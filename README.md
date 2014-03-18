@@ -5,6 +5,7 @@ NSA Sandwiches Project
 
 NSA-DB-Diagram.pdf   - Database diagram as of 3/11
 
+<<<<<<< HEAD
 DB - 2014-03-11.sql  - SQL for Creating initial DB as of 3/11
 
 NSA Lobby Application   3/17/2014
@@ -14,3 +15,6 @@ NSA Lobby Application   3/17/2014
   DatabaseConnection.cs  - connects to the database
   
   Lobby.cs and Lobby.designer.cs contain the form functionality.
+=======
+DB - 2014-03-11.sql  - SQL for Creating initial DB as of 3/11
+>>>>>>> origin/Initial-Database
