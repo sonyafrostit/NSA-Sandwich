@@ -1,0 +1,11 @@
+c:\users\trae\documents\visual studio 2013\Projects\NSA Lobby Application\bin\Debug\NSA Lobby Application.exe.config
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\obj\Debug\NSA_Lobby_Application.Lobby.resources
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\obj\Debug\NSA_Lobby_Application.Properties.Resources.resources
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\obj\Debug\NSA Lobby Application.csproj.GenerateResource.Cache
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\bin\Debug\NSA Lobby Application.exe
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\bin\Debug\NSA Lobby Application.pdb
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\obj\Debug\NSA Lobby Application.exe
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\obj\Debug\NSA Lobby Application.pdb
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\bin\Debug\MySql.Data.dll
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\bin\Debug\NSAConfig.xml
+C:\Users\Trae\documents\visual studio 2013\Projects\NSA Lobby Application\obj\Debug\NSA Lobby Application.csprojResolveAssemblyReference.cache
