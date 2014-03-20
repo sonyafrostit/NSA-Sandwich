@@ -15,7 +15,7 @@ from
 where
 	O.orderid = OI.orderid AND 
 	O.storeid = 1 AND
-	O.status = 2;
+	O.status = 1;
 
 /* The following gets the components that are added to order item 5*/
 Select 

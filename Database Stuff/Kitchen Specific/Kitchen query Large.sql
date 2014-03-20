@@ -37,6 +37,6 @@ from
 
 where  
 	Q2.storeid = 1 AND
-	Q2.status = 2 
+	Q2.status = 1 
 
 Order by orderID, orderitemid, categoryid, componentremoved
