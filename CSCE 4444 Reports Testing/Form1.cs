@@ -33,9 +33,13 @@ namespace CSCE_4444_Reports_Testing {
             //Add a second store ID to reports object;
             rept.AddStore(2);
 
-            // generate the report and place it into a RTF File.
+            // generate the report and place it into a Webbrowser window.
             string report = rept.GenerateReport(listReports.SelectedIndex);
-            rtbReport.Text = report;
+            webReport.Navigate("about:blank");
+            if (webReport.Document != null) {
+                webReport.Document.Write(string.Empty);
+            }
+            webReport.DocumentText = report;
 
         }
 

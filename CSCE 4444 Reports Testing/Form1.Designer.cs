@@ -23,20 +23,12 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.rtbReport = new System.Windows.Forms.RichTextBox();
             this.listReports = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.webReport = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
-            // 
-            // rtbReport
-            // 
-            this.rtbReport.Location = new System.Drawing.Point(383, 38);
-            this.rtbReport.Name = "rtbReport";
-            this.rtbReport.Size = new System.Drawing.Size(587, 329);
-            this.rtbReport.TabIndex = 0;
-            this.rtbReport.Text = "";
             // 
             // listReports
             // 
@@ -75,16 +67,24 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Report";
             // 
+            // webReport
+            // 
+            this.webReport.Location = new System.Drawing.Point(383, 38);
+            this.webReport.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webReport.Name = "webReport";
+            this.webReport.Size = new System.Drawing.Size(1355, 1074);
+            this.webReport.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 473);
+            this.ClientSize = new System.Drawing.Size(2086, 1124);
+            this.Controls.Add(this.webReport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listReports);
-            this.Controls.Add(this.rtbReport);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -94,11 +94,11 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox rtbReport;
         private System.Windows.Forms.ListBox listReports;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.WebBrowser webReport;
 
     }
 }
