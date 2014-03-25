@@ -397,12 +397,13 @@ namespace CSCE_4444_Term_Project
         public int ManagerAccountsData(out List<string>[] manageraccounts)
         {
 
-            string query = "SELECT managerid, lastname FROM managers WHERE isassistant = 1 and storeid = " + StoreNumber.ToString() + " ORDER BY managerid";
+            string query = "SELECT managerid, firstname, lastname FROM managers WHERE isassistant = 1 and storeid = " + StoreNumber.ToString() + " ORDER BY managerid";
 
             //Change the Manager Accounts list to store the result
-            manageraccounts = new List<string>[2];
+            manageraccounts = new List<string>[3];
             manageraccounts[0] = new List<string>();
             manageraccounts[1] = new List<string>();
+            manageraccounts[2] = new List<string>();
 
             //initial record count is 0
             RecordCount = 0;
@@ -421,7 +422,8 @@ namespace CSCE_4444_Term_Project
                 while (mysqlreader.Read())
                 {
                     manageraccounts[0].Add(mysqlreader["managerid"] + "");
-                    manageraccounts[1].Add(mysqlreader["lastname"] + "");
+                    manageraccounts[1].Add(mysqlreader["firstname"] + "");
+                    manageraccounts[2].Add(mysqlreader["lastname"] + "");
 
                     //increment the record count 
                     RecordCount++;
@@ -495,12 +497,14 @@ namespace CSCE_4444_Term_Project
         public int ManagerGetComponentData(out List<string>[] componentdata)
         {
 
-            string query = "SELECT componentid, name FROM components WHERE storeid = " + StoreNumber.ToString() + " ORDER BY componentid";
+            string query = "SELECT componentid, name, categoryid, price FROM components WHERE storeid = " + StoreNumber.ToString() + " ORDER BY componentid";
 
             //Change the inventory data list to store the result
-            componentdata = new List<string>[2];
+            componentdata = new List<string>[4];
             componentdata[0] = new List<string>();
             componentdata[1] = new List<string>();
+            componentdata[2] = new List<string>();
+            componentdata[3] = new List<string>();
 
             //initial record count is 0
             RecordCount = 0;
@@ -520,6 +524,8 @@ namespace CSCE_4444_Term_Project
                 {
                     componentdata[0].Add(mysqlreader["componentid"] + "");
                     componentdata[1].Add(mysqlreader["name"] + "");
+                    componentdata[2].Add(mysqlreader["categoryid"] + "");
+                    componentdata[3].Add(mysqlreader["price"] + "");
 
                     //increment the record count 
                     RecordCount++;

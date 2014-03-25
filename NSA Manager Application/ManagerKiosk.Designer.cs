@@ -33,10 +33,10 @@
             this.RefreshOrders_Button = new System.Windows.Forms.Button();
             this.RefundItem_Button = new System.Windows.Forms.Button();
             this.OrdersItems_Label = new System.Windows.Forms.Label();
-            this.OrderItems_ListBox = new System.Windows.Forms.ListBox();
+            this.OrderItems_Listbox = new System.Windows.Forms.ListBox();
             this.OrdersList_Label = new System.Windows.Forms.Label();
             this.RefundOrders_Button = new System.Windows.Forms.Button();
-            this.Orders_ListBox = new System.Windows.Forms.ListBox();
+            this.Orders_Listbox = new System.Windows.Forms.ListBox();
             this.LoyaltyAccounts = new System.Windows.Forms.TabPage();
             this.AddLoyaltyAccount_Label = new System.Windows.Forms.Label();
             this.SaveLoyaltyAccount_Button = new System.Windows.Forms.Button();
@@ -57,12 +57,12 @@
             this.LoyaltyAccount_Title = new System.Windows.Forms.Label();
             this.AssistantManagers = new System.Windows.Forms.TabPage();
             this.AssistantManagerLastName_Label = new System.Windows.Forms.Label();
-            this.AssistantManagerLastName_TextBox = new System.Windows.Forms.TextBox();
+            this.AssistantManagerLastName_Textbox = new System.Windows.Forms.TextBox();
             this.DeleteAssistantManager_Button = new System.Windows.Forms.Button();
-            this.AssistantManagers_ListBox = new System.Windows.Forms.ListBox();
+            this.AssistantManagers_Listbox = new System.Windows.Forms.ListBox();
             this.AssistantManagersList_Label = new System.Windows.Forms.Label();
             this.AssistantManagerSave_Button = new System.Windows.Forms.Button();
-            this.AssistantManagerConfirm_TextBox = new System.Windows.Forms.TextBox();
+            this.AssistantManagerConfirm_Textbox = new System.Windows.Forms.TextBox();
             this.AssistantManagerPassword_Textbox = new System.Windows.Forms.TextBox();
             this.EmployeeID_Textbox = new System.Windows.Forms.TextBox();
             this.AssistantManagerFirstName_Textbox = new System.Windows.Forms.TextBox();
@@ -75,7 +75,7 @@
             this.InventoryUpdate_Button = new System.Windows.Forms.Button();
             this.ItemCount_Textbox = new System.Windows.Forms.TextBox();
             this.ItemCount_Label = new System.Windows.Forms.Label();
-            this.Inventory_ListBox = new System.Windows.Forms.ListBox();
+            this.Inventory_Listbox = new System.Windows.Forms.ListBox();
             this.InventoryTitle_Label = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabPage();
             this.ReportPDF_Button = new System.Windows.Forms.Button();
@@ -117,8 +117,8 @@
             this.ComponentHighQuantity_Label = new System.Windows.Forms.Label();
             this.ComponentPrice_Label = new System.Windows.Forms.Label();
             this.ComponentCategory_Label = new System.Windows.Forms.Label();
-            this.ComponentPrice_Listbox = new System.Windows.Forms.TextBox();
-            this.ComponentCategory_Listbox = new System.Windows.Forms.TextBox();
+            this.ComponentPrice_Textbox = new System.Windows.Forms.TextBox();
+            this.ComponentCategory_Textbox = new System.Windows.Forms.TextBox();
             this.ComponentName_Textbox = new System.Windows.Forms.TextBox();
             this.ComponentName_Label = new System.Windows.Forms.Label();
             this.Components_Listbox = new System.Windows.Forms.ListBox();
@@ -126,6 +126,8 @@
             this.Tools = new System.Windows.Forms.TabPage();
             this.ClearPickupWindow_Button = new System.Windows.Forms.Button();
             this.ToolsTitle_Label = new System.Windows.Forms.Label();
+            this.ComponentCost_Textbox = new System.Windows.Forms.TextBox();
+            this.ComponentCost_Label = new System.Windows.Forms.Label();
             this.ManagerKiosk_TabPage.SuspendLayout();
             this.Orders.SuspendLayout();
             this.LoyaltyAccounts.SuspendLayout();
@@ -158,10 +160,10 @@
             this.Orders.Controls.Add(this.RefreshOrders_Button);
             this.Orders.Controls.Add(this.RefundItem_Button);
             this.Orders.Controls.Add(this.OrdersItems_Label);
-            this.Orders.Controls.Add(this.OrderItems_ListBox);
+            this.Orders.Controls.Add(this.OrderItems_Listbox);
             this.Orders.Controls.Add(this.OrdersList_Label);
             this.Orders.Controls.Add(this.RefundOrders_Button);
-            this.Orders.Controls.Add(this.Orders_ListBox);
+            this.Orders.Controls.Add(this.Orders_Listbox);
             this.Orders.Location = new System.Drawing.Point(4, 22);
             this.Orders.Name = "Orders";
             this.Orders.Padding = new System.Windows.Forms.Padding(3);
@@ -198,15 +200,15 @@
             this.OrdersItems_Label.TabIndex = 7;
             this.OrdersItems_Label.Text = "Order Items";
             // 
-            // OrderItems_ListBox
+            // OrderItems_Listbox
             // 
-            this.OrderItems_ListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.OrderItems_ListBox.FormattingEnabled = true;
-            this.OrderItems_ListBox.ItemHeight = 16;
-            this.OrderItems_ListBox.Location = new System.Drawing.Point(390, 30);
-            this.OrderItems_ListBox.Name = "OrderItems_ListBox";
-            this.OrderItems_ListBox.Size = new System.Drawing.Size(856, 564);
-            this.OrderItems_ListBox.TabIndex = 6;
+            this.OrderItems_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.OrderItems_Listbox.FormattingEnabled = true;
+            this.OrderItems_Listbox.ItemHeight = 16;
+            this.OrderItems_Listbox.Location = new System.Drawing.Point(390, 30);
+            this.OrderItems_Listbox.Name = "OrderItems_Listbox";
+            this.OrderItems_Listbox.Size = new System.Drawing.Size(856, 564);
+            this.OrderItems_Listbox.TabIndex = 6;
             // 
             // OrdersList_Label
             // 
@@ -228,16 +230,16 @@
             this.RefundOrders_Button.UseVisualStyleBackColor = true;
             this.RefundOrders_Button.Click += new System.EventHandler(this.RefundOrders_Click);
             // 
-            // Orders_ListBox
+            // Orders_Listbox
             // 
-            this.Orders_ListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Orders_ListBox.FormattingEnabled = true;
-            this.Orders_ListBox.ItemHeight = 16;
-            this.Orders_ListBox.Location = new System.Drawing.Point(10, 30);
-            this.Orders_ListBox.Name = "Orders_ListBox";
-            this.Orders_ListBox.Size = new System.Drawing.Size(337, 564);
-            this.Orders_ListBox.TabIndex = 3;
-            this.Orders_ListBox.SelectedIndexChanged += new System.EventHandler(this.Orders_ListBox_SelectedIndexChanged);
+            this.Orders_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Orders_Listbox.FormattingEnabled = true;
+            this.Orders_Listbox.ItemHeight = 16;
+            this.Orders_Listbox.Location = new System.Drawing.Point(10, 30);
+            this.Orders_Listbox.Name = "Orders_Listbox";
+            this.Orders_Listbox.Size = new System.Drawing.Size(337, 564);
+            this.Orders_Listbox.TabIndex = 3;
+            this.Orders_Listbox.SelectedIndexChanged += new System.EventHandler(this.Orders_ListBox_SelectedIndexChanged);
             // 
             // LoyaltyAccounts
             // 
@@ -421,12 +423,12 @@
             // AssistantManagers
             // 
             this.AssistantManagers.Controls.Add(this.AssistantManagerLastName_Label);
-            this.AssistantManagers.Controls.Add(this.AssistantManagerLastName_TextBox);
+            this.AssistantManagers.Controls.Add(this.AssistantManagerLastName_Textbox);
             this.AssistantManagers.Controls.Add(this.DeleteAssistantManager_Button);
-            this.AssistantManagers.Controls.Add(this.AssistantManagers_ListBox);
+            this.AssistantManagers.Controls.Add(this.AssistantManagers_Listbox);
             this.AssistantManagers.Controls.Add(this.AssistantManagersList_Label);
             this.AssistantManagers.Controls.Add(this.AssistantManagerSave_Button);
-            this.AssistantManagers.Controls.Add(this.AssistantManagerConfirm_TextBox);
+            this.AssistantManagers.Controls.Add(this.AssistantManagerConfirm_Textbox);
             this.AssistantManagers.Controls.Add(this.AssistantManagerPassword_Textbox);
             this.AssistantManagers.Controls.Add(this.EmployeeID_Textbox);
             this.AssistantManagers.Controls.Add(this.AssistantManagerFirstName_Textbox);
@@ -453,12 +455,12 @@
             this.AssistantManagerLastName_Label.TabIndex = 14;
             this.AssistantManagerLastName_Label.Text = "Last Name:";
             // 
-            // AssistantManagerLastName_TextBox
+            // AssistantManagerLastName_Textbox
             // 
-            this.AssistantManagerLastName_TextBox.Location = new System.Drawing.Point(524, 59);
-            this.AssistantManagerLastName_TextBox.Name = "AssistantManagerLastName_TextBox";
-            this.AssistantManagerLastName_TextBox.Size = new System.Drawing.Size(224, 20);
-            this.AssistantManagerLastName_TextBox.TabIndex = 6;
+            this.AssistantManagerLastName_Textbox.Location = new System.Drawing.Point(524, 59);
+            this.AssistantManagerLastName_Textbox.Name = "AssistantManagerLastName_Textbox";
+            this.AssistantManagerLastName_Textbox.Size = new System.Drawing.Size(224, 20);
+            this.AssistantManagerLastName_Textbox.TabIndex = 6;
             // 
             // DeleteAssistantManager_Button
             // 
@@ -469,15 +471,15 @@
             this.DeleteAssistantManager_Button.Text = "Delete Assistant Manager";
             this.DeleteAssistantManager_Button.UseVisualStyleBackColor = true;
             // 
-            // AssistantManagers_ListBox
+            // AssistantManagers_Listbox
             // 
-            this.AssistantManagers_ListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.AssistantManagers_ListBox.FormattingEnabled = true;
-            this.AssistantManagers_ListBox.ItemHeight = 16;
-            this.AssistantManagers_ListBox.Location = new System.Drawing.Point(6, 31);
-            this.AssistantManagers_ListBox.Name = "AssistantManagers_ListBox";
-            this.AssistantManagers_ListBox.Size = new System.Drawing.Size(337, 564);
-            this.AssistantManagers_ListBox.TabIndex = 11;
+            this.AssistantManagers_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.AssistantManagers_Listbox.FormattingEnabled = true;
+            this.AssistantManagers_Listbox.ItemHeight = 16;
+            this.AssistantManagers_Listbox.Location = new System.Drawing.Point(6, 31);
+            this.AssistantManagers_Listbox.Name = "AssistantManagers_Listbox";
+            this.AssistantManagers_Listbox.Size = new System.Drawing.Size(337, 564);
+            this.AssistantManagers_Listbox.TabIndex = 11;
             // 
             // AssistantManagersList_Label
             // 
@@ -498,12 +500,12 @@
             this.AssistantManagerSave_Button.Text = "Save Assistant Manager Account";
             this.AssistantManagerSave_Button.UseVisualStyleBackColor = true;
             // 
-            // AssistantManagerConfirm_TextBox
+            // AssistantManagerConfirm_Textbox
             // 
-            this.AssistantManagerConfirm_TextBox.Location = new System.Drawing.Point(525, 137);
-            this.AssistantManagerConfirm_TextBox.Name = "AssistantManagerConfirm_TextBox";
-            this.AssistantManagerConfirm_TextBox.Size = new System.Drawing.Size(224, 20);
-            this.AssistantManagerConfirm_TextBox.TabIndex = 9;
+            this.AssistantManagerConfirm_Textbox.Location = new System.Drawing.Point(525, 137);
+            this.AssistantManagerConfirm_Textbox.Name = "AssistantManagerConfirm_Textbox";
+            this.AssistantManagerConfirm_Textbox.Size = new System.Drawing.Size(224, 20);
+            this.AssistantManagerConfirm_Textbox.TabIndex = 9;
             // 
             // AssistantManagerPassword_Textbox
             // 
@@ -581,7 +583,7 @@
             this.Inventory.Controls.Add(this.InventoryUpdate_Button);
             this.Inventory.Controls.Add(this.ItemCount_Textbox);
             this.Inventory.Controls.Add(this.ItemCount_Label);
-            this.Inventory.Controls.Add(this.Inventory_ListBox);
+            this.Inventory.Controls.Add(this.Inventory_Listbox);
             this.Inventory.Controls.Add(this.InventoryTitle_Label);
             this.Inventory.Location = new System.Drawing.Point(4, 22);
             this.Inventory.Name = "Inventory";
@@ -617,15 +619,15 @@
             this.ItemCount_Label.TabIndex = 2;
             this.ItemCount_Label.Text = "Item Count:";
             // 
-            // Inventory_ListBox
+            // Inventory_Listbox
             // 
-            this.Inventory_ListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Inventory_ListBox.FormattingEnabled = true;
-            this.Inventory_ListBox.ItemHeight = 16;
-            this.Inventory_ListBox.Location = new System.Drawing.Point(11, 35);
-            this.Inventory_ListBox.Name = "Inventory_ListBox";
-            this.Inventory_ListBox.Size = new System.Drawing.Size(851, 564);
-            this.Inventory_ListBox.TabIndex = 1;
+            this.Inventory_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Inventory_Listbox.FormattingEnabled = true;
+            this.Inventory_Listbox.ItemHeight = 16;
+            this.Inventory_Listbox.Location = new System.Drawing.Point(11, 35);
+            this.Inventory_Listbox.Name = "Inventory_Listbox";
+            this.Inventory_Listbox.Size = new System.Drawing.Size(851, 564);
+            this.Inventory_Listbox.TabIndex = 1;
             // 
             // InventoryTitle_Label
             // 
@@ -951,6 +953,8 @@
             // 
             // ItemMods
             // 
+            this.ItemMods.Controls.Add(this.ComponentCost_Label);
+            this.ItemMods.Controls.Add(this.ComponentCost_Textbox);
             this.ItemMods.Controls.Add(this.ComponentSave_Button);
             this.ItemMods.Controls.Add(this.ComponentDelete_Button);
             this.ItemMods.Controls.Add(this.ComponentLowQuantity_Textbox);
@@ -959,8 +963,8 @@
             this.ItemMods.Controls.Add(this.ComponentHighQuantity_Label);
             this.ItemMods.Controls.Add(this.ComponentPrice_Label);
             this.ItemMods.Controls.Add(this.ComponentCategory_Label);
-            this.ItemMods.Controls.Add(this.ComponentPrice_Listbox);
-            this.ItemMods.Controls.Add(this.ComponentCategory_Listbox);
+            this.ItemMods.Controls.Add(this.ComponentPrice_Textbox);
+            this.ItemMods.Controls.Add(this.ComponentCategory_Textbox);
             this.ItemMods.Controls.Add(this.ComponentName_Textbox);
             this.ItemMods.Controls.Add(this.ComponentName_Label);
             this.ItemMods.Controls.Add(this.Components_Listbox);
@@ -975,10 +979,10 @@
             // 
             // ComponentSave_Button
             // 
-            this.ComponentSave_Button.Location = new System.Drawing.Point(516, 182);
+            this.ComponentSave_Button.Location = new System.Drawing.Point(516, 203);
             this.ComponentSave_Button.Name = "ComponentSave_Button";
             this.ComponentSave_Button.Size = new System.Drawing.Size(179, 39);
-            this.ComponentSave_Button.TabIndex = 28;
+            this.ComponentSave_Button.TabIndex = 9;
             this.ComponentSave_Button.Text = "Save Component";
             this.ComponentSave_Button.UseVisualStyleBackColor = true;
             // 
@@ -993,16 +997,16 @@
             // 
             // ComponentLowQuantity_Textbox
             // 
-            this.ComponentLowQuantity_Textbox.Location = new System.Drawing.Point(471, 156);
+            this.ComponentLowQuantity_Textbox.Location = new System.Drawing.Point(471, 177);
             this.ComponentLowQuantity_Textbox.Name = "ComponentLowQuantity_Textbox";
             this.ComponentLowQuantity_Textbox.Size = new System.Drawing.Size(224, 20);
-            this.ComponentLowQuantity_Textbox.TabIndex = 11;
+            this.ComponentLowQuantity_Textbox.TabIndex = 8;
             // 
             // ComponentLowQuantity_Label
             // 
             this.ComponentLowQuantity_Label.AutoSize = true;
             this.ComponentLowQuantity_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ComponentLowQuantity_Label.Location = new System.Drawing.Point(356, 154);
+            this.ComponentLowQuantity_Label.Location = new System.Drawing.Point(356, 175);
             this.ComponentLowQuantity_Label.Name = "ComponentLowQuantity_Label";
             this.ComponentLowQuantity_Label.Size = new System.Drawing.Size(105, 20);
             this.ComponentLowQuantity_Label.TabIndex = 10;
@@ -1010,16 +1014,16 @@
             // 
             // ComponentHighQuantity_Textbox
             // 
-            this.ComponentHighQuantity_Textbox.Location = new System.Drawing.Point(471, 129);
+            this.ComponentHighQuantity_Textbox.Location = new System.Drawing.Point(471, 150);
             this.ComponentHighQuantity_Textbox.Name = "ComponentHighQuantity_Textbox";
             this.ComponentHighQuantity_Textbox.Size = new System.Drawing.Size(224, 20);
-            this.ComponentHighQuantity_Textbox.TabIndex = 9;
+            this.ComponentHighQuantity_Textbox.TabIndex = 7;
             // 
             // ComponentHighQuantity_Label
             // 
             this.ComponentHighQuantity_Label.AutoSize = true;
             this.ComponentHighQuantity_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ComponentHighQuantity_Label.Location = new System.Drawing.Point(356, 127);
+            this.ComponentHighQuantity_Label.Location = new System.Drawing.Point(356, 148);
             this.ComponentHighQuantity_Label.Name = "ComponentHighQuantity_Label";
             this.ComponentHighQuantity_Label.Size = new System.Drawing.Size(109, 20);
             this.ComponentHighQuantity_Label.TabIndex = 8;
@@ -1045,19 +1049,19 @@
             this.ComponentCategory_Label.TabIndex = 6;
             this.ComponentCategory_Label.Text = "Category:";
             // 
-            // ComponentPrice_Listbox
+            // ComponentPrice_Textbox
             // 
-            this.ComponentPrice_Listbox.Location = new System.Drawing.Point(471, 85);
-            this.ComponentPrice_Listbox.Name = "ComponentPrice_Listbox";
-            this.ComponentPrice_Listbox.Size = new System.Drawing.Size(224, 20);
-            this.ComponentPrice_Listbox.TabIndex = 5;
+            this.ComponentPrice_Textbox.Location = new System.Drawing.Point(471, 85);
+            this.ComponentPrice_Textbox.Name = "ComponentPrice_Textbox";
+            this.ComponentPrice_Textbox.Size = new System.Drawing.Size(224, 20);
+            this.ComponentPrice_Textbox.TabIndex = 5;
             // 
-            // ComponentCategory_Listbox
+            // ComponentCategory_Textbox
             // 
-            this.ComponentCategory_Listbox.Location = new System.Drawing.Point(471, 58);
-            this.ComponentCategory_Listbox.Name = "ComponentCategory_Listbox";
-            this.ComponentCategory_Listbox.Size = new System.Drawing.Size(224, 20);
-            this.ComponentCategory_Listbox.TabIndex = 4;
+            this.ComponentCategory_Textbox.Location = new System.Drawing.Point(471, 58);
+            this.ComponentCategory_Textbox.Name = "ComponentCategory_Textbox";
+            this.ComponentCategory_Textbox.Size = new System.Drawing.Size(224, 20);
+            this.ComponentCategory_Textbox.TabIndex = 4;
             // 
             // ComponentName_Textbox
             // 
@@ -1127,6 +1131,23 @@
             this.ToolsTitle_Label.TabIndex = 0;
             this.ToolsTitle_Label.Text = "Tools";
             // 
+            // ComponentCost_Textbox
+            // 
+            this.ComponentCost_Textbox.Location = new System.Drawing.Point(471, 112);
+            this.ComponentCost_Textbox.Name = "ComponentCost_Textbox";
+            this.ComponentCost_Textbox.Size = new System.Drawing.Size(224, 20);
+            this.ComponentCost_Textbox.TabIndex = 6;
+            // 
+            // ComponentCost_Label
+            // 
+            this.ComponentCost_Label.AutoSize = true;
+            this.ComponentCost_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ComponentCost_Label.Location = new System.Drawing.Point(356, 110);
+            this.ComponentCost_Label.Name = "ComponentCost_Label";
+            this.ComponentCost_Label.Size = new System.Drawing.Size(46, 20);
+            this.ComponentCost_Label.TabIndex = 30;
+            this.ComponentCost_Label.Text = "Cost:";
+            // 
             // ManagerKiosk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1169,9 +1190,9 @@
         private System.Windows.Forms.TabPage Tools;
         private System.Windows.Forms.Label OrdersList_Label;
         private System.Windows.Forms.Button RefundOrders_Button;
-        private System.Windows.Forms.ListBox Orders_ListBox;
+        private System.Windows.Forms.ListBox Orders_Listbox;
         private System.Windows.Forms.Label OrdersItems_Label;
-        private System.Windows.Forms.ListBox OrderItems_ListBox;
+        private System.Windows.Forms.ListBox OrderItems_Listbox;
         private System.Windows.Forms.Button RefundItem_Button;
         private System.Windows.Forms.TextBox SearchEmailAddress_Textbox;
         private System.Windows.Forms.TextBox SearchAccountName_Textbox;
@@ -1191,17 +1212,17 @@
         private System.Windows.Forms.TextBox AssistantManagerFirstName_Textbox;
         private System.Windows.Forms.Label AssistantManagersConfirm_Label;
         private System.Windows.Forms.Label AssistantMangerPassword_Label;
-        private System.Windows.Forms.TextBox AssistantManagerConfirm_TextBox;
+        private System.Windows.Forms.TextBox AssistantManagerConfirm_Textbox;
         private System.Windows.Forms.TextBox AssistantManagerPassword_Textbox;
         private System.Windows.Forms.Button AssistantManagerSave_Button;
         private System.Windows.Forms.Label AssistantManagersList_Label;
-        private System.Windows.Forms.ListBox AssistantManagers_ListBox;
+        private System.Windows.Forms.ListBox AssistantManagers_Listbox;
         private System.Windows.Forms.Button DeleteAssistantManager_Button;
         private System.Windows.Forms.Label InventoryTitle_Label;
         private System.Windows.Forms.Button InventoryUpdate_Button;
         private System.Windows.Forms.TextBox ItemCount_Textbox;
         private System.Windows.Forms.Label ItemCount_Label;
-        private System.Windows.Forms.ListBox Inventory_ListBox;
+        private System.Windows.Forms.ListBox Inventory_Listbox;
         private System.Windows.Forms.Label ReportsTitle_Label;
         private System.Windows.Forms.RichTextBox Reports_Textbox;
         private System.Windows.Forms.ListBox Reports_Listbox;
@@ -1235,8 +1256,8 @@
         private System.Windows.Forms.Label ComponentsTitle_Label;
         private System.Windows.Forms.Label ComponentName_Label;
         private System.Windows.Forms.TextBox ComponentName_Textbox;
-        private System.Windows.Forms.TextBox ComponentPrice_Listbox;
-        private System.Windows.Forms.TextBox ComponentCategory_Listbox;
+        private System.Windows.Forms.TextBox ComponentPrice_Textbox;
+        private System.Windows.Forms.TextBox ComponentCategory_Textbox;
         private System.Windows.Forms.Label ComponentCategory_Label;
         private System.Windows.Forms.Label ComponentPrice_Label;
         private System.Windows.Forms.TextBox ComponentHighQuantity_Textbox;
@@ -1254,8 +1275,10 @@
         private System.Windows.Forms.TextBox AddAccountName_Textbox;
         private System.Windows.Forms.Label EmailAddress_Label2;
         private System.Windows.Forms.Label AccountName_Label2;
-        private System.Windows.Forms.TextBox AssistantManagerLastName_TextBox;
+        private System.Windows.Forms.TextBox AssistantManagerLastName_Textbox;
         private System.Windows.Forms.Label AssistantManagerLastName_Label;
+        private System.Windows.Forms.TextBox ComponentCost_Textbox;
+        private System.Windows.Forms.Label ComponentCost_Label;
     }
 }
 

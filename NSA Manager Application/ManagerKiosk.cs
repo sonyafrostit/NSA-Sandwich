@@ -91,18 +91,18 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerOrdersData(out Managerdata);
 
-                Orders_ListBox.Items.Clear();
+                Orders_Listbox.Items.Clear();
 
                 //loop over the records and load them to the listbox
                 for (int index = 0; index < ordercount; index++)
                 {
                     if(Managerdata[2][index] == "0")
                     {
-                        Orders_ListBox.Items.Add("#" + Managerdata[0][index] + " - " + Managerdata[1][index]);
+                        Orders_Listbox.Items.Add("#" + Managerdata[0][index] + " - " + Managerdata[1][index]);
                     }
                     else
                     {
-                        Orders_ListBox.Items.Add("#" + Managerdata[0][index] + " - " + Managerdata[1][index] + " - Refunded");
+                        Orders_Listbox.Items.Add("#" + Managerdata[0][index] + " - " + Managerdata[1][index] + " - Refunded");
                     }
 
                 }
@@ -116,11 +116,11 @@ namespace CSCE_4444_Term_Project
         private void Orders_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the currently selected item in the ListBox. 
-            string curItem = Orders_ListBox.SelectedItem.ToString();
+            string curItem = Orders_Listbox.SelectedItem.ToString();
             string[] split = curItem.Split(new Char[] { ' ', '#' });
 
             // Clears existing items in the list
-            OrderItems_ListBox.Items.Clear();
+            OrderItems_Listbox.Items.Clear();
 
             // Loads Order Items list using currently selected item.
             LoadOrderItems(split[1]);
@@ -145,7 +145,7 @@ namespace CSCE_4444_Term_Project
                 //loop over the records and load them to the listbox
                 for (int index = 0; index < ordercount; index++)
                 {
-                    OrderItems_ListBox.Items.Add(ManagerItemdata[0][index] + "");
+                    OrderItems_Listbox.Items.Add(ManagerItemdata[0][index] + "");
                 }
             }
             catch (Exception ex)
@@ -159,7 +159,7 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = Orders_ListBox.SelectedItem.ToString();
+                string curItem = Orders_Listbox.SelectedItem.ToString();
                 string[] split = curItem.Split(new Char[] { ' ', '#' });
 
                 // connect to DB if it is not connected
@@ -186,10 +186,10 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curOrder = Orders_ListBox.SelectedItem.ToString();
+                string curOrder = Orders_Listbox.SelectedItem.ToString();
                 string[] splitOrder = curOrder.Split(new Char[] { ' ', '#' });
 
-                string curItem = OrderItems_ListBox.SelectedItem.ToString();
+                string curItem = OrderItems_Listbox.SelectedItem.ToString();
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -214,7 +214,7 @@ namespace CSCE_4444_Term_Project
             LoadOrders();
 
             // Clears OrderItems List
-            OrderItems_ListBox.Items.Clear();
+            OrderItems_Listbox.Items.Clear();
         } // RefreshOrders_Click
 
         private void LoyaltyAccountSearch_Button_Click(object sender, EventArgs e)
@@ -329,12 +329,12 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerAccountsData(out ManagerAccountdata);
 
-                AssistantManagers_ListBox.Items.Clear();
+                AssistantManagers_Listbox.Items.Clear();
 
                 //loop over the records and load them to the listbox
                 for (int index = 0; index < ordercount; index++)
                 {
-                    AssistantManagers_ListBox.Items.Add(ManagerAccountdata[0][index] + " - " + ManagerAccountdata[1][index]);
+                    AssistantManagers_Listbox.Items.Add("#" + ManagerAccountdata[0][index] + " - " + ManagerAccountdata[1][index] + " " + ManagerAccountdata[2][index]);
                 }
             }
             catch (Exception ex)
@@ -360,12 +360,12 @@ namespace CSCE_4444_Term_Project
                 ordercount = nsadb.ManagerGetInventoryData(out ManagerInventorydata);
 
                 // Clear previous Values
-                Inventory_ListBox.Items.Clear();
+                Inventory_Listbox.Items.Clear();
 
                 //loop over the records and load them to the listbox
                 for (int index = 0; index < ordercount; index++)
                 {
-                    Inventory_ListBox.Items.Add("#" + ManagerInventorydata[2][index] + " - " + ManagerInventorydata[0][index] + " - " + ManagerInventorydata[1][index]);
+                    Inventory_Listbox.Items.Add("#" + ManagerInventorydata[2][index] + " - " + ManagerInventorydata[0][index] + " - " + ManagerInventorydata[1][index]);
                 }
             }
             catch (Exception ex)
@@ -396,7 +396,7 @@ namespace CSCE_4444_Term_Project
                 //loop over the records and load them to the listbox
                 for (int index = 0; index < ordercount; index++)
                 {
-                    Components_Listbox.Items.Add(ManagerComponentdata[0][index] + " - " + ManagerComponentdata[1][index]);
+                    Components_Listbox.Items.Add("#" + ManagerComponentdata[0][index] + " - " + ManagerComponentdata[1][index] + " - " + ManagerComponentdata[2][index] + " - $" + String.Format("{0:0.00}", ManagerComponentdata[3][index]));
                 }
             }
             catch (Exception ex)
@@ -468,8 +468,8 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = AssistantManagers_ListBox.SelectedItem.ToString();
-                string[] split = curItem.Split(new Char[] { ' ', '-' });
+                string curItem = AssistantManagers_Listbox.SelectedItem.ToString();
+                string[] split = curItem.Split(new Char[] { ' ', '-', '#' });
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -478,11 +478,11 @@ namespace CSCE_4444_Term_Project
                 }
 
                 // Update the database to mark selected order Refunded and clear Manager Accounts List
-                nsadb.ManagerDeleteManagerAccount(split[0]);
+                nsadb.ManagerDeleteManagerAccount(split[1]);
                 LoadManagerAccountList();
 
                 // Inform User that Account was successfully Deleted.
-                MessageBox.Show("Manager Account #" + split[0] + " Deleted.", "Delete Manager Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Manager Account #" + split[1] + " Deleted.", "Delete Manager Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -497,10 +497,10 @@ namespace CSCE_4444_Term_Project
             {
                 // Buffer to store text
                 string FirstName = AssistantManagerFirstName_Textbox.Text.ToString();
-                string LastName = AssistantManagerLastName_TextBox.Text.ToString();
+                string LastName = AssistantManagerLastName_Textbox.Text.ToString();
                 string EmployeeID = EmployeeID_Textbox.Text.ToString();
                 string Password = AssistantManagerPassword_Textbox.Text.ToString();
-                string PasswordConfirm = AssistantManagerConfirm_TextBox.Text.ToString();
+                string PasswordConfirm = AssistantManagerConfirm_Textbox.Text.ToString();
 
                 if (String.IsNullOrWhiteSpace(FirstName) || String.IsNullOrWhiteSpace(LastName) || String.IsNullOrWhiteSpace(EmployeeID) 
                     || String.IsNullOrWhiteSpace(Password) || String.IsNullOrWhiteSpace(PasswordConfirm))
@@ -543,7 +543,7 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = Inventory_ListBox.SelectedItem.ToString();
+                string curItem = Inventory_Listbox.SelectedItem.ToString();
                 string quantity = ItemCount_Textbox.Text.ToString();
                 string[] split = curItem.Split(new Char[] { ' ', '-', '#' });
 
