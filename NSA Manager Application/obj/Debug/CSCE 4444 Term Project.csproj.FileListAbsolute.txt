@@ -1,0 +1,10 @@
+c:\users\ranger\documents\visual studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\bin\Debug\CSCE 4444 Term Project.exe.config
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\bin\Debug\CSCE 4444 Term Project.exe
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\bin\Debug\CSCE 4444 Term Project.pdb
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\CSCE_4444_Term_Project.ManagerKiosk.resources
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\CSCE_4444_Term_Project.Properties.Resources.resources
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\CSCE 4444 Term Project.csproj.GenerateResource.Cache
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\CSCE 4444 Term Project.exe
+C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\CSCE 4444 Term Project.pdb
+C:\Users\Ranger\documents\visual studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\bin\Debug\MySql.Data.dll
+C:\Users\Ranger\documents\visual studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\CSCE 4444 Term Project.csprojResolveAssemblyReference.cache
