@@ -13,6 +13,8 @@
 //                object that will give the user access to the records based
 //                on the query passed to the method. 
 //                VERY IMPORTANT: is is up to the user to close the data reader
+//
+//      2014-03-26 Moved to NSA namespace
 ///////////////////////////////////////////////////////////////////////////////
 using System.Windows.Forms;
 using System.IO;
@@ -25,7 +27,8 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 
-class NSADatabase{
+namespace NSA{
+public class NSADatabase{
     private MySqlConnection Connection;
     private string DBServer;    //IP address or host name for server
     private string DBName;      //Database name to use
@@ -68,8 +71,7 @@ class NSADatabase{
 
     //open connection to database
     public bool OpenConnection(){
-        try
-        {
+        try {
             Connection.Open();
             return true;
         } catch (MySqlException exMySQL) {
@@ -192,4 +194,4 @@ class NSADatabase{
     }
 
 } //class DatabaseConnection
-
+}
