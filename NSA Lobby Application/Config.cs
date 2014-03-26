@@ -2,7 +2,7 @@
 //Module Name:  Configs.cs
 //Project:      NSA Lobby Application
 //Developer:    Trae Watkins
-//Last Changes: 3/17/2014 - Trae Watkins
+//Last Changes: 3/26/2014 - Trae Watkins
 //
 //     This is a class to load the application settings for our project's
 //     applications for the  CSCE4444 class
@@ -18,6 +18,7 @@
 //              <StoreID>1</StoreID>
 //            </NSAConfigSettings>
 //
+//      2014-03-26 Moved to NSA namespace
 ///////////////////////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace NSA_Lobby_Application {
-    class AppConfig {
+namespace NSA{
+    public class AppConfig {
 
         //Constants used in reading the XML Config file
         private const string XML_CONFIG_SECTION = "NSAConfigSettings";
@@ -140,6 +141,10 @@ namespace NSA_Lobby_Application {
 
         //Loads the Data from the XML file specified in file path
         public bool Load(string filepath) {
+            //Chack for empty string
+            if (filepath.Equals("") || (filepath == null)) {
+                throw new Exception("File Not Specified. Filename was not given prior to trying to load the settings.");
+            }
 
            //save the specified path to the property;
            gcFilePath = filepath;
@@ -199,6 +204,7 @@ namespace NSA_Lobby_Application {
                 } //if (xmlReader.IsStartElement())
             } //while (xmlReader ...
 
+            gcLoaded = true;
             return true;
 
         } //public void Load(string filepath)
