@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,11 +60,14 @@ namespace CSCE_4444_Term_Project
                 return;
             }
 
+            // Intial Load of all Lists
             LoadOrders();
             LoadManagerAccountList();
             LoadManagerInventoryList();
             LoadManagerComponentList();
             LoadManagerMenuItemList();
+
+            // Event Handler Definitions
             RefreshOrders_Button.Click += new EventHandler(this.RefreshOrders_Click);
             RefundItem_Button.Click += new EventHandler(this.RefundItem_Click);
             LoyaltyAccountSearch_Button.Click += new EventHandler(this.LoyaltyAccountSearch_Button_Click);
@@ -75,12 +79,43 @@ namespace CSCE_4444_Term_Project
             InventoryUpdate_Button.Click += new EventHandler(this.UpdateInventory_Click);
         }
 
+        public class BoxFormat
+        {
+            private string mydisplayText;
+            private string mydatabaseID;
+
+            public BoxFormat(string strdisplayText, string strdatabaseID)
+            {
+
+                this.mydisplayText = strdisplayText;
+                this.mydatabaseID = strdatabaseID;
+            }
+
+            public string displayText
+            {
+                get
+                {
+                    return mydisplayText;
+                }
+            }
+
+            public string databaseID
+            {
+
+                get
+                {
+                    return mydatabaseID;
+                }
+            }
+        }
+
         public void LoadOrders()
         {
             try
             {
                 int ordercount = 0;        // the number of orders to display
                 List<string>[] Managerdata;   // the orders that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array list where formatted text will be stored
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -91,21 +126,29 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerOrdersData(out Managerdata);
 
+                // Clear any existing data in the list box
+                Orders_Listbox.DataSource = null;
                 Orders_Listbox.Items.Clear();
 
-                //loop over the records and load them to the listbox
+                //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
                     if(Managerdata[2][index] == "0")
                     {
-                        Orders_Listbox.Items.Add("#" + Managerdata[0][index] + " - " + Managerdata[1][index]);
+                        ListBoxInfo.Add(new BoxFormat("#" + Managerdata[0][index] + " - " + Managerdata[1][index], Managerdata[0][index]));
                     }
                     else
                     {
-                        Orders_Listbox.Items.Add("#" + Managerdata[0][index] + " - " + Managerdata[1][index] + " - Refunded");
+                        ListBoxInfo.Add(new BoxFormat("#" + Managerdata[0][index] + " - " + Managerdata[1][index] + " - Refunded", Managerdata[0][index]));
                     }
-
                 }
+
+                // Insert Array List into the List Box
+                Orders_Listbox.DataSource = ListBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                Orders_Listbox.DisplayMember = "displayText";
+                Orders_Listbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -115,15 +158,22 @@ namespace CSCE_4444_Term_Project
 
         private void Orders_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Get the currently selected item in the ListBox. 
-            string curItem = Orders_Listbox.SelectedItem.ToString();
-            string[] split = curItem.Split(new Char[] { ' ', '#' });
+            try
+            {
+                // Get the currently selected item in the ListBox. 
+                string curItem = ((BoxFormat)Orders_Listbox.SelectedItem).databaseID;
 
-            // Clears existing items in the list
-            OrderItems_Listbox.Items.Clear();
+                // Clears existing items in the list
+                OrderItems_Listbox.DataSource = null;
+                OrderItems_Listbox.Items.Clear();
 
-            // Loads Order Items list using currently selected item.
-            LoadOrderItems(split[1]);
+                // Loads Order Items list using currently selected item.
+                LoadOrderItems(curItem);
+            }
+            catch
+            {
+
+            }
         } // Orders_ListBox_SelectedIndexChanged
 
         public void LoadOrderItems( string OrderID )
@@ -131,7 +181,8 @@ namespace CSCE_4444_Term_Project
             try
             {
                 int ordercount = 0;        // the number of order items to display
-                List<string>[] ManagerItemdata;   // the order items that will be displayed
+                List<string>[] ManagerItemdata; // the order items that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array list where formatted text will be stored
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -142,11 +193,25 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager order litems list
                 ordercount = nsadb.ManagerOrderItemData(out ManagerItemdata, OrderID);
 
-                //loop over the records and load them to the listbox
+                //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
-                    OrderItems_Listbox.Items.Add(ManagerItemdata[0][index] + "");
+                    if (ManagerItemdata[2][index] == "0")
+                    {
+                        ListBoxInfo.Add(new BoxFormat(ManagerItemdata[1][index], ManagerItemdata[0][index]));
+                    }
+                    else
+                    {
+                        ListBoxInfo.Add(new BoxFormat(ManagerItemdata[1][index] + " - Refunded", ManagerItemdata[0][index]));
+                    }
                 }
+
+                // Insert Array List into the List Box
+                OrderItems_Listbox.DataSource = ListBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                OrderItems_Listbox.DisplayMember = "displayText";
+                OrderItems_Listbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -159,8 +224,7 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = Orders_Listbox.SelectedItem.ToString();
-                string[] split = curItem.Split(new Char[] { ' ', '#' });
+                string curItem = ((BoxFormat)Orders_Listbox.SelectedItem).databaseID;
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -169,11 +233,11 @@ namespace CSCE_4444_Term_Project
                 }
 
                 // Update the database to mark selected order Refunded and Refresh List
-                nsadb.ManagerRefundOrders(split[1]);
+                nsadb.ManagerRefundOrders(curItem);
                 LoadOrders();
 
                 // Give User Feedback that Refund was Successful
-                MessageBox.Show("Order #" + split[1] + " Refunded.", "Refund Orders", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Order #" + curItem + " Refunded.", "Refund Orders", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -186,10 +250,9 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curOrder = Orders_Listbox.SelectedItem.ToString();
-                string[] splitOrder = curOrder.Split(new Char[] { ' ', '#' });
+                string curOrder = ((BoxFormat)Orders_Listbox.SelectedItem).databaseID;
 
-                string curItem = OrderItems_Listbox.SelectedItem.ToString();
+                string curItem = ((BoxFormat)OrderItems_Listbox.SelectedItem).databaseID;
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -198,9 +261,14 @@ namespace CSCE_4444_Term_Project
                 }
 
                 // Update the database to mark selected order Refunded
-                nsadb.ManagerRefundItem(splitOrder[1], curItem);
+                nsadb.ManagerRefundItem(curOrder, curItem);
 
-                MessageBox.Show("Order #" + splitOrder[1] + " - " + curItem + " Refunded.", "Refund Order Items", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Clears existing items in the list
+                OrderItems_Listbox.DataSource = null;
+                OrderItems_Listbox.Items.Clear();
+
+                MessageBox.Show("Order #" + curOrder + " - " + curItem + " Refunded.", "Refund Order Items", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -210,11 +278,14 @@ namespace CSCE_4444_Term_Project
 
         private void RefreshOrders_Click(object sender, EventArgs e)
         {
-            // Refreshes the Orders List
-            LoadOrders();
-
             // Clears OrderItems List
+            OrderItems_Listbox.DataSource = null;
             OrderItems_Listbox.Items.Clear();
+            OrderItems_Listbox.ClearSelected();
+
+            // Refreshes the Orders List
+            Orders_Listbox.ClearSelected();
+            LoadOrders();
         } // RefreshOrders_Click
 
         private void LoyaltyAccountSearch_Button_Click(object sender, EventArgs e)
@@ -224,6 +295,7 @@ namespace CSCE_4444_Term_Project
             {
                 int ordercount = 0;        // the number of orders to display
                 List<string>[] Loyaltydata;   // the orders that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
 
                 // Buffer to store text
                 string AccountID = SearchAccountNumber_Textbox.Text.ToString();
@@ -239,16 +311,23 @@ namespace CSCE_4444_Term_Project
                 // Get the loyalty account data from the database
                 ordercount = nsadb.ManagerGetLoyaltyAccount(out Loyaltydata, AccountID, AccountName, EmailAddress);
 
-                // Clear previous Values
+                // Clear any existing data in the list box
+                AccountsFound_Listbox.DataSource = null;
                 AccountsFound_Listbox.Items.Clear();
 
-
-                //loop over the records and load them to the listbox
+                //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
                     int accountnumber = Convert.ToInt32(Loyaltydata[0][index]);
-                    AccountsFound_Listbox.Items.Add(accountnumber.ToString("D12") + " - " + Loyaltydata[1][index]);
+                    ListBoxInfo.Add(new BoxFormat(accountnumber.ToString("D12") + " - " + Loyaltydata[1][index], accountnumber.ToString("D12")));
                 }
+
+                // Insert Array List into the List Box
+                AccountsFound_Listbox.DataSource = ListBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                AccountsFound_Listbox.DisplayMember = "displayText";
+                AccountsFound_Listbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -319,6 +398,7 @@ namespace CSCE_4444_Term_Project
             {
                 int ordercount = 0;        // the number of orders to display
                 List<string>[] ManagerAccountdata;   // the orders that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -329,13 +409,22 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerAccountsData(out ManagerAccountdata);
 
+                // Clear any existing data in the list box
+                AssistantManagers_Listbox.DataSource = null;
                 AssistantManagers_Listbox.Items.Clear();
 
-                //loop over the records and load them to the listbox
+                //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
-                    AssistantManagers_Listbox.Items.Add("#" + ManagerAccountdata[0][index] + " - " + ManagerAccountdata[1][index] + " " + ManagerAccountdata[2][index]);
+                    ListBoxInfo.Add(new BoxFormat(ManagerAccountdata[1][index] + " " + ManagerAccountdata[2][index] + " - " + ManagerAccountdata[3][index], ManagerAccountdata[0][index]));
                 }
+
+                // Insert Array List into the List Box
+                AssistantManagers_Listbox.DataSource = ListBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                AssistantManagers_Listbox.DisplayMember = "displayText";
+                AssistantManagers_Listbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -349,6 +438,7 @@ namespace CSCE_4444_Term_Project
             {
                 int ordercount = 0;        // the number of orders to display
                 List<string>[] ManagerInventorydata;   // the orders that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -359,14 +449,22 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerGetInventoryData(out ManagerInventorydata);
 
-                // Clear previous Values
+                // Clear any existing data in the list box
+                Inventory_Listbox.DataSource = null;
                 Inventory_Listbox.Items.Clear();
 
-                //loop over the records and load them to the listbox
+                //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
-                    Inventory_Listbox.Items.Add("#" + ManagerInventorydata[2][index] + " - " + ManagerInventorydata[0][index] + " - " + ManagerInventorydata[1][index]);
+                    ListBoxInfo.Add(new BoxFormat(ManagerInventorydata[1][index] + " - " + ManagerInventorydata[2][index], ManagerInventorydata[0][index]));
                 }
+
+                // Insert Array List into the List Box
+                Inventory_Listbox.DataSource = ListBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                Inventory_Listbox.DisplayMember = "displayText";
+                Inventory_Listbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -441,8 +539,7 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = AccountsFound_Listbox.SelectedItem.ToString();
-                string[] split = curItem.Split(new Char[] { ' ', '-' });
+                string curItem = ((BoxFormat)AccountsFound_Listbox.SelectedItem).databaseID;
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -451,13 +548,14 @@ namespace CSCE_4444_Term_Project
                 }
 
                 // Update the database to mark selected order Refunded and clear Accounts Found List
-                nsadb.ManagerDeleteLoyaltyAccount(split[0]);
+                nsadb.ManagerDeleteLoyaltyAccount(curItem);
+                AccountsFound_Listbox.DataSource = null;
                 AccountsFound_Listbox.Items.Clear();
 
                 // Inform User that Account was successfully deleted.
-                MessageBox.Show("Account #" + split[0] + " Deleted.", "Delete Loyalty Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Account #" + curItem + " Deleted.", "Delete Loyalty Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Account Not Selected!", "Delete Loyalty Account", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -468,8 +566,7 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = AssistantManagers_Listbox.SelectedItem.ToString();
-                string[] split = curItem.Split(new Char[] { ' ', '-', '#' });
+                string curItem = ((BoxFormat)AssistantManagers_Listbox.SelectedItem).databaseID;
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -478,13 +575,13 @@ namespace CSCE_4444_Term_Project
                 }
 
                 // Update the database to mark selected order Refunded and clear Manager Accounts List
-                nsadb.ManagerDeleteManagerAccount(split[1]);
+                nsadb.ManagerDeleteManagerAccount(curItem);
                 LoadManagerAccountList();
 
                 // Inform User that Account was successfully Deleted.
-                MessageBox.Show("Manager Account #" + split[1] + " Deleted.", "Delete Manager Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Manager Account #" + curItem + " Deleted.", "Delete Manager Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Account Not Selected!", "Delete Manager Account", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -543,9 +640,8 @@ namespace CSCE_4444_Term_Project
             // Get the currently selected item in the ListBox. 
             try
             {
-                string curItem = Inventory_Listbox.SelectedItem.ToString();
+                string curItem = ((BoxFormat)Inventory_Listbox.SelectedItem).databaseID;
                 string quantity = ItemCount_Textbox.Text.ToString();
-                string[] split = curItem.Split(new Char[] { ' ', '-', '#' });
 
                 if (string.IsNullOrWhiteSpace(quantity))
                 {
@@ -559,13 +655,13 @@ namespace CSCE_4444_Term_Project
                 }
 
                 // Update the database to mark selected order Refunded and refresh inventory list
-                nsadb.ManagerUpdateInventory(split[1], quantity);
+                nsadb.ManagerUpdateInventory(curItem, quantity);
                 LoadManagerInventoryList();
 
                 // Inform User that Inventory was Successfully Updated.
-                MessageBox.Show("Component #" + split[1] + " Updated.", "Update Inventory", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Component #" + curItem + " Updated.", "Update Inventory", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Component Not Selected!", "Update Inventory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

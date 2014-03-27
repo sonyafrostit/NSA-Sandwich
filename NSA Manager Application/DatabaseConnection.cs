@@ -159,11 +159,13 @@ namespace CSCE_4444_Term_Project
         // Gets Information for Manager Order Items List
         public int ManagerOrderItemData(out List<string>[] managerorderitems, string orderid)
         {
-            string query = "SELECT name FROM orderitems WHERE orderid = " + orderid.ToString() + " and storeid = " + StoreNumber.ToString() + " ORDER BY menuitemid";
+            string query = "SELECT orderitemid, name, refunded FROM orderitems WHERE orderid = " + orderid.ToString() + " and storeid = " + StoreNumber.ToString() + " ORDER BY menuitemid";
 
             //Change the Manager orders list list to store the result
-            managerorderitems = new List<string>[1];
+            managerorderitems = new List<string>[3];
             managerorderitems[0] = new List<string>();
+            managerorderitems[1] = new List<string>();
+            managerorderitems[2] = new List<string>();
 
             //initial record count is 0
             RecordCount = 0;
@@ -181,7 +183,9 @@ namespace CSCE_4444_Term_Project
                 //Read the data and store them in the list
                 while (mysqlreader.Read())
                 {
-                    managerorderitems[0].Add(mysqlreader["name"] + "");
+                    managerorderitems[0].Add(mysqlreader["orderitemid"] + "");
+                    managerorderitems[1].Add(mysqlreader["name"] + "");
+                    managerorderitems[2].Add(mysqlreader["refunded"] + "");
 
                     //increment the record count 
                     RecordCount++;
@@ -219,9 +223,9 @@ namespace CSCE_4444_Term_Project
         } //ManagerRefundOrders
 
         // Updates an Order Item in the database to mark that it has been Refunded
-        public void ManagerRefundItem(string orderid, string orderitemname)
+        public void ManagerRefundItem(string orderid, string orderitemid)
         {
-            string query = "UPDATE orderitems SET refunded = 1 WHERE orderid = " + orderid.ToString() + " and name = '" + orderitemname.ToString() + "' and storeid = " + StoreNumber.ToString();
+            string query = "UPDATE orderitems SET refunded = 1 WHERE orderid = " + orderid.ToString() + " and orderitemid = '" + orderitemid.ToString() + "' and storeid = " + StoreNumber.ToString();
 
             if (Connection.State == System.Data.ConnectionState.Open)
             {
@@ -397,13 +401,14 @@ namespace CSCE_4444_Term_Project
         public int ManagerAccountsData(out List<string>[] manageraccounts)
         {
 
-            string query = "SELECT managerid, firstname, lastname FROM managers WHERE isassistant = 1 and storeid = " + StoreNumber.ToString() + " ORDER BY managerid";
+            string query = "SELECT managerid, firstname, lastname, employeeid FROM managers WHERE isassistant = 1 and storeid = " + StoreNumber.ToString() + " ORDER BY managerid";
 
             //Change the Manager Accounts list to store the result
-            manageraccounts = new List<string>[3];
+            manageraccounts = new List<string>[4];
             manageraccounts[0] = new List<string>();
             manageraccounts[1] = new List<string>();
             manageraccounts[2] = new List<string>();
+            manageraccounts[3] = new List<string>();
 
             //initial record count is 0
             RecordCount = 0;
@@ -424,6 +429,7 @@ namespace CSCE_4444_Term_Project
                     manageraccounts[0].Add(mysqlreader["managerid"] + "");
                     manageraccounts[1].Add(mysqlreader["firstname"] + "");
                     manageraccounts[2].Add(mysqlreader["lastname"] + "");
+                    manageraccounts[3].Add(mysqlreader["employeeid"] + "");
 
                     //increment the record count 
                     RecordCount++;
@@ -471,9 +477,9 @@ namespace CSCE_4444_Term_Project
                 //Read the data and store them in the list
                 while (mysqlreader.Read())
                 {
-                    inventorydata[0].Add(mysqlreader["name"] + "");
-                    inventorydata[1].Add(mysqlreader["quantity"] + "");
-                    inventorydata[2].Add(mysqlreader["componentid"] + "");
+                    inventorydata[0].Add(mysqlreader["componentid"] + "");
+                    inventorydata[1].Add(mysqlreader["name"] + "");
+                    inventorydata[2].Add(mysqlreader["quantity"] + "");
 
                     //increment the record count 
                     RecordCount++;
