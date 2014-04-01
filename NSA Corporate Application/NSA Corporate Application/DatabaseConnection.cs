@@ -2,7 +2,7 @@
 //Module Name:  DatabaseConnection.cs
 //Project:      NSA Lobby Application
 //Developer:    Trae Watkins
-//Last Changes: 4/1/2014 - Trae Watkins
+//Last Changes: 3/22/2014 - Trae Watkins
 //
 //     This is a DB connection class for our project for CSCE4444
 //
@@ -15,10 +15,6 @@
 //                VERY IMPORTANT: is is up to the user to close the data reader
 //
 //      2014-03-26 Moved to NSA namespace
-//
-//		2014-04-01 Added a execute query function to execute non record 
-//				   returning queries.
-//
 ///////////////////////////////////////////////////////////////////////////////
 using System.Windows.Forms;
 using System.IO;
@@ -53,8 +49,7 @@ public class NSADatabase{
         Initialize(server, dbname, dbuser, password, storenum);
         this.OpenConnection();
     }
-    
-    //Will attempt to open the connection.
+
     public NSADatabase(string server, string dbname, string dbuser, string password) {
         Initialize(server, dbname, dbuser, password, -1);
         this.OpenConnection();

@@ -17,8 +17,15 @@ using MySql.Data;
 using NSA;
 
 namespace NSATest {
+
     [TestClass]
     public class DatabaseConnecitonTest {
+
+        //Save the connection info to class private properties.
+        private string DBServer = "54.186.234.139";
+        private string DBName = "nsa_database";
+        private string DBUser = "trae";
+        private string DBPassword = "";
 
         [TestMethod]
         public void TestInitializer_WithParameters() {
@@ -26,7 +33,7 @@ namespace NSATest {
             bool loadExpected = true;
 
             //act - initalize
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
             
             // assert
             bool actual = NSADB.Connected();
@@ -37,35 +44,35 @@ namespace NSATest {
         [ExpectedException(typeof(Exception))]
         public void TestInitializer_WithParameters_InvalidServer() {
             // Act
-            NSADatabase NSADB = new NSADatabase("NA", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase("NA", DBName, DBUser, DBPassword, 1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void TestInitializer_WithParameters_InvalidDB() {
             // Act
-            NSADatabase NSADB = new NSADatabase("locahost", "BAD-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, "BAD-DB", DBUser, DBPassword, 1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void TestInitializer_WithParameters_InvalidUser() {
             // Act
-            NSADatabase NSADB = new NSADatabase("locahost", "nsa-database", "BADUSER", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, "BAD-USER", DBPassword, 1);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void TestInitializer_WithParameters_InvalidPass() {
             // Act
-            NSADatabase NSADB = new NSADatabase("locahost", "nsa-database", "root", "BADPASS", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, "BADPASS", 1);
         }
 
         [TestMethod]
         public void TestOpenConnection() {
             // arrange
             bool Expected = true;
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
             NSADB.CloseConnection();
 
             //act
@@ -79,7 +86,7 @@ namespace NSATest {
         [ExpectedException(typeof(Exception))]
         public void TestOpenConnection_AlreadyOpen_Execption() {
             // arrange
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
             
             //act
             bool actual = NSADB.OpenConnection();
@@ -89,7 +96,7 @@ namespace NSATest {
         public void TestCloseConnection() {
             // arrange
             bool Expected = true;
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
 
             //act
             bool actual = NSADB.CloseConnection();
@@ -101,7 +108,7 @@ namespace NSATest {
         [TestMethod]
         public void TestLobbyOrdersData() {
             // arrange
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
             List<string>[] data;   //List for data to be in
 
             //request the Records to display on the lobby window
@@ -115,7 +122,7 @@ namespace NSATest {
         [TestMethod]
         public void TestLobbyOrdersData_ClosedConnection() {
             // arrange
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
             List<string>[] data;   //List for data to be in
             int expected = -1;
             NSADB.CloseConnection();
@@ -130,7 +137,7 @@ namespace NSATest {
         [TestMethod]
         public void TestCustomQuery() {
             // arrange
-            NSADatabase NSADB = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            NSADatabase NSADB = new NSADatabase(DBServer, DBName, DBUser, DBPassword, 1);
             string query = "SELECT COUNT(*) FROM information_schema.TABLES WHERE TABLE_SCHEMA='nsa-database';";
             bool expected = true;
             MySqlDataReader data = NSADB.CustomQuery(query);

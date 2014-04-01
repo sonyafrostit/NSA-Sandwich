@@ -1,11 +1,18 @@
-USE `nsa-database`;
+USE `nsa_database`;
 
-DELETE FROM `nsa-database`.`componentcategories` WHERE `categoryid`='0';
-DELETE FROM `nsa-database`.`componentcategories` WHERE `categoryid`='1';
-DELETE FROM `nsa-database`.`componentcategories` WHERE `categoryid`='2';
-DELETE FROM `nsa-database`.`componentcategories` WHERE `categoryid`='3';
-DELETE FROM `nsa-database`.`componentcategories` WHERE `categoryid`='4';
-DELETE FROM `nsa-database`.`componentcategories` WHERE `categoryid`='5';
+DELETE FROM `nsa_database`.`componentcategories` WHERE `categoryid`='0';
+DELETE FROM `nsa_database`.`componentcategories` WHERE `categoryid`='1';
+DELETE FROM `nsa_database`.`componentcategories` WHERE `categoryid`='2';
+DELETE FROM `nsa_database`.`componentcategories` WHERE `categoryid`='3';
+DELETE FROM `nsa_database`.`componentcategories` WHERE `categoryid`='4';
+DELETE FROM `nsa_database`.`componentcategories` WHERE `categoryid`='5';
+
+DELETE FROM `nsa_database`.`menutypes` WHERE `menutypeid`='0';
+DELETE FROM `nsa_database`.`menutypes` WHERE `menutypeid`='1';
+DELETE FROM `nsa_database`.`menutypes` WHERE `menutypeid`='2';
+DELETE FROM `nsa_database`.`menutypes` WHERE `menutypeid`='3';
+DELETE FROM `nsa_database`.`menutypes` WHERE `menutypeid`='4';
+DELETE FROM `nsa_database`.`menutypes` WHERE `menutypeid`='5';
 
 INSERT INTO `componentcategories` (`categoryid`, `categoryname`) VALUES (0,'Unassigned'),(1,'Bread'),(2,'Meat'),(3,'Cheese'),(4,'Vegetables'),(5,'Condiments');
 

@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `nsa-database` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `nsa-database`;
+CREATE DATABASE  IF NOT EXISTS `nsa_database` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `nsa_database`;
 -- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
--- Host: 127.0.0.1    Database: nsa-database
+-- Host: 127.0.0.1    Database: nsa_database
 -- ------------------------------------------------------
 -- Server version	5.6.14
 
