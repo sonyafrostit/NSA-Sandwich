@@ -1,0 +1,44 @@
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe.config
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.pdb
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.KioskWindow.resources
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Properties.Resources.resources
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csproj.GenerateResource.Cache
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
+c:\users\willisicheckin\documents\visual studio 2012\Projects\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CustomizeForm.resources
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe.config
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.pdb
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CustomizeForm.resources
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.KioskWindow.resources
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Properties.Resources.resources
+C:\Users\Willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csproj.GenerateResource.Cache
+F:\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe.config
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
+F:\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe
+F:\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.pdb
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CustomizeForm.resources
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.StartForm.resources
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.KioskWindow.resources
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Properties.Resources.resources
+F:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csproj.GenerateResource.Cache
+E:\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe.config
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CustomizeForm.resources
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.StartForm.resources
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.KioskWindow.resources
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Properties.Resources.resources
+E:\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csproj.GenerateResource.Cache
+C:\Users\willisicheckin\Documents\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.StartForm.resources
+C:\Users\willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\mysql.data.dll
+C:\Users\willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\mysql.data.entity.EF5.dll
+C:\Users\willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\willisicheckin\Documents\CustomerInterface\CustomerInterface\bin\Debug\mysql.web.dll
