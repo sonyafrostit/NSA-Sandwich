@@ -135,4 +135,43 @@
   <data name="welcomeText" xml:space="preserve">
     <value>Willkommen bei</value>
   </data>
+  <data name="accountNumber" xml:space="preserve">
+    <value>Kontonummer:</value>
+  </data>
+  <data name="changesCat" xml:space="preserve">
+    <value>Änderungen</value>
+  </data>
+  <data name="customizeBut" xml:space="preserve">
+    <value>Anpassen</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="finishOrderBut" xml:space="preserve">
+    <value>Oberfläche Bestell</value>
+  </data>
+  <data name="itemCat" xml:space="preserve">
+    <value>Artikel</value>
+  </data>
+  <data name="loyaltyTab" xml:space="preserve">
+    <value>Treuekonto</value>
+  </data>
+  <data name="menuTab" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="orderTab" xml:space="preserve">
+    <value>Bestellen</value>
+  </data>
+  <data name="orderTotal" xml:space="preserve">
+    <value>Bestellen Total:</value>
+  </data>
+  <data name="priceCat" xml:space="preserve">
+    <value>Preis</value>
+  </data>
+  <data name="removeBut" xml:space="preserve">
+    <value>Entfernen</value>
+  </data>
 </root>

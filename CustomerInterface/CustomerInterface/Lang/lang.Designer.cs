@@ -61,6 +61,24 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Number:.
+        /// </summary>
+        internal static string accountNumber {
+            get {
+                return ResourceManager.GetString("accountNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes.
+        /// </summary>
+        internal static string changesCat {
+            get {
+                return ResourceManager.GetString("changesCat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Need a Loyalty Card Click here.
         /// </summary>
         internal static string createLoyaltyBut {
@@ -70,11 +88,110 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customize.
+        /// </summary>
+        internal static string customizeBut {
+            get {
+                return ResourceManager.GetString("customizeBut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email:.
+        /// </summary>
+        internal static string email {
+            get {
+                return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finish Order.
+        /// </summary>
+        internal static string finishOrderBut {
+            get {
+                return ResourceManager.GetString("finishOrderBut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item.
+        /// </summary>
+        internal static string itemCat {
+            get {
+                return ResourceManager.GetString("itemCat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loyalty Account.
+        /// </summary>
+        internal static string loyaltyTab {
+            get {
+                return ResourceManager.GetString("loyaltyTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        internal static string menuTab {
+            get {
+                return ResourceManager.GetString("menuTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        internal static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NSA.
         /// </summary>
         internal static string NSAText {
             get {
                 return ResourceManager.GetString("NSAText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        internal static string orderTab {
+            get {
+                return ResourceManager.GetString("orderTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Total:.
+        /// </summary>
+        internal static string orderTotal {
+            get {
+                return ResourceManager.GetString("orderTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        internal static string priceCat {
+            get {
+                return ResourceManager.GetString("priceCat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string removeBut {
+            get {
+                return ResourceManager.GetString("removeBut", resourceCulture);
             }
         }
         
