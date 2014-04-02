@@ -56,6 +56,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lang\lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\lang.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\lang.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\lang.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.es.resx</DependentUpon>
+    </Compile>
     <Compile Include="NSADatabase.cs" />
     <Compile Include="NSALoyaltyAccount.cs" />
     <Compile Include="NSAMenuCategory.cs" />
@@ -85,6 +105,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomizeForm.resx">
       <DependentUpon>CustomizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\lang.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\lang.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\lang.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>

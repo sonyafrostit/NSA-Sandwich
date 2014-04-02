@@ -29,140 +29,145 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
-            this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.selectLangText = new System.Windows.Forms.Label();
+            this.spBtn = new System.Windows.Forms.Button();
+            this.geBtn = new System.Windows.Forms.Button();
+            this.frBtn = new System.Windows.Forms.Button();
+            this.enBtn = new System.Windows.Forms.Button();
+            this.startOrderBtn = new System.Windows.Forms.Button();
+            this.createLoyaltyBtn = new System.Windows.Forms.Button();
+            this.scanLoyaltyText = new System.Windows.Forms.Label();
+            this.NSAText = new System.Windows.Forms.Label();
+            this.welcomeText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label4
+            // selectLangText
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(238, 534);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 26);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Select Language:";
+            this.selectLangText.AutoSize = true;
+            this.selectLangText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectLangText.Location = new System.Drawing.Point(322, 510);
+            this.selectLangText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.selectLangText.Name = "selectLangText";
+            this.selectLangText.Size = new System.Drawing.Size(181, 26);
+            this.selectLangText.TabIndex = 19;
+            this.selectLangText.Text = "Select Language:";
             // 
-            // button6
+            // spBtn
             // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(574, 538);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 27);
-            this.button6.TabIndex = 18;
-            this.button6.UseVisualStyleBackColor = true;
+            this.spBtn.Image = ((System.Drawing.Image)(resources.GetObject("spBtn.Image")));
+            this.spBtn.Location = new System.Drawing.Point(483, 538);
+            this.spBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.spBtn.Name = "spBtn";
+            this.spBtn.Size = new System.Drawing.Size(48, 27);
+            this.spBtn.TabIndex = 18;
+            this.spBtn.UseVisualStyleBackColor = true;
+            this.spBtn.Click += new System.EventHandler(this.spBtn_Click);
             // 
-            // button5
+            // geBtn
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(522, 538);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 27);
-            this.button5.TabIndex = 17;
-            this.button5.UseVisualStyleBackColor = true;
+            this.geBtn.Image = ((System.Drawing.Image)(resources.GetObject("geBtn.Image")));
+            this.geBtn.Location = new System.Drawing.Point(431, 538);
+            this.geBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.geBtn.Name = "geBtn";
+            this.geBtn.Size = new System.Drawing.Size(48, 27);
+            this.geBtn.TabIndex = 17;
+            this.geBtn.UseVisualStyleBackColor = true;
+            this.geBtn.Click += new System.EventHandler(this.geBtn_Click);
             // 
-            // button4
+            // frBtn
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(471, 538);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 27);
-            this.button4.TabIndex = 16;
-            this.button4.UseVisualStyleBackColor = true;
+            this.frBtn.Image = ((System.Drawing.Image)(resources.GetObject("frBtn.Image")));
+            this.frBtn.Location = new System.Drawing.Point(379, 538);
+            this.frBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.frBtn.Name = "frBtn";
+            this.frBtn.Size = new System.Drawing.Size(48, 27);
+            this.frBtn.TabIndex = 16;
+            this.frBtn.UseVisualStyleBackColor = true;
+            this.frBtn.Click += new System.EventHandler(this.frBtn_Click);
             // 
-            // button3
+            // enBtn
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(420, 538);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 27);
-            this.button3.TabIndex = 15;
-            this.button3.UseVisualStyleBackColor = true;
+            this.enBtn.Image = ((System.Drawing.Image)(resources.GetObject("enBtn.Image")));
+            this.enBtn.Location = new System.Drawing.Point(327, 538);
+            this.enBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.enBtn.Name = "enBtn";
+            this.enBtn.Size = new System.Drawing.Size(48, 27);
+            this.enBtn.TabIndex = 15;
+            this.enBtn.UseVisualStyleBackColor = true;
+            this.enBtn.Click += new System.EventHandler(this.enBtn_Click);
             // 
-            // button2
+            // startOrderBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(573, 360);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 124);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Start Order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.startOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startOrderBtn.Location = new System.Drawing.Point(573, 360);
+            this.startOrderBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.startOrderBtn.Name = "startOrderBtn";
+            this.startOrderBtn.Size = new System.Drawing.Size(212, 124);
+            this.startOrderBtn.TabIndex = 14;
+            this.startOrderBtn.Text = "Start Order";
+            this.startOrderBtn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // createLoyaltyBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(76, 360);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 124);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Need a Loyalty Card Click here";
-            this.button1.UseVisualStyleBackColor = true;
+            this.createLoyaltyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createLoyaltyBtn.Location = new System.Drawing.Point(76, 360);
+            this.createLoyaltyBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.createLoyaltyBtn.Name = "createLoyaltyBtn";
+            this.createLoyaltyBtn.Size = new System.Drawing.Size(212, 124);
+            this.createLoyaltyBtn.TabIndex = 13;
+            this.createLoyaltyBtn.Text = "Need a Loyalty Card Click here";
+            this.createLoyaltyBtn.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // scanLoyaltyText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 274);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(723, 55);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Scan Loyalty Card or Press Start";
+            this.scanLoyaltyText.AutoSize = true;
+            this.scanLoyaltyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scanLoyaltyText.Location = new System.Drawing.Point(66, 247);
+            this.scanLoyaltyText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.scanLoyaltyText.MaximumSize = new System.Drawing.Size(723, 0);
+            this.scanLoyaltyText.Name = "scanLoyaltyText";
+            this.scanLoyaltyText.Size = new System.Drawing.Size(723, 55);
+            this.scanLoyaltyText.TabIndex = 12;
+            this.scanLoyaltyText.Text = "Scan Loyalty Card or Press Start";
             // 
-            // label2
+            // NSAText
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(289, 144);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 108);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "NSA";
+            this.NSAText.AutoSize = true;
+            this.NSAText.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NSAText.Location = new System.Drawing.Point(289, 127);
+            this.NSAText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NSAText.Name = "NSAText";
+            this.NSAText.Size = new System.Drawing.Size(242, 108);
+            this.NSAText.TabIndex = 11;
+            this.NSAText.Text = "NSA";
             // 
-            // label1
+            // welcomeText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(550, 108);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Welcome to";
+            this.welcomeText.AutoSize = true;
+            this.welcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeText.Location = new System.Drawing.Point(152, 19);
+            this.welcomeText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.welcomeText.Name = "welcomeText";
+            this.welcomeText.Size = new System.Drawing.Size(550, 108);
+            this.welcomeText.TabIndex = 10;
+            this.welcomeText.Text = "Welcome to";
             // 
-            // Form1
+            // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 605);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Controls.Add(this.selectLangText);
+            this.Controls.Add(this.spBtn);
+            this.Controls.Add(this.geBtn);
+            this.Controls.Add(this.frBtn);
+            this.Controls.Add(this.enBtn);
+            this.Controls.Add(this.startOrderBtn);
+            this.Controls.Add(this.createLoyaltyBtn);
+            this.Controls.Add(this.scanLoyaltyText);
+            this.Controls.Add(this.NSAText);
+            this.Controls.Add(this.welcomeText);
+            this.Name = "StartForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,15 +176,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label selectLangText;
+        private System.Windows.Forms.Button spBtn;
+        private System.Windows.Forms.Button geBtn;
+        private System.Windows.Forms.Button frBtn;
+        private System.Windows.Forms.Button enBtn;
+        private System.Windows.Forms.Button startOrderBtn;
+        private System.Windows.Forms.Button createLoyaltyBtn;
+        private System.Windows.Forms.Label scanLoyaltyText;
+        private System.Windows.Forms.Label NSAText;
+        private System.Windows.Forms.Label welcomeText;
     }
 }
