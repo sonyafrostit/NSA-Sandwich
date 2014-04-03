@@ -48,14 +48,8 @@ namespace CustomerInterface
                 }
                 newLVI.SubItems.Add(sb.ToString());
             }
-            newLVI.Tag = item;
-            OrderListView.Items.Add(newLVI);
-            KioskTabs.SelectTab(1);
+            newLVI.Tag = item;;
             double total = 0.0;
-            foreach (NSAMenuItem orderItemItr in currentOrder.Items) {
-                total += orderItemItr.Price;
-            }
-            PriceLabel.Text = String.Format("${0}", ((Math.Round(total * 100))/ 100));
 
 
         }
@@ -105,10 +99,6 @@ namespace CustomerInterface
         {
 
         }
-        private void OrderListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-        {
-            e.Cancel = true;
-            e.NewWidth = OrderListView.Columns[e.ColumnIndex].Width;
-        }
+
     }
 }

@@ -30,20 +30,10 @@
         {
             this.KioskTabs = new System.Windows.Forms.TabControl();
             this.MenuTab = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.menuListView = new System.Windows.Forms.ListView();
-            this.OrderTab = new System.Windows.Forms.TabPage();
-            this.PriceLabel = new System.Windows.Forms.Label();
-            this.PriceTagLabel = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.FinishButton = new System.Windows.Forms.Button();
-            this.OrderListView = new System.Windows.Forms.ListView();
-            this.ItemHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ChangesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LoyaltyTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
@@ -61,12 +51,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AccNumberLaber = new System.Windows.Forms.Label();
             this.AccNumberTagLabel = new System.Windows.Forms.Label();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.CustomizeButton = new System.Windows.Forms.Button();
-            this.PriceHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.LanguageTab = new System.Windows.Forms.TabPage();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
-            this.OrderTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,41 +66,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.KioskTabs.Controls.Add(this.MenuTab);
-            this.KioskTabs.Controls.Add(this.OrderTab);
             this.KioskTabs.Controls.Add(this.LoyaltyTab);
+            this.KioskTabs.Controls.Add(this.LanguageTab);
             this.KioskTabs.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KioskTabs.ItemSize = new System.Drawing.Size(42, 18);
             this.KioskTabs.Location = new System.Drawing.Point(13, 12);
             this.KioskTabs.Multiline = true;
             this.KioskTabs.Name = "KioskTabs";
             this.KioskTabs.SelectedIndex = 0;
-            this.KioskTabs.Size = new System.Drawing.Size(1055, 593);
+            this.KioskTabs.Size = new System.Drawing.Size(766, 593);
             this.KioskTabs.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.KioskTabs.TabIndex = 0;
             // 
             // MenuTab
             // 
-            this.MenuTab.Controls.Add(this.label4);
             this.MenuTab.Controls.Add(this.button4);
             this.MenuTab.Controls.Add(this.button5);
-            this.MenuTab.Controls.Add(this.button1);
             this.MenuTab.Controls.Add(this.menuListView);
             this.MenuTab.Location = new System.Drawing.Point(4, 22);
             this.MenuTab.Name = "MenuTab";
             this.MenuTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTab.Size = new System.Drawing.Size(1047, 567);
+            this.MenuTab.Size = new System.Drawing.Size(758, 567);
             this.MenuTab.TabIndex = 0;
             this.MenuTab.Text = "Menu";
             this.MenuTab.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 533);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 25);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Order Total:";
             // 
             // button4
             // 
@@ -136,9 +113,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(861, 527);
+            this.button1.Location = new System.Drawing.Point(959, 569);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 36);
+            this.button1.Size = new System.Drawing.Size(109, 36);
             this.button1.TabIndex = 2;
             this.button1.Text = "Finish Order";
             this.button1.UseVisualStyleBackColor = true;
@@ -147,106 +124,10 @@
             // 
             this.menuListView.Location = new System.Drawing.Point(75, 6);
             this.menuListView.Name = "menuListView";
-            this.menuListView.Size = new System.Drawing.Size(969, 515);
+            this.menuListView.Size = new System.Drawing.Size(677, 515);
             this.menuListView.TabIndex = 0;
             this.menuListView.UseCompatibleStateImageBehavior = false;
             this.menuListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // OrderTab
-            // 
-            this.OrderTab.Controls.Add(this.CustomizeButton);
-            this.OrderTab.Controls.Add(this.RemoveButton);
-            this.OrderTab.Controls.Add(this.PriceLabel);
-            this.OrderTab.Controls.Add(this.PriceTagLabel);
-            this.OrderTab.Controls.Add(this.button3);
-            this.OrderTab.Controls.Add(this.button2);
-            this.OrderTab.Controls.Add(this.FinishButton);
-            this.OrderTab.Controls.Add(this.OrderListView);
-            this.OrderTab.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderTab.Location = new System.Drawing.Point(4, 22);
-            this.OrderTab.Name = "OrderTab";
-            this.OrderTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderTab.Size = new System.Drawing.Size(1047, 567);
-            this.OrderTab.TabIndex = 1;
-            this.OrderTab.Text = "Order";
-            this.OrderTab.UseVisualStyleBackColor = true;
-            // 
-            // PriceLabel
-            // 
-            this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(138, 533);
-            this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(0, 25);
-            this.PriceLabel.TabIndex = 5;
-            // 
-            // PriceTagLabel
-            // 
-            this.PriceTagLabel.AutoSize = true;
-            this.PriceTagLabel.Location = new System.Drawing.Point(6, 533);
-            this.PriceTagLabel.Name = "PriceTagLabel";
-            this.PriceTagLabel.Size = new System.Drawing.Size(126, 25);
-            this.PriceTagLabel.TabIndex = 4;
-            this.PriceTagLabel.Text = "Order Total:";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button3.Location = new System.Drawing.Point(3, 456);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 65);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "q";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button2.Location = new System.Drawing.Point(3, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 65);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "p";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // FinishButton
-            // 
-            this.FinishButton.Location = new System.Drawing.Point(861, 527);
-            this.FinishButton.Name = "FinishButton";
-            this.FinishButton.Size = new System.Drawing.Size(183, 36);
-            this.FinishButton.TabIndex = 1;
-            this.FinishButton.Text = "Finish Order";
-            this.FinishButton.UseVisualStyleBackColor = true;
-            this.FinishButton.Click += new System.EventHandler(this.FinishButton_Click);
-            // 
-            // OrderListView
-            // 
-            this.OrderListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ItemHeader,
-            this.ChangesHeader,
-            this.PriceHeader});
-            this.OrderListView.FullRowSelect = true;
-            this.OrderListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.OrderListView.Location = new System.Drawing.Point(75, 6);
-            this.OrderListView.Name = "OrderListView";
-            this.OrderListView.Scrollable = false;
-            this.OrderListView.Size = new System.Drawing.Size(969, 515);
-            this.OrderListView.TabIndex = 0;
-            this.OrderListView.UseCompatibleStateImageBehavior = false;
-            this.OrderListView.View = System.Windows.Forms.View.Details;
-            this.OrderListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.OrderListView_ColumnWidthChanging);
-            this.OrderListView.SelectedIndexChanged += new System.EventHandler(this.OrderListView_SelectedIndexChanged);
-            // 
-            // ItemHeader
-            // 
-            this.ItemHeader.Text = "Item";
-            this.ItemHeader.Width = 400;
-            // 
-            // ChangesHeader
-            // 
-            this.ChangesHeader.Text = "Changes";
-            this.ChangesHeader.Width = 500;
             // 
             // LoyaltyTab
             // 
@@ -262,7 +143,7 @@
             this.LoyaltyTab.Location = new System.Drawing.Point(4, 22);
             this.LoyaltyTab.Name = "LoyaltyTab";
             this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LoyaltyTab.Size = new System.Drawing.Size(1047, 567);
+            this.LoyaltyTab.Size = new System.Drawing.Size(758, 567);
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
             this.LoyaltyTab.UseVisualStyleBackColor = true;
@@ -275,7 +156,7 @@
             this.panel1.Controls.Add(this.HistoryView);
             this.panel1.Location = new System.Drawing.Point(6, 187);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 184);
+            this.panel1.Size = new System.Drawing.Size(746, 184);
             this.panel1.TabIndex = 3;
             // 
             // splitter2
@@ -283,7 +164,7 @@
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(3, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(1032, 3);
+            this.splitter2.Size = new System.Drawing.Size(743, 3);
             this.splitter2.TabIndex = 11;
             this.splitter2.TabStop = false;
             // 
@@ -308,7 +189,7 @@
             // 
             this.HistoryView.Location = new System.Drawing.Point(0, 39);
             this.HistoryView.Name = "HistoryView";
-            this.HistoryView.Size = new System.Drawing.Size(1038, 145);
+            this.HistoryView.Size = new System.Drawing.Size(743, 145);
             this.HistoryView.TabIndex = 8;
             this.HistoryView.UseCompatibleStateImageBehavior = false;
             // 
@@ -319,14 +200,14 @@
             this.panel2.Controls.Add(this.splitter3);
             this.panel2.Location = new System.Drawing.Point(6, 377);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1035, 184);
+            this.panel2.Size = new System.Drawing.Size(746, 184);
             this.panel2.TabIndex = 2;
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(0, 39);
+            this.listView2.Location = new System.Drawing.Point(3, 34);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1035, 145);
+            this.listView2.Size = new System.Drawing.Size(740, 145);
             this.listView2.TabIndex = 12;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -344,7 +225,7 @@
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 0);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(1035, 3);
+            this.splitter3.Size = new System.Drawing.Size(746, 3);
             this.splitter3.TabIndex = 0;
             this.splitter3.TabStop = false;
             // 
@@ -411,42 +292,36 @@
             this.AccNumberTagLabel.Text = "Account Number:";
             this.AccNumberTagLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // RemoveButton
+            // listBox1
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(726, 527);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(129, 36);
-            this.RemoveButton.TabIndex = 6;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(786, 34);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(282, 524);
+            this.listBox1.TabIndex = 1;
             // 
-            // CustomizeButton
+            // LanguageTab
             // 
-            this.CustomizeButton.Location = new System.Drawing.Point(545, 527);
-            this.CustomizeButton.Name = "CustomizeButton";
-            this.CustomizeButton.Size = new System.Drawing.Size(175, 36);
-            this.CustomizeButton.TabIndex = 7;
-            this.CustomizeButton.Text = "Customize";
-            this.CustomizeButton.UseVisualStyleBackColor = true;
-            // 
-            // PriceHeader
-            // 
-            this.PriceHeader.Text = "Price";
-            this.PriceHeader.Width = 100;
+            this.LanguageTab.Location = new System.Drawing.Point(4, 22);
+            this.LanguageTab.Name = "LanguageTab";
+            this.LanguageTab.Padding = new System.Windows.Forms.Padding(3);
+            this.LanguageTab.Size = new System.Drawing.Size(758, 567);
+            this.LanguageTab.TabIndex = 3;
+            this.LanguageTab.Text = "Language";
+            this.LanguageTab.UseVisualStyleBackColor = true;
             // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 617);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.KioskTabs);
             this.Name = "KioskWindow";
             this.Text = "Customer Kiosk";
             this.KioskTabs.ResumeLayout(false);
             this.MenuTab.ResumeLayout(false);
-            this.MenuTab.PerformLayout();
-            this.OrderTab.ResumeLayout(false);
-            this.OrderTab.PerformLayout();
             this.LoyaltyTab.ResumeLayout(false);
             this.LoyaltyTab.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -459,28 +334,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl KioskTabs;
         private System.Windows.Forms.TabPage MenuTab;
-        private System.Windows.Forms.TabPage OrderTab;
         private System.Windows.Forms.ListView menuListView;
-        private System.Windows.Forms.Button FinishButton;
-        private System.Windows.Forms.ListView OrderListView;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TabPage LoyaltyTab;
         private System.Windows.Forms.Label AccNumberTagLabel;
         private System.Windows.Forms.Label AccNumberLaber;
-        private System.Windows.Forms.Label PriceLabel;
-        private System.Windows.Forms.Label PriceTagLabel;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
@@ -490,11 +356,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader ItemHeader;
-        private System.Windows.Forms.ColumnHeader ChangesHeader;
-        private System.Windows.Forms.Button RemoveButton;
-        private System.Windows.Forms.Button CustomizeButton;
-        private System.Windows.Forms.ColumnHeader PriceHeader;
+        private System.Windows.Forms.TabPage LanguageTab;
+        private System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.TabControl KioskTabs;
     }
 }
 

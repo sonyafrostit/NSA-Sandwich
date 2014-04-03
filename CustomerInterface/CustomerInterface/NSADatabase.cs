@@ -43,7 +43,8 @@ namespace CustomerInterface
         public NSADatabase()
         {
             //Default values are used since none are specified.
-            Initialize("localhost", "nsa_database", "root", "1234", 1);
+            Initialize("54.186.234.139", "nsa_database", "trae", "", 1);
+            //Initialize("localhost", "nsa_database", "root", "1234", 1);
         }
 
         //Constructor that specifies the connection other than the default 
