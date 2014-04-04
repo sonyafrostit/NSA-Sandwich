@@ -8,6 +8,9 @@ namespace CustomerInterface
 {
     public class NSAMenuItem
     {
+        public NSAMenuItem() { 
+            componentChanges = new List<string>();
+        }
         int id;
 
         public int Id
@@ -44,9 +47,9 @@ namespace CustomerInterface
             set { components = value; }
         }
 
-        string[] componentChanges;
+        List<string> componentChanges;
 
-        public string[] ComponentChanges
+        public List<string> ComponentChanges
         {
             get { return componentChanges; }
             set { componentChanges = value; }

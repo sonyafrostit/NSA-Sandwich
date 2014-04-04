@@ -47,11 +47,15 @@ namespace CustomerInterface
             
             for (int i = 0; i < currentOrder.Items.Count; i++) {
                 ListViewItem lvi = new ListViewItem(currentOrder.Items.ElementAt(i).Name);
-                StringBuilder sb = new StringBuilder();
-                foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
-                    sb.Append(c).Append("\n");
+                
+                if (currentOrder.Items.ElementAt(i).ComponentChanges.Count > 0) {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
+                        sb.Append(c).Append("\n");
+                    }
+                    lvi.SubItems.Add(sb.ToString());
                 }
-                lvi.SubItems.Add(sb.ToString());
+                
                 OrderView.Items.Add(lvi);
             }
         }

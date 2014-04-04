@@ -318,7 +318,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Location = new System.Drawing.Point(4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(46, 65);
             this.button2.TabIndex = 6;
