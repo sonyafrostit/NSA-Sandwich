@@ -43,12 +43,13 @@ namespace CustomerInterface
             get { return components; }
             set { components = value; }
         }
-        NSAComponent[] removed_components;
 
-        internal NSAComponent[] Removed_components
+        string[] componentChanges;
+
+        public string[] ComponentChanges
         {
-            get { return removed_components; }
-            set { removed_components = value; }
+            get { return componentChanges; }
+            set { componentChanges = value; }
         }
 
         string image;

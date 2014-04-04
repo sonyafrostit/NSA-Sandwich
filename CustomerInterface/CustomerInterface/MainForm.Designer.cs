@@ -51,13 +51,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AccNumberLaber = new System.Windows.Forms.Label();
             this.AccNumberTagLabel = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.LanguageTab = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitter4 = new System.Windows.Forms.Splitter();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.OrderView = new System.Windows.Forms.ListView();
+            this.button6 = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // KioskTabs
@@ -74,7 +85,7 @@
             this.KioskTabs.Multiline = true;
             this.KioskTabs.Name = "KioskTabs";
             this.KioskTabs.SelectedIndex = 0;
-            this.KioskTabs.Size = new System.Drawing.Size(766, 593);
+            this.KioskTabs.Size = new System.Drawing.Size(786, 547);
             this.KioskTabs.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.KioskTabs.TabIndex = 0;
             // 
@@ -86,7 +97,7 @@
             this.MenuTab.Location = new System.Drawing.Point(4, 22);
             this.MenuTab.Name = "MenuTab";
             this.MenuTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTab.Size = new System.Drawing.Size(758, 567);
+            this.MenuTab.Size = new System.Drawing.Size(778, 521);
             this.MenuTab.TabIndex = 0;
             this.MenuTab.Text = "Menu";
             this.MenuTab.UseVisualStyleBackColor = true;
@@ -94,7 +105,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button4.Location = new System.Drawing.Point(3, 456);
+            this.button4.Location = new System.Drawing.Point(3, 443);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(66, 65);
             this.button4.TabIndex = 5;
@@ -113,7 +124,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(959, 569);
+            this.button1.Location = new System.Drawing.Point(12, 565);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 36);
             this.button1.TabIndex = 2;
@@ -124,7 +135,7 @@
             // 
             this.menuListView.Location = new System.Drawing.Point(75, 6);
             this.menuListView.Name = "menuListView";
-            this.menuListView.Size = new System.Drawing.Size(677, 515);
+            this.menuListView.Size = new System.Drawing.Size(697, 502);
             this.menuListView.TabIndex = 0;
             this.menuListView.UseCompatibleStateImageBehavior = false;
             this.menuListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -143,7 +154,7 @@
             this.LoyaltyTab.Location = new System.Drawing.Point(4, 22);
             this.LoyaltyTab.Name = "LoyaltyTab";
             this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LoyaltyTab.Size = new System.Drawing.Size(758, 567);
+            this.LoyaltyTab.Size = new System.Drawing.Size(778, 567);
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
             this.LoyaltyTab.UseVisualStyleBackColor = true;
@@ -181,9 +192,10 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
+            this.label5.Size = new System.Drawing.Size(121, 25);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.label5.Text = "Past Orders";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // HistoryView
             // 
@@ -216,9 +228,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 6);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 25);
+            this.label6.Size = new System.Drawing.Size(146, 25);
             this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
+            this.label6.Text = "Favorite Items";
             // 
             // splitter3
             // 
@@ -292,30 +304,111 @@
             this.AccNumberTagLabel.Text = "Account Number:";
             this.AccNumberTagLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(786, 34);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(282, 524);
-            this.listBox1.TabIndex = 1;
-            // 
             // LanguageTab
             // 
             this.LanguageTab.Location = new System.Drawing.Point(4, 22);
             this.LanguageTab.Name = "LanguageTab";
             this.LanguageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LanguageTab.Size = new System.Drawing.Size(758, 567);
+            this.LanguageTab.Size = new System.Drawing.Size(778, 567);
             this.LanguageTab.TabIndex = 3;
             this.LanguageTab.Text = "Language";
             this.LanguageTab.UseVisualStyleBackColor = true;
+            this.LanguageTab.Click += new System.EventHandler(this.LanguageTab_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(46, 65);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "p";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button3.Location = new System.Drawing.Point(3, 369);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(46, 65);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "q";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.RemoveButton);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.OrderView);
+            this.panel3.Controls.Add(this.splitter4);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = new System.Drawing.Point(805, 108);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(263, 493);
+            this.panel3.TabIndex = 7;
+            // 
+            // splitter4
+            // 
+            this.splitter4.Location = new System.Drawing.Point(0, 0);
+            this.splitter4.Name = "splitter4";
+            this.splitter4.Size = new System.Drawing.Size(3, 493);
+            this.splitter4.TabIndex = 7;
+            this.splitter4.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.WelcomeLabel);
+            this.panel4.Location = new System.Drawing.Point(808, 34);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(260, 68);
+            this.panel4.TabIndex = 8;
+            // 
+            // WelcomeLabel
+            // 
+            this.WelcomeLabel.AutoSize = true;
+            this.WelcomeLabel.Location = new System.Drawing.Point(4, 4);
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            this.WelcomeLabel.Size = new System.Drawing.Size(55, 13);
+            this.WelcomeLabel.TabIndex = 0;
+            this.WelcomeLabel.Text = "Welcome!";
+            this.WelcomeLabel.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // OrderView
+            // 
+            this.OrderView.Location = new System.Drawing.Point(56, 0);
+            this.OrderView.Name = "OrderView";
+            this.OrderView.Size = new System.Drawing.Size(204, 434);
+            this.OrderView.TabIndex = 8;
+            this.OrderView.UseCompatibleStateImageBehavior = false;
+            this.OrderView.View = System.Windows.Forms.View.Details;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(85, 455);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(83, 35);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Customize";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Location = new System.Drawing.Point(174, 457);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(86, 35);
+            this.RemoveButton.TabIndex = 10;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
             // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 617);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.KioskTabs);
             this.Name = "KioskWindow";
@@ -328,6 +421,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -357,8 +453,17 @@
         private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TabPage LanguageTab;
-        private System.Windows.Forms.ListBox listBox1;
         public System.Windows.Forms.TabControl KioskTabs;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Splitter splitter4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label WelcomeLabel;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ListView OrderView;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button RemoveButton;
     }
 }
 

@@ -18,5 +18,8 @@ namespace CustomerInterface
         public void AddItem(NSAMenuItem item) {
             items.Add(item);
         }
+        public void GetFormattedString() { 
+        
+        }
     }
 }

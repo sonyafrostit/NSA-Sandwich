@@ -22,13 +22,7 @@ namespace CustomerInterface
             get { return name; }
             set { name = value; }
         }
-        float price;
 
-        public float Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
         string category;
 
         public string Category

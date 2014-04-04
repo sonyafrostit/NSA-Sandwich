@@ -13,7 +13,7 @@ namespace CustomerInterface
         short daymask;
         public Boolean isActive() {
             return (DateTime.Compare(DateTime.Now, beginDate) > 0 && DateTime.Compare(DateTime.Now, endDate) < 0)
-                && daymask == (2 ^ ((int)DateTime.Now.DayOfWeek));
+                && ((2 ^ ((int)DateTime.Now.DayOfWeek)) & daymask) == (2 ^ ((int)DateTime.Now.DayOfWeek));
         
         }
     }

@@ -254,6 +254,10 @@ namespace CustomerInterface
             return itemList.ToArray();
             
         }
+        public void createNewOrder() {
+            CustomQuery("INSERT;");
+
+        }
         //Return true if Database is connected
         public bool Connected()
         {

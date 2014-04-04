@@ -8,3 +8,6 @@ C:\Users\Trae\Documents\Visual Studio 2013\Projects\NSA Corporate Application\NS
 C:\Users\Trae\Documents\Visual Studio 2013\Projects\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.pdb
 C:\Users\Trae\Documents\Visual Studio 2013\Projects\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSAConfig.xml
 C:\Users\Trae\Documents\Visual Studio 2013\Projects\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.csprojResolveAssemblyReference.cache
+H:\NSA\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.exe.config
+H:\NSA\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.exe
+H:\NSA\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.pdb
