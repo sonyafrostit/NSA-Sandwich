@@ -127,7 +127,7 @@
     <value>Scan Loyalty Card or Press Start</value>
   </data>
   <data name="selectLangText" xml:space="preserve">
-    <value>Select Language:</value>
+    <value>Select language:</value>
   </data>
   <data name="startOrderBut" xml:space="preserve">
     <value>Start Order</value>
@@ -173,5 +173,8 @@
   </data>
   <data name="removeBut" xml:space="preserve">
     <value>Remove</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome!</value>
   </data>
 </root>

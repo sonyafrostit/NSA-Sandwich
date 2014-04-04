@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Resources;
+using System.Globalization;
 
 namespace CustomerInterface
 {
@@ -123,6 +126,51 @@ namespace CustomerInterface
         }
 
         private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setLang(CultureInfo ci)
+        {
+            Assembly a = Assembly.Load("CustomerInterface");
+            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+            selectLangText.Text = rm.GetString("selectLangText", ci);
+            KioskTabs.TabPages[0].Text = rm.GetString("menuTab", ci);
+            KioskTabs.TabPages[1].Text = rm.GetString("loyaltyTab", ci);
+            AccNumberTagLabel.Text = rm.GetString("accountNumber", ci);
+            nameLabel.Text = rm.GetString("name", ci);
+            emailLabel.Text = rm.GetString("email", ci);
+            button1.Text = rm.GetString("finishOrderBut", ci);
+            WelcomeLabel.Text = rm.GetString("welcome", ci);
+            button6.Text = rm.GetString("customizeBut", ci);
+            RemoveButton.Text = rm.GetString("removeBut", ci);
+        }
+
+        private void enBtn_Click(object sender, EventArgs e)
+        {
+            CultureInfo ci = new CultureInfo("en-US");
+            setLang(ci);
+        }
+
+        private void frBtn_Click(object sender, EventArgs e)
+        {
+            CultureInfo ci = new CultureInfo("fr-FR");
+            setLang(ci);
+        }
+
+        private void geBtn_Click(object sender, EventArgs e)
+        {
+            CultureInfo ci = new CultureInfo("de-DE");
+            setLang(ci);
+        }
+
+        private void spBtn_Click(object sender, EventArgs e)
+        {
+            CultureInfo ci = new CultureInfo("es-ES");
+            setLang(ci);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

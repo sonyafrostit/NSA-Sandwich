@@ -205,7 +205,7 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select Language:.
+        ///   Looks up a localized string similar to Select language:.
         /// </summary>
         internal static string selectLangText {
             get {
@@ -219,6 +219,15 @@ namespace CustomerInterface.Lang {
         internal static string startOrderBut {
             get {
                 return ResourceManager.GetString("startOrderBut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome!.
+        /// </summary>
+        internal static string welcome {
+            get {
+                return ResourceManager.GetString("welcome", resourceCulture);
             }
         }
         

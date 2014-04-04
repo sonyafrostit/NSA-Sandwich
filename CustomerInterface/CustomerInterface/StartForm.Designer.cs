@@ -48,9 +48,9 @@
             this.selectLangText.Location = new System.Drawing.Point(322, 510);
             this.selectLangText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.selectLangText.Name = "selectLangText";
-            this.selectLangText.Size = new System.Drawing.Size(181, 26);
+            this.selectLangText.Size = new System.Drawing.Size(174, 26);
             this.selectLangText.TabIndex = 19;
-            this.selectLangText.Text = "Select Language:";
+            this.selectLangText.Text = "Select language:";
             // 
             // spBtn
             // 

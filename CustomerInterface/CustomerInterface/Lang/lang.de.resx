@@ -174,4 +174,7 @@
   <data name="removeBut" xml:space="preserve">
     <value>Entfernen</value>
   </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Herzlich Willkommen!</value>
+  </data>
 </root>

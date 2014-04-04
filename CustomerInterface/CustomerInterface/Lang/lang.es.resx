@@ -127,7 +127,7 @@
     <value>Tarjeta de Fidelidad de Scan o Pulse Inicio</value>
   </data>
   <data name="selectLangText" xml:space="preserve">
-    <value>Selecciona Idioma:</value>
+    <value>Selecciona idioma:</value>
   </data>
   <data name="startOrderBut" xml:space="preserve">
     <value>Comience Orden</value>
@@ -173,5 +173,8 @@
   </data>
   <data name="removeBut" xml:space="preserve">
     <value>Número de cuenta:</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>¡Bienvenido!</value>
   </data>
 </root>

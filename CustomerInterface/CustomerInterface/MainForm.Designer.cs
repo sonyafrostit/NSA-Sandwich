@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KioskWindow));
             this.KioskTabs = new System.Windows.Forms.TabControl();
             this.MenuTab = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuListView = new System.Windows.Forms.ListView();
             this.LoyaltyTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,28 +45,35 @@
             this.label6 = new System.Windows.Forms.Label();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
             this.AccNumberLaber = new System.Windows.Forms.Label();
             this.AccNumberTagLabel = new System.Windows.Forms.Label();
             this.LanguageTab = new System.Windows.Forms.TabPage();
+            this.selectLangText = new System.Windows.Forms.Label();
+            this.spBtn = new System.Windows.Forms.Button();
+            this.geBtn = new System.Windows.Forms.Button();
+            this.frBtn = new System.Windows.Forms.Button();
+            this.enBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.OrderView = new System.Windows.Forms.ListView();
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.OrderView = new System.Windows.Forms.ListView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.RemoveButton = new System.Windows.Forms.Button();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.LanguageTab.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -122,15 +129,6 @@
             this.button5.Text = "p";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 565);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Finish Order";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // menuListView
             // 
             this.menuListView.Location = new System.Drawing.Point(75, 6);
@@ -145,16 +143,16 @@
             this.LoyaltyTab.Controls.Add(this.panel1);
             this.LoyaltyTab.Controls.Add(this.panel2);
             this.LoyaltyTab.Controls.Add(this.textBox2);
-            this.LoyaltyTab.Controls.Add(this.label3);
+            this.LoyaltyTab.Controls.Add(this.nameLabel);
             this.LoyaltyTab.Controls.Add(this.textBox1);
             this.LoyaltyTab.Controls.Add(this.label2);
-            this.LoyaltyTab.Controls.Add(this.label1);
+            this.LoyaltyTab.Controls.Add(this.emailLabel);
             this.LoyaltyTab.Controls.Add(this.AccNumberLaber);
             this.LoyaltyTab.Controls.Add(this.AccNumberTagLabel);
             this.LoyaltyTab.Location = new System.Drawing.Point(4, 22);
             this.LoyaltyTab.Name = "LoyaltyTab";
             this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LoyaltyTab.Size = new System.Drawing.Size(778, 567);
+            this.LoyaltyTab.Size = new System.Drawing.Size(778, 521);
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
             this.LoyaltyTab.UseVisualStyleBackColor = true;
@@ -243,23 +241,23 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 85);
+            this.textBox2.Location = new System.Drawing.Point(115, 85);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(414, 33);
             this.textBox2.TabIndex = 7;
             // 
-            // label3
+            // nameLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Name:";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(10, 47);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(73, 25);
+            this.nameLabel.TabIndex = 6;
+            this.nameLabel.Text = "Name:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 46);
+            this.textBox1.Location = new System.Drawing.Point(115, 44);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(414, 33);
             this.textBox1.TabIndex = 5;
@@ -275,14 +273,14 @@
             this.label2.Text = "4 more orders to free sandwich";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // emailLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Email:";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(10, 88);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(70, 25);
+            this.emailLabel.TabIndex = 2;
+            this.emailLabel.Text = "Email:";
             // 
             // AccNumberLaber
             // 
@@ -306,14 +304,84 @@
             // 
             // LanguageTab
             // 
+            this.LanguageTab.Controls.Add(this.selectLangText);
+            this.LanguageTab.Controls.Add(this.spBtn);
+            this.LanguageTab.Controls.Add(this.geBtn);
+            this.LanguageTab.Controls.Add(this.frBtn);
+            this.LanguageTab.Controls.Add(this.enBtn);
             this.LanguageTab.Location = new System.Drawing.Point(4, 22);
             this.LanguageTab.Name = "LanguageTab";
             this.LanguageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LanguageTab.Size = new System.Drawing.Size(778, 567);
+            this.LanguageTab.Size = new System.Drawing.Size(778, 521);
             this.LanguageTab.TabIndex = 3;
             this.LanguageTab.Text = "Language";
             this.LanguageTab.UseVisualStyleBackColor = true;
             this.LanguageTab.Click += new System.EventHandler(this.LanguageTab_Click);
+            // 
+            // selectLangText
+            // 
+            this.selectLangText.AutoSize = true;
+            this.selectLangText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectLangText.Location = new System.Drawing.Point(15, 16);
+            this.selectLangText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.selectLangText.Name = "selectLangText";
+            this.selectLangText.Size = new System.Drawing.Size(174, 26);
+            this.selectLangText.TabIndex = 24;
+            this.selectLangText.Text = "Select language:";
+            // 
+            // spBtn
+            // 
+            this.spBtn.Image = ((System.Drawing.Image)(resources.GetObject("spBtn.Image")));
+            this.spBtn.Location = new System.Drawing.Point(176, 44);
+            this.spBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.spBtn.Name = "spBtn";
+            this.spBtn.Size = new System.Drawing.Size(48, 27);
+            this.spBtn.TabIndex = 23;
+            this.spBtn.UseVisualStyleBackColor = true;
+            this.spBtn.Click += new System.EventHandler(this.spBtn_Click);
+            // 
+            // geBtn
+            // 
+            this.geBtn.Image = ((System.Drawing.Image)(resources.GetObject("geBtn.Image")));
+            this.geBtn.Location = new System.Drawing.Point(124, 44);
+            this.geBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.geBtn.Name = "geBtn";
+            this.geBtn.Size = new System.Drawing.Size(48, 27);
+            this.geBtn.TabIndex = 22;
+            this.geBtn.UseVisualStyleBackColor = true;
+            this.geBtn.Click += new System.EventHandler(this.geBtn_Click);
+            // 
+            // frBtn
+            // 
+            this.frBtn.Image = ((System.Drawing.Image)(resources.GetObject("frBtn.Image")));
+            this.frBtn.Location = new System.Drawing.Point(72, 44);
+            this.frBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.frBtn.Name = "frBtn";
+            this.frBtn.Size = new System.Drawing.Size(48, 27);
+            this.frBtn.TabIndex = 21;
+            this.frBtn.UseVisualStyleBackColor = true;
+            this.frBtn.Click += new System.EventHandler(this.frBtn_Click);
+            // 
+            // enBtn
+            // 
+            this.enBtn.Image = ((System.Drawing.Image)(resources.GetObject("enBtn.Image")));
+            this.enBtn.Location = new System.Drawing.Point(20, 44);
+            this.enBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.enBtn.Name = "enBtn";
+            this.enBtn.Size = new System.Drawing.Size(48, 27);
+            this.enBtn.TabIndex = 20;
+            this.enBtn.UseVisualStyleBackColor = true;
+            this.enBtn.Click += new System.EventHandler(this.enBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 565);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Finish Order";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -348,6 +416,34 @@
             this.panel3.Size = new System.Drawing.Size(263, 493);
             this.panel3.TabIndex = 7;
             // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Location = new System.Drawing.Point(174, 457);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(86, 35);
+            this.RemoveButton.TabIndex = 10;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(85, 455);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(83, 35);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Customize";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // OrderView
+            // 
+            this.OrderView.Location = new System.Drawing.Point(56, 0);
+            this.OrderView.Name = "OrderView";
+            this.OrderView.Size = new System.Drawing.Size(204, 434);
+            this.OrderView.TabIndex = 8;
+            this.OrderView.UseCompatibleStateImageBehavior = false;
+            this.OrderView.View = System.Windows.Forms.View.Details;
+            // 
             // splitter4
             // 
             this.splitter4.Location = new System.Drawing.Point(0, 0);
@@ -374,34 +470,6 @@
             this.WelcomeLabel.Text = "Welcome!";
             this.WelcomeLabel.Click += new System.EventHandler(this.label4_Click);
             // 
-            // OrderView
-            // 
-            this.OrderView.Location = new System.Drawing.Point(56, 0);
-            this.OrderView.Name = "OrderView";
-            this.OrderView.Size = new System.Drawing.Size(204, 434);
-            this.OrderView.TabIndex = 8;
-            this.OrderView.UseCompatibleStateImageBehavior = false;
-            this.OrderView.View = System.Windows.Forms.View.Details;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(85, 455);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 35);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Customize";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Location = new System.Drawing.Point(174, 457);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(86, 35);
-            this.RemoveButton.TabIndex = 10;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +489,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.LanguageTab.ResumeLayout(false);
+            this.LanguageTab.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -439,10 +509,10 @@
         private System.Windows.Forms.Label AccNumberTagLabel;
         private System.Windows.Forms.Label AccNumberLaber;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
@@ -464,6 +534,11 @@
         private System.Windows.Forms.ListView OrderView;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Label selectLangText;
+        private System.Windows.Forms.Button spBtn;
+        private System.Windows.Forms.Button geBtn;
+        private System.Windows.Forms.Button frBtn;
+        private System.Windows.Forms.Button enBtn;
     }
 }
 
