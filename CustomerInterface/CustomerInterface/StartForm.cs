@@ -15,6 +15,7 @@ namespace CustomerInterface
 {
     public partial class StartForm : Form
     {
+        CultureInfo ci;
         public StartForm()
         {
             InitializeComponent();
@@ -33,25 +34,25 @@ namespace CustomerInterface
 
         private void enBtn_Click(object sender, EventArgs e)
         {
-            CultureInfo ci = new CultureInfo("en-US");
+            ci = new CultureInfo("en-US");
             setLang(ci);
         }
 
         private void frBtn_Click(object sender, EventArgs e)
         {
-            CultureInfo ci = new CultureInfo("fr-FR");
+            ci = new CultureInfo("fr-FR");
             setLang(ci);
         }
 
         private void geBtn_Click(object sender, EventArgs e)
         {
-            CultureInfo ci = new CultureInfo("de-DE");
+            ci = new CultureInfo("de-DE");
             setLang(ci);
         }
 
         private void spBtn_Click(object sender, EventArgs e)
         {
-            CultureInfo ci = new CultureInfo("es-ES");
+            ci = new CultureInfo("es-ES");
             setLang(ci);
         }
     }

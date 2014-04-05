@@ -21,9 +21,14 @@ namespace CustomerInterface
         public string parseComponent(string component)
         {
             string translatedWord;
+
             Assembly a = Assembly.Load("CustomerInterface");
             ResourceManager rm = new ResourceManager("CustomerInterface.Lang.components", a);
             translatedWord = rm.GetString(component.ToLower(), ci);
+
+            if(String.IsNullOrEmpty(translatedWord))
+                return component;
+
             return translatedWord;
         }
     }
