@@ -774,6 +774,43 @@ namespace NSA_Manager
             }
         } //ManagerCreateSpecial
 
+        public string ManagerLogin(string username, string password)
+        {
+            string assistflag = "-1";
+
+            string query = "SELECT * FROM managers WHERE storeid = " + StoreNumber.ToString() + " and employeeid = '" + username.ToString() + "' and password = '" + password.ToString() + "' ORDER BY managerid";
+
+            //If DB connection is open attem to get data.
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (mysqlreader.Read())
+                {
+                    assistflag = mysqlreader["isassistant"].ToString();
+
+                    //increment the record count 
+                    RecordCount++;
+                }
+
+                //close Data Reader
+                mysqlreader.Close();
+
+                if (RecordCount == 1)
+                {
+                    return assistflag;
+                }
+            }
+
+            return assistflag;
+        }
+
         //Return true if Database is connected
         public bool Connected()
         {

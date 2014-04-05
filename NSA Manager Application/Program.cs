@@ -16,7 +16,7 @@ namespace NSA_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerKiosk());
+            Application.Run(new ManagerLogin_Form());
         }
     }
 }
