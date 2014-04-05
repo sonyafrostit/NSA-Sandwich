@@ -76,6 +76,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lang.es.resx</DependentUpon>
     </Compile>
+    <Compile Include="Lang\components.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>components.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\components.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>components.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\components.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>components.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\components.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>components.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="NSADatabase.cs" />
     <Compile Include="NSALoyaltyAccount.cs" />
     <Compile Include="NSAMenuCategory.cs" />
@@ -121,6 +141,22 @@
     <EmbeddedResource Include="Lang\lang.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\components.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>components.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\components.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>components.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\components.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>components.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\components.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>components.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
