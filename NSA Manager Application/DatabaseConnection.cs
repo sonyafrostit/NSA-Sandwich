@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 
-namespace CSCE_4444_Term_Project
+namespace NSA_Manager
 {
     class NSADatabase
     {
@@ -503,14 +503,13 @@ namespace CSCE_4444_Term_Project
         public int ManagerGetComponentData(out List<string>[] componentdata)
         {
 
-            string query = "SELECT componentid, name, categoryid, price FROM components WHERE storeid = " + StoreNumber.ToString() + " ORDER BY componentid";
+            string query = "SELECT componentid, name, price FROM components WHERE deleted = 0 and storeid = " + StoreNumber.ToString() + " ORDER BY componentid";
 
             //Change the inventory data list to store the result
-            componentdata = new List<string>[4];
+            componentdata = new List<string>[3];
             componentdata[0] = new List<string>();
             componentdata[1] = new List<string>();
             componentdata[2] = new List<string>();
-            componentdata[3] = new List<string>();
 
             //initial record count is 0
             RecordCount = 0;
@@ -530,8 +529,7 @@ namespace CSCE_4444_Term_Project
                 {
                     componentdata[0].Add(mysqlreader["componentid"] + "");
                     componentdata[1].Add(mysqlreader["name"] + "");
-                    componentdata[2].Add(mysqlreader["categoryid"] + "");
-                    componentdata[3].Add(mysqlreader["price"] + "");
+                    componentdata[2].Add(mysqlreader["price"] + "");
 
                     //increment the record count 
                     RecordCount++;
@@ -555,7 +553,7 @@ namespace CSCE_4444_Term_Project
         public int ManagerGetMenuItemData(out List<string>[] menuitemdata)
         {
 
-            string query = "SELECT menuitemid, name FROM menuitem WHERE storeid = " + StoreNumber.ToString() + " ORDER BY menuitemid";
+            string query = "SELECT menuitemid, name FROM menuitem WHERE deleted = 0 and storeid = " + StoreNumber.ToString() + " ORDER BY menuitemid";
 
             //Change the inventory data list to store the result
             menuitemdata = new List<string>[2];
@@ -662,7 +660,119 @@ namespace CSCE_4444_Term_Project
                 cmd.ExecuteNonQuery();
 
             }
-        } //Manager Clear Orders Screen
+        } //ManagerUpdateInventory
+
+        public void ManagerDeleteComponent(string componentid)
+        {
+            string query = "UPDATE components SET deleted = 1 WHERE componentid = " + componentid.ToString() + " and storeid = " + StoreNumber.ToString();
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+
+            }
+        } //ManagerDeleteComponent
+
+        public void ManagerSaveComponent(string componentname, string componentcategory, string componentprice, string componentcost, string componenthighquantity, string componentlowquantity)
+        {
+            string query = "INSERT INTO components (storeid, name, cost, price, categoryid, quantity, lowquantity, deleted) VALUES ('" + StoreNumber.ToString() + "', '"
+                + componentname.ToString() + "', '" + componentcost.ToString() + "', '" + componentprice.ToString() + "', '" + componentcategory.ToString() + "', '" 
+                + componenthighquantity.ToString() + "', '" + componentlowquantity.ToString() + "', 0 )";
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+            }
+        } //ManagerSaveComponent
+
+        public void ManagerDeleteMenuItem(string menuitemid)
+        {
+            string query = "UPDATE menuitem SET deleted = 1 WHERE menuitemid = " + menuitemid.ToString() + " and storeid = " + StoreNumber.ToString();
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+
+            }
+        } //ManagerDeleteMenuItem
+
+        public string ManagerCreateMenuItem(string menuitemname, string menuitemcategory, string menuitemprice, string isspecial)
+        {
+            string menuitemid = null;
+
+            string createquery = "INSERT INTO menuitem (storeid, name, cost, price, isspecial, menutypeid, deleted) VALUES ('" + StoreNumber.ToString() + "', '" + menuitemname.ToString() + "', 0, '" + menuitemprice.ToString() + "', '" +isspecial.ToString() + "', '" + menuitemcategory.ToString() + "', 0)";
+            string query = "SELECT menuitemid FROM menuitem WHERE name = '" + menuitemname.ToString() + "' and storeid = " + StoreNumber.ToString() + " ORDER BY menuitemid";
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(createquery, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+
+                //Create MySQL Command object.
+                cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                mysqlreader.Read();
+                menuitemid = mysqlreader["menuitemid"].ToString();
+
+                //close Data Reader
+                mysqlreader.Close();
+            }
+
+            return menuitemid;
+        } // ManagerCreateMenuItem
+
+        public void ManagerCreateMenuItemComponent(string menuitemid, string componentid)
+        {
+            string query = "INSERT INTO menuitemcomponents (menuitemid, storeid, component) VALUES ('" + menuitemid.ToString() + "', '" + StoreNumber.ToString() + "', '" + componentid.ToString() + "')";
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+            }
+        } //ManagerCreateMenuItemComponent
+
+        public void ManagerCreateSpecial(string menuitemid, string begindate, string enddate, int daymask)
+        {
+            string query = "INSERT INTO specials (menuitemid, storeid, begindate, enddate, daymask) VALUES ('" + menuitemid.ToString() + "', '" + StoreNumber.ToString() + "', '" + begindate.Trim(new Char[] { '/' }) + "', '" + enddate.Trim(new Char[] { '/' }) + "', '" + daymask.ToString() + "')";
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+            }
+        } //ManagerCreateSpecial
 
         //Return true if Database is connected
         public bool Connected()
@@ -670,7 +780,48 @@ namespace CSCE_4444_Term_Project
             return (Connection.State == System.Data.ConnectionState.Open);
         }
 
-    } //class DatabaseConnection
+        //Use query string parameter and get data from the database returning a MySqlDataReader. 
+        //IMPORTANT: the user of the reader needs to make sure and close the connection.
+        public MySqlDataReader CustomQuery(string query)
+        {
 
+            //If DB connection is open attem to get data.
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                MySqlCommand cmd = null;
+                MySqlDataReader mysqlreader = null;
+
+                try
+                {
+                    //Create MySQL Command object.
+                    cmd = new MySqlCommand(query, Connection);
+
+                    //Create a MySQL reader and Execute the query
+                    mysqlreader = cmd.ExecuteReader();
+
+                    //Return the Datareader
+                    return mysqlreader;
+
+                }
+                catch (Exception)
+                {
+                    if (mysqlreader != null)
+                    {
+                        mysqlreader.Close();
+                    }
+                    throw;
+                }
+
+            }
+            else
+            {
+                //if the DB is not open then no records can be read.
+                return null;
+            }
+
+        } //CustomQuery
+
+    } //class DatabaseConnection
 
 } //CSCE_4444_Term_Project

@@ -1,4 +1,4 @@
-﻿namespace CSCE_4444_Term_Project
+﻿namespace NSA_Manager
 {
     partial class ManagerKiosk
     {
@@ -78,15 +78,15 @@
             this.Inventory_Listbox = new System.Windows.Forms.ListBox();
             this.InventoryTitle_Label = new System.Windows.Forms.Label();
             this.Reports = new System.Windows.Forms.TabPage();
-            this.ReportPDF_Button = new System.Windows.Forms.Button();
+            this.webReports = new System.Windows.Forms.WebBrowser();
             this.PrintReport_Button = new System.Windows.Forms.Button();
-            this.Reports_Textbox = new System.Windows.Forms.RichTextBox();
             this.Reports_Listbox = new System.Windows.Forms.ListBox();
             this.ReportsTitle_Label = new System.Windows.Forms.Label();
             this.MenuItems = new System.Windows.Forms.TabPage();
+            this.SpecialDaySunday_Checkbox = new System.Windows.Forms.CheckBox();
             this.MenuItemSave_Button = new System.Windows.Forms.Button();
             this.MenuItemDelete_Button = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.DateEnd_Calender = new System.Windows.Forms.MonthCalendar();
             this.DateEnd_Label = new System.Windows.Forms.Label();
             this.DateBegin_Calender = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
@@ -109,6 +109,8 @@
             this.MenuItems_Listbox = new System.Windows.Forms.ListBox();
             this.MenuItemsTitle_Label = new System.Windows.Forms.Label();
             this.ItemMods = new System.Windows.Forms.TabPage();
+            this.ComponentCost_Label = new System.Windows.Forms.Label();
+            this.ComponentCost_Textbox = new System.Windows.Forms.TextBox();
             this.ComponentSave_Button = new System.Windows.Forms.Button();
             this.ComponentDelete_Button = new System.Windows.Forms.Button();
             this.ComponentLowQuantity_Textbox = new System.Windows.Forms.TextBox();
@@ -126,8 +128,6 @@
             this.Tools = new System.Windows.Forms.TabPage();
             this.ClearPickupWindow_Button = new System.Windows.Forms.Button();
             this.ToolsTitle_Label = new System.Windows.Forms.Label();
-            this.ComponentCost_Textbox = new System.Windows.Forms.TextBox();
-            this.ComponentCost_Label = new System.Windows.Forms.Label();
             this.ManagerKiosk_TabPage.SuspendLayout();
             this.Orders.SuspendLayout();
             this.LoyaltyAccounts.SuspendLayout();
@@ -641,9 +641,8 @@
             // 
             // Reports
             // 
-            this.Reports.Controls.Add(this.ReportPDF_Button);
+            this.Reports.Controls.Add(this.webReports);
             this.Reports.Controls.Add(this.PrintReport_Button);
-            this.Reports.Controls.Add(this.Reports_Textbox);
             this.Reports.Controls.Add(this.Reports_Listbox);
             this.Reports.Controls.Add(this.ReportsTitle_Label);
             this.Reports.Location = new System.Drawing.Point(4, 22);
@@ -654,14 +653,13 @@
             this.Reports.Text = "Reports";
             this.Reports.UseVisualStyleBackColor = true;
             // 
-            // ReportPDF_Button
+            // webReports
             // 
-            this.ReportPDF_Button.Location = new System.Drawing.Point(951, 601);
-            this.ReportPDF_Button.Name = "ReportPDF_Button";
-            this.ReportPDF_Button.Size = new System.Drawing.Size(141, 32);
-            this.ReportPDF_Button.TabIndex = 4;
-            this.ReportPDF_Button.Text = "Print to PDF";
-            this.ReportPDF_Button.UseVisualStyleBackColor = true;
+            this.webReports.Location = new System.Drawing.Point(350, 31);
+            this.webReports.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webReports.Name = "webReports";
+            this.webReports.Size = new System.Drawing.Size(896, 563);
+            this.webReports.TabIndex = 5;
             // 
             // PrintReport_Button
             // 
@@ -672,14 +670,6 @@
             this.PrintReport_Button.Text = "Print";
             this.PrintReport_Button.UseVisualStyleBackColor = true;
             // 
-            // Reports_Textbox
-            // 
-            this.Reports_Textbox.Location = new System.Drawing.Point(367, 31);
-            this.Reports_Textbox.Name = "Reports_Textbox";
-            this.Reports_Textbox.Size = new System.Drawing.Size(879, 563);
-            this.Reports_Textbox.TabIndex = 2;
-            this.Reports_Textbox.Text = "";
-            // 
             // Reports_Listbox
             // 
             this.Reports_Listbox.FormattingEnabled = true;
@@ -687,6 +677,7 @@
             this.Reports_Listbox.Name = "Reports_Listbox";
             this.Reports_Listbox.Size = new System.Drawing.Size(337, 563);
             this.Reports_Listbox.TabIndex = 1;
+            this.Reports_Listbox.SelectedIndexChanged += new System.EventHandler(this.Reports_Listbox_SelectedIndexChanged);
             // 
             // ReportsTitle_Label
             // 
@@ -700,9 +691,10 @@
             // 
             // MenuItems
             // 
+            this.MenuItems.Controls.Add(this.SpecialDaySunday_Checkbox);
             this.MenuItems.Controls.Add(this.MenuItemSave_Button);
             this.MenuItems.Controls.Add(this.MenuItemDelete_Button);
-            this.MenuItems.Controls.Add(this.monthCalendar1);
+            this.MenuItems.Controls.Add(this.DateEnd_Calender);
             this.MenuItems.Controls.Add(this.DateEnd_Label);
             this.MenuItems.Controls.Add(this.DateBegin_Calender);
             this.MenuItems.Controls.Add(this.label1);
@@ -732,6 +724,16 @@
             this.MenuItems.Text = "Menu Items";
             this.MenuItems.UseVisualStyleBackColor = true;
             // 
+            // SpecialDaySunday_Checkbox
+            // 
+            this.SpecialDaySunday_Checkbox.AutoSize = true;
+            this.SpecialDaySunday_Checkbox.Location = new System.Drawing.Point(862, 254);
+            this.SpecialDaySunday_Checkbox.Name = "SpecialDaySunday_Checkbox";
+            this.SpecialDaySunday_Checkbox.Size = new System.Drawing.Size(62, 17);
+            this.SpecialDaySunday_Checkbox.TabIndex = 26;
+            this.SpecialDaySunday_Checkbox.Text = "Sunday";
+            this.SpecialDaySunday_Checkbox.UseVisualStyleBackColor = true;
+            // 
             // MenuItemSave_Button
             // 
             this.MenuItemSave_Button.Location = new System.Drawing.Point(369, 477);
@@ -750,11 +752,11 @@
             this.MenuItemDelete_Button.Text = "Delete Menu Item";
             this.MenuItemDelete_Button.UseVisualStyleBackColor = true;
             // 
-            // monthCalendar1
+            // DateEnd_Calender
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(645, 303);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 22;
+            this.DateEnd_Calender.Location = new System.Drawing.Point(645, 303);
+            this.DateEnd_Calender.Name = "DateEnd_Calender";
+            this.DateEnd_Calender.TabIndex = 22;
             // 
             // DateEnd_Label
             // 
@@ -977,6 +979,23 @@
             this.ItemMods.Text = "Components";
             this.ItemMods.UseVisualStyleBackColor = true;
             // 
+            // ComponentCost_Label
+            // 
+            this.ComponentCost_Label.AutoSize = true;
+            this.ComponentCost_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ComponentCost_Label.Location = new System.Drawing.Point(356, 110);
+            this.ComponentCost_Label.Name = "ComponentCost_Label";
+            this.ComponentCost_Label.Size = new System.Drawing.Size(46, 20);
+            this.ComponentCost_Label.TabIndex = 30;
+            this.ComponentCost_Label.Text = "Cost:";
+            // 
+            // ComponentCost_Textbox
+            // 
+            this.ComponentCost_Textbox.Location = new System.Drawing.Point(471, 112);
+            this.ComponentCost_Textbox.Name = "ComponentCost_Textbox";
+            this.ComponentCost_Textbox.Size = new System.Drawing.Size(224, 20);
+            this.ComponentCost_Textbox.TabIndex = 6;
+            // 
             // ComponentSave_Button
             // 
             this.ComponentSave_Button.Location = new System.Drawing.Point(516, 203);
@@ -1131,23 +1150,6 @@
             this.ToolsTitle_Label.TabIndex = 0;
             this.ToolsTitle_Label.Text = "Tools";
             // 
-            // ComponentCost_Textbox
-            // 
-            this.ComponentCost_Textbox.Location = new System.Drawing.Point(471, 112);
-            this.ComponentCost_Textbox.Name = "ComponentCost_Textbox";
-            this.ComponentCost_Textbox.Size = new System.Drawing.Size(224, 20);
-            this.ComponentCost_Textbox.TabIndex = 6;
-            // 
-            // ComponentCost_Label
-            // 
-            this.ComponentCost_Label.AutoSize = true;
-            this.ComponentCost_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ComponentCost_Label.Location = new System.Drawing.Point(356, 110);
-            this.ComponentCost_Label.Name = "ComponentCost_Label";
-            this.ComponentCost_Label.Size = new System.Drawing.Size(46, 20);
-            this.ComponentCost_Label.TabIndex = 30;
-            this.ComponentCost_Label.Text = "Cost:";
-            // 
             // ManagerKiosk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1224,9 +1226,7 @@
         private System.Windows.Forms.Label ItemCount_Label;
         private System.Windows.Forms.ListBox Inventory_Listbox;
         private System.Windows.Forms.Label ReportsTitle_Label;
-        private System.Windows.Forms.RichTextBox Reports_Textbox;
         private System.Windows.Forms.ListBox Reports_Listbox;
-        private System.Windows.Forms.Button ReportPDF_Button;
         private System.Windows.Forms.Button PrintReport_Button;
         private System.Windows.Forms.Label MenuItemsTitle_Label;
         private System.Windows.Forms.Label MenuItemCategory_Label;
@@ -1248,7 +1248,7 @@
         private System.Windows.Forms.CheckBox SpecialDaySaturday_Checkbox;
         private System.Windows.Forms.MonthCalendar DateBegin_Calender;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar DateEnd_Calender;
         private System.Windows.Forms.Label DateEnd_Label;
         private System.Windows.Forms.Button MenuItemDelete_Button;
         private System.Windows.Forms.Button MenuItemSave_Button;
@@ -1279,6 +1279,8 @@
         private System.Windows.Forms.Label AssistantManagerLastName_Label;
         private System.Windows.Forms.TextBox ComponentCost_Textbox;
         private System.Windows.Forms.Label ComponentCost_Label;
+        private System.Windows.Forms.CheckBox SpecialDaySunday_Checkbox;
+        private System.Windows.Forms.WebBrowser webReports;
     }
 }
 

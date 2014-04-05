@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace CSCE_4444_Term_Project
+namespace NSA_Manager
 {
     class AppConfig
     {

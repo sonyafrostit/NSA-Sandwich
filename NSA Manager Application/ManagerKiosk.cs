@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace CSCE_4444_Term_Project
+namespace NSA_Manager
 {
     public partial class ManagerKiosk : Form
     {
@@ -66,6 +67,7 @@ namespace CSCE_4444_Term_Project
             LoadManagerInventoryList();
             LoadManagerComponentList();
             LoadManagerMenuItemList();
+            LoadReports();
 
             // Event Handler Definitions
             RefreshOrders_Button.Click += new EventHandler(this.RefreshOrders_Click);
@@ -77,6 +79,11 @@ namespace CSCE_4444_Term_Project
             DeleteAssistantManager_Button.Click += new EventHandler(this.DeleteManagerAccount_Click);
             AssistantManagerSave_Button.Click += new EventHandler(this.SaveManagerAccount_Button_Click);
             InventoryUpdate_Button.Click += new EventHandler(this.UpdateInventory_Click);
+            ComponentDelete_Button.Click += new EventHandler(this.DeleteComponent_Click);
+            ComponentSave_Button.Click += new EventHandler(this.SaveComponent_Click);
+            MenuItemDelete_Button.Click += new EventHandler(this.DeleteMenuItem_Click);
+            MenuItemSave_Button.Click += new EventHandler(this.SaveMenuItem_Click);
+            PrintReport_Button.Click += new EventHandler(this.PrintReport_Button_Click);
         }
 
         public class BoxFormat
@@ -129,6 +136,13 @@ namespace CSCE_4444_Term_Project
                 // Clear any existing data in the list box
                 Orders_Listbox.DataSource = null;
                 Orders_Listbox.Items.Clear();
+
+                // If there is no data in the database skip attempting to load the List
+                // It will cause an error.
+                if (ordercount == 0)
+                {
+                    return;
+                }
 
                 //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
@@ -193,6 +207,13 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager order litems list
                 ordercount = nsadb.ManagerOrderItemData(out ManagerItemdata, OrderID);
 
+                // If there is no data in the database skip attempting to load the List
+                // It will cause an error.
+                if (ordercount == 0)
+                {
+                    return;
+                }
+
                 //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
@@ -239,7 +260,7 @@ namespace CSCE_4444_Term_Project
                 // Give User Feedback that Refund was Successful
                 MessageBox.Show("Order #" + curItem + " Refunded.", "Refund Orders", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Order Not Selected!", "Refund Orders", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -270,7 +291,7 @@ namespace CSCE_4444_Term_Project
 
                 MessageBox.Show("Order #" + curOrder + " - " + curItem + " Refunded.", "Refund Order Items", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Order Item Not Selected!", "Refund Order Items", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -413,6 +434,13 @@ namespace CSCE_4444_Term_Project
                 AssistantManagers_Listbox.DataSource = null;
                 AssistantManagers_Listbox.Items.Clear();
 
+                // If there is no data in the database skip attempting to load the List
+                // It will cause an error.
+                if (ordercount == 0)
+                {
+                    return;
+                }
+
                 //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
@@ -453,6 +481,13 @@ namespace CSCE_4444_Term_Project
                 Inventory_Listbox.DataSource = null;
                 Inventory_Listbox.Items.Clear();
 
+                // If there is no data in the database skip attempting to load the List
+                // It will cause an error.
+                if (ordercount == 0)
+                {
+                    return;
+                }
+
                 //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
@@ -478,6 +513,7 @@ namespace CSCE_4444_Term_Project
             {
                 int ordercount = 0;        // the number of orders to display
                 List<string>[] ManagerComponentdata;   // the orders that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -488,14 +524,29 @@ namespace CSCE_4444_Term_Project
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerGetComponentData(out ManagerComponentdata);
 
-                // Clear previous Values
+                // Clear any existing data in the list box
+                Components_Listbox.DataSource = null;
                 Components_Listbox.Items.Clear();
 
-                //loop over the records and load them to the listbox
+                // If there is no data in the database skip attempting to load the List
+                // It will cause an error.
+                if (ordercount == 0)
+                {
+                    return;
+                }
+
+                //loop over the records and format them in the Array List
                 for (int index = 0; index < ordercount; index++)
                 {
-                    Components_Listbox.Items.Add("#" + ManagerComponentdata[0][index] + " - " + ManagerComponentdata[1][index] + " - " + ManagerComponentdata[2][index] + " - $" + String.Format("{0:0.00}", ManagerComponentdata[3][index]));
+                    ListBoxInfo.Add(new BoxFormat(ManagerComponentdata[1][index] + " - $" + ManagerComponentdata[2][index], ManagerComponentdata[0][index]));
                 }
+
+                // Insert Array List into the List Box
+                Components_Listbox.DataSource = ListBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                Components_Listbox.DisplayMember = "displayText";
+                Components_Listbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -507,8 +558,12 @@ namespace CSCE_4444_Term_Project
         {
             try
             {
-                int ordercount = 0;        // the number of orders to display
-                List<string>[] ManagerMenuItemdata;   // the orders that will be displayed
+                int itemcount = 0;        // the number of menu items returned by database
+                int componentcount = 0;   // The number of components returned by database
+                List<string>[] ManagerMenuItemdata;   // The Menu Items that will be displayed
+                List<string>[] ManagerComponentdata;  // The Components that will be displayed
+                ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
+                ArrayList CheckBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -517,16 +572,47 @@ namespace CSCE_4444_Term_Project
                 }
 
                 //request the Records to display on the manager orders list
-                ordercount = nsadb.ManagerGetMenuItemData(out ManagerMenuItemdata);
+                itemcount = nsadb.ManagerGetMenuItemData(out ManagerMenuItemdata);
+                componentcount = nsadb.ManagerGetComponentData(out ManagerComponentdata);
 
-                // Clear previous Values
+                // Clear any existing data in the list box
+                MenuItems_Listbox.DataSource = null;
                 MenuItems_Listbox.Items.Clear();
+                MenuItemsComponent_CheckedListbox.DataSource = null;
+                MenuItemsComponent_CheckedListbox.Items.Clear();
 
-                //loop over the records and load them to the listbox
-                for (int index = 0; index < ordercount; index++)
+                // If there is no data in the database skip attempting to load the List
+                // It will cause an error.
+                if (itemcount == 0)
                 {
-                    MenuItems_Listbox.Items.Add(ManagerMenuItemdata[0][index] + " - " + ManagerMenuItemdata[1][index]);
+                    return;
                 }
+
+                //loop over the records and format them in the Array List
+                for (int index = 0; index < itemcount; index++)
+                {
+                    ListBoxInfo.Add(new BoxFormat(ManagerMenuItemdata[1][index], ManagerMenuItemdata[0][index]));
+                }
+
+                if (componentcount == 0)
+                {
+                    return;
+                }
+
+                for (int index = 0; index < componentcount; index++ )
+                {
+                    CheckBoxInfo.Add(new BoxFormat(ManagerComponentdata[1][index], ManagerComponentdata[0][index]));
+                }
+
+                // Insert Array List into the List Box
+                MenuItems_Listbox.DataSource = ListBoxInfo;
+                MenuItemsComponent_CheckedListbox.DataSource = CheckBoxInfo;
+
+                // Define which information is actually displayed by the listbox and returned
+                MenuItems_Listbox.DisplayMember = "displayText";
+                MenuItems_Listbox.ValueMember = "databaseID";
+                MenuItemsComponent_CheckedListbox.DisplayMember = "displayText";
+                MenuItemsComponent_CheckedListbox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -620,7 +706,7 @@ namespace CSCE_4444_Term_Project
                     nsadb.OpenConnection();
                 }
 
-                // Get the loyalty account data from the database
+                // Save the loyalty account data in the database
                 nsadb.ManagerSaveManagerAccount(FirstName, LastName, EmployeeID, Password);
 
                 // Refresh Managers List 
@@ -666,5 +752,249 @@ namespace CSCE_4444_Term_Project
                 MessageBox.Show("Component Not Selected!", "Update Inventory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         } // DeleteUpdateInventory_Click
+
+        private void DeleteComponent_Click(object sender, EventArgs e)
+        {
+            // Get the currently selected item in the ListBox. 
+            try
+            {
+                string curItem = ((BoxFormat)Components_Listbox.SelectedItem).databaseID;
+
+                // connect to DB if it is not connected
+                if (!nsadb.Connected())
+                {
+                    nsadb.OpenConnection();
+                }
+
+                // Update the database to mark selected order Refunded and clear Manager Accounts List
+                nsadb.ManagerDeleteComponent(curItem);
+                LoadManagerComponentList();
+
+                // Inform User that Account was successfully Deleted.
+                MessageBox.Show("Component #" + curItem + " Deleted.", "Delete Component", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Component Not Selected!", "Delete Component", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        } // DeleteComponent_Click
+
+        private void SaveComponent_Click(object sender, EventArgs e) // SaveComponent_Click
+        {
+            try
+            {
+                // Buffer to store text
+                string ComponentName = ComponentName_Textbox.Text.ToString();
+                string ComponentCategory = ComponentCategory_Textbox.Text.ToString();
+                string ComponentPrice = ComponentPrice_Textbox.Text.ToString();
+                string ComponentCost = ComponentCost_Textbox.Text.ToString();
+                string ComponentHighQuantity = ComponentHighQuantity_Textbox.Text.ToString();
+                string ComponentLowQuantity = ComponentLowQuantity_Textbox.Text.ToString();
+
+                if (String.IsNullOrWhiteSpace(ComponentName) || String.IsNullOrWhiteSpace(ComponentCategory) || String.IsNullOrWhiteSpace(ComponentPrice) 
+                    || String.IsNullOrWhiteSpace(ComponentCost) || String.IsNullOrWhiteSpace(ComponentHighQuantity) || String.IsNullOrWhiteSpace(ComponentLowQuantity) )
+                {
+                    MessageBox.Show("Not All Fields Filled In!", "Save Component", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
+
+                // connect to DB if it is not connected
+                if (!nsadb.Connected())
+                {
+                    nsadb.OpenConnection();
+                }
+
+                // Save the Component data to the Database
+                nsadb.ManagerSaveComponent(ComponentName, ComponentCategory, ComponentPrice, ComponentCost, ComponentHighQuantity, ComponentLowQuantity);
+
+                //Refresh List
+                LoadManagerComponentList();
+                
+                // Inform user that account was successfully created.
+                MessageBox.Show("Component - " + Name + " Created.", "Save Component", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Shouldnt Be Seeing This!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void DeleteMenuItem_Click(object sender, EventArgs e) // DeleteMenuItem_Click
+        {
+            // Get the currently selected item in the ListBox. 
+            try
+            {
+                string curItem = ((BoxFormat)MenuItems_Listbox.SelectedItem).databaseID;
+
+                // connect to DB if it is not connected
+                if (!nsadb.Connected())
+                {
+                    nsadb.OpenConnection();
+                }
+
+                // Update the database to mark selected order Refunded and clear Manager Accounts List
+                nsadb.ManagerDeleteMenuItem(curItem);
+                LoadManagerMenuItemList();
+
+                // Inform User that Account was successfully Deleted.
+                MessageBox.Show("Menu Item #" + curItem + " Deleted.", "Delete Menu Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Menu Item Not Selected!", "Delete Menu Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void SaveMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Buffer to store text
+                string MenuItemName = MenuItemName_Textbox.Text.ToString();
+                string MenuItemCategory = MenuItemCategory_Textbox.Text.ToString();
+                string MenuItemPrice = MenuItemPrice_Textbox.Text.ToString();
+                string isspecial = null;
+                string MenuItemID = null;
+                int DayMask = 0;
+                object Components = MenuItemsComponent_CheckedListbox.SelectedItems;
+
+                // Checks if Special has been checked
+                if(MenuItemSpecial_Checkbox.Checked)
+                {
+                    isspecial = "1";
+
+                    // Test Checkboxes for Day Mask
+                    if(SpecialDayMonday_Checkbox.Checked)
+                    {
+                        DayMask += 1;
+                    }
+
+                    if (SpecialDayTuesday_Checkbox.Checked)
+                    {
+                        DayMask += 2;
+                    }
+
+                    if (SpecialDayWednesday_Checkbox.Checked)
+                    {
+                        DayMask += 4;
+                    }
+
+                    if (SpecialDayThursday_Checkbox.Checked)
+                    {
+                        DayMask += 8;
+                    }
+
+                    if (SpecialDayFriday_Checkbox.Checked)
+                    {
+                        DayMask += 16;
+                    }
+
+                    if (SpecialDaySaturday_Checkbox.Checked)
+                    {
+                        DayMask += 32;
+                    }
+
+                    if (SpecialDaySunday_Checkbox.Checked)
+                    {
+                        DayMask += 64;
+                    }
+                }
+                else
+                {
+                    isspecial = "0";
+                }
+
+                // Checks if all Text Boxes filled
+                if (String.IsNullOrWhiteSpace(MenuItemName) || String.IsNullOrWhiteSpace(MenuItemCategory) || String.IsNullOrWhiteSpace(MenuItemPrice) )
+                {
+                    MessageBox.Show("Not All Fields Filled In!", "Save Menu Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // Checks if Menu Item has atleast 1 component
+                if (MenuItemsComponent_CheckedListbox.CheckedItems.Count == 0)
+                {
+                    MessageBox.Show("No Components Selected!", "Save Menu Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+                // connect to DB if it is not connected
+                if (!nsadb.Connected())
+                {
+                    nsadb.OpenConnection();
+                }
+
+                // Create the Menu Item in the Database
+                MenuItemID = nsadb.ManagerCreateMenuItem(MenuItemName, MenuItemCategory, MenuItemPrice, isspecial);
+
+                foreach (object itemChecked in MenuItemsComponent_CheckedListbox.CheckedItems)
+                {
+                    // Create the Menu Item Component in the Database
+                    nsadb.ManagerCreateMenuItemComponent(MenuItemID, ((BoxFormat)itemChecked).databaseID);
+                }
+
+                // Checks if Special has been checked
+                if (MenuItemSpecial_Checkbox.Checked)
+                {
+                    // Create the Special in the Database
+                    nsadb.ManagerCreateSpecial(MenuItemID, DateBegin_Calender.SelectionRange.Start.ToString("d", CultureInfo.CreateSpecificCulture("ja-jp")), 
+                        DateEnd_Calender.SelectionRange.Start.ToString("d", CultureInfo.CreateSpecificCulture("ja-jp")), DayMask);
+                }
+                // Refresh List
+                LoadManagerMenuItemList();
+
+                // Inform user that Menu Item was successfully created.
+                MessageBox.Show("Menu Item - " + MenuItemName + " Created.", "Save Menu Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Save Menu Item", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            } 
+        } // ManagerSaveMenuItem
+
+        private void LoadReports()
+        {
+            //create instance of report object.
+            Reports rept = new Reports();
+
+            //loop over number reports.
+            for (int i = 0; i < rept.NumberReportsAvalaible(); i++)
+            {
+                //add report names to list box
+                Reports_Listbox.Items.Add(rept.ReportName(i));
+            }
+
+            //Reports_Listbox.SelectedIndex = 0;
+        } // Load Reports
+
+        private void GenerateReport()
+        {
+            //create instance of report object.
+            Reports rept = new Reports();
+
+            rept.AddStore(ConfigurationSettings.StoreNumber);
+
+            // generate the report and place it into a Webbrowser window.
+            string report = rept.GenerateReport(Reports_Listbox.SelectedIndex);
+            webReports.Navigate("about:blank");
+
+            //if a report exists we have to empty the control
+            if (webReports.Document != null)
+            {
+                webReports.Document.Write(string.Empty);
+            }
+            webReports.DocumentText = report;
+        }
+
+        private void Reports_Listbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GenerateReport();
+        } // Reports_Listbox_SelectedIndexChanged
+
+        private void PrintReport_Button_Click(object sender, EventArgs e)
+        {
+            webReports.ShowPrintDialog();
+        } // PrintReport_Button_Click
     }
 }

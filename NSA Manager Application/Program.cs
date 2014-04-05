@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSCE_4444_Term_Project
+namespace NSA_Manager
 {
     static class Program
     {
