@@ -68,6 +68,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.ItemHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ChangesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -111,7 +113,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button4.Location = new System.Drawing.Point(3, 443);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(66, 65);
@@ -121,7 +123,7 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button5.Location = new System.Drawing.Point(3, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(66, 65);
@@ -375,7 +377,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 565);
+            this.button1.Location = new System.Drawing.Point(154, 454);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 36);
             this.button1.TabIndex = 2;
@@ -385,17 +387,18 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button2.Font = new System.Drawing.Font("Wingdings", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button2.Location = new System.Drawing.Point(4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(46, 65);
             this.button2.TabIndex = 6;
             this.button2.Text = "p";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button3.Location = new System.Drawing.Point(3, 369);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(46, 65);
@@ -407,6 +410,7 @@
             // 
             this.panel3.Controls.Add(this.RemoveButton);
             this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.OrderView);
             this.panel3.Controls.Add(this.splitter4);
             this.panel3.Controls.Add(this.button2);
@@ -418,18 +422,18 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(174, 457);
+            this.RemoveButton.Location = new System.Drawing.Point(165, 399);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(86, 35);
+            this.RemoveButton.Size = new System.Drawing.Size(95, 35);
             this.RemoveButton.TabIndex = 10;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(85, 455);
+            this.button6.Location = new System.Drawing.Point(56, 399);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 35);
+            this.button6.Size = new System.Drawing.Size(103, 35);
             this.button6.TabIndex = 9;
             this.button6.Text = "Customize";
             this.button6.UseVisualStyleBackColor = true;
@@ -437,9 +441,12 @@
             // 
             // OrderView
             // 
+            this.OrderView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ItemHeader,
+            this.ChangesHeader});
             this.OrderView.Location = new System.Drawing.Point(56, 0);
             this.OrderView.Name = "OrderView";
-            this.OrderView.Size = new System.Drawing.Size(204, 434);
+            this.OrderView.Size = new System.Drawing.Size(204, 393);
             this.OrderView.TabIndex = 8;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
@@ -470,6 +477,20 @@
             this.WelcomeLabel.Text = "Welcome!";
             this.WelcomeLabel.Click += new System.EventHandler(this.label4_Click);
             // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
+            // 
+            // ItemHeader
+            // 
+            this.ItemHeader.Text = "Item";
+            this.ItemHeader.Width = 84;
+            // 
+            // ChangesHeader
+            // 
+            this.ChangesHeader.Text = "Changes";
+            this.ChangesHeader.Width = 139;
+            // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,7 +498,6 @@
             this.ClientSize = new System.Drawing.Size(1080, 617);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.KioskTabs);
             this.Name = "KioskWindow";
             this.Text = "Customer Kiosk";
@@ -539,6 +559,8 @@
         private System.Windows.Forms.Button geBtn;
         private System.Windows.Forms.Button frBtn;
         private System.Windows.Forms.Button enBtn;
+        private System.Windows.Forms.ColumnHeader ItemHeader;
+        private System.Windows.Forms.ColumnHeader ChangesHeader;
     }
 }
 

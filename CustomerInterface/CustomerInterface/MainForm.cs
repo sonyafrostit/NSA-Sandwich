@@ -42,13 +42,12 @@ namespace CustomerInterface
         }
         private void addItemToOrder(NSAMenuItem item) {
             currentOrder.AddItem(item);
-            UpdateOrderView();
 
 
         }
         private void UpdateOrderView() {
-            OrderView.Clear();
-            
+            OrderView.Items.Clear();
+
             for (int i = 0; i < currentOrder.Items.Count; i++) {
                 ListViewItem lvi = new ListViewItem(currentOrder.Items.ElementAt(i).Name);
                 
@@ -58,8 +57,9 @@ namespace CustomerInterface
                         sb.Append(c).Append("\n");
                     }
                     lvi.SubItems.Add(sb.ToString());
+                    
                 }
-                
+                Console.WriteLine("Cock");
                 OrderView.Items.Add(lvi);
             }
         }
@@ -73,6 +73,7 @@ namespace CustomerInterface
             foreach (ListViewItem t in menuListView.SelectedItems)
             {
                 addItemToOrder((NSAMenuItem)t.Tag);
+                UpdateOrderView();
             }
         }
 
@@ -172,6 +173,11 @@ namespace CustomerInterface
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
 
         }
