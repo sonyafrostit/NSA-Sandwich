@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MySql.Data.MySqlClient;
+using MySql.Data;
 namespace CustomerInterface
 {
     public class NSAMenuItem
@@ -21,6 +22,30 @@ namespace CustomerInterface
             componentChanges = a.componentChanges;
             image = a.image;
             categoryID = a.categoryID;
+        }
+
+        public void getComponents(NSADatabase d, NSAComponent[] allComponents) {
+            MySqlDataReader reader = d.CustomQuery("SELECT component FROM menuitemcomponents WHERE menuitemid = " + id + ";");
+            List<int> compIDs = new List<int>();
+            if (reader != null)
+            {
+                while (reader.Read())
+                {
+                    compIDs.Add((int)reader["component"]);
+                }
+            }
+            foreach (int i in compIDs) {
+                Console.WriteLine(i);
+            }
+            reader.Close();
+            foreach (NSAComponent comp in allComponents) {
+                //Console.WriteLine(comp.ComponentID);
+                if (compIDs.Contains(comp.ComponentID)) {
+                    components.Add(comp);
+                }
+            }
+            
+            
         }
         int id;
 

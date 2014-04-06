@@ -71,7 +71,8 @@ namespace CustomerInterface
 
         private void addItemToOrder(NSAMenuItem item) {
             item.GenerateItem(componentsList);
-
+            
+            item.getComponents(db, componentsList);
             currentOrder.AddItem(new NSAMenuItem(item));
 
 
@@ -165,10 +166,14 @@ namespace CustomerInterface
 
         private void button6_Click(object sender, EventArgs e)
         {
-            CustomizeForm customizeItemForm = new CustomizeForm();
-            customizeItemForm.CustomizeComponents = componentsList;
-            customizeItemForm.populateComponents();
-            customizeItemForm.Show();
+            if (OrderView.SelectedItems.Count > 0)
+            {
+                CustomizeForm customizeItemForm = new CustomizeForm();
+                customizeItemForm.CustomizeComponents = componentsList;
+                customizeItemForm.CustomizeItem = (NSAMenuItem)currentOrder.Items[(int)OrderView.SelectedItems[0].Tag];
+                customizeItemForm.populateComponents();
+                customizeItemForm.Show();
+            }
         }
 
         public void setLang(CultureInfo ci)

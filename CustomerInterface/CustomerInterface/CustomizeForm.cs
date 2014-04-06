@@ -18,12 +18,19 @@ namespace CustomerInterface
             
         }
         NSAComponent[] customizeComponents;
+        NSAMenuItem customizeItem;
+
+        public NSAMenuItem CustomizeItem
+        {
+            get { return customizeItem; }
+            set { customizeItem = value; }
+        }
         public void populateComponents() {
             foreach (NSAComponent comp in customizeComponents)
             {
                 if (comp.Category != "Bread")
                 {
-                    OtherListBox.Items.Add(comp.Name);
+                    OtherListBox.Items.Add(comp.Name, customizeItem.Components.Contains(comp));
                 }
                 else {
                     BreadList.Items.Add(new ListViewItem(comp.Name));

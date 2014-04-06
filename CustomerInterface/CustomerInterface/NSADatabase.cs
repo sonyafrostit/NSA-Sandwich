@@ -203,6 +203,7 @@ namespace CustomerInterface
                     {
                         mysqlreader.Close();
                     }
+                    Console.WriteLine(query);
                     throw;
                 }
 
@@ -233,7 +234,9 @@ namespace CustomerInterface
                 newMC.Items = items;
                 categories.Add(newMC);
             }
+            menuItemReader.Close();
             return categories.ToArray();
+            
         }
         public NSAMenuItem[] getMenuItems() {
             MySqlDataReader menuItemReader = CustomQuery("SELECT menuitemid, name, price, menutypeid FROM menuitem WHERE storeid = " + StoreNumber.ToString() + " and deleted = 0;");

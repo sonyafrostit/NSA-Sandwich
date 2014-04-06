@@ -55,5 +55,12 @@ namespace CustomerInterface
             ci = new CultureInfo("es-ES");
             setLang(ci);
         }
+        KioskWindow mainForm = new KioskWindow();
+        private void startOrderBtn_Click(object sender, EventArgs e)
+        {
+            
+            mainForm.Show();
+            Hide();
+        }
     }
 }

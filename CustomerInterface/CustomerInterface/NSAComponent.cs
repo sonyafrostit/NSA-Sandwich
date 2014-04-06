@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CustomerInterface
+
 {
     public class NSAComponent
     {
@@ -30,6 +31,24 @@ namespace CustomerInterface
             get { return category; }
             set { category = value; }
         }
+        public override bool Equals(System.Object obj)
+        {
+            // If parameter is null return false.
+            if (obj == null)
+            {
+                return false;
+            }
+
+            NSAComponent compare = obj as NSAComponent;
+            if ((System.Object)compare == null)
+            {
+                return false;
+            }
+
+            // Return true if the ids match:
+            return (componentID == compare.componentID) && (componentID == compare.componentID);
+        }
+
 
     }
 }
