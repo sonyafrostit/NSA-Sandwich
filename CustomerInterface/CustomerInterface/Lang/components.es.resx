@@ -150,6 +150,9 @@
   <data name="cucumbers" xml:space="preserve">
     <value>Pepinos</value>
   </data>
+  <data name="custom" xml:space="preserve">
+    <value>Costumbre</value>
+  </data>
   <data name="egg" xml:space="preserve">
     <value>Huevo</value>
   </data>
