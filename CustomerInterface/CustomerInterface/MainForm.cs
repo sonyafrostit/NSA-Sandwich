@@ -22,8 +22,9 @@ namespace CustomerInterface
         NSAMenuCategory[] menu;
         NSAOrder currentOrder;
         NSAComponent[] componentsList;
-        public KioskWindow()
+        public KioskWindow(CultureInfo language)
         {
+            ci = language;
             InitializeComponent();
             db = new NSADatabase();
             db.OpenConnection();
@@ -31,6 +32,7 @@ namespace CustomerInterface
             menu = db.getMenu();
             updateMenu();
             currentOrder = new NSAOrder();
+            setLang(ci);
         }
 
         private void updateMenu()
