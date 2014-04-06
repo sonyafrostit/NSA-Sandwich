@@ -22,9 +22,9 @@ namespace CustomerInterface
         NSAMenuCategory[] menu;
         NSAOrder currentOrder;
         NSAComponent[] componentsList;
-        CustomizeForm customizeItemForm;
-        public KioskWindow()
+        public KioskWindow(CultureInfo language)
         {
+            ci = language;
             InitializeComponent();
             db = new NSADatabase();
             db.OpenConnection();
@@ -32,6 +32,7 @@ namespace CustomerInterface
             menu = db.getMenu();
             updateMenu();
             currentOrder = new NSAOrder();
+            setLang(ci);
         }
 
         private void updateMenu()
@@ -170,7 +171,7 @@ namespace CustomerInterface
         {
             if (OrderView.SelectedItems.Count > 0)
             {
-                customizeItemForm = new CustomizeForm();
+                CustomizeForm customizeItemForm = new CustomizeForm();
                 customizeItemForm.CustomizeComponents = componentsList;
                 customizeItemForm.CustomizeItem = (NSAMenuItem)currentOrder.Items[(int)OrderView.SelectedItems[0].Tag];
                 customizeItemForm.populateComponents();
@@ -246,23 +247,6 @@ namespace CustomerInterface
                 currentOrder.Items.RemoveAt((int)item.Tag);
             }
             UpdateOrderView();
-        }
-
-        private void KioskWindow_Activated(object sender, EventArgs e)
-        {
-            if (customizeItemForm != null) {
-                NSAChanges changes = customizeItemForm.getItem();
-                
-                currentOrder.Items.RemoveAt(changes.OriginalItem);
-                addItemToOrder(changes.FinishedItem);
-                UpdateOrderView();
-                customizeItemForm = null;
-            }
-        }
-
-        private void OrderView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
     }
