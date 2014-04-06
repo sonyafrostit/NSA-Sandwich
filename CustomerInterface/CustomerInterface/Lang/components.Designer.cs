@@ -331,6 +331,15 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sauerkraut.
+        /// </summary>
+        internal static string sauerkraut {
+            get {
+                return ResourceManager.GetString("sauerkraut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Spinach.
         /// </summary>
         internal static string spinach {
@@ -345,6 +354,15 @@ namespace CustomerInterface.Lang {
         internal static string steak {
             get {
                 return ResourceManager.GetString("steak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swiss.
+        /// </summary>
+        internal static string swiss {
+            get {
+                return ResourceManager.GetString("swiss", resourceCulture);
             }
         }
         

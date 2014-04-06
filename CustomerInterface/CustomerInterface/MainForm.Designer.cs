@@ -38,11 +38,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pastOrdersLabel = new System.Windows.Forms.Label();
             this.HistoryView = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.label6 = new System.Windows.Forms.Label();
+            this.favoriteItemsLabel = new System.Windows.Forms.Label();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -163,7 +163,7 @@
             // 
             this.panel1.Controls.Add(this.splitter2);
             this.panel1.Controls.Add(this.splitter1);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.pastOrdersLabel);
             this.panel1.Controls.Add(this.HistoryView);
             this.panel1.Location = new System.Drawing.Point(6, 187);
             this.panel1.Name = "panel1";
@@ -187,15 +187,15 @@
             this.splitter1.TabIndex = 10;
             this.splitter1.TabStop = false;
             // 
-            // label5
+            // pastOrdersLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 25);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Past Orders";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.pastOrdersLabel.AutoSize = true;
+            this.pastOrdersLabel.Location = new System.Drawing.Point(3, 11);
+            this.pastOrdersLabel.Name = "pastOrdersLabel";
+            this.pastOrdersLabel.Size = new System.Drawing.Size(121, 25);
+            this.pastOrdersLabel.TabIndex = 9;
+            this.pastOrdersLabel.Text = "Past Orders";
+            this.pastOrdersLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // HistoryView
             // 
@@ -208,7 +208,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.listView2);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.favoriteItemsLabel);
             this.panel2.Controls.Add(this.splitter3);
             this.panel2.Location = new System.Drawing.Point(6, 377);
             this.panel2.Name = "panel2";
@@ -223,14 +223,14 @@
             this.listView2.TabIndex = 12;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // label6
+            // favoriteItemsLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 25);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Favorite Items";
+            this.favoriteItemsLabel.AutoSize = true;
+            this.favoriteItemsLabel.Location = new System.Drawing.Point(3, 6);
+            this.favoriteItemsLabel.Name = "favoriteItemsLabel";
+            this.favoriteItemsLabel.Size = new System.Drawing.Size(146, 25);
+            this.favoriteItemsLabel.TabIndex = 1;
+            this.favoriteItemsLabel.Text = "Favorite Items";
             // 
             // splitter3
             // 
@@ -536,11 +536,11 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label pastOrdersLabel;
         private System.Windows.Forms.ListView HistoryView;
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label favoriteItemsLabel;
         private System.Windows.Forms.Splitter splitter3;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TabPage LanguageTab;
