@@ -150,7 +150,10 @@ namespace CustomerInterface
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            CustomizeForm customizeItemForm = new CustomizeForm();
+            customizeItemForm.CustomizeComponents = componentsList;
+            customizeItemForm.populateComponents();
+            customizeItemForm.Show();
         }
 
         public void setLang(CultureInfo ci)
