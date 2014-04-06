@@ -64,7 +64,6 @@ namespace CustomerInterface
 
         private void startOrderBtn_Click_1(object sender, EventArgs e)
         {
-            KioskWindow mainForm = new KioskWindow(ci);
             mainForm.Show();
             Hide();
         }
