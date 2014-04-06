@@ -54,7 +54,8 @@ namespace CustomerInterface
         }
         private void addItemToOrder(NSAMenuItem item) {
             item.GenerateItem(componentsList);
-            currentOrder.AddItem(item);
+            NSAMenuItem newItem = new NSAMenuItem(item);
+            currentOrder.AddItem(newItem);
 
 
         }
@@ -85,6 +86,7 @@ namespace CustomerInterface
         {
             foreach (ListViewItem t in menuListView.SelectedItems)
             {
+                
                 addItemToOrder((NSAMenuItem)t.Tag);
                 UpdateOrderView();
             }
@@ -203,6 +205,11 @@ namespace CustomerInterface
                 }
             }
             UpdateOrderView();
+        }
+
+        private void OrderView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

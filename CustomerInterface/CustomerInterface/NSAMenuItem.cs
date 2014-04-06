@@ -11,6 +11,17 @@ namespace CustomerInterface
         public NSAMenuItem() { 
             componentChanges = new List<string>();
         }
+        //Clone constructor
+        public NSAMenuItem(NSAMenuItem a) {
+            id = a.id;
+            name = a.name;
+            price = a.price;
+            menuType = a.menuType;
+            components = a.components;
+            componentChanges = a.componentChanges;
+            image = a.image;
+            categoryID = a.categoryID;
+        }
         int id;
 
         public int Id
@@ -39,7 +50,7 @@ namespace CustomerInterface
             get { return menuType; }
             set { menuType = value; }
         }
-        List<NSAComponent> components;
+        protected List<NSAComponent> components = new List<NSAComponent>();
 
         internal List<NSAComponent> Components
         {
@@ -47,7 +58,7 @@ namespace CustomerInterface
             set { components = value; }
         }
 
-        List<string> componentChanges;
+        protected List<string> componentChanges = new List<string>();
 
         public List<string> ComponentChanges
         {
@@ -81,8 +92,8 @@ namespace CustomerInterface
             set { categoryID = value; }
         }
 
-        public void GenerateItem(NSAComponent[] components) { 
-        
+        public virtual void GenerateItem(NSAComponent[] components) { 
+            componentChanges = new List<string>();
         }
     }
 }

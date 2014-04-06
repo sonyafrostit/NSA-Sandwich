@@ -451,6 +451,7 @@
             this.OrderView.TabIndex = 8;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
+            this.OrderView.SelectedIndexChanged += new System.EventHandler(this.OrderView_SelectedIndexChanged);
             // 
             // ItemHeader
             // 
