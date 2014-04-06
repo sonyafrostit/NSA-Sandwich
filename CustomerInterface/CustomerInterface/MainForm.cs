@@ -59,7 +59,6 @@ namespace CustomerInterface
                     lvi.SubItems.Add(sb.ToString());
                     
                 }
-                Console.WriteLine("Cock");
                 OrderView.Items.Add(lvi);
             }
         }
@@ -180,6 +179,14 @@ namespace CustomerInterface
         private void button2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            foreach (int index in OrderView.SelectedIndices) {
+                currentOrder.Items.RemoveAt(index);
+            }
+            UpdateOrderView();
         }
 
     }

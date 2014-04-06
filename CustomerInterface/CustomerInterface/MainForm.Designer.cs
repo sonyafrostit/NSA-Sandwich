@@ -64,12 +64,12 @@
             this.RemoveButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.OrderView = new System.Windows.Forms.ListView();
+            this.ItemHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ChangesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.splitter4 = new System.Windows.Forms.Splitter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.ItemHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ChangesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -113,7 +113,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button4.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button4.Location = new System.Drawing.Point(3, 443);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(66, 65);
@@ -123,7 +123,7 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button5.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button5.Location = new System.Drawing.Point(3, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(66, 65);
@@ -387,7 +387,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Wingdings", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button2.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button2.Location = new System.Drawing.Point(4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(46, 65);
@@ -398,7 +398,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button3.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button3.Location = new System.Drawing.Point(3, 369);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(46, 65);
@@ -428,6 +428,7 @@
             this.RemoveButton.TabIndex = 10;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // button6
             // 
@@ -450,6 +451,16 @@
             this.OrderView.TabIndex = 8;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
+            // 
+            // ItemHeader
+            // 
+            this.ItemHeader.Text = "Item";
+            this.ItemHeader.Width = 84;
+            // 
+            // ChangesHeader
+            // 
+            this.ChangesHeader.Text = "Changes";
+            this.ChangesHeader.Width = 139;
             // 
             // splitter4
             // 
@@ -480,16 +491,6 @@
             // fontDialog1
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
-            // 
-            // ItemHeader
-            // 
-            this.ItemHeader.Text = "Item";
-            this.ItemHeader.Width = 84;
-            // 
-            // ChangesHeader
-            // 
-            this.ChangesHeader.Text = "Changes";
-            this.ChangesHeader.Width = 139;
             // 
             // KioskWindow
             // 

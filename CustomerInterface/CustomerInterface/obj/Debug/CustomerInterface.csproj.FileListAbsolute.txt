@@ -115,3 +115,7 @@ C:\Users\Bradford\Documents\NSA-Sandwich\CustomerInterface\CustomerInterface\obj
 C:\Users\Bradford\Documents\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\fr\CustomerInterface.resources.dll
 C:\Users\Bradford\Documents\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\de\CustomerInterface.resources.dll
 C:\Users\Bradford\Documents\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\es\CustomerInterface.resources.dll
+H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.resources
+H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.de.resources
+H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.es.resources
+H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.fr.resources
