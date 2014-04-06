@@ -9,7 +9,7 @@ using MySql.Data;
 using NSA;
 
 namespace NSA_Corporate_Application {
-    class CorporateData {
+    public class CorporateData {
         //Database object that we use to access the data in the database.
         private NSADatabase nsadb;  //Database connection object.
 
@@ -82,7 +82,7 @@ namespace NSA_Corporate_Application {
         } //Stores
 
         //Insert a new store
-        public void CorporateSaveStore(string StoreName, string StoreAddress, string StoreCity, string StoreState, string StoreZip) {
+        public bool CorporateSaveStore(string StoreName, string StoreAddress, string StoreCity, string StoreState, string StoreZip) {
             StringBuilder query = new StringBuilder();
 
             query.Append("INSERT INTO stores (name, address, city, state, zip) VALUES ('");
@@ -105,13 +105,17 @@ namespace NSA_Corporate_Application {
             //If DB connection is open attem to execute insert query.
             if (nsadb.Connected()) {
                 nsadb.ExecuteQuery(query.ToString());
+            } else {
+                return false;
             }
+
+            return true;
 
 
         }
 
         //Delete Store.
-        public void CorporateStore(string storeid) {
+        public bool DeleteCorporateStore(string storeid) {
             string query = "DELETE FROM stores WHERE storeid = '" + storeid + "';";
 
             // connect to DB if it is not connected
@@ -124,7 +128,11 @@ namespace NSA_Corporate_Application {
 
                 nsadb.ExecuteQuery(query);
 
+            } else {
+                return false;
             }
+
+            return true;
         } //CorporatDeleteManagerAccount
 
         // Gets Information for Manager Order Items List
@@ -336,7 +344,7 @@ namespace NSA_Corporate_Application {
         } //CorporateManagerAccountsData
 
         //Inserta a new manager into the database 
-        public void CorporateSaveManagerAccount(string firstname, string lastname, string employeeid, string password, string storeID) {
+        public bool CorporateSaveManagerAccount(string firstname, string lastname, string employeeid, string password, string storeID) {
             StringBuilder query = new StringBuilder();
             
             query.Append("INSERT INTO managers (storeid, firstname, lastname, employeeid, password, isassistant) VALUES ('");
@@ -359,12 +367,16 @@ namespace NSA_Corporate_Application {
             //If DB connection is open attem to execute insert query.
             if (nsadb.Connected()) {
                 nsadb.ExecuteQuery(query.ToString());
+            } else {
+                return false;
             }
+
+            return true;
 
         } //CorporateSaveManagerAccount
 
         //Delete Manager Account.
-        public void CorporatDeleteManagerAccount(string managerid) {
+        public bool CorporatDeleteManagerAccount(string managerid) {
             string query = "DELETE FROM managers WHERE managerid = '" + managerid + "';";
 
             // connect to DB if it is not connected
@@ -377,7 +389,11 @@ namespace NSA_Corporate_Application {
 
                 nsadb.ExecuteQuery(query);
 
+            } else {
+                return false;
             }
+
+            return true;
         } //CorporatDeleteManagerAccount
 
         //Get data for inventory window
