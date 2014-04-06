@@ -204,6 +204,12 @@
   <data name="ranch" xml:space="preserve">
     <value>Rancho</value>
   </data>
+  <data name="random" xml:space="preserve">
+    <value>Azar</value>
+  </data>
+  <data name="rye" xml:space="preserve">
+    <value>Centeno</value>
+  </data>
   <data name="salad" xml:space="preserve">
     <value>Ensalada</value>
   </data>
