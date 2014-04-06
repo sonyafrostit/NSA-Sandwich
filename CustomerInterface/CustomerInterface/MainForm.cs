@@ -56,7 +56,8 @@ namespace CustomerInterface
         }
         private void addItemToOrder(NSAMenuItem item) {
             item.GenerateItem(componentsList);
-            currentOrder.AddItem(item);
+
+            currentOrder.AddItem(new NSAMenuItem(item));
 
 
         }
@@ -66,15 +67,20 @@ namespace CustomerInterface
             for (int i = 0; i < currentOrder.Items.Count; i++) {
                 ListViewItem lvi = new ListViewItem(currentOrder.Items.ElementAt(i).Name);
                 totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
+                lvi.Tag = i; // Set to the index of the order item
+                OrderView.Items.Add(lvi);
                 if (currentOrder.Items.ElementAt(i).ComponentChanges.Count > 0) {
-                    StringBuilder sb = new StringBuilder();
+                    
                     foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
-                        sb.Append(c).Append("\n");
+                        ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
+                        changeItem.SubItems.Add(c);
+                        changeItem.Tag = i;
+                        OrderView.Items.Add(changeItem);
                     }
-                    lvi.SubItems.Add(sb.ToString());
+                    
                     
                 }
-                OrderView.Items.Add(lvi);
+                
             }
             OrderView.Items.Add(new ListViewItem("Total: " + totalPrice));
         }
@@ -207,10 +213,8 @@ namespace CustomerInterface
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            foreach (int index in OrderView.SelectedIndices) {
-                if (index < currentOrder.Items.Count) {
-                    currentOrder.Items.RemoveAt(index);
-                }
+            foreach (ListViewItem item in OrderView.SelectedItems) {
+                currentOrder.Items.RemoveAt((int)item.Tag);
             }
             UpdateOrderView();
         }
