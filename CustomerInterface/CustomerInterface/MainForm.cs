@@ -15,6 +15,8 @@ namespace CustomerInterface
 {
     public partial class KioskWindow : Form
     {
+        //needs to be taken from StartForm 
+        //(default is US if language not chosen in splash screen)
         CultureInfo ci;
         NSADatabase db;
         NSAMenuCategory[] menu;
@@ -150,15 +152,23 @@ namespace CustomerInterface
             Assembly a = Assembly.Load("CustomerInterface");
             ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
             selectLangText.Text = rm.GetString("selectLangText", ci);
-            KioskTabs.TabPages[0].Text = rm.GetString("menuTab", ci);
-            KioskTabs.TabPages[1].Text = rm.GetString("loyaltyTab", ci);
-            AccNumberTagLabel.Text = rm.GetString("accountNumber", ci);
-            nameLabel.Text = rm.GetString("name", ci);
-            emailLabel.Text = rm.GetString("email", ci);
+
             button1.Text = rm.GetString("finishOrderBut", ci);
             WelcomeLabel.Text = rm.GetString("welcome", ci);
             button6.Text = rm.GetString("customizeBut", ci);
             RemoveButton.Text = rm.GetString("removeBut", ci);
+            OrderView.Columns[0].Text = rm.GetString("itemCat", ci);
+            OrderView.Columns[1].Text = rm.GetString("changesCat", ci);
+
+            KioskTabs.TabPages[0].Text = rm.GetString("menuTab", ci);
+            KioskTabs.TabPages[1].Text = rm.GetString("loyaltyTab", ci);
+            KioskTabs.TabPages[2].Text = rm.GetString("languageTab", ci);
+
+            AccNumberTagLabel.Text = rm.GetString("accountNumber", ci);
+            nameLabel.Text = rm.GetString("name", ci);
+            emailLabel.Text = rm.GetString("email", ci);
+            pastOrdersLabel.Text = rm.GetString("pastOrders", ci);
+            favoriteItemsLabel.Text = rm.GetString("favoriteItems", ci);
         }
 
         private void enBtn_Click(object sender, EventArgs e)

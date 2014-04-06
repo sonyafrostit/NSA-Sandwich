@@ -207,11 +207,17 @@
   <data name="salt" xml:space="preserve">
     <value>Salz</value>
   </data>
+  <data name="sauerkraut" xml:space="preserve">
+    <value>Sauerkraut</value>
+  </data>
   <data name="spinach" xml:space="preserve">
     <value>Spinat</value>
   </data>
   <data name="steak" xml:space="preserve">
     <value>Steak</value>
+  </data>
+  <data name="swiss" xml:space="preserve">
+    <value>Schweizer</value>
   </data>
   <data name="tomato" xml:space="preserve">
     <value>Tomate</value>

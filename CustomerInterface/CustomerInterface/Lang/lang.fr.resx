@@ -177,4 +177,13 @@
   <data name="welcome" xml:space="preserve">
     <value>Bienvenue!</value>
   </data>
+  <data name="favoriteItems" xml:space="preserve">
+    <value>Articles favoris</value>
+  </data>
+  <data name="languageTab" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="pastOrders" xml:space="preserve">
+    <value>Les commandes passées</value>
+  </data>
 </root>
