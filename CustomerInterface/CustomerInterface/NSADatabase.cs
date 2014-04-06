@@ -254,6 +254,41 @@ namespace CustomerInterface
             return itemList.ToArray();
             
         }
+        public Dictionary<int, string> getCategories() {
+            Dictionary<int, string> categories = new Dictionary<int, string>();
+            MySqlDataReader componentCategoryReader = CustomQuery("SELECT categoryid, categoryname FROM componentcategories;");
+            if (componentCategoryReader != null)
+            {
+                while (componentCategoryReader.Read())
+                {
+                    categories.Add((int)componentCategoryReader["categoryid"], (string)componentCategoryReader["categoryname"]);
+                }
+            }
+            componentCategoryReader.Close();
+            return categories;
+        }
+        public NSAComponent[] getComponents()
+        {
+
+            Dictionary<int, string> categories = getCategories();
+            MySqlDataReader componentReader = CustomQuery("SELECT componentid, name, categoryid FROM components WHERE storeid = " + StoreNumber.ToString() + " and deleted = 0;");
+            List<NSAComponent> itemList = new List<NSAComponent>();
+            if (componentReader != null)
+            {
+                while (componentReader.Read())
+                {
+                    NSAComponent newcomponent = new NSAComponent();
+                    newcomponent.ComponentID = (int)componentReader["componentid"];
+                    newcomponent.Name = (string)componentReader["name"];
+                    newcomponent.Category = categories[(int)componentReader["categoryid"]];
+                    
+                    itemList.Add(newcomponent);
+                }
+            }
+            componentReader.Close();
+            return itemList.ToArray();
+
+        }
         public void createNewOrder() {
             CustomQuery("INSERT;");
 

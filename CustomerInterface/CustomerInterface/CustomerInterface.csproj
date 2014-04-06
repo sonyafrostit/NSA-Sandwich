@@ -102,6 +102,7 @@
     <Compile Include="NSALoyaltyAccount.cs" />
     <Compile Include="NSAMenuCategory.cs" />
     <Compile Include="NSAOrder.cs" />
+    <Compile Include="NSARandomItem.cs" />
     <Compile Include="NSASpecial.cs" />
     <Compile Include="NSAComponent.cs" />
     <Compile Include="NSAMenuItem.cs" />

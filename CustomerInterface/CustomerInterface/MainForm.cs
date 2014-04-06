@@ -19,11 +19,13 @@ namespace CustomerInterface
         NSADatabase db;
         NSAMenuCategory[] menu;
         NSAOrder currentOrder;
+        NSAComponent[] componentsList;
         public KioskWindow()
         {
             InitializeComponent();
             db = new NSADatabase();
             db.OpenConnection();
+            componentsList = db.getComponents();
             menu = db.getMenu();
             foreach (NSAMenuCategory category in menu) {
                 ListViewGroup LVG = new ListViewGroup(category.Name);
@@ -37,20 +39,31 @@ namespace CustomerInterface
                 }
                 menuListView.Groups.Add(LVG);
             }
+            ListViewGroup RandomGroup = new ListViewGroup("Random!");
+            ListViewItem randomItemLVI = new ListViewItem("Random Sandwich!", RandomGroup);
+            NSARandomItem randomItem = new NSARandomItem();
+            randomItem.CategoryID = 1;
+            randomItem.Price = 9.99;
+            randomItem.MenuType = "Random!";
+            randomItem.Name = "Random";
+            randomItemLVI.Tag = randomItem;
+            menuListView.Items.Add(randomItemLVI);
+            menuListView.Groups.Add(RandomGroup);
             currentOrder = new NSAOrder();
 
         }
         private void addItemToOrder(NSAMenuItem item) {
+            item.GenerateItem(componentsList);
             currentOrder.AddItem(item);
 
 
         }
         private void UpdateOrderView() {
             OrderView.Items.Clear();
-
+            Decimal totalPrice = 0;
             for (int i = 0; i < currentOrder.Items.Count; i++) {
                 ListViewItem lvi = new ListViewItem(currentOrder.Items.ElementAt(i).Name);
-                
+                totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
                 if (currentOrder.Items.ElementAt(i).ComponentChanges.Count > 0) {
                     StringBuilder sb = new StringBuilder();
                     foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
@@ -61,6 +74,7 @@ namespace CustomerInterface
                 }
                 OrderView.Items.Add(lvi);
             }
+            OrderView.Items.Add(new ListViewItem("Total: " + totalPrice));
         }
         private void removeItemFromOrder(NSAMenuItem item)
         { 
@@ -184,7 +198,9 @@ namespace CustomerInterface
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             foreach (int index in OrderView.SelectedIndices) {
-                currentOrder.Items.RemoveAt(index);
+                if (index < currentOrder.Items.Count) {
+                    currentOrder.Items.RemoveAt(index);
+                }
             }
             UpdateOrderView();
         }

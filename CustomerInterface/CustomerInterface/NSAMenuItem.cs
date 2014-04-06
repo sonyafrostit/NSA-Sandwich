@@ -39,9 +39,9 @@ namespace CustomerInterface
             get { return menuType; }
             set { menuType = value; }
         }
-        NSAComponent[] components;
+        List<NSAComponent> components;
 
-        internal NSAComponent[] Components
+        internal List<NSAComponent> Components
         {
             get { return components; }
             set { components = value; }
@@ -81,6 +81,8 @@ namespace CustomerInterface
             set { categoryID = value; }
         }
 
+        public void GenerateItem(NSAComponent[] components) { 
         
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomerInterface
 {
-    class NSAComponent
+    public class NSAComponent
     {
         int componentID;
 
