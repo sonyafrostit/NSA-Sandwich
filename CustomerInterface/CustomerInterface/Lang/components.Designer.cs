@@ -160,6 +160,15 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        internal static string custom {
+            get {
+                return ResourceManager.GetString("custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Egg.
         /// </summary>
         internal static string egg {

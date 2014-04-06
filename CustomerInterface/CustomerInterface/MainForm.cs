@@ -29,18 +29,29 @@ namespace CustomerInterface
             db.OpenConnection();
             componentsList = db.getComponents();
             menu = db.getMenu();
-            foreach (NSAMenuCategory category in menu) {
+            updateMenu();
+            currentOrder = new NSAOrder();
+        }
+
+        private void updateMenu()
+        {
+            ComponentParser cp = new ComponentParser(ci);
+            foreach (NSAMenuCategory category in menu)
+            {
                 ListViewGroup LVG = new ListViewGroup(category.Name);
-                foreach (NSAMenuItem item in category.Items) {
-                    if (item.CategoryID != category.Id) {
+                foreach (NSAMenuItem item in category.Items)
+                {
+                    if (item.CategoryID != category.Id)
+                    {
                         continue;
                     }
-                    ListViewItem newitem = new ListViewItem(item.Name, item.Image, LVG);
+                    ListViewItem newitem = new ListViewItem(cp.parseComponent(item.Name), item.Image, LVG);
                     newitem.Tag = item;
                     menuListView.Items.Add(newitem);
                 }
                 menuListView.Groups.Add(LVG);
             }
+
             ListViewGroup RandomGroup = new ListViewGroup("Random!");
             ListViewItem randomItemLVI = new ListViewItem("Random Sandwich!", RandomGroup);
             NSARandomItem randomItem = new NSARandomItem();
@@ -51,9 +62,13 @@ namespace CustomerInterface
             randomItemLVI.Tag = randomItem;
             menuListView.Items.Add(randomItemLVI);
             menuListView.Groups.Add(RandomGroup);
-            currentOrder = new NSAOrder();
-
         }
+
+        private void clearMenu()
+        {
+            menuListView.Items.Clear();
+        }
+
         private void addItemToOrder(NSAMenuItem item) {
             item.GenerateItem(componentsList);
 
@@ -175,6 +190,9 @@ namespace CustomerInterface
             emailLabel.Text = rm.GetString("email", ci);
             pastOrdersLabel.Text = rm.GetString("pastOrders", ci);
             favoriteItemsLabel.Text = rm.GetString("favoriteItems", ci);
+
+            clearMenu();
+            updateMenu();
         }
 
         private void enBtn_Click(object sender, EventArgs e)
