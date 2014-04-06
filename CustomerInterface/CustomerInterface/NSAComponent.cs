@@ -48,7 +48,9 @@ namespace CustomerInterface
             // Return true if the ids match:
             return (componentID == compare.componentID) && (componentID == compare.componentID);
         }
-
+        public override string ToString() {
+            return Name;
+        }
 
     }
 }

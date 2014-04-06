@@ -19,7 +19,7 @@ namespace CustomerInterface
         }
         NSAComponent[] customizeComponents;
         NSAMenuItem customizeItem;
-
+        NSAChanges changes;
         public NSAMenuItem CustomizeItem
         {
             get { return customizeItem; }
@@ -30,7 +30,7 @@ namespace CustomerInterface
             {
                 if (comp.Category != "Bread")
                 {
-                    OtherListBox.Items.Add(comp.Name, customizeItem.Components.Contains(comp));
+                    OtherListBox.Items.Add(comp, customizeItem.Components.Contains(comp));
                 }
                 else {
                     BreadList.Items.Add(new ListViewItem(comp.Name));
@@ -61,12 +61,43 @@ namespace CustomerInterface
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void OtherListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void BreadList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public NSAChanges getItem() {
+            Close();
+            return changes;
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            changes = new NSAChanges();
+            NSAMenuItem resultItem = new NSAMenuItem(customizeItem);
+            foreach (Object customComponent in OtherListBox.CheckedItems) {
+                //if (!customizeItem.Components.Contains((NSAComponent)customComponent)) {
+                    resultItem.Components.Add((NSAComponent)customComponent);
+                    List<string> changedCC = resultItem.ComponentChanges;
+                    changedCC.Add("+" + ((NSAComponent)customComponent).Name);
+                    resultItem.ComponentChanges = changedCC;
+                    
+                //}
+            }
+            changes.FinishedItem = resultItem;
+            Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

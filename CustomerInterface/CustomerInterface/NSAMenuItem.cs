@@ -107,7 +107,7 @@ namespace CustomerInterface
             }
 
             // Return true if the Ids match:
-            return (Id == p.Id);
+            return (Id == p.Id && components == p.components);
         }
         int categoryID;
 
@@ -119,6 +119,7 @@ namespace CustomerInterface
 
         public virtual void GenerateItem(NSAComponent[] components) { 
             componentChanges = new List<string>();
+            
         }
     }
 }

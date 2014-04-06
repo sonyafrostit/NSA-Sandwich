@@ -67,6 +67,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1046, 578);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button4
             // 
@@ -138,9 +139,11 @@
             this.BreadList.Size = new System.Drawing.Size(912, 139);
             this.BreadList.TabIndex = 1;
             this.BreadList.UseCompatibleStateImageBehavior = false;
+            this.BreadList.SelectedIndexChanged += new System.EventHandler(this.BreadList_SelectedIndexChanged);
             // 
             // OtherListBox
             // 
+            this.OtherListBox.CheckOnClick = true;
             this.OtherListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OtherListBox.FormattingEnabled = true;
             this.OtherListBox.Location = new System.Drawing.Point(65, 210);
@@ -158,6 +161,7 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Finish";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // CustomizeForm
             // 

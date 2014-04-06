@@ -98,6 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>components.fr.resx</DependentUpon>
     </Compile>
+    <Compile Include="NSAChanges.cs" />
     <Compile Include="NSADatabase.cs" />
     <Compile Include="NSALoyaltyAccount.cs" />
     <Compile Include="NSAMenuCategory.cs" />

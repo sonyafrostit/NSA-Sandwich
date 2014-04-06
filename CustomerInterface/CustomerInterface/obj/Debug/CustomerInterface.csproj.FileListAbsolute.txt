@@ -143,3 +143,4 @@ F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\de\CustomerInterface.resour
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\es\CustomerInterface.resources.dll
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache

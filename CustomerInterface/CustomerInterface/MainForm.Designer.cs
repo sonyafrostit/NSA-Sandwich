@@ -451,6 +451,7 @@
             this.OrderView.TabIndex = 8;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
+            this.OrderView.SelectedIndexChanged += new System.EventHandler(this.OrderView_SelectedIndexChanged);
             // 
             // ItemHeader
             // 
@@ -502,6 +503,7 @@
             this.Controls.Add(this.KioskTabs);
             this.Name = "KioskWindow";
             this.Text = "Customer Kiosk";
+            this.Activated += new System.EventHandler(this.KioskWindow_Activated);
             this.KioskTabs.ResumeLayout(false);
             this.MenuTab.ResumeLayout(false);
             this.LoyaltyTab.ResumeLayout(false);
