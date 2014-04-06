@@ -28,6 +28,12 @@ namespace NSA_Manager
             Initialize("localhost", "nsa-database", "root", "", 1);
         }
 
+        //Will attempt to open the connection.
+        public NSADatabase(string server, string dbname, string dbuser, string password) {
+            Initialize(server, dbname, dbuser, password, -1);
+            this.OpenConnection();
+        }
+
         //Constructor that specifies the connection other than the default 
         //Will attempt to open the connection.
         public NSADatabase(string server, string dbname, string dbuser, string password, int storenum)

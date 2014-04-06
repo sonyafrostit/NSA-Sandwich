@@ -971,7 +971,10 @@ namespace NSA_Manager
         private void GenerateReport()
         {
             //create instance of report object.
-            Reports rept = new Reports();
+            Reports rept = new Reports(ConfigurationSettings.DatabaseServer,
+                                       ConfigurationSettings.DatabaseName,
+                                       ConfigurationSettings.DatabaseUserName,
+                                       ConfigurationSettings.DatabasePassword);
 
             rept.AddStore(ConfigurationSettings.StoreNumber);
 

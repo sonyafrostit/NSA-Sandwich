@@ -844,7 +844,10 @@ namespace NSA_Manager
         private void GenerateReport()
         {
             //create instance of report object.
-            Reports rept = new Reports();
+            Reports rept = new Reports(ConfigurationSettings.DatabaseServer,
+                                       ConfigurationSettings.DatabaseName,
+                                       ConfigurationSettings.DatabaseUserName,
+                                       ConfigurationSettings.DatabasePassword);
 
             rept.AddStore(ConfigurationSettings.StoreNumber);
 
@@ -868,6 +871,10 @@ namespace NSA_Manager
         private void PrintReport_Button_Click(object sender, EventArgs e)
         {
             webReports.ShowPrintDialog();
+        }
+
+        private void Reports_Listbox_SelectedIndexChanged_1(object sender, EventArgs e) {
+            GenerateReport();
         } // PrintReport_Button_Click
     }
 }
