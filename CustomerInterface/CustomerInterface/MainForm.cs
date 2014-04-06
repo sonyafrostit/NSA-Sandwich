@@ -45,7 +45,7 @@ namespace CustomerInterface
                     {
                         continue;
                     }
-                    ListViewItem newitem = new ListViewItem(cp.parseComponent(item.Name), item.Image, LVG);
+                    ListViewItem newitem = new ListViewItem(cp.parseMenuItem(item.Name), item.Image, LVG);
                     newitem.Tag = item;
                     menuListView.Items.Add(newitem);
                 }
@@ -78,10 +78,11 @@ namespace CustomerInterface
 
         }
         private void UpdateOrderView() {
+            ComponentParser cp = new ComponentParser(ci);
             OrderView.Items.Clear();
             Decimal totalPrice = 0;
             for (int i = 0; i < currentOrder.Items.Count; i++) {
-                ListViewItem lvi = new ListViewItem(currentOrder.Items.ElementAt(i).Name);
+                ListViewItem lvi = new ListViewItem(cp.parseComponent(currentOrder.Items.ElementAt(i).Name));
                 totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
                 lvi.Tag = i; // Set to the index of the order item
                 OrderView.Items.Add(lvi);
@@ -89,7 +90,7 @@ namespace CustomerInterface
                     
                     foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
                         ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
-                        changeItem.SubItems.Add(c);
+                        changeItem.SubItems.Add(cp.parseComponent(c));
                         changeItem.Tag = i;
                         OrderView.Items.Add(changeItem);
                     }
@@ -199,6 +200,7 @@ namespace CustomerInterface
             pastOrdersLabel.Text = rm.GetString("pastOrders", ci);
             favoriteItemsLabel.Text = rm.GetString("favoriteItems", ci);
 
+            UpdateOrderView();
             clearMenu();
             updateMenu();
         }

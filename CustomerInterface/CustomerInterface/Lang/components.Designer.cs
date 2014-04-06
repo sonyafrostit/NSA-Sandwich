@@ -322,6 +322,24 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Random.
+        /// </summary>
+        internal static string random {
+            get {
+                return ResourceManager.GetString("random", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rye.
+        /// </summary>
+        internal static string rye {
+            get {
+                return ResourceManager.GetString("rye", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Salad.
         /// </summary>
         internal static string salad {

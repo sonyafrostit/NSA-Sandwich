@@ -59,6 +59,11 @@ namespace CustomerInterface
         private void startOrderBtn_Click(object sender, EventArgs e)
         {
             
+            
+        }
+
+        private void startOrderBtn_Click_1(object sender, EventArgs e)
+        {
             mainForm.Show();
             Hide();
         }

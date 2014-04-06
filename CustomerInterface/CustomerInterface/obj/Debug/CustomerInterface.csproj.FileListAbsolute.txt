@@ -120,14 +120,11 @@ H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.comp
 H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.es.resources
 H:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.fr.resources
 F:\NSA\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe.config
-F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
-F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
 F:\NSA\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.exe
 F:\NSA\CustomerInterface\CustomerInterface\bin\Debug\CustomerInterface.pdb
 F:\NSA\CustomerInterface\CustomerInterface\bin\Debug\fr\CustomerInterface.resources.dll
 F:\NSA\CustomerInterface\CustomerInterface\bin\Debug\de\CustomerInterface.resources.dll
 F:\NSA\CustomerInterface\CustomerInterface\bin\Debug\es\CustomerInterface.resources.dll
-F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CustomizeForm.resources
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.lang.resources
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Lang.components.resources
@@ -144,3 +141,5 @@ F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csproj.Ge
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\fr\CustomerInterface.resources.dll
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\de\CustomerInterface.resources.dll
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\es\CustomerInterface.resources.dll
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb

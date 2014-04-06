@@ -106,7 +106,7 @@
             this.startOrderBtn.TabIndex = 14;
             this.startOrderBtn.Text = "Start Order";
             this.startOrderBtn.UseVisualStyleBackColor = true;
-            this.startOrderBtn.Click += new System.EventHandler(this.startOrderBtn_Click);
+            this.startOrderBtn.Click += new System.EventHandler(this.startOrderBtn_Click_1);
             // 
             // createLoyaltyBtn
             // 

@@ -39,7 +39,7 @@ namespace CustomerInterface
             }
             reader.Close();
             foreach (NSAComponent comp in allComponents) {
-                //Console.WriteLine(comp.ComponentID);
+                Console.WriteLine(comp.ComponentID);
                 if (compIDs.Contains(comp.ComponentID)) {
                     components.Add(comp);
                 }

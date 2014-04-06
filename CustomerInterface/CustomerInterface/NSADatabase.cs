@@ -203,7 +203,6 @@ namespace CustomerInterface
                     {
                         mysqlreader.Close();
                     }
-                    Console.WriteLine(query);
                     throw;
                 }
 

@@ -18,18 +18,34 @@ namespace CustomerInterface
             ci = c;
         }
 
+        public string parseMenuItem(string name)
+        {
+            string translatedWord;                
+
+            Assembly a = Assembly.Load("CustomerInterface");
+            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.components", a);
+            translatedWord = rm.GetString(name.ToLower(), ci);
+
+            if(String.IsNullOrEmpty(translatedWord))
+                return name;
+
+            return translatedWord;
+        }
+
         public string parseComponent(string component)
         {
+            string splitComponent = component.Substring(1);
+
             string translatedWord;
 
             Assembly a = Assembly.Load("CustomerInterface");
             ResourceManager rm = new ResourceManager("CustomerInterface.Lang.components", a);
-            translatedWord = rm.GetString(component.ToLower(), ci);
+            translatedWord = rm.GetString(splitComponent.ToLower(), ci);
 
             if(String.IsNullOrEmpty(translatedWord))
                 return component;
 
-            return translatedWord;
+            return "+" + translatedWord;
         }
     }
 }
