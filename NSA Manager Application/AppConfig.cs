@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace NSA_Manager
 {
-    class AppConfig
+    public class AppConfig
     {
 
         //Constants used in reading the XML Config file

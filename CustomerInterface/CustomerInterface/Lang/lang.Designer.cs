@@ -106,6 +106,15 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favorite Items.
+        /// </summary>
+        internal static string favoriteItems {
+            get {
+                return ResourceManager.GetString("favoriteItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish Order.
         /// </summary>
         internal static string finishOrderBut {
@@ -120,6 +129,15 @@ namespace CustomerInterface.Lang {
         internal static string itemCat {
             get {
                 return ResourceManager.GetString("itemCat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string languageTab {
+            get {
+                return ResourceManager.GetString("languageTab", resourceCulture);
             }
         }
         
@@ -174,6 +192,15 @@ namespace CustomerInterface.Lang {
         internal static string orderTotal {
             get {
                 return ResourceManager.GetString("orderTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Past Orders.
+        /// </summary>
+        internal static string pastOrders {
+            get {
+                return ResourceManager.GetString("pastOrders", resourceCulture);
             }
         }
         

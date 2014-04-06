@@ -226,7 +226,7 @@ namespace NSA_Corporate_Application
 
                 if (!string.IsNullOrWhiteSpace(storeid)) {
                     // Update the database to mark selected order Refunded and clear Manager Accounts List
-                    CorpData.CorporateStore(storeid);
+                    CorpData.DeleteCorporateStore(storeid);
 
                     LoadStoresLong(Stores_List);
                     // Inform User that Account was successfully Deleted.
@@ -623,7 +623,10 @@ namespace NSA_Corporate_Application
 
         private void LoadReports(ListBox reportslist) {
             //create instance of report object.
-            Reports rept = new Reports();
+            Reports rept = new Reports(ConfigurationSettings.DatabaseServer, 
+                                       ConfigurationSettings.DatabaseName, 
+                                       ConfigurationSettings.DatabaseUserName, 
+                                       ConfigurationSettings.DatabasePassword);
 
             //loop over number reports.
             for (int i = 0; i < rept.NumberReportsAvalaible(); i++) {
@@ -636,7 +639,10 @@ namespace NSA_Corporate_Application
 
         private void GenerateReport() {
             //create instance of report object.
-            Reports rept = new Reports();
+            Reports rept = new Reports(ConfigurationSettings.DatabaseServer,
+                                       ConfigurationSettings.DatabaseName,
+                                       ConfigurationSettings.DatabaseUserName,
+                                       ConfigurationSettings.DatabasePassword);
 
             //Add the stores to the report generator
             for (int i = 0; i < Reports_Stores.SelectedIndices.Count; ++i) {

@@ -2,7 +2,7 @@
 //Module Name:  Reports.cs
 //Project:      NSA Applications - Reports Object
 //Developer:    Trae Watkins
-//Last Changes: 3/22/2014 - Trae Watkins
+//Last Changes: 4/6/2014 - Trae Watkins
 //
 //     This is a Report generation class for our project for CSCE4444
 //
@@ -24,6 +24,10 @@
 //          NumberStores() - Shows the number of stores added.
 //          GenerateReport (ReportID) - generates and returns the report 
 //              with ID ReportID. A store must have been added.
+//
+//      2014/03/31  Changed the namespace to NSA
+//
+//      2014/04/06  fixed a bug with only loading from local host.
 //          
 ///////////////////////////////////////////////////////////////////////////////
 using System;
@@ -36,7 +40,10 @@ using MySql.Data.MySqlClient;
 using MySql.Data;
 
 namespace NSA_Manager {
-    class Reports {
+    public class Reports {
+
+        //Database object that we use to access the data in the database.
+        private NSADatabase nsadb;  //Database connection object.
 
         //Ids of the various reports avaliable
         public enum ReportIDs {
@@ -56,7 +63,13 @@ namespace NSA_Manager {
         public Reports() {
             //create instance of the list of stores 
             Stores = new List<int>();
+        }
 
+        //Constructor that specifies the connection other than the default 
+        //Will attempt to open the connection.
+        public Reports(string server, string dbname, string dbuser, string password) {
+            Stores = new List<int>();
+            nsadb = new NSADatabase(server, dbname, dbuser, password);
         }
 
         //Constructor that will initialize the Class ith the station ID passed in
@@ -158,7 +171,7 @@ namespace NSA_Manager {
             ByWeekQuery.Append("STR_TO_DATE(CONCAT(CONCAT( DATE_FORMAT(O.timeplaced,'%Y'), ");
             ByWeekQuery.Append("weekofyear(O.timeplaced) ),' Monday'), '%X%V %W') as WeekDate, ");
             ByWeekQuery.Append("sum(O.total) as Sales, sum(O.tax) as SalesTax, count(orderid) as Orders, refunded ");
-            ByWeekQuery.Append("FROM Orders O WHERE O.refunded = 0 AND storeid IN (");
+            ByWeekQuery.Append("FROM orders O WHERE O.refunded = 0 AND storeid IN (");
 
             //loop over all the stations in the list execpt for the last one adding them 
             //to the set of numbers for the in clause
@@ -177,11 +190,12 @@ namespace NSA_Manager {
             //StringBuilder object.
             StringBuilder ByWeekReport = new StringBuilder();
 
-            //Create and Open the Database Connection.
-            NSADatabase DBConnection = new NSADatabase("localhost","nsa-database","root","",1);
+            if (!nsadb.Connected()) {
+                nsadb.OpenConnection();
+            }
      
             //Create Data reader object using the built query with the database object.
-            MySqlDataReader ByWeekData = DBConnection.CustomQuery(ByWeekQuery.ToString());
+            MySqlDataReader ByWeekData = nsadb.CustomQuery(ByWeekQuery.ToString());
 
             //Append the top portion of the report again done in multiple appends for readability.
             ByWeekReport.Append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"><html><head><title>NSASALES - By Week</title></head>");
@@ -221,7 +235,7 @@ namespace NSA_Manager {
             ByWeekData.Close();
 
             //Close the connection
-            DBConnection.CloseConnection();
+            nsadb.CloseConnection();
 
             //return the built report to the calling function.
             return ByWeekReport.ToString();
@@ -246,7 +260,7 @@ namespace NSA_Manager {
             //for readability the query is built via multiple appends rather than a single one.
             ByMonthQuery.Append("SELECT storeid, month(O.timeplaced) as Month, ");
             ByMonthQuery.Append("sum(O.total) as Sales, count(orderid) as Orders, refunded ");
-            ByMonthQuery.Append("FROM Orders O WHERE O.refunded = 0 AND storeid IN (");
+            ByMonthQuery.Append("FROM orders O WHERE O.refunded = 0 AND storeid IN (");
 
             //loop over all the stations in the list execpt for the last one adding them 
             //to the set of numbers for the in clause
@@ -265,11 +279,12 @@ namespace NSA_Manager {
             //StringBuilder object.
             StringBuilder ByMonthReport = new StringBuilder();
 
-            //Create and Open the Database Connection.
-            NSADatabase DBConnection = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            if (!nsadb.Connected()) {
+                nsadb.OpenConnection();
+            }
 
             //Create Data reader object using the built query with the database object.
-            MySqlDataReader ByMonthData = DBConnection.CustomQuery(ByMonthQuery.ToString());
+            MySqlDataReader ByMonthData = nsadb.CustomQuery(ByMonthQuery.ToString());
 
             //Append the top portion of the report again done in multiple appends for readability.
             ByMonthReport.Append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"><html><head><title>NSASALES - By Month</title></head>");
@@ -307,7 +322,7 @@ namespace NSA_Manager {
             ByMonthData.Close();
 
             //Close the connection
-            DBConnection.CloseConnection();
+            nsadb.CloseConnection();
 
             //return the built report to the calling function.
             return ByMonthReport.ToString();
@@ -333,7 +348,7 @@ namespace NSA_Manager {
             ByDayQuery.Append("SELECT storeid, month(O.timeplaced) as Month, day(O.timeplaced) as Day, ");
             ByDayQuery.Append("WEEKDAY(O.timeplaced) as DayOfWeek, DATE_FORMAT(O.timeplaced, '%m/%d/%Y') as Date, ");
             ByDayQuery.Append("sum(O.total) as Sales, count(orderid) as Orders, refunded ");
-            ByDayQuery.Append("FROM Orders O WHERE O.refunded = 0 AND storeid IN (");
+            ByDayQuery.Append("FROM orders O WHERE O.refunded = 0 AND storeid IN (");
 
             //loop over all the stations in the list execpt for the last one adding them 
             //to the set of numbers for the in clause
@@ -352,11 +367,12 @@ namespace NSA_Manager {
             //StringBuilder object.
             StringBuilder ByDayReport = new StringBuilder();
 
-            //Create and Open the Database Connection.
-            NSADatabase DBConnection = new NSADatabase("localhost", "nsa-database", "root", "", 1);
+            if (!nsadb.Connected()) {
+                nsadb.OpenConnection();
+            }
 
             //Create Data reader object using the built query with the database object.
-            MySqlDataReader ByDayData = DBConnection.CustomQuery(ByDayQuery.ToString());
+            MySqlDataReader ByDayData = nsadb.CustomQuery(ByDayQuery.ToString());
 
             //Append the top portion of the report again done in multiple appends for readability.
             ByDayReport.Append("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"><html><head><title>NSASALES - By Day</title></head>");
@@ -396,7 +412,7 @@ namespace NSA_Manager {
             ByDayData.Close();
 
             //Close the connection
-            DBConnection.CloseConnection();
+            nsadb.CloseConnection();
 
             //return the built report to the calling function.
             return ByDayReport.ToString();
