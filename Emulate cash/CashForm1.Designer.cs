@@ -1,6 +1,6 @@
 ﻿namespace emulate_cashPayment
 {
-    partial class Form1
+    partial class CashForm1
     {
         /// <summary>
         /// Required designer variable.

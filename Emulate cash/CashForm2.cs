@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace emulate_cashPayment
 {
-    public partial class Form2 : Form
+    public partial class CashForm2 : Form
     {
-        public Form2()
+        public CashForm2()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f1= new Form1();
+            CashForm1 f1= new CashForm1();
             f1.passValueOntoForms1 = textBox1.Text;
             f1.passValueOntoForms2 = textBox2.Text;
             double result1 = Convert.ToDouble(textBox1.Text) ;

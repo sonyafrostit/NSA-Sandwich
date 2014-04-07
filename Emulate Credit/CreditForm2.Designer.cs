@@ -1,6 +1,6 @@
 ﻿namespace emulate_credit
 {
-    partial class Form2
+    partial class CreditForm2
     {
         /// <summary>
         /// Required designer variable.

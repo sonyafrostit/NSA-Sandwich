@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace emulate_credit
 {
-    public partial class Form2 : Form
+    public partial class CreditForm2 : Form
     {
         private string creditcardnum;
 
@@ -19,7 +19,7 @@ namespace emulate_credit
             get { return creditcardnum; }
             set { creditcardnum = value; }
         }
-        public Form2()
+        public CreditForm2()
         {
             InitializeComponent();
         }
