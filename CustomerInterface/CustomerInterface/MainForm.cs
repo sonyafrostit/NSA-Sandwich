@@ -18,6 +18,8 @@ namespace CustomerInterface
         //needs to be taken from StartForm 
         //(default is US if language not chosen in splash screen)
         CultureInfo ci;
+        Assembly a;
+        ResourceManager rm;
         NSADatabase db;
         NSAMenuCategory[] menu;
         NSAOrder currentOrder;
@@ -26,11 +28,15 @@ namespace CustomerInterface
         public KioskWindow(CultureInfo language)
         {
             ci = language;
+            a = Assembly.Load("CustomerInterface");
+            rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+
             InitializeComponent();
             db = new NSADatabase();
             db.OpenConnection();
             componentsList = db.getComponents();
             menu = db.getMenu();
+
             updateMenu();
             currentOrder = new NSAOrder();
             setLang(ci);
@@ -38,24 +44,24 @@ namespace CustomerInterface
 
         private void updateMenu()
         {
-            ComponentParser cp = new ComponentParser(ci);
+            DataParser dataParser = new DataParser(ci);
             foreach (NSAMenuCategory category in menu)
             {
-                ListViewGroup LVG = new ListViewGroup(category.Name);
+                ListViewGroup LVG = new ListViewGroup(dataParser.parseCategory(category.Name));
                 foreach (NSAMenuItem item in category.Items)
                 {
                     if (item.CategoryID != category.Id)
                     {
                         continue;
                     }
-                    ListViewItem newitem = new ListViewItem(cp.parseMenuItem(item.Name), item.Image, LVG);
+                    ListViewItem newitem = new ListViewItem(dataParser.parseMenuItem(item.Name), item.Image, LVG);
                     newitem.Tag = item;
                     menuListView.Items.Add(newitem);
                 }
                 menuListView.Groups.Add(LVG);
             }
 
-            ListViewGroup RandomGroup = new ListViewGroup("Random!");
+            ListViewGroup RandomGroup = new ListViewGroup(dataParser.parseCategory("Random"));
             ListViewItem randomItemLVI = new ListViewItem("Random Sandwich!", RandomGroup);
             NSARandomItem randomItem = new NSARandomItem();
             randomItem.CategoryID = 1;
@@ -65,6 +71,9 @@ namespace CustomerInterface
             randomItemLVI.Tag = randomItem;
             menuListView.Items.Add(randomItemLVI);
             menuListView.Groups.Add(RandomGroup);
+
+            rm.GetString("accountNumber", ci);
+            rm.GetString("accountNumber", ci);
         }
 
         private void clearMenu()
@@ -81,7 +90,7 @@ namespace CustomerInterface
 
         }
         private void UpdateOrderView() {
-            ComponentParser cp = new ComponentParser(ci);
+            DataParser cp = new DataParser(ci);
             OrderView.Items.Clear();
             Decimal totalPrice = 0;
             for (int i = 0; i < currentOrder.Items.Count; i++) {
@@ -184,8 +193,6 @@ namespace CustomerInterface
 
         public void setLang(CultureInfo ci)
         {
-            Assembly a = Assembly.Load("CustomerInterface");
-            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
             selectLangText.Text = rm.GetString("selectLangText", ci);
 
             button1.Text = rm.GetString("finishOrderBut", ci);

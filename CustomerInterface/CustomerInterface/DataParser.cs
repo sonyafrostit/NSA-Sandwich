@@ -9,13 +9,27 @@ using System.Globalization;
 
 namespace CustomerInterface
 {
-    class ComponentParser
+    class DataParser
     {
         private CultureInfo ci;
 
-        public ComponentParser(CultureInfo c)
+        public DataParser(CultureInfo c)
         {
             ci = c;
+        }
+
+        public string parseCategory(string name)
+        {
+            string translatedWord;
+
+            Assembly a = Assembly.Load("CustomerInterface");
+            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+            translatedWord = rm.GetString(name.ToLower(), ci);
+
+            if (String.IsNullOrEmpty(translatedWord))
+                return name;
+
+            return translatedWord;
         }
 
         public string parseMenuItem(string name)

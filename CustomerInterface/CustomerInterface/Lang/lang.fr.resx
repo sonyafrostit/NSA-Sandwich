@@ -186,4 +186,10 @@
   <data name="pastOrders" xml:space="preserve">
     <value>Les commandes passées</value>
   </data>
+  <data name="random" xml:space="preserve">
+    <value>Aléatoire</value>
+  </data>
+  <data name="sandwich" xml:space="preserve">
+    <value>Sandwich</value>
+  </data>
 </root>
