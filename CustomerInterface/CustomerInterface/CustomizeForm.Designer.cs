@@ -30,16 +30,16 @@
         {
             this.CancelButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BreadPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.BreadList = new System.Windows.Forms.ListView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.OtherListBox = new System.Windows.Forms.CheckedListBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.BreadPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.BreadPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,26 +68,17 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button4
+            // BreadPanel
             // 
-            this.button4.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button4.Location = new System.Drawing.Point(7, 506);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 68);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "q";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button3.Location = new System.Drawing.Point(7, 210);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 68);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "p";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BreadPanel.Controls.Add(this.button2);
+            this.BreadPanel.Controls.Add(this.button1);
+            this.BreadPanel.Controls.Add(this.BreadList);
+            this.BreadPanel.Controls.Add(this.label2);
+            this.BreadPanel.Location = new System.Drawing.Point(10, 8);
+            this.BreadPanel.Name = "BreadPanel";
+            this.BreadPanel.Size = new System.Drawing.Size(1036, 172);
+            this.BreadPanel.TabIndex = 8;
+            this.BreadPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BreadPanel_Paint);
             // 
             // button2
             // 
@@ -109,6 +100,17 @@
             this.button1.Text = "u";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // BreadList
+            // 
+            this.BreadList.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.BreadList.HideSelection = false;
+            this.BreadList.Location = new System.Drawing.Point(58, 34);
+            this.BreadList.Name = "BreadList";
+            this.BreadList.Size = new System.Drawing.Size(912, 139);
+            this.BreadList.TabIndex = 1;
+            this.BreadList.UseCompatibleStateImageBehavior = false;
+            this.BreadList.SelectedIndexChanged += new System.EventHandler(this.BreadList_SelectedIndexChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -118,6 +120,27 @@
             this.label2.Size = new System.Drawing.Size(65, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Bread:";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button4.Location = new System.Drawing.Point(7, 506);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(55, 68);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "q";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button3.Location = new System.Drawing.Point(7, 210);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(55, 68);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "p";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -129,16 +152,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Other:";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // BreadList
-            // 
-            this.BreadList.Alignment = System.Windows.Forms.ListViewAlignment.Default;
-            this.BreadList.Location = new System.Drawing.Point(58, 34);
-            this.BreadList.Name = "BreadList";
-            this.BreadList.Size = new System.Drawing.Size(912, 139);
-            this.BreadList.TabIndex = 1;
-            this.BreadList.UseCompatibleStateImageBehavior = false;
-            this.BreadList.SelectedIndexChanged += new System.EventHandler(this.BreadList_SelectedIndexChanged);
             // 
             // OtherListBox
             // 
@@ -161,18 +174,6 @@
             this.button5.Text = "Finish";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // BreadPanel
-            // 
-            this.BreadPanel.Controls.Add(this.button2);
-            this.BreadPanel.Controls.Add(this.button1);
-            this.BreadPanel.Controls.Add(this.BreadList);
-            this.BreadPanel.Controls.Add(this.label2);
-            this.BreadPanel.Location = new System.Drawing.Point(10, 8);
-            this.BreadPanel.Name = "BreadPanel";
-            this.BreadPanel.Size = new System.Drawing.Size(1036, 172);
-            this.BreadPanel.TabIndex = 8;
-            this.BreadPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BreadPanel_Paint);
             // 
             // CustomizeForm
             // 
