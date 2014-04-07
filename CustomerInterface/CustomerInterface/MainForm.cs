@@ -69,13 +69,13 @@ namespace CustomerInterface
         }
 
         //constructor called when logging in with a previous loyalty account
-        public KioskWindow(CultureInfo language, string accountNumber)
+        public KioskWindow(CultureInfo language, List<string>[] accountNumber)
         {
             ci = language;
             a = Assembly.Load("CustomerInterface");
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
-            account = new NSALoyaltyAccount(accountNumber);
+            //account = new NSALoyaltyAccount(accountNumber);
             setAccountTab();
 
             InitializeComponent();

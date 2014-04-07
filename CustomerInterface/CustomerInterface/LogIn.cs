@@ -15,6 +15,7 @@ namespace CustomerInterface
     {
         private CultureInfo ci;
         private string accountNumber;
+        private NSADatabase db;
 
         public LogInForm(CultureInfo language)
         {
@@ -32,10 +33,25 @@ namespace CustomerInterface
             if (String.IsNullOrEmpty(accountNumber))
                 errorLabel.Text = "Enter your account number!";
 
+            int recordCount = 0;        //the number of orders to display
+            //List<string>[] loyaltyData;   //the orders that will be displayed
+            
+           //connect to DB if it is not connected
+            if (!db.Connected())
+            {
+                 db.OpenConnection();
+            }
+
+                // Get the loyalty account data from the database
+            //recordCount = db.ManagerGetLoyaltyAccount(out Loyaltydata, accountNumber);
+
+            if(recordCount == 0)
+                errorLabel.Text = "Localty account not found!";
+
             else
             {
-                KioskWindow mainForm = new KioskWindow(ci, accountNumber);
-                mainForm.Show();
+                //KioskWindow mainForm = new KioskWindow(ci, loyaltyData);
+                //mainForm.Show();
                 Hide();
             }
         }

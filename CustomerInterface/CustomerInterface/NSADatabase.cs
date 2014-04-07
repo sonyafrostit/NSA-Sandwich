@@ -358,5 +358,51 @@ namespace CustomerInterface
             return "FAIL";
         }
 
+        public int getLoyaltyAccountName(out List<string>[] loyaltyaccounts, string accountNumber)
+        {
+            loyaltyaccounts = new List<string>[3];
+            loyaltyaccounts[0] = new List<string>();
+            loyaltyaccounts[1] = new List<string>();
+            loyaltyaccounts[2] = new List<string>();
+
+            string query = "SELECT name, emailaddress, rewardscount FROM loyaltyaccounts WHERE storeid = " + StoreNumber.ToString() +
+                        " and loyaltyid = " + accountNumber.ToString() + " ORDER BY loyaltyid";
+
+            //If DB connection is open attem to get data.
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (mysqlreader.Read())
+                {
+                    loyaltyaccounts[0].Add(mysqlreader["name"] + "");
+                    loyaltyaccounts[1].Add(mysqlreader["emailaddress"] + "");
+                    loyaltyaccounts[2].Add(mysqlreader["rewardscount"] + "");
+
+                    //increment the record count 
+                    RecordCount++;
+                }
+
+                //close Data Reader
+
+                mysqlreader.Close();
+
+                //return number of records found.
+                return RecordCount;
+
+            }
+            else
+            {
+                //if the DB is not open then no records can be read.
+                return -1;
+            }
+        }
+
     } //class DatabaseConnection
 }
