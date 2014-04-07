@@ -21,3 +21,13 @@ C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corpor
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSAConfig.xml
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.exe
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.pdb
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.exe.config
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.exe
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.pdb
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSAConfig.xml
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.exe
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.pdb
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.csprojResolveAssemblyReference.cache
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA_Corporate_Application.CorporateUI.resources
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA_Corporate_Application.Properties.Resources.resources
+C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.csproj.GenerateResource.Cache
