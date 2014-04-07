@@ -301,7 +301,7 @@ namespace CustomerInterface
             return (Connection.State == System.Data.ConnectionState.Open);
         }
 
-        public long createLoyaltyAccount(string accountname, string emailaddress)
+        public string createLoyaltyAccount(string accountname, string emailaddress)
         {
             List<String> loyaltyaccounts;
 
@@ -330,6 +330,9 @@ namespace CustomerInterface
                     RecordCount++;
                 }
 
+                string storeNumber = StoreNumber.ToString("D4");
+                string recordNumber = RecordCount.ToString("D8");
+          
                 //close Data Reader
                 mysqlreader.Close();
 
@@ -350,9 +353,9 @@ namespace CustomerInterface
 
                 //Create a MySQL reader and Execute the query
                 cmd.ExecuteNonQuery();
-                return cmd.LastInsertedId;
+                return String.Concat(storeNumber, recordNumber);
             }
-            return 0;
+            return "FAIL";
         }
 
     } //class DatabaseConnection

@@ -27,6 +27,7 @@ namespace CustomerInterface
         private NSAOrder currentOrder;
         private NSAComponent[] componentsList;
         private CustomizeForm customizeItemForm;
+        private NSALoyaltyAccount account;
 
         public KioskWindow(CultureInfo language)
         {
@@ -45,14 +46,16 @@ namespace CustomerInterface
             setLang(ci);
         }
 
-        public KioskWindow(CultureInfo language, long lastDBID)
+        public KioskWindow(CultureInfo language, string accountNumber, string name, string email)
         {
             ci = language;
             a = Assembly.Load("CustomerInterface");
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
+            account = new NSALoyaltyAccount(accountNumber, name, email);
+            setAccountTab();
+
             InitializeComponent();
-            lastID = lastDBID;
             db = new NSADatabase();
             db.OpenConnection();
             componentsList = db.getComponents();
@@ -61,6 +64,13 @@ namespace CustomerInterface
             updateMenu();
             currentOrder = new NSAOrder();
             setLang(ci);
+        }
+
+        private void setAccountTab()
+        {
+            nameTextBox.Text = account.getName();
+            emailTextBox.Text = account.getEmail();
+            accountNumberLabel.Text = account.getAccountNumber();
         }
 
         private void updateMenu()

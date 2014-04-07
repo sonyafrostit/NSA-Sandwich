@@ -44,12 +44,12 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.favoriteItemsLabel = new System.Windows.Forms.Label();
             this.splitter3 = new System.Windows.Forms.Splitter();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
-            this.AccNumberLaber = new System.Windows.Forms.Label();
+            this.accountNumberLabel = new System.Windows.Forms.Label();
             this.AccNumberTagLabel = new System.Windows.Forms.Label();
             this.LanguageTab = new System.Windows.Forms.TabPage();
             this.selectLangText = new System.Windows.Forms.Label();
@@ -144,12 +144,12 @@
             // 
             this.LoyaltyTab.Controls.Add(this.panel1);
             this.LoyaltyTab.Controls.Add(this.panel2);
-            this.LoyaltyTab.Controls.Add(this.textBox2);
+            this.LoyaltyTab.Controls.Add(this.emailTextBox);
             this.LoyaltyTab.Controls.Add(this.nameLabel);
-            this.LoyaltyTab.Controls.Add(this.textBox1);
+            this.LoyaltyTab.Controls.Add(this.nameTextBox);
             this.LoyaltyTab.Controls.Add(this.label2);
             this.LoyaltyTab.Controls.Add(this.emailLabel);
-            this.LoyaltyTab.Controls.Add(this.AccNumberLaber);
+            this.LoyaltyTab.Controls.Add(this.accountNumberLabel);
             this.LoyaltyTab.Controls.Add(this.AccNumberTagLabel);
             this.LoyaltyTab.Location = new System.Drawing.Point(4, 22);
             this.LoyaltyTab.Name = "LoyaltyTab";
@@ -241,12 +241,12 @@
             this.splitter3.TabIndex = 0;
             this.splitter3.TabStop = false;
             // 
-            // textBox2
+            // emailTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(414, 33);
-            this.textBox2.TabIndex = 7;
+            this.emailTextBox.Location = new System.Drawing.Point(115, 85);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(414, 33);
+            this.emailTextBox.TabIndex = 7;
             // 
             // nameLabel
             // 
@@ -257,13 +257,13 @@
             this.nameLabel.TabIndex = 6;
             this.nameLabel.Text = "Name:";
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(414, 33);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.nameTextBox.Location = new System.Drawing.Point(115, 44);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(414, 33);
+            this.nameTextBox.TabIndex = 5;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -284,15 +284,14 @@
             this.emailLabel.TabIndex = 2;
             this.emailLabel.Text = "Email:";
             // 
-            // AccNumberLaber
+            // accountNumberLabel
             // 
-            this.AccNumberLaber.AutoSize = true;
-            this.AccNumberLaber.Location = new System.Drawing.Point(184, 11);
-            this.AccNumberLaber.Name = "AccNumberLaber";
-            this.AccNumberLaber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AccNumberLaber.Size = new System.Drawing.Size(133, 25);
-            this.AccNumberLaber.TabIndex = 1;
-            this.AccNumberLaber.Text = "29038470298";
+            this.accountNumberLabel.AutoSize = true;
+            this.accountNumberLabel.Location = new System.Drawing.Point(184, 11);
+            this.accountNumberLabel.Name = "accountNumberLabel";
+            this.accountNumberLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.accountNumberLabel.Size = new System.Drawing.Size(0, 25);
+            this.accountNumberLabel.TabIndex = 1;
             // 
             // AccNumberTagLabel
             // 
@@ -530,10 +529,10 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TabPage LoyaltyTab;
         private System.Windows.Forms.Label AccNumberTagLabel;
-        private System.Windows.Forms.Label AccNumberLaber;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label accountNumberLabel;
+        private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Panel panel1;

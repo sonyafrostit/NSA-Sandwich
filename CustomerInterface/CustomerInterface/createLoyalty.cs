@@ -47,9 +47,9 @@ namespace CustomerInterface
                     }
 
                     // Get the loyalty account data from the database
-                    long lastID = db.createLoyaltyAccount(name, email);
+                    string lastID = db.createLoyaltyAccount(name, email);
 
-                    KioskWindow form = new KioskWindow(ci, lastID);
+                    KioskWindow form = new KioskWindow(ci, lastID, name, email);
                     form.Show();
                     Hide();
                 }
