@@ -15,20 +15,21 @@ namespace CustomerInterface
 {
     public partial class KioskWindow : Form
     {
-        //needs to be taken from StartForm 
+        //CultureInfo stores the lanuage
         //(default is US if language not chosen in splash screen)
         private CultureInfo ci;
         private Assembly a;
         private ResourceManager rm;
 
+        //db will connect to the databse
         private NSADatabase db;
-        private long lastID;
         private NSAMenuCategory[] menu;
         private NSAOrder currentOrder;
         private NSAComponent[] componentsList;
         private CustomizeForm customizeItemForm;
         private NSALoyaltyAccount account;
 
+        //constructor called when logging in as guest
         public KioskWindow(CultureInfo language)
         {
             ci = language;
@@ -46,7 +47,29 @@ namespace CustomerInterface
             setLang(ci);
         }
 
+        //constructor called when logging in AFTER creating loyalty account
         public KioskWindow(CultureInfo language, string accountNumber, string name, string email)
+        {
+            ci = language;
+            a = Assembly.Load("CustomerInterface");
+            rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+
+            account = new NSALoyaltyAccount(accountNumber, name, email);
+            setAccountTab();
+
+            InitializeComponent();
+            db = new NSADatabase();
+            db.OpenConnection();
+            componentsList = db.getComponents();
+            menu = db.getMenu();
+
+            updateMenu();
+            currentOrder = new NSAOrder();
+            setLang(ci);
+        }
+
+        //constructor called when logging in with a previous loyalty account
+        public KioskWindow(CultureInfo language, string accountNumber)
         {
             ci = language;
             a = Assembly.Load("CustomerInterface");
