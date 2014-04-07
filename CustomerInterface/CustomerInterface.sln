@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInterfaceTest", "CustomerInterfaceTest\CustomerInterfaceTest.csproj", "{CD7800ED-AC9A-4010-A54A-39B0C5B77A41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emulate_cashPayment", "..\Emulate cash\emulate_cashPayment.csproj", "{AF058354-C6CA-4963-8AA3-18860B988F46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emulate_credit", "..\Emulate Credit\emulate_credit.csproj", "{E6D738DD-177A-4562-A0BC-C373861235F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{CD7800ED-AC9A-4010-A54A-39B0C5B77A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD7800ED-AC9A-4010-A54A-39B0C5B77A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD7800ED-AC9A-4010-A54A-39B0C5B77A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF058354-C6CA-4963-8AA3-18860B988F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF058354-C6CA-4963-8AA3-18860B988F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF058354-C6CA-4963-8AA3-18860B988F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF058354-C6CA-4963-8AA3-18860B988F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D738DD-177A-4562-A0BC-C373861235F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D738DD-177A-4562-A0BC-C373861235F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D738DD-177A-4562-A0BC-C373861235F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D738DD-177A-4562-A0BC-C373861235F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
