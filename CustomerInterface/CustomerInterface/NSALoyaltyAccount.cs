@@ -20,6 +20,21 @@ namespace CustomerInterface
             email = e;
         }
 
+        public NSALoyaltyAccount(string acc)
+        {
+            accountNumber = acc;
+            queryForNameAndEmail();
+        }
+
+        public void queryForNameAndEmail()
+        {
+            NSADatabase db = new NSADatabase();
+            db.OpenConnection();
+            //query db with acc number
+            //set name to db name
+            //set email to db email
+        }
+
         public string getAccountNumber()
         {
             return accountNumber;

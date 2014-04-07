@@ -47,7 +47,7 @@
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.rewardsLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.accountNumberLabel = new System.Windows.Forms.Label();
             this.AccNumberTagLabel = new System.Windows.Forms.Label();
@@ -147,7 +147,7 @@
             this.LoyaltyTab.Controls.Add(this.emailTextBox);
             this.LoyaltyTab.Controls.Add(this.nameLabel);
             this.LoyaltyTab.Controls.Add(this.nameTextBox);
-            this.LoyaltyTab.Controls.Add(this.label2);
+            this.LoyaltyTab.Controls.Add(this.rewardsLabel);
             this.LoyaltyTab.Controls.Add(this.emailLabel);
             this.LoyaltyTab.Controls.Add(this.accountNumberLabel);
             this.LoyaltyTab.Controls.Add(this.AccNumberTagLabel);
@@ -265,15 +265,15 @@
             this.nameTextBox.TabIndex = 5;
             this.nameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label2
+            // rewardsLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(307, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "4 more orders to free sandwich";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.rewardsLabel.AutoSize = true;
+            this.rewardsLabel.Location = new System.Drawing.Point(10, 130);
+            this.rewardsLabel.Name = "rewardsLabel";
+            this.rewardsLabel.Size = new System.Drawing.Size(307, 25);
+            this.rewardsLabel.TabIndex = 3;
+            this.rewardsLabel.Text = "4 more orders to free sandwich";
+            this.rewardsLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // emailLabel
             // 
@@ -533,7 +533,7 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label rewardsLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
