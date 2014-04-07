@@ -118,7 +118,6 @@
             this.createLoyaltyBtn.TabIndex = 13;
             this.createLoyaltyBtn.Text = "Need a Loyalty Card Click here";
             this.createLoyaltyBtn.UseVisualStyleBackColor = true;
-            this.createLoyaltyBtn.Click += new System.EventHandler(this.createLoyaltyBtn_Click);
             // 
             // scanLoyaltyText
             // 
@@ -136,7 +135,7 @@
             // 
             this.NSAText.AutoSize = true;
             this.NSAText.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NSAText.Location = new System.Drawing.Point(58, 127);
+            this.NSAText.Location = new System.Drawing.Point(289, 127);
             this.NSAText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NSAText.Name = "NSAText";
             this.NSAText.Size = new System.Drawing.Size(242, 108);
@@ -147,7 +146,7 @@
             // 
             this.welcomeText.AutoSize = true;
             this.welcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeText.Location = new System.Drawing.Point(58, 19);
+            this.welcomeText.Location = new System.Drawing.Point(152, 19);
             this.welcomeText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.welcomeText.Name = "welcomeText";
             this.welcomeText.Size = new System.Drawing.Size(550, 108);
