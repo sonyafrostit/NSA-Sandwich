@@ -25,6 +25,7 @@ namespace CustomerInterface
         NSAOrder currentOrder;
         NSAComponent[] componentsList;
         CustomizeForm customizeItemForm;
+
         public KioskWindow(CultureInfo language)
         {
             ci = language;

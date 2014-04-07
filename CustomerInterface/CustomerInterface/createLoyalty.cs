@@ -16,6 +16,7 @@ namespace CustomerInterface
         private CultureInfo ci;
         private string name;
         private string email;
+        private NSADatabase db;
 
         public createLoyalty(CultureInfo language)
         {
@@ -37,10 +38,25 @@ namespace CustomerInterface
 
             else
             {
-                //create account
-                KioskWindow form = new KioskWindow(ci);
-                form.Show();
-                Hide();
+                try
+                {
+                    // connect to DB if it is not connected
+                    if (!db.Connected())
+                    {
+                        db.OpenConnection();
+                    }
+
+                    // Get the loyalty account data from the database
+                    //db.ManagerSaveLoyaltyAccount(name, email);
+
+                    KioskWindow form = new KioskWindow(ci);
+                    form.Show();
+                    Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Save Loyalty Account", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
