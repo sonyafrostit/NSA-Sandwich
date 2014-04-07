@@ -460,7 +460,7 @@
             // 
             // ChangesHeader
             // 
-            this.ChangesHeader.Text = "Changes";
+            this.ChangesHeader.Text = "Components";
             this.ChangesHeader.Width = 139;
             // 
             // splitter4

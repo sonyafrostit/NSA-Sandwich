@@ -20,13 +20,7 @@ namespace CustomerInterface
         NSAComponent[] customizeComponents;
         NSAMenuItem customizeItem;
         NSAChanges changes;
-        List<string> stringChanges;
-
-        public List<string> StringChanges
-        {
-            get { return stringChanges; }
-            set { stringChanges = value; }
-        }
+        
         public NSAChanges Changes
         {
             get { return changes; }
@@ -45,6 +39,8 @@ namespace CustomerInterface
             set { customizeItem = value; }
         }
         public void populateComponents() {
+            
+            BreadPanel.Visible = customizeItem.BreadIndex >= 0;
             
             foreach (NSAComponent comp in customizeComponents)
             {
@@ -91,39 +87,34 @@ namespace CustomerInterface
 
         private void BreadList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            customizeItem.Components.Add((NSAComponent)BreadList.SelectedItems[0].Tag);
+            customizeItem.BreadIndex = customizeItem.Components.Count - 1;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            stringChanges = customizeItem.ComponentChanges;
             changes = new NSAChanges();
             NSAMenuItem resultItem = new NSAMenuItem(customizeItem);
-            List<NSAComponent> checkedItems = new List<NSAComponent>();
+            List<NSAComponent> finalComponents = new List<NSAComponent>();
             foreach (Object customComponent in OtherListBox.CheckedItems) {
-                checkedItems.Add((NSAComponent)customComponent);
-                if (!customizeItem.Components.Contains((NSAComponent)customComponent))
-                {
-                    resultItem.Components.Add((NSAComponent)customComponent);
-
-                    stringChanges.Add("+" + ((NSAComponent)customComponent).Name);
-
-
-                }
+                finalComponents.Add((NSAComponent)customComponent);
+                
             }
-            foreach (NSAComponent nmi in customizeItem.Components.ToArray()) {
-                if (!checkedItems.Contains(nmi)) {
-                    resultItem.Components.Remove(nmi);
-                    stringChanges.Add("-" + nmi.Name);
-                }
+            if (customizeItem.BreadIndex > -1) {
+                finalComponents.Add(customizeItem.Components[customizeItem.BreadIndex]);
             }
-            resultItem.ComponentChanges = stringChanges;
+            resultItem.Components = finalComponents;
             changes.FinishedItem = resultItem;
             changes.OriginalItem = OriginalIndex;
             Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BreadPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
