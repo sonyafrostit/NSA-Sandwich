@@ -75,20 +75,6 @@ namespace CustomerInterfaceTest
         }
 
         [TestMethod]
-        public void Can_Close_Connection()
-        {
-            //Arrange
-            NSADatabase database = new NSADatabase(server, name, user, pass, storeNumber);
-
-            //Act
-            bool actual = database.CloseConnection();
-
-            //Assert
-            bool expected = true;
-            Assert.AreEqual(expected, actual, "Server is failing to close connection");
-        }
-
-        [TestMethod]
         public void Can_Get_Menu()
         {
             //Arrange
@@ -99,7 +85,7 @@ namespace CustomerInterfaceTest
 
             //Assert
             bool expected = true;
-            Assert.AreEqual(expected, actual, "Server is failing to close connection");
+            Assert.AreEqual(expected, actual, "Server is failing to get menu");
         }
 
         [TestMethod]
@@ -113,7 +99,7 @@ namespace CustomerInterfaceTest
 
             //Assert
             bool expected = true;
-            Assert.AreEqual(expected, actual, "Server is failing to close connection");
+            Assert.AreEqual(expected, actual, "Server is failing to get menu items");
         }
 
         [TestMethod]
@@ -127,7 +113,7 @@ namespace CustomerInterfaceTest
 
             //Assert
             bool expected = true;
-            Assert.AreEqual(expected, actual, "Server is failing to close connection");
+            Assert.AreEqual(expected, actual, "Server is failing to get categories");
         }
 
         [TestMethod]
@@ -141,7 +127,7 @@ namespace CustomerInterfaceTest
 
             //Assert
             bool expected = true;
-            Assert.AreEqual(expected, actual, "Server is failing to close connection");
+            Assert.AreEqual(expected, actual, "Server is failing to get components");
         }
     }
 }
