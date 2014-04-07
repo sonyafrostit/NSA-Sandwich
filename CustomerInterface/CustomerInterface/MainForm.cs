@@ -75,7 +75,7 @@ namespace CustomerInterface
             a = Assembly.Load("CustomerInterface");
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
-            account = new NSALoyaltyAccount(accountNumber, name, email);
+            account = new NSALoyaltyAccount(accountNumber);
             setAccountTab();
 
             InitializeComponent();

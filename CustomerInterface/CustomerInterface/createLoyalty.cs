@@ -27,14 +27,10 @@ namespace CustomerInterface
         private void createLoyaltyBut_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(name))
-            {
                 errorLabel.Text = "Enter your name!";
-            }
 
             else if (String.IsNullOrEmpty(email))
-            {
                 errorLabel.Text = "Enter your email!";
-            }
 
             else
             {
@@ -46,12 +42,18 @@ namespace CustomerInterface
                         db.OpenConnection();
                     }
 
-                    // Get the loyalty account data from the database
-                    string lastID = db.createLoyaltyAccount(name, email);
+                    //create the loyalty account and save the account number
+                    string accountNumber = db.createLoyaltyAccount(name, email);
 
-                    KioskWindow form = new KioskWindow(ci, lastID, name, email);
-                    form.Show();
-                    Hide();
+                    if (accountNumber != "FAIL")
+                    {
+                        KioskWindow form = new KioskWindow(ci, accountNumber, name, email);
+                        form.Show();
+                        Hide();
+                    }
+
+                    else
+                        errorLabel.Text = "SYSTEM IS DOWN";
                 }
                 catch (Exception ex)
                 {
