@@ -42,8 +42,15 @@ namespace CustomerInterface
         //Constructor - Default Sets default values and DOES not open connectiton.
         public NSADatabase()
         {
+            
+            string[] configFileLines = {"1", "54.186.234.139", "nsa_database", "trae", ""};
+            if (File.Exists("config")) {
+                configFileLines = File.ReadAllLines("config");
+                
+            }
+            
             //Default values are used since none are specified.
-            Initialize("54.186.234.139", "nsa_database", "trae", "", 1);
+            Initialize(configFileLines[1], configFileLines[2], configFileLines[3], configFileLines[4], Convert.ToInt32(configFileLines[0]));
             //Initialize("localhost", "nsa_database", "root", "1234", 1);
         }
 
