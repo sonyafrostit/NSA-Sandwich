@@ -17,14 +17,17 @@ namespace CustomerInterface
     {
         //needs to be taken from StartForm 
         //(default is US if language not chosen in splash screen)
-        CultureInfo ci;
-        Assembly a;
-        ResourceManager rm;
-        NSADatabase db;
-        NSAMenuCategory[] menu;
-        NSAOrder currentOrder;
-        NSAComponent[] componentsList;
-        CustomizeForm customizeItemForm;
+        private CultureInfo ci;
+        private Assembly a;
+        private ResourceManager rm;
+
+        private NSADatabase db;
+        private long lastID;
+        private NSAMenuCategory[] menu;
+        private NSAOrder currentOrder;
+        private NSAComponent[] componentsList;
+        private CustomizeForm customizeItemForm;
+
         public KioskWindow(CultureInfo language)
         {
             ci = language;
@@ -32,6 +35,24 @@ namespace CustomerInterface
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
             InitializeComponent();
+            db = new NSADatabase();
+            db.OpenConnection();
+            componentsList = db.getComponents();
+            menu = db.getMenu();
+
+            updateMenu();
+            currentOrder = new NSAOrder();
+            setLang(ci);
+        }
+
+        public KioskWindow(CultureInfo language, long lastDBID)
+        {
+            ci = language;
+            a = Assembly.Load("CustomerInterface");
+            rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+
+            InitializeComponent();
+            lastID = lastDBID;
             db = new NSADatabase();
             db.OpenConnection();
             componentsList = db.getComponents();
