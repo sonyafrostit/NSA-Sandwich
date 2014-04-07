@@ -85,7 +85,7 @@ namespace CustomerInterface
         private void addItemToOrder(NSAMenuItem item) {
             item.GenerateItem(componentsList);
             
-            item.getComponents(db, componentsList);
+            //item.getComponents(db, componentsList);
             currentOrder.AddItem(new NSAMenuItem(item));
             UpdateOrderView();
 
@@ -99,12 +99,12 @@ namespace CustomerInterface
                 totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
                 lvi.Tag = i; // Set to the index of the order item
                 OrderView.Items.Add(lvi);
-                if (currentOrder.Items.ElementAt(i).ComponentChanges.Count > 0) {
-                    Console.WriteLine(currentOrder.Items.ElementAt(i).ComponentChanges[0]);
-                    foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
+                if (currentOrder.Items.ElementAt(i).Components.Count > 0) {
+                    Console.WriteLine(currentOrder.Items.ElementAt(i).Components[0]);
+                    foreach (NSAComponent c in currentOrder.Items.ElementAt(i).Components) {
                         Console.WriteLine(c);
                         ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
-                        changeItem.SubItems.Add(cp.parseComponent(c));
+                        changeItem.SubItems.Add(cp.parseComponent(c.Name));
                         changeItem.Tag = i;
                         OrderView.Items.Add(changeItem);
                     }
@@ -124,6 +124,7 @@ namespace CustomerInterface
         {
             foreach (ListViewItem t in menuListView.SelectedItems)
             {
+                ((NSAMenuItem)t.Tag).getComponents(db, componentsList);
                 addItemToOrder((NSAMenuItem)t.Tag);
                 UpdateOrderView();
             }
@@ -262,21 +263,24 @@ namespace CustomerInterface
 
         private void KioskWindow_Activated(object sender, EventArgs e)
         {
+            
             if (customizeItemForm != null)
             {
-
+                
                 NSAChanges changes = customizeItemForm.Changes;
+
                 
-                Console.WriteLine(changes.FinishedItem.ComponentChanges.Count);
                 customizeItemForm.Close();
-                currentOrder.Items.RemoveAt(changes.OriginalItem);
                 
+                currentOrder.Items.RemoveAt(changes.OriginalItem);
+                Console.WriteLine("debug");
                 addItemToOrder(changes.FinishedItem);
                 
                 
                 
                 UpdateOrderView();
             }
+            
         }
 
         private void button3_Click_1(object sender, EventArgs e)

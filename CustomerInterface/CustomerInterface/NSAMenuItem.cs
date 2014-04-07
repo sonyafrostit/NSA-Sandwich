@@ -9,9 +9,7 @@ namespace CustomerInterface
 {
     public class NSAMenuItem
     {
-        public NSAMenuItem() { 
-            componentChanges = new List<string>();
-        }
+        public NSAMenuItem() { }
         //Clone constructor
         public NSAMenuItem(NSAMenuItem a) {
             id = a.id;
@@ -19,7 +17,6 @@ namespace CustomerInterface
             price = a.price;
             menuType = a.menuType;
             components = a.components;
-            componentChanges = a.componentChanges;
             image = a.image;
             categoryID = a.categoryID;
         }
@@ -39,10 +36,20 @@ namespace CustomerInterface
             foreach (NSAComponent comp in allComponents) {
                 if (compIDs.Contains(comp.ComponentID)) {
                     components.Add(comp);
+                    if (comp.Category == "Bread") {
+                        breadIndex = components.Count - 1;
+                    }
                 }
             }
             
             
+        }
+        int breadIndex; //Index of Bread in the sandwich. If -1, then salad
+
+        public int BreadIndex
+        {
+            get { return breadIndex; }
+            set { breadIndex = value; }
         }
         int id;
 
@@ -80,13 +87,7 @@ namespace CustomerInterface
             set { components = value; }
         }
 
-        protected List<string> componentChanges = new List<string>();
 
-        public List<string> ComponentChanges
-        {
-            get { return componentChanges; }
-            set { componentChanges = value; }
-        }
 
         string image;
 
