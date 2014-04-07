@@ -214,11 +214,29 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Random.
+        /// </summary>
+        internal static string random {
+            get {
+                return ResourceManager.GetString("random", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         internal static string removeBut {
             get {
                 return ResourceManager.GetString("removeBut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sandwich.
+        /// </summary>
+        internal static string sandwich {
+            get {
+                return ResourceManager.GetString("sandwich", resourceCulture);
             }
         }
         
