@@ -20,6 +20,13 @@ namespace CustomerInterface
         NSAComponent[] customizeComponents;
         NSAMenuItem customizeItem;
         NSAChanges changes;
+        int originalIndex;
+
+        public int OriginalIndex
+        {
+            get { return originalIndex; }
+            set { originalIndex = value; }
+        }
         public NSAMenuItem CustomizeItem
         {
             get { return customizeItem; }
@@ -74,23 +81,24 @@ namespace CustomerInterface
 
         }
         public NSAChanges getItem() {
-            Close();
             return changes;
+            
         }
         private void button5_Click(object sender, EventArgs e)
         {
             changes = new NSAChanges();
             NSAMenuItem resultItem = new NSAMenuItem(customizeItem);
             foreach (Object customComponent in OtherListBox.CheckedItems) {
-                //if (!customizeItem.Components.Contains((NSAComponent)customComponent)) {
+                if (!customizeItem.Components.Contains((NSAComponent)customComponent)) {
                     resultItem.Components.Add((NSAComponent)customComponent);
                     List<string> changedCC = resultItem.ComponentChanges;
                     changedCC.Add("+" + ((NSAComponent)customComponent).Name);
                     resultItem.ComponentChanges = changedCC;
                     
-                //}
+                }
             }
             changes.FinishedItem = resultItem;
+            changes.OriginalItem = OriginalIndex;
             Hide();
         }
 

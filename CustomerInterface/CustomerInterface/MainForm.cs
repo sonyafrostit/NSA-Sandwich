@@ -77,7 +77,7 @@ namespace CustomerInterface
             
             item.getComponents(db, componentsList);
             currentOrder.AddItem(new NSAMenuItem(item));
-
+            UpdateOrderView();
 
         }
         private void UpdateOrderView() {
@@ -90,8 +90,9 @@ namespace CustomerInterface
                 lvi.Tag = i; // Set to the index of the order item
                 OrderView.Items.Add(lvi);
                 if (currentOrder.Items.ElementAt(i).ComponentChanges.Count > 0) {
-                    
+                    Console.WriteLine(currentOrder.Items.ElementAt(i).ComponentChanges[0]);
                     foreach (String c in currentOrder.Items.ElementAt(i).ComponentChanges) {
+                        Console.WriteLine(c);
                         ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
                         changeItem.SubItems.Add(cp.parseComponent(c));
                         changeItem.Tag = i;
@@ -175,6 +176,7 @@ namespace CustomerInterface
                 customizeItemForm = new CustomizeForm();
                 customizeItemForm.CustomizeComponents = componentsList;
                 customizeItemForm.CustomizeItem = (NSAMenuItem)currentOrder.Items[(int)OrderView.SelectedItems[0].Tag];
+                customizeItemForm.OriginalIndex = OrderView.SelectedIndices[0];
                 customizeItemForm.populateComponents();
                 customizeItemForm.Show();
             }
@@ -254,9 +256,15 @@ namespace CustomerInterface
         {
             if (customizeItemForm != null)
             {
+
                 NSAChanges changes = customizeItemForm.getItem();
                 currentOrder.Items.RemoveAt(changes.OriginalItem);
+                Console.WriteLine(changes.OriginalItem);
                 addItemToOrder(changes.FinishedItem);
+                
+                
+                
+                UpdateOrderView();
             }
         }
 

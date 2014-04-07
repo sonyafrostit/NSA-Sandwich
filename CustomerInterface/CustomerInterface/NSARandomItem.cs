@@ -23,6 +23,7 @@ namespace CustomerInterface
                 {
                     components.Add(component);
                     componentChanges.Add("+" + component.Name);
+
                 }
             }
             
