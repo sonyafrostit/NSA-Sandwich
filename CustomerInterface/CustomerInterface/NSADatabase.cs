@@ -301,5 +301,59 @@ namespace CustomerInterface
             return (Connection.State == System.Data.ConnectionState.Open);
         }
 
+        public long createLoyaltyAccount(string accountname, string emailaddress)
+        {
+            List<String> loyaltyaccounts;
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+                string query = "SELECT loyaltyid FROM loyaltyaccounts WHERE storeid = " + StoreNumber.ToString() + " ORDER BY loyaltyid";
+
+                //Change the Manager orders list list to store the result
+                loyaltyaccounts = new List<string>();
+
+                //initial record count is 0
+                RecordCount = 0;
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (mysqlreader.Read())
+                {
+                    loyaltyaccounts.Add(mysqlreader["loyaltyid"] + "");
+
+                    //increment the record count 
+                    RecordCount++;
+                }
+
+                //close Data Reader
+                mysqlreader.Close();
+
+                if (RecordCount == 0)
+                {
+                    query = "INSERT INTO loyaltyaccounts (loyaltyid, storeid, name, emailaddress) VALUES ('" + StoreNumber.ToString("D4") + RecordCount.ToString("D8") + "', '" + StoreNumber.ToString() + "', '" + accountname.ToString() + "', '" + emailaddress.ToString() + "')";
+                }
+                else
+                {
+                    int accountnumber = Convert.ToInt32(loyaltyaccounts[RecordCount - 1]);
+                    accountnumber++;
+
+                    query = "INSERT INTO loyaltyaccounts (loyaltyid, storeid, name, emailaddress) VALUES ('" + accountnumber.ToString("D12") + "', '" + StoreNumber.ToString() + "', '" + accountname.ToString() + "', '" + emailaddress.ToString() + "')";
+                }
+
+                //Create MySQL Command object.
+                cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+                return cmd.LastInsertedId;
+            }
+            return 0;
+        }
+
     } //class DatabaseConnection
 }
