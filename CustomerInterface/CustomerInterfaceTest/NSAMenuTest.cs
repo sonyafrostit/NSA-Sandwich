@@ -114,7 +114,5 @@ namespace CustomerInterfaceTest
             string expected = "Swiss";
             Assert.AreEqual(expected, actual, "Component is returning its name with ToString correctly");
         }
-
-        //begin Database tests
     }
 }
