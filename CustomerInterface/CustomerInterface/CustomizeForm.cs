@@ -96,16 +96,25 @@ namespace CustomerInterface
 
         private void button5_Click(object sender, EventArgs e)
         {
-            stringChanges = new List<string>();
+            stringChanges = customizeItem.ComponentChanges;
             changes = new NSAChanges();
             NSAMenuItem resultItem = new NSAMenuItem(customizeItem);
+            List<NSAComponent> checkedItems = new List<NSAComponent>();
             foreach (Object customComponent in OtherListBox.CheckedItems) {
-                if (!customizeItem.Components.Contains((NSAComponent)customComponent)) {
+                checkedItems.Add((NSAComponent)customComponent);
+                if (!customizeItem.Components.Contains((NSAComponent)customComponent))
+                {
                     resultItem.Components.Add((NSAComponent)customComponent);
-                    
+
                     stringChanges.Add("+" + ((NSAComponent)customComponent).Name);
-                    
-                    
+
+
+                }
+            }
+            foreach (NSAComponent nmi in customizeItem.Components.ToArray()) {
+                if (!checkedItems.Contains(nmi)) {
+                    resultItem.Components.Remove(nmi);
+                    stringChanges.Add("-" + nmi.Name);
                 }
             }
             resultItem.ComponentChanges = stringChanges;
