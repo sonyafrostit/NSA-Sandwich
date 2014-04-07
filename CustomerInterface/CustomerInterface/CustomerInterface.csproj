@@ -64,6 +64,12 @@
     <Compile Include="createLoyalty.Designer.cs">
       <DependentUpon>createLoyalty.cs</DependentUpon>
     </Compile>
+    <Compile Include="CashCreditSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashCreditSelect.Designer.cs">
+      <DependentUpon>CashCreditSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomizeForm.resx">
       <DependentUpon>CustomizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashCreditSelect.resx">
+      <DependentUpon>CashCreditSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

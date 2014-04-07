@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace emulate_credit
 {
-    public partial class Form1 : Form
+    public partial class CreditForm1 : Form
     {
       
-        public Form1()
+        public CreditForm1()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace emulate_credit
         {
             if (CCBox.TextLength == 16)
             {
-                Form2 f2 = new Form2();
+                CreditForm2 f2 = new CreditForm2();
                 f2.passValue = CCBox.Text;
                 f2.ShowDialog();
                 Close();

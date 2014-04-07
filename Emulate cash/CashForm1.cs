@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace emulate_cashPayment
 {
     
-    public partial class Form1 : Form
+    public partial class CashForm1 : Form
     {
         private string total_to_pay;
         private string total_received;
@@ -35,7 +35,7 @@ namespace emulate_cashPayment
             set { change_to_be_given = value; }
         }
 
-        public Form1()
+        public CashForm1()
         {
             InitializeComponent();
         }
