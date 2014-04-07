@@ -15,7 +15,7 @@ namespace CustomerInterface
 {
     public partial class StartForm : Form
     {
-        private CultureInfo ci;
+        CultureInfo ci;
         public StartForm()
         {
             InitializeComponent();
@@ -58,15 +58,8 @@ namespace CustomerInterface
 
         private void startOrderBtn_Click_1(object sender, EventArgs e)
         {
-            LogInOrGuest form = new LogInOrGuest(ci);
-            form.Show();
-            Hide();
-        }
-
-        private void createLoyaltyBtn_Click(object sender, EventArgs e)
-        {
-            createLoyalty form = new createLoyalty(ci);
-            form.Show();
+            KioskWindow mainForm = new KioskWindow(ci);
+            mainForm.Show();
             Hide();
         }
     }
