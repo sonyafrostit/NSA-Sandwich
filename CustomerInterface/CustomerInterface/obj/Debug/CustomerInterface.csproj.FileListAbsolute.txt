@@ -197,3 +197,6 @@ C:\Users\LibCMNTYUser\Desktop\NSA\CustomerInterface\CustomerInterface\obj\Debug\
 C:\Users\LibCMNTYUser\Desktop\NSA\CustomerInterface\CustomerInterface\obj\Debug\de\CustomerInterface.resources.dll
 C:\Users\LibCMNTYUser\Desktop\NSA\CustomerInterface\CustomerInterface\obj\Debug\es\CustomerInterface.resources.dll
 C:\Users\LibCMNTYUser\Desktop\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.createLoyalty.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.createLoyalty.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInForm.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInOrGuest.resources
