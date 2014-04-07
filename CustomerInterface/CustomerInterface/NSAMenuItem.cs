@@ -19,16 +19,20 @@ namespace CustomerInterface
             components = a.components;
             image = a.image;
             categoryID = a.categoryID;
+            breadIndex = a.breadIndex;
         }
 
         public void getComponents(NSADatabase d, NSAComponent[] allComponents) {
+            if (components.Count > 0) {
+                return;
+            }
             MySqlDataReader reader = d.CustomQuery("SELECT component FROM menuitemcomponents WHERE menuitemid = " + id + ";");
             List<int> compIDs = new List<int>();
             if (reader != null)
             {
                 while (reader.Read())
                 {
-                    compIDs.Add((int)reader["component"]);
+                    compIDs.Add((int)reader["component"]); 
                 }
             }
 

@@ -49,7 +49,9 @@ namespace CustomerInterface
                     OtherListBox.Items.Add(comp, customizeItem.Components.Contains(comp));
                 }
                 else {
-                    BreadList.Items.Add(new ListViewItem(comp.Name));
+                    ListViewItem nlvi = new ListViewItem(comp.Name);
+                    nlvi.Tag = comp;
+                    BreadList.Items.Add(nlvi);
                 }
             }
         
@@ -87,8 +89,7 @@ namespace CustomerInterface
 
         private void BreadList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            customizeItem.Components.Add((NSAComponent)BreadList.SelectedItems[0].Tag);
-            customizeItem.BreadIndex = customizeItem.Components.Count - 1;
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -96,17 +97,21 @@ namespace CustomerInterface
             changes = new NSAChanges();
             NSAMenuItem resultItem = new NSAMenuItem(customizeItem);
             List<NSAComponent> finalComponents = new List<NSAComponent>();
+            if (customizeItem.BreadIndex > -1 && BreadList.SelectedItems.Count > 0) {
+                finalComponents.Add((NSAComponent)BreadList.SelectedItems[0].Tag);
+                resultItem.BreadIndex = 0;
+            }
             foreach (Object customComponent in OtherListBox.CheckedItems) {
                 finalComponents.Add((NSAComponent)customComponent);
                 
             }
-            if (customizeItem.BreadIndex > -1) {
-                finalComponents.Add(customizeItem.Components[customizeItem.BreadIndex]);
-            }
+            
             resultItem.Components = finalComponents;
             changes.FinishedItem = resultItem;
             changes.OriginalItem = OriginalIndex;
+            
             Hide();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

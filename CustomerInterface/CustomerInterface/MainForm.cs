@@ -113,37 +113,51 @@ namespace CustomerInterface
         }
 
         private void addItemToOrder(NSAMenuItem item) {
+            
             item.GenerateItem(componentsList);
             
             //item.getComponents(db, componentsList);
             currentOrder.AddItem(new NSAMenuItem(item));
+            
             UpdateOrderView();
+            
 
         }
         private void UpdateOrderView() {
-            DataParser cp = new DataParser(ci);
-            OrderView.Items.Clear();
-            Decimal totalPrice = 0;
-            for (int i = 0; i < currentOrder.Items.Count; i++) {
-                ListViewItem lvi = new ListViewItem(cp.parseComponent(currentOrder.Items.ElementAt(i).Name));
-                totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
-                lvi.Tag = i; // Set to the index of the order item
-                OrderView.Items.Add(lvi);
-                if (currentOrder.Items.ElementAt(i).Components.Count > 0) {
-                    Console.WriteLine(currentOrder.Items.ElementAt(i).Components[0]);
-                    foreach (NSAComponent c in currentOrder.Items.ElementAt(i).Components) {
-                        Console.WriteLine(c);
-                        ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
-                        changeItem.SubItems.Add(cp.parseComponent(c.Name));
-                        changeItem.Tag = i;
-                        OrderView.Items.Add(changeItem);
+            try
+            {
+                DataParser cp = new DataParser(ci);
+                OrderView.Items.Clear();
+                Decimal totalPrice = 0;
+                for (int i = 0; i < currentOrder.Items.Count; i++)
+                {
+
+                    ListViewItem lvi = new ListViewItem(cp.parseComponent(currentOrder.Items.ElementAt(i).Name));
+                    totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
+                    lvi.Tag = i; // Set to the index of the order item
+                    OrderView.Items.Add(lvi);
+                    if (currentOrder.Items.ElementAt(i).Components.Count > 0)
+                    {
+                        
+                        foreach (NSAComponent c in currentOrder.Items.ElementAt(i).Components)
+                        {
+                            
+                            ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
+                            changeItem.SubItems.Add(cp.parseComponent(c.ToString()));
+                            changeItem.Tag = i;
+                            OrderView.Items.Add(changeItem);
+                        }
+
+
                     }
-                    
-                    
+
                 }
-                
+
+                OrderView.Items.Add(new ListViewItem("Total: " + totalPrice));
             }
-            OrderView.Items.Add(new ListViewItem("Total: " + totalPrice));
+            catch (System.NullReferenceException e) {
+                Console.WriteLine(e.StackTrace);
+            }
         }
         private void removeItemFromOrder(NSAMenuItem item)
         { 
@@ -303,12 +317,13 @@ namespace CustomerInterface
                 customizeItemForm.Close();
                 
                 currentOrder.Items.RemoveAt(changes.OriginalItem);
-                Console.WriteLine("debug");
-                addItemToOrder(changes.FinishedItem);
                 
+                addItemToOrder(changes.FinishedItem);
+
                 
                 
                 UpdateOrderView();
+                
             }
             
         }
