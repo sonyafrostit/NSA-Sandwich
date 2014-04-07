@@ -8,9 +8,31 @@ namespace CustomerInterface
 {
     class NSALoyaltyAccount
     {
-        int loyaltyID;
-        string Name;
-        string email;
-        int rewardscount;
+        private string accountNumber;
+        private string name;
+        private string email;
+        private int rewardscount;
+
+        public NSALoyaltyAccount(string acc, string n, string e)
+        {
+            accountNumber = acc;
+            name = n;
+            email = e;
+        }
+
+        public string getAccountNumber()
+        {
+            return accountNumber;
+        }
+
+        public string getName()
+        {
+            return name;
+        }
+
+        public string getEmail()
+        {
+            return email;
+        }
     }
 }
