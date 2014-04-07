@@ -20,6 +20,18 @@ namespace CustomerInterface
         NSAComponent[] customizeComponents;
         NSAMenuItem customizeItem;
         NSAChanges changes;
+        List<string> stringChanges;
+
+        public List<string> StringChanges
+        {
+            get { return stringChanges; }
+            set { stringChanges = value; }
+        }
+        public NSAChanges Changes
+        {
+            get { return changes; }
+            set { changes = value; }
+        }
         int originalIndex;
 
         public int OriginalIndex
@@ -33,6 +45,7 @@ namespace CustomerInterface
             set { customizeItem = value; }
         }
         public void populateComponents() {
+            
             foreach (NSAComponent comp in customizeComponents)
             {
                 if (comp.Category != "Bread")
@@ -80,23 +93,22 @@ namespace CustomerInterface
         {
 
         }
-        public NSAChanges getItem() {
-            return changes;
-            
-        }
+
         private void button5_Click(object sender, EventArgs e)
         {
+            stringChanges = new List<string>();
             changes = new NSAChanges();
             NSAMenuItem resultItem = new NSAMenuItem(customizeItem);
             foreach (Object customComponent in OtherListBox.CheckedItems) {
                 if (!customizeItem.Components.Contains((NSAComponent)customComponent)) {
                     resultItem.Components.Add((NSAComponent)customComponent);
-                    List<string> changedCC = resultItem.ComponentChanges;
-                    changedCC.Add("+" + ((NSAComponent)customComponent).Name);
-                    resultItem.ComponentChanges = changedCC;
+                    
+                    stringChanges.Add("+" + ((NSAComponent)customComponent).Name);
+                    
                     
                 }
             }
+            resultItem.ComponentChanges = stringChanges;
             changes.FinishedItem = resultItem;
             changes.OriginalItem = OriginalIndex;
             Hide();

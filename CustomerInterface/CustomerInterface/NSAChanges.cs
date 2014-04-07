@@ -15,13 +15,7 @@ namespace CustomerInterface
             get { return finishedItem; }
             set { finishedItem = value; }
         }
-        List<string> changes;
-
-        public List<string> Changes
-        {
-            get { return changes; }
-            set { changes = value; }
-        }
+        
 
         int originalItem;
 

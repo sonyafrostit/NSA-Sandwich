@@ -115,7 +115,6 @@ namespace CustomerInterface
         }
 
         public virtual void GenerateItem(NSAComponent[] components) { 
-            componentChanges = new List<string>();
             
         }
     }

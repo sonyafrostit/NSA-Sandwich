@@ -257,15 +257,23 @@ namespace CustomerInterface
             if (customizeItemForm != null)
             {
 
-                NSAChanges changes = customizeItemForm.getItem();
+                NSAChanges changes = customizeItemForm.Changes;
+                
+                Console.WriteLine(changes.FinishedItem.ComponentChanges.Count);
+                customizeItemForm.Close();
                 currentOrder.Items.RemoveAt(changes.OriginalItem);
-                Console.WriteLine(changes.OriginalItem);
+                
                 addItemToOrder(changes.FinishedItem);
                 
                 
                 
                 UpdateOrderView();
             }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
         }
 
     }

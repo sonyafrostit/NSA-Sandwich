@@ -399,12 +399,13 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button3.Location = new System.Drawing.Point(3, 369);
+            this.button3.Location = new System.Drawing.Point(4, 369);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(46, 65);
             this.button3.TabIndex = 6;
             this.button3.Text = "q";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // panel3
             // 
