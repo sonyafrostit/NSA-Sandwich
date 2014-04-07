@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 
 namespace WindowsFormsApplication1
-{
+{   
     public static class Program
     {
         /// <summary>

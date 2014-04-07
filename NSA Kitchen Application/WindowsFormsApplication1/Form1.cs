@@ -18,6 +18,17 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
+            ///
+            ///Test Order Number
+            ///
+            Mod mustard = new Mod(0, "mustard");
+            Item classic = new Item("Classic", mustard);
+            Order firstorder = new Order(1, classic);
+            list_of_orders.Add(firstorder);
+            ///
+            ///
+            ///
         }
         public void UpdateFromDatabase()
         {
@@ -27,36 +38,47 @@ namespace WindowsFormsApplication1
         {
             UpdateTotalOrderNumber();
             int i = 0;
-            for(i = 0;(i<5) || (i <list_of_orders.Count()); i ++)
+            for(i = 0;(i<5) && (i <list_of_orders.Count()); i++)
             {
                 int temp = list_of_orders[i].getOrderId();
                 if(i == 0)
                 {
+                    treeView1.Nodes.Clear();
                     this.label1number.Text = temp.ToString();
+                    TreeNode newNode = new TreeNode("Condiment");
+                    TreeNode newNode2 = new TreeNode("Sandwich", new System.Windows.Forms.TreeNode[] {
+            newNode});
+                    treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            newNode2});
                     //Set treeview 1 based of list_of_order
+                    treeView1.ExpandAll();
                 }else if(i == 1)
                 {
 
                     this.label2number.Text = temp.ToString();
                     //Set treeview 2 based of list_of_order
+                    treeView2.ExpandAll();
                 }
                 else if (i == 2)
                 {
 
                     this.label3number.Text = temp.ToString();
                     //Set treeview 3 based of list_of_order
+                    treeView3.ExpandAll();
                 }
                 else if (i == 3)
                 {
 
                     this.label4number.Text = temp.ToString();
                     //Set treeview 4 based of list_of_order
+                    treeView4.ExpandAll();
                 }
                 else if (i == 4)
                 {
 
                     this.label5number.Text = temp.ToString();
                     //Set treeview 5 based of list_of_order
+                    treeView5.ExpandAll();
                 }
                 
 
@@ -67,33 +89,37 @@ namespace WindowsFormsApplication1
                 {
                     this.label1number.Text = "######";
                     //clear treeview5
+                    treeView1.Nodes.Clear();
                 }
                 else if (i == 1)
                 {
 
                     this.label2number.Text = "######";
                     //clear treeview4
+                    treeView2.Nodes.Clear();
                 }
                 else if (i == 2)
                 {
 
                     this.label3number.Text = "######";
                     //clear treeview3
+                    treeView3.Nodes.Clear();
                 }
                 else if (i == 3)
                 {
 
                     this.label4number.Text = "######";
                     //clear treeview4
+                    treeView4.Nodes.Clear();
                 }
                 else if (i == 4)
                 {
 
                     this.label5number.Text = "######";
                     //clear treeview5
+                    treeView5.Nodes.Clear();
 
                 }
-
 
                 i++;
             }
@@ -416,6 +442,14 @@ namespace WindowsFormsApplication1
             }
 
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //After button is clicked, check for new updates.
+            UpdateFromDatabase();
+            //Update the kitchen screen to reflect the new list_of_orders
+            UpdateAllTables();
         }
     }
 }
