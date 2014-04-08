@@ -144,6 +144,9 @@
   <data name="cookies" xml:space="preserve">
     <value>Cookies</value>
   </data>
+  <data name="cornedbeef" xml:space="preserve">
+    <value>Bœuf Salé</value>
+  </data>
   <data name="cucumber" xml:space="preserve">
     <value>Concombre</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="eggs" xml:space="preserve">
     <value>œufs</value>
+  </data>
+  <data name="grapejelly" xml:space="preserve">
+    <value>Gelée de raisin</value>
   </data>
   <data name="ham" xml:space="preserve">
     <value>Jambon</value>
@@ -186,6 +192,12 @@
   <data name="onions" xml:space="preserve">
     <value>Oignons</value>
   </data>
+  <data name="orangemarmalade" xml:space="preserve">
+    <value>Marmelade à l'orange</value>
+  </data>
+  <data name="peanutbutter" xml:space="preserve">
+    <value>Beurre D'arachide</value>
+  </data>
   <data name="pepper" xml:space="preserve">
     <value>Poivre</value>
   </data>
@@ -206,6 +218,9 @@
   </data>
   <data name="random" xml:space="preserve">
     <value>Aléatoire</value>
+  </data>
+  <data name="russiandressing" xml:space="preserve">
+    <value>Sauce Russe</value>
   </data>
   <data name="rye" xml:space="preserve">
     <value>Seigle</value>

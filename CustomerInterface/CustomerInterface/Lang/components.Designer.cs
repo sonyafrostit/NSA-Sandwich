@@ -142,6 +142,15 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Corned Beef.
+        /// </summary>
+        internal static string cornedbeef {
+            get {
+                return ResourceManager.GetString("cornedbeef", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cucumber.
         /// </summary>
         internal static string cucumber {
@@ -183,6 +192,15 @@ namespace CustomerInterface.Lang {
         internal static string eggs {
             get {
                 return ResourceManager.GetString("eggs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grape Jelly.
+        /// </summary>
+        internal static string grapejelly {
+            get {
+                return ResourceManager.GetString("grapejelly", resourceCulture);
             }
         }
         
@@ -268,6 +286,24 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Orange Marmalade.
+        /// </summary>
+        internal static string orangemarmalade {
+            get {
+                return ResourceManager.GetString("orangemarmalade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Peanut Butter.
+        /// </summary>
+        internal static string peanutbutter {
+            get {
+                return ResourceManager.GetString("peanutbutter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pepper.
         /// </summary>
         internal static string pepper {
@@ -327,6 +363,15 @@ namespace CustomerInterface.Lang {
         internal static string random {
             get {
                 return ResourceManager.GetString("random", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Russian Dressing.
+        /// </summary>
+        internal static string russiandressing {
+            get {
+                return ResourceManager.GetString("russiandressing", resourceCulture);
             }
         }
         

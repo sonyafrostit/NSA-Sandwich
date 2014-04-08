@@ -210,4 +210,16 @@
   <data name="signIntoLoyalty" xml:space="preserve">
     <value>Inscrivez compte de fidélité</value>
   </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Stornieren</value>
+  </data>
+  <data name="finish" xml:space="preserve">
+    <value>Oberfläche</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="bread" xml:space="preserve">
+    <value>Brot</value>
+  </data>
 </root>

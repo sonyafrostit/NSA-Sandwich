@@ -32,34 +32,21 @@ namespace CustomerInterface
             return translatedWord;
         }
 
-        public string parseMenuItem(string name)
+        //parses components and menu items
+        public string parseItem(string component)
         {
-            string translatedWord;                
+            //replace all spaces in case of two-word component
+            string translatedWord = component.Replace(" ", String.Empty);
 
+            //load assembly and resource manager
             Assembly a = Assembly.Load("CustomerInterface");
             ResourceManager rm = new ResourceManager("CustomerInterface.Lang.components", a);
-            translatedWord = rm.GetString(name.ToLower(), ci);
+            translatedWord = rm.GetString(translatedWord.ToLower(), ci); //set it to lowercase
 
-            if(String.IsNullOrEmpty(translatedWord))
-                return name;
-
-            return translatedWord;
-        }
-
-        public string parseComponent(string component)
-        {
-            string splitComponent = component.Substring(1);
-
-            string translatedWord;
-
-            Assembly a = Assembly.Load("CustomerInterface");
-            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.components", a);
-            translatedWord = rm.GetString(splitComponent.ToLower(), ci);
-
-            if(String.IsNullOrEmpty(translatedWord))
+            if(String.IsNullOrEmpty(translatedWord)) //if the string wasnt found, it will be empty
                 return component;
 
-            return "+" + translatedWord;
+            return translatedWord; //if it wasnt, we return the translated word
         }
     }
 }

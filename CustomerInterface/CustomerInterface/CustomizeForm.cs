@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Resources;
+using System.Reflection;
 
 namespace CustomerInterface
 {
     public partial class CustomizeForm : Form
     {
+        private CultureInfo ci;
+
         public CustomizeForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();  
         }
+
         NSAComponent[] customizeComponents;
         NSAMenuItem customizeItem;
         NSAChanges changes;
@@ -38,8 +43,9 @@ namespace CustomerInterface
             get { return customizeItem; }
             set { customizeItem = value; }
         }
-        public void populateComponents() {
-            
+        public void populateComponents() 
+        {
+            DataParser dataParser = new DataParser(ci);
             BreadPanel.Visible = customizeItem.BreadIndex >= 0;
             
             foreach (NSAComponent comp in customizeComponents)
@@ -49,7 +55,7 @@ namespace CustomerInterface
                     OtherListBox.Items.Add(comp, customizeItem.Components.Contains(comp));
                 }
                 else {
-                    ListViewItem nlvi = new ListViewItem(comp.Name);
+                    ListViewItem nlvi = new ListViewItem(dataParser.parseItem(comp.Name));
                     nlvi.Tag = comp;
                     BreadList.Items.Add(nlvi);
                 }
@@ -60,6 +66,15 @@ namespace CustomerInterface
         {
             get { return customizeComponents; }
             set { customizeComponents = value; }
+        }
+
+        public void setLang(CultureInfo language)
+        {
+            ci = language;
+            Assembly a = Assembly.Load("CustomerInterface");
+            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+            breadLabel.Text = rm.GetString("bread", ci);
+            otherLabel.Text = rm.GetString("other", ci);
         }
 
         private void button1_Click(object sender, EventArgs e)
