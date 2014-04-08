@@ -319,7 +319,11 @@ namespace CustomerInterface
             }
             cmd.ExecuteReader().Close();
             currentOrder.Id = cmd.LastInsertedId;
-            
+            if (account != null && saveorder)
+            {
+                MySqlCommand histcmd = new MySqlCommand(String.Format("INSERT INTO favoriteorder (orderID, storeid, loyaltyid) VALUES ({0}, {1}, {2});", currentOrder.Id, db.StoreNumber1, account.getAccountNumber()));
+                histcmd.ExecuteReader().Close();
+            }
             foreach (NSAMenuItem item in currentOrder.Items) { 
                 MySqlCommand cmd2 = new MySqlCommand(String.Format("INSERT INTO orderitems (storeid, orderid, menuitemid, name, price) VALUES ({0}, {1}, {2}, '{3}', {4});", db.StoreNumber1, currentOrder.Id, item.Id, item.Name, item.Price), db.Connection1);
                 cmd2.ExecuteReader().Close();
@@ -404,5 +408,15 @@ namespace CustomerInterface
             }
         }
 
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click_2(object sender, EventArgs e)
+        {
+            saveorder = true;
+        }
+        bool saveorder = false;
     }
 }
