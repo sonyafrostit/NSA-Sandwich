@@ -11,28 +11,14 @@ namespace CustomerInterface
         private string accountNumber;
         private string name;
         private string email;
-        private int rewardscount;
+        private string rewardsCount;
 
-        public NSALoyaltyAccount(string acc, string n, string e)
+        public NSALoyaltyAccount(string n, string e, string rewards, string acc)
         {
-            accountNumber = acc;
             name = n;
             email = e;
-        }
-
-        public NSALoyaltyAccount(string acc)
-        {
+            rewardsCount = rewards;
             accountNumber = acc;
-            queryForNameAndEmail();
-        }
-
-        public void queryForNameAndEmail()
-        {
-            NSADatabase db = new NSADatabase();
-            db.OpenConnection();
-            //query db with acc number
-            //set name to db name
-            //set email to db email
         }
 
         public string getAccountNumber()
@@ -48,6 +34,11 @@ namespace CustomerInterface
         public string getEmail()
         {
             return email;
+        }
+
+        public string getRewardCount()
+        {
+            return rewardsCount;
         }
     }
 }

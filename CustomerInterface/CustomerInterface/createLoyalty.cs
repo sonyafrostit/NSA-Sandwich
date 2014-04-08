@@ -22,10 +22,15 @@ namespace CustomerInterface
         {
             InitializeComponent();
             ci = language;
+            db = new NSADatabase();
         }
 
+        //called when user tries to create an account
         private void createLoyaltyBut_Click(object sender, EventArgs e)
         {
+            //get text box text
+            name = nameTextBox.Text.ToString();
+            email = emailTextBox.Text;
             if (String.IsNullOrEmpty(name))
                 errorLabel.Text = "Enter your name!";
 
@@ -42,12 +47,19 @@ namespace CustomerInterface
                         db.OpenConnection();
                     }
 
+                    //writeLine to see if db can connect (this line is called)
+                    Console.WriteLine("Connection opened");
                     //create the loyalty account and save the account number
                     string accountNumber = db.createLoyaltyAccount(name, email);
 
                     if (accountNumber != "FAIL")
                     {
-                        KioskWindow form = new KioskWindow(ci, accountNumber, name, email);
+                        List<string>[] accountInfo = new List<string>[4];
+                        accountInfo[0].Add(name);
+                        accountInfo[1].Add(email);
+                        accountInfo[2].Add("0");
+                        accountInfo[3].Add(accountNumber);
+                        KioskWindow form = new KioskWindow(ci, accountInfo);
                         form.Show();
                         Hide();
                     }
@@ -60,16 +72,6 @@ namespace CustomerInterface
                     MessageBox.Show(ex.Message, "Save Loyalty Account", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-        }
-
-        private void nameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            name = nameTextBox.Text;
-        }
-
-        private void emailTextBox_TextChanged(object sender, EventArgs e)
-        {
-            email = emailTextBox.Text;
         }
     }
 }

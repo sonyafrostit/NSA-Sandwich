@@ -43,7 +43,6 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(321, 20);
             this.nameTextBox.TabIndex = 0;
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // emailTextBox
             // 
@@ -51,7 +50,6 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(321, 20);
             this.emailTextBox.TabIndex = 1;
-            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             // 
             // createLoyaltyBut
             // 

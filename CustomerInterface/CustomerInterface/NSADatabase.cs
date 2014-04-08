@@ -42,8 +42,8 @@ namespace CustomerInterface
         //Constructor - Default Sets default values and DOES not open connectiton.
         public NSADatabase()
         {
-            
-            string[] configFileLines = {"1", "54.186.234.139", "nsa_database", "trae", ""};
+
+            string[] configFileLines = { "1", "54.186.234.139", "nsa_database", "trae", ""};
             if (File.Exists("config")) {
                 configFileLines = File.ReadAllLines("config");
                 
@@ -360,12 +360,12 @@ namespace CustomerInterface
 
                 //Create a MySQL reader and Execute the query
                 cmd.ExecuteNonQuery();
-                return String.Concat(storeNumber, recordNumber);
+                return storeNumber + recordNumber;
             }
             return "FAIL";
         }
 
-        public int getLoyaltyAccountName(out List<string>[] loyaltyaccounts, string accountNumber)
+        public int getLoyaltyAccountInfo(out List<string>[] loyaltyaccounts, string accountNumber)
         {
             loyaltyaccounts = new List<string>[3];
             loyaltyaccounts[0] = new List<string>();

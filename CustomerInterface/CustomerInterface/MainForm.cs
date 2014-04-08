@@ -47,28 +47,7 @@ namespace CustomerInterface
             setLang(ci);
         }
 
-        //constructor called when logging in AFTER creating loyalty account
-        public KioskWindow(CultureInfo language, string accountNumber, string name, string email)
-        {
-            ci = language;
-            a = Assembly.Load("CustomerInterface");
-            rm = new ResourceManager("CustomerInterface.Lang.lang", a);
-
-            account = new NSALoyaltyAccount(accountNumber, name, email);
-            setAccountTab();
-
-            InitializeComponent();
-            db = new NSADatabase();
-            db.OpenConnection();
-            componentsList = db.getComponents();
-            menu = db.getMenu();
-
-            updateMenu();
-            currentOrder = new NSAOrder();
-            setLang(ci);
-        }
-
-        //constructor called when logging in with a previous loyalty account
+        //constructor called when logging in with a loyalty account
         public KioskWindow(CultureInfo language, List<string>[] accountNumber)
         {
             ci = language;
@@ -76,6 +55,7 @@ namespace CustomerInterface
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
             //account = new NSALoyaltyAccount(accountNumber);
+            account = new NSALoyaltyAccount(accountNumber[0][0], accountNumber[1][0], accountNumber[2][0], accountNumber[3][0]);
             setAccountTab();
 
             InitializeComponent();
@@ -94,6 +74,7 @@ namespace CustomerInterface
             nameTextBox.Text = account.getName();
             emailTextBox.Text = account.getEmail();
             accountNumberLabel.Text = account.getAccountNumber();
+            rewardsLabel.Text = account.getRewardCount() + " more orders to free sandwich";
         }
 
         private void updateMenu()

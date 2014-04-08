@@ -21,20 +21,18 @@ namespace CustomerInterface
         {
             InitializeComponent();
             ci = language;
+            db = new NSADatabase();
         }
 
-        private void signInBut_TextChanged(object sender, EventArgs e)
-        {
-            accountNumber = signInBut.Text;
-        }
-
+        //called when user tries to log in
         private void button1_Click(object sender, EventArgs e)
         {
+            accountNumber = signInBut.Text.ToString();
             if (String.IsNullOrEmpty(accountNumber))
                 errorLabel.Text = "Enter your account number!";
 
-            int recordCount = 0;        //the number of orders to display
-            //List<string>[] loyaltyData;   //the orders that will be displayed
+            int recordCount = 0;        //the number of accounts found
+            List<string>[] loyaltyData;   //the loyalty account data to be found
             
            //connect to DB if it is not connected
             if (!db.Connected())
@@ -43,15 +41,15 @@ namespace CustomerInterface
             }
 
                 // Get the loyalty account data from the database
-            //recordCount = db.ManagerGetLoyaltyAccount(out Loyaltydata, accountNumber);
+            recordCount = db.getLoyaltyAccountInfo(out loyaltyData, accountNumber);
 
-            if(recordCount == 0)
-                errorLabel.Text = "Localty account not found!";
+            if(recordCount <= 0)
+                errorLabel.Text = "Loyalty account not found!";
 
             else
             {
-                //KioskWindow mainForm = new KioskWindow(ci, loyaltyData);
-                //mainForm.Show();
+                KioskWindow mainForm = new KioskWindow(ci, loyaltyData);
+                mainForm.Show();
                 Hide();
             }
         }
