@@ -12,10 +12,10 @@ namespace CustomerInterface
 {
     public partial class CashForm2 : Form
     {
-        int orderID;
+        long orderID;
         Decimal cost;
         NSADatabase db;
-        public CashForm2(int orderID, Decimal cost, NSADatabase db)
+        public CashForm2(long orderID, Decimal cost, NSADatabase db)
         {
             InitializeComponent();
             this.orderID = orderID;
@@ -26,7 +26,7 @@ namespace CustomerInterface
         private void button1_Click(object sender, EventArgs e)
         {
             CashForm1 f1= new CashForm1();
-            db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";");
+            db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
             f1.passValueOntoForms1 = textBox1.Text;
             f1.passValueOntoForms2 = textBox2.Text;
             double result1 = Convert.ToDouble(textBox1.Text) ;

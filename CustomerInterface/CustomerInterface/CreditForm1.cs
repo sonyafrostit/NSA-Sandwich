@@ -12,10 +12,10 @@ namespace CustomerInterface
 {
     public partial class CreditForm1 : Form
     {
-        int orderID;
+        long orderID;
         Decimal cost; //for show
         NSADatabase db;
-        public CreditForm1(int orderID, Decimal cost, NSADatabase db)
+        public CreditForm1(long orderID, Decimal cost, NSADatabase db)
         {
             InitializeComponent();
             this.orderID = orderID;
@@ -37,7 +37,7 @@ namespace CustomerInterface
         {
             if (CCBox.TextLength == 16)
             {
-                db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";");
+                db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
                 CreditForm2 f2 = new CreditForm2();
                 f2.passValue = CCBox.Text;
                 f2.ShowDialog();

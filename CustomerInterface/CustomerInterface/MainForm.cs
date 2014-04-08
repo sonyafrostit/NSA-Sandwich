@@ -304,12 +304,20 @@ namespace CustomerInterface
         private void button1_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = new MySqlCommand(("INSERT INTO orders (storeid, loyaltyid, status, timeplaced, total, tax, refunded) VALUES (" + db.StoreNumber1 + ", " + account.getAccountNumber() + ", 0, " + DateTime.Now + ", " + currentOrder.Total.ToString() + ", " + currentOrder.Tax.ToString() + ", " + (Convert.ToInt32(account.getRewardCount()) == 0) + ");"), db.Connection1);
-            cmd.ExecuteReader();
+            cmd.ExecuteReader().Close();
             currentOrder.Id = cmd.LastInsertedId;
             
             foreach (NSAMenuItem item in currentOrder.Items) { 
-                
+                MySqlCommand cmd2 = new MySqlCommand(("INSERT INTO orderItems (storeid, orderid, menuitemid, name, price VALUES (" + db.StoreNumber1 + currentOrder.Id + item.Id + item.Name + item.Price + ");"), db.Connection1);
+                cmd2.ExecuteReader().Close();
+                foreach (NSAComponent comp in item.Components) {
+                    MySqlCommand cmd3 = new MySqlCommand(("INSERT INTO orderItemComponents (orderitemid, storeid, component) VALUES (" + item.Id + ", " + db.StoreNumber1 + ", " + comp.ComponentID + ");"), db.Connection1);
+                    cmd3.ExecuteReader().Close();
+                }
             }
+            CashCreditSelect ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db);
+            ccs.Show();
+            Hide();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
