@@ -89,6 +89,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "t";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -120,6 +121,7 @@
             this.breadLabel.Size = new System.Drawing.Size(60, 24);
             this.breadLabel.TabIndex = 3;
             this.breadLabel.Text = "Bread";
+            this.breadLabel.Click += new System.EventHandler(this.breadLabel_Click);
             // 
             // button4
             // 

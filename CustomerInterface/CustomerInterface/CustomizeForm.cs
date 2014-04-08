@@ -52,6 +52,10 @@ namespace CustomerInterface
             {
                 if (comp.Category != "Bread")
                 {
+                    if (rm != null)
+                    {
+                        comp.Rm = rm;
+                    }
                     OtherListBox.Items.Add(comp, customizeItem.Components.Contains(comp));
                 }
                 else {
@@ -75,8 +79,11 @@ namespace CustomerInterface
             ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
             breadLabel.Text = rm.GetString("bread", ci);
             otherLabel.Text = rm.GetString("other", ci);
+            foreach (Object o in OtherListBox.Items) {
+                ((NSAComponent)o).Rm = rm;
+            }
         }
-
+        ResourceManager rm;
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
@@ -117,6 +124,7 @@ namespace CustomerInterface
                 resultItem.BreadIndex = 0;
             }
             foreach (Object customComponent in OtherListBox.CheckedItems) {
+                
                 finalComponents.Add((NSAComponent)customComponent);
                 
             }
@@ -135,6 +143,16 @@ namespace CustomerInterface
         }
 
         private void BreadPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void breadLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
