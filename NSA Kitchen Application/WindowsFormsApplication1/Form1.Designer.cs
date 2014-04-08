@@ -28,41 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeView treeView1;
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("-Mustard");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
+            treeNode21});
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("+Onion");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
+            treeNode23});
             System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("-Mustard");
             System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
             treeNode25});
             System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("+Onion");
             System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
             treeNode27});
-            System.Windows.Forms.TreeView treeView2;
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("-Mustard");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
-            treeNode33});
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("+Onion");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
-            treeNode35});
-            System.Windows.Forms.TreeView treeView3;
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("-Mustard");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
-            treeNode37});
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("+Onion");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
-            treeNode39});
-            System.Windows.Forms.TreeView treeView4;
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("-Mustard");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
-            treeNode41});
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("+Onion");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
-            treeNode43});
-            System.Windows.Forms.TreeView treeView5;
             System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("-Mustard");
             System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
             treeNode29});
             System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("+Onion");
             System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
             treeNode31});
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("-Mustard");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
+            treeNode33});
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("+Onion");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
+            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("-Mustard");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("All-Star Sandwich", new System.Windows.Forms.TreeNode[] {
+            treeNode37});
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("+Onion");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Avocado Burger", new System.Windows.Forms.TreeNode[] {
+            treeNode39});
             this.toplabelnumber = new System.Windows.Forms.Label();
             this.label1number = new System.Windows.Forms.Label();
             this.label2number = new System.Windows.Forms.Label();
@@ -85,56 +81,17 @@
             this.mytable4 = new System.Windows.Forms.FlowLayoutPanel();
             this.mytable5 = new System.Windows.Forms.FlowLayoutPanel();
             this.mytable2 = new System.Windows.Forms.FlowLayoutPanel();
-            treeView1 = new System.Windows.Forms.TreeView();
-            treeView2 = new System.Windows.Forms.TreeView();
+            this.Polling = new System.Windows.Forms.Timer(this.components);
             treeView3 = new System.Windows.Forms.TreeView();
             treeView4 = new System.Windows.Forms.TreeView();
             treeView5 = new System.Windows.Forms.TreeView();
+            treeView2 = new System.Windows.Forms.TreeView();
+            treeView1 = new System.Windows.Forms.TreeView();
             this.mytable3.SuspendLayout();
             this.mytable4.SuspendLayout();
             this.mytable5.SuspendLayout();
             this.mytable2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // treeView1
-            // 
-            treeView1.BackColor = System.Drawing.Color.Black;
-            treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            treeView1.CausesValidation = false;
-            treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeView1.ForeColor = System.Drawing.Color.White;
-            treeView1.ItemHeight = 24;
-            treeView1.LineColor = System.Drawing.Color.DimGray;
-            treeView1.Location = new System.Drawing.Point(6, 40);
-            treeView1.Margin = new System.Windows.Forms.Padding(0);
-            treeView1.Name = "treeView1";
-            treeNode25.BackColor = System.Drawing.Color.Black;
-            treeNode25.Name = "Mod";
-            treeNode25.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode25.Text = "-Mustard";
-            treeNode26.BackColor = System.Drawing.Color.Black;
-            treeNode26.Checked = true;
-            treeNode26.Name = "Item";
-            treeNode26.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode26.Text = "All-Star Sandwich";
-            treeNode27.BackColor = System.Drawing.Color.Black;
-            treeNode27.Name = "Mod";
-            treeNode27.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode27.Text = "+Onion";
-            treeNode28.BackColor = System.Drawing.Color.Black;
-            treeNode28.Checked = true;
-            treeNode28.Name = "Node0";
-            treeNode28.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode28.Text = "Avocado Burger";
-            treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode26,
-            treeNode28});
-            treeView1.Scrollable = false;
-            treeView1.Size = new System.Drawing.Size(184, 404);
-            treeView1.TabIndex = 0;
-            treeView1.TabStop = false;
-            treeView1.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeCollapse);
-            treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
             // 
             // toplabelnumber
             // 
@@ -145,7 +102,7 @@
             this.toplabelnumber.Name = "toplabelnumber";
             this.toplabelnumber.Size = new System.Drawing.Size(84, 26);
             this.toplabelnumber.TabIndex = 0;
-            this.toplabelnumber.Text = "######";
+            this.toplabelnumber.Text = "0";
             // 
             // label1number
             // 
@@ -156,7 +113,7 @@
             this.label1number.Name = "label1number";
             this.label1number.Size = new System.Drawing.Size(63, 20);
             this.label1number.TabIndex = 7;
-            this.label1number.Text = "######";
+            this.label1number.Text = "";
             // 
             // label2number
             // 
@@ -167,7 +124,7 @@
             this.label2number.Name = "label2number";
             this.label2number.Size = new System.Drawing.Size(63, 20);
             this.label2number.TabIndex = 8;
-            this.label2number.Text = "######";
+            this.label2number.Text = "";
             // 
             // label3number
             // 
@@ -178,7 +135,7 @@
             this.label3number.Name = "label3number";
             this.label3number.Size = new System.Drawing.Size(63, 20);
             this.label3number.TabIndex = 9;
-            this.label3number.Text = "######";
+            this.label3number.Text = "";
             // 
             // label4number
             // 
@@ -189,7 +146,7 @@
             this.label4number.Name = "label4number";
             this.label4number.Size = new System.Drawing.Size(63, 20);
             this.label4number.TabIndex = 10;
-            this.label4number.Text = "######";
+            this.label4number.Text = "";
             // 
             // label5number
             // 
@@ -200,7 +157,7 @@
             this.label5number.Name = "label5number";
             this.label5number.Size = new System.Drawing.Size(63, 20);
             this.label5number.TabIndex = 11;
-            this.label5number.Text = "######";
+            this.label5number.Text = "";
             // 
             // toplabel
             // 
@@ -342,71 +299,6 @@
             this.mytable3.Size = new System.Drawing.Size(184, 404);
             this.mytable3.TabIndex = 19;
             // 
-            // mytable4
-            // 
-            this.mytable4.Controls.Add(treeView4);
-            this.mytable4.ForeColor = System.Drawing.Color.White;
-            this.mytable4.Location = new System.Drawing.Point(570, 40);
-            this.mytable4.Name = "mytable4";
-            this.mytable4.Size = new System.Drawing.Size(184, 404);
-            this.mytable4.TabIndex = 20;
-            // 
-            // mytable5
-            // 
-            this.mytable5.Controls.Add(treeView5);
-            this.mytable5.ForeColor = System.Drawing.Color.White;
-            this.mytable5.Location = new System.Drawing.Point(758, 40);
-            this.mytable5.Name = "mytable5";
-            this.mytable5.Size = new System.Drawing.Size(184, 404);
-            this.mytable5.TabIndex = 21;
-            // 
-            // treeView2
-            // 
-            treeView2.BackColor = System.Drawing.Color.Black;
-            treeView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            treeView2.CausesValidation = false;
-            treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeView2.ForeColor = System.Drawing.Color.White;
-            treeView2.ItemHeight = 24;
-            treeView2.LineColor = System.Drawing.Color.DimGray;
-            treeView2.Location = new System.Drawing.Point(0, 0);
-            treeView2.Margin = new System.Windows.Forms.Padding(0);
-            treeView2.Name = "treeView2";
-            treeNode33.BackColor = System.Drawing.Color.Black;
-            treeNode33.Name = "Mod";
-            treeNode33.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode33.Text = "-Mustard";
-            treeNode34.BackColor = System.Drawing.Color.Black;
-            treeNode34.Checked = true;
-            treeNode34.Name = "Item";
-            treeNode34.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode34.Text = "All-Star Sandwich";
-            treeNode35.BackColor = System.Drawing.Color.Black;
-            treeNode35.Name = "Mod";
-            treeNode35.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode35.Text = "+Onion";
-            treeNode36.BackColor = System.Drawing.Color.Black;
-            treeNode36.Checked = true;
-            treeNode36.Name = "Node0";
-            treeNode36.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode36.Text = "Avocado Burger";
-            treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode34,
-            treeNode36});
-            treeView2.Scrollable = false;
-            treeView2.Size = new System.Drawing.Size(184, 404);
-            treeView2.TabIndex = 1;
-            treeView2.TabStop = false;
-            // 
-            // mytable2
-            // 
-            this.mytable2.Controls.Add(treeView2);
-            this.mytable2.ForeColor = System.Drawing.Color.White;
-            this.mytable2.Location = new System.Drawing.Point(194, 40);
-            this.mytable2.Name = "mytable2";
-            this.mytable2.Size = new System.Drawing.Size(184, 404);
-            this.mytable2.TabIndex = 18;
-            // 
             // treeView3
             // 
             treeView3.BackColor = System.Drawing.Color.Black;
@@ -419,31 +311,40 @@
             treeView3.Location = new System.Drawing.Point(0, 0);
             treeView3.Margin = new System.Windows.Forms.Padding(0);
             treeView3.Name = "treeView3";
-            treeNode37.BackColor = System.Drawing.Color.Black;
-            treeNode37.Name = "Mod";
-            treeNode37.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode37.Text = "-Mustard";
-            treeNode38.BackColor = System.Drawing.Color.Black;
-            treeNode38.Checked = true;
-            treeNode38.Name = "Item";
-            treeNode38.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode38.Text = "All-Star Sandwich";
-            treeNode39.BackColor = System.Drawing.Color.Black;
-            treeNode39.Name = "Mod";
-            treeNode39.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode39.Text = "+Onion";
-            treeNode40.BackColor = System.Drawing.Color.Black;
-            treeNode40.Checked = true;
-            treeNode40.Name = "Node0";
-            treeNode40.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode40.Text = "Avocado Burger";
+            treeNode21.BackColor = System.Drawing.Color.Black;
+            treeNode21.Name = "Mod";
+            treeNode21.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode21.Text = "-Mustard";
+            treeNode22.BackColor = System.Drawing.Color.Black;
+            treeNode22.Checked = true;
+            treeNode22.Name = "Item";
+            treeNode22.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode22.Text = "All-Star Sandwich";
+            treeNode23.BackColor = System.Drawing.Color.Black;
+            treeNode23.Name = "Mod";
+            treeNode23.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode23.Text = "+Onion";
+            treeNode24.BackColor = System.Drawing.Color.Black;
+            treeNode24.Checked = true;
+            treeNode24.Name = "Node0";
+            treeNode24.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode24.Text = "Avocado Burger";
             treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode38,
-            treeNode40});
+            treeNode22,
+            treeNode24});
             treeView3.Scrollable = false;
             treeView3.Size = new System.Drawing.Size(184, 404);
             treeView3.TabIndex = 2;
             treeView3.TabStop = false;
+            // 
+            // mytable4
+            // 
+            this.mytable4.Controls.Add(treeView4);
+            this.mytable4.ForeColor = System.Drawing.Color.White;
+            this.mytable4.Location = new System.Drawing.Point(570, 40);
+            this.mytable4.Name = "mytable4";
+            this.mytable4.Size = new System.Drawing.Size(184, 404);
+            this.mytable4.TabIndex = 20;
             // 
             // treeView4
             // 
@@ -457,31 +358,40 @@
             treeView4.Location = new System.Drawing.Point(0, 0);
             treeView4.Margin = new System.Windows.Forms.Padding(0);
             treeView4.Name = "treeView4";
-            treeNode41.BackColor = System.Drawing.Color.Black;
-            treeNode41.Name = "Mod";
-            treeNode41.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode41.Text = "-Mustard";
-            treeNode42.BackColor = System.Drawing.Color.Black;
-            treeNode42.Checked = true;
-            treeNode42.Name = "Item";
-            treeNode42.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode42.Text = "All-Star Sandwich";
-            treeNode43.BackColor = System.Drawing.Color.Black;
-            treeNode43.Name = "Mod";
-            treeNode43.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode43.Text = "+Onion";
-            treeNode44.BackColor = System.Drawing.Color.Black;
-            treeNode44.Checked = true;
-            treeNode44.Name = "Node0";
-            treeNode44.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            treeNode44.Text = "Avocado Burger";
+            treeNode25.BackColor = System.Drawing.Color.Black;
+            treeNode25.Name = "Mod";
+            treeNode25.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode25.Text = "-Mustard";
+            treeNode26.BackColor = System.Drawing.Color.Black;
+            treeNode26.Checked = true;
+            treeNode26.Name = "Item";
+            treeNode26.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode26.Text = "All-Star Sandwich";
+            treeNode27.BackColor = System.Drawing.Color.Black;
+            treeNode27.Name = "Mod";
+            treeNode27.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode27.Text = "+Onion";
+            treeNode28.BackColor = System.Drawing.Color.Black;
+            treeNode28.Checked = true;
+            treeNode28.Name = "Node0";
+            treeNode28.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode28.Text = "Avocado Burger";
             treeView4.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode42,
-            treeNode44});
+            treeNode26,
+            treeNode28});
             treeView4.Scrollable = false;
             treeView4.Size = new System.Drawing.Size(184, 404);
             treeView4.TabIndex = 2;
             treeView4.TabStop = false;
+            // 
+            // mytable5
+            // 
+            this.mytable5.Controls.Add(treeView5);
+            this.mytable5.ForeColor = System.Drawing.Color.White;
+            this.mytable5.Location = new System.Drawing.Point(758, 40);
+            this.mytable5.Name = "mytable5";
+            this.mytable5.Size = new System.Drawing.Size(184, 404);
+            this.mytable5.TabIndex = 21;
             // 
             // treeView5
             // 
@@ -521,6 +431,103 @@
             treeView5.TabIndex = 2;
             treeView5.TabStop = false;
             // 
+            // mytable2
+            // 
+            this.mytable2.Controls.Add(treeView2);
+            this.mytable2.ForeColor = System.Drawing.Color.White;
+            this.mytable2.Location = new System.Drawing.Point(194, 40);
+            this.mytable2.Name = "mytable2";
+            this.mytable2.Size = new System.Drawing.Size(184, 404);
+            this.mytable2.TabIndex = 18;
+            // 
+            // treeView2
+            // 
+            treeView2.BackColor = System.Drawing.Color.Black;
+            treeView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            treeView2.CausesValidation = false;
+            treeView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeView2.ForeColor = System.Drawing.Color.White;
+            treeView2.ItemHeight = 24;
+            treeView2.LineColor = System.Drawing.Color.DimGray;
+            treeView2.Location = new System.Drawing.Point(0, 0);
+            treeView2.Margin = new System.Windows.Forms.Padding(0);
+            treeView2.Name = "treeView2";
+            treeNode33.BackColor = System.Drawing.Color.Black;
+            treeNode33.Name = "Mod";
+            treeNode33.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode33.Text = "-Mustard";
+            treeNode34.BackColor = System.Drawing.Color.Black;
+            treeNode34.Checked = true;
+            treeNode34.Name = "Item";
+            treeNode34.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode34.Text = "All-Star Sandwich";
+            treeNode35.BackColor = System.Drawing.Color.Black;
+            treeNode35.Name = "Mod";
+            treeNode35.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode35.Text = "+Onion";
+            treeNode36.BackColor = System.Drawing.Color.Black;
+            treeNode36.Checked = true;
+            treeNode36.Name = "Node0";
+            treeNode36.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode36.Text = "Avocado Burger";
+            treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode34,
+            treeNode36});
+            treeView2.Scrollable = false;
+            treeView2.Size = new System.Drawing.Size(184, 404);
+            treeView2.TabIndex = 1;
+            treeView2.TabStop = false;
+            // 
+            // treeView1
+            // 
+            treeView1.BackColor = System.Drawing.Color.Black;
+            treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            treeView1.CausesValidation = false;
+            treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeView1.ForeColor = System.Drawing.Color.White;
+            treeView1.ItemHeight = 24;
+            treeView1.LineColor = System.Drawing.Color.DimGray;
+            treeView1.Location = new System.Drawing.Point(6, 40);
+            treeView1.Margin = new System.Windows.Forms.Padding(0);
+            treeView1.Name = "treeView1";
+            treeNode37.BackColor = System.Drawing.Color.Black;
+            treeNode37.Name = "Mod";
+            treeNode37.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode37.Text = "-Mustard";
+            treeNode38.BackColor = System.Drawing.Color.Black;
+            treeNode38.Checked = true;
+            treeNode38.Name = "Item";
+            treeNode38.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode38.Text = "All-Star Sandwich";
+            treeNode39.BackColor = System.Drawing.Color.Black;
+            treeNode39.Name = "Mod";
+            treeNode39.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode39.Text = "+Onion";
+            treeNode40.BackColor = System.Drawing.Color.Black;
+            treeNode40.Checked = true;
+            treeNode40.Name = "Node0";
+            treeNode40.NodeFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            treeNode40.Text = "Avocado Burger";
+            treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode38,
+            treeNode40});
+            treeView1.Scrollable = false;
+            treeView1.Size = new System.Drawing.Size(184, 404);
+            treeView1.TabIndex = 0;
+            treeView1.TabStop = false;
+            treeView1.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeCollapse);
+            treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect_1);
+            treeView1.ExpandAll();
+            treeView2.ExpandAll();
+            treeView3.ExpandAll();
+            treeView4.ExpandAll();
+            treeView5.ExpandAll();
+            // 
+            // Polling
+            // 
+            this.Polling.Interval = 2;
+            this.Polling.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.Color.Black;
@@ -558,18 +565,18 @@
             this.mytable4.ResumeLayout(false);
             this.mytable5.ResumeLayout(false);
             this.mytable2.ResumeLayout(false);
+            this.mytable1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-            treeView1.ExpandAll();
-            treeView2.ExpandAll();
-            treeView3.ExpandAll();
-            treeView4.ExpandAll();
-            treeView5.ExpandAll();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView treeView3;
+        private System.Windows.Forms.TreeView treeView4;
+        private System.Windows.Forms.TreeView treeView5;
         private System.Windows.Forms.Label toplabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -582,7 +589,7 @@
         private System.Windows.Forms.Label label3number;
         private System.Windows.Forms.Label label4number;
         private System.Windows.Forms.Label label5number;
-        public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -592,6 +599,7 @@
         private System.Windows.Forms.FlowLayoutPanel mytable4;
         private System.Windows.Forms.FlowLayoutPanel mytable5;
         private System.Windows.Forms.FlowLayoutPanel mytable2;
+        private System.Windows.Forms.Timer Polling;
     }
 }
 

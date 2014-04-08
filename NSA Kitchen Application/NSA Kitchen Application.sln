@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{67C553D5-E920-43C0-99F8-AECF39A37410}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSA Kitchen Application", "WindowsFormsApplication1\NSA Kitchen Application.csproj", "{67C553D5-E920-43C0-99F8-AECF39A37410}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

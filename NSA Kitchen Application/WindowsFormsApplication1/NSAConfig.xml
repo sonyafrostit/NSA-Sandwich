@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<NSAConfigSettings>
+  <DBServer>localhost</DBServer>
+  <DBName>nsa_database</DBName>
+  <DBUser>root</DBUser>
+  <DBPassword>password</DBPassword>
+  <StoreID>1</StoreID>
+</NSAConfigSettings>
