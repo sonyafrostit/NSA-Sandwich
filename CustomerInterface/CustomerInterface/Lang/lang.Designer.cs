@@ -79,6 +79,24 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continue as guest.
+        /// </summary>
+        internal static string continueAsGuest {
+            get {
+                return ResourceManager.GetString("continueAsGuest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create loyalty account.
+        /// </summary>
+        internal static string createLoyalty {
+            get {
+                return ResourceManager.GetString("createLoyalty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Need a Loyalty Card Click here.
         /// </summary>
         internal static string createLoyaltyBut {
@@ -102,6 +120,24 @@ namespace CustomerInterface.Lang {
         internal static string email {
             get {
                 return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter in your account number:.
+        /// </summary>
+        internal static string enterAccountInfo {
+            get {
+                return ResourceManager.GetString("enterAccountInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your information:.
+        /// </summary>
+        internal static string enterInfo {
+            get {
+                return ResourceManager.GetString("enterInfo", resourceCulture);
             }
         }
         
@@ -255,6 +291,24 @@ namespace CustomerInterface.Lang {
         internal static string selectLangText {
             get {
                 return ResourceManager.GetString("selectLangText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in.
+        /// </summary>
+        internal static string signIn {
+            get {
+                return ResourceManager.GetString("signIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign into loyalty account.
+        /// </summary>
+        internal static string signIntoLoyalty {
+            get {
+                return ResourceManager.GetString("signIntoLoyalty", resourceCulture);
             }
         }
         

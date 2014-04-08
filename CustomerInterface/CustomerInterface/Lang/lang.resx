@@ -192,4 +192,22 @@
   <data name="sandwich" xml:space="preserve">
     <value>Sandwich</value>
   </data>
+  <data name="continueAsGuest" xml:space="preserve">
+    <value>Continue as guest</value>
+  </data>
+  <data name="createLoyalty" xml:space="preserve">
+    <value>Create loyalty account</value>
+  </data>
+  <data name="enterAccountInfo" xml:space="preserve">
+    <value>Enter in your account number:</value>
+  </data>
+  <data name="enterInfo" xml:space="preserve">
+    <value>Enter your information:</value>
+  </data>
+  <data name="signIn" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="signIntoLoyalty" xml:space="preserve">
+    <value>Sign into loyalty account</value>
+  </data>
 </root>
