@@ -40,7 +40,7 @@ namespace CustomerInterface
         //called when user tries to log in
         private void button1_Click(object sender, EventArgs e)
         {
-            accountNumber = signInBut.Text.ToString();
+            accountNumber = accountNumberBox.Text.ToString();
             if (String.IsNullOrEmpty(accountNumber))
                 errorLabel.Text = "Enter your account number!";
 
