@@ -60,7 +60,7 @@
     <Compile Include="ReportsTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NSA Manager Application\CSCE 4444 Term Project.csproj">
+    <ProjectReference Include="..\CSCE 4444 Term Project.csproj">
       <Project>{29b67af7-332d-4313-8700-404e77072155}</Project>
       <Name>CSCE 4444 Term Project</Name>
     </ProjectReference>

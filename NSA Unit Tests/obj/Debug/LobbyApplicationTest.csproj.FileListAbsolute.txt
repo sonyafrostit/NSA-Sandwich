@@ -1,8 +1,0 @@
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\bin\Debug\NSAConfig.xml
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\bin\Debug\LobbyApplicationTest.dll
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\bin\Debug\LobbyApplicationTest.pdb
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\bin\Debug\NSA Lobby Application.exe
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\bin\Debug\NSA Lobby Application.pdb
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\obj\Debug\LobbyApplicationTest.csprojResolveAssemblyReference.cache
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\obj\Debug\LobbyApplicationTest.dll
-C:\Users\Trae\Documents\GitHub\NSA-Sandwich\LobbyApplicationTest\obj\Debug\LobbyApplicationTest.pdb

@@ -69,6 +69,7 @@
     <Compile Include="CashForm2.Designer.cs">
       <DependentUpon>CashForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config.cs" />
     <Compile Include="CreditForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +274,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="emulate_cashPayment.csproj" />
+    <Content Include="NSAConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

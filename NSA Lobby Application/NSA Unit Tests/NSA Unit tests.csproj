@@ -60,7 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NSA Lobby Application\NSA Lobby Application.csproj">
+    <ProjectReference Include="..\NSA Lobby Application.csproj">
       <Project>{bec498e2-6e9d-4b9b-b06e-cfddcaaebe8d}</Project>
       <Name>NSA Lobby Application</Name>
     </ProjectReference>

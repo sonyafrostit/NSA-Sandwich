@@ -26,12 +26,20 @@ using System.Threading.Tasks;
 
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using NSA;
 
 namespace CustomerInterface
 {
     public class NSADatabase
     {
         private MySqlConnection Connection;
+
+        //constant for the config file name
+        private const string XML_CONFIG_FILE = "NSAConfig.xml";
+
+        //appconfig object containing the application settings
+        private AppConfig ConfigurationSettings;
+
 
         public MySqlConnection Connection1
         {
@@ -55,15 +63,33 @@ namespace CustomerInterface
         public NSADatabase()
         {
 
-            string[] configFileLines = { "1", "54.186.234.139", "nsa_database", "trae", ""};
-            if (File.Exists("config")) {
-                configFileLines = File.ReadAllLines("config");
+            //string[] configFileLines = { "1", "54.186.234.139", "nsa_database", "trae", ""};
+            //if (File.Exists("config")) {
+            //    configFileLines = File.ReadAllLines("config");
                 
+            //}
+
+            //load the Config XML file.
+            try
+            {
+                ConfigurationSettings = new AppConfig(XML_CONFIG_FILE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error loading App Config:" + XML_CONFIG_FILE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             
             //Default values are used since none are specified.
-            Initialize(configFileLines[1], configFileLines[2], configFileLines[3], configFileLines[4], Convert.ToInt32(configFileLines[0]));
+            //Initialize(configFileLines[1], configFileLines[2], configFileLines[3], configFileLines[4], Convert.ToInt32(configFileLines[0]));
             //Initialize("localhost", "nsa_database", "root", "1234", 1);
+
+            Initialize(ConfigurationSettings.DatabaseServer,
+                       ConfigurationSettings.DatabaseName,
+                       ConfigurationSettings.DatabaseUserName,
+                       ConfigurationSettings.DatabasePassword,
+                       ConfigurationSettings.StoreNumber);
+            
         }
 
         //Constructor that specifies the connection other than the default 

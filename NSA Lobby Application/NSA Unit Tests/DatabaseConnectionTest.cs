@@ -22,9 +22,9 @@ namespace NSATest {
     public class DatabaseConnecitonTest {
 
         //Save the connection info to class private properties.
-        private string DBServer = "54.186.234.139";
-        private string DBName = "nsa_database";
-        private string DBUser = "trae";
+        private string DBServer = "localhost";
+        private string DBName = "nsa-database";
+        private string DBUser = "root";
         private string DBPassword = "";
 
         [TestMethod]
