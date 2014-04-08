@@ -43,6 +43,7 @@ namespace CustomerInterface
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+            Application.Run(new StartForm());
         }
 
         private void Form1_Load(object sender, EventArgs e)

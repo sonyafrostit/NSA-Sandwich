@@ -27,6 +27,7 @@ namespace CustomerInterface
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+            Application.Run(new StartForm());
         }
 
         private void Form2_Load(object sender, EventArgs e)
