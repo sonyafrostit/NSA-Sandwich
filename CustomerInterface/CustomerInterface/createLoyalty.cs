@@ -8,23 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 
 namespace CustomerInterface
 {
     public partial class createLoyalty : Form
     {
-        private CultureInfo ci;
-        private string name;
-        private string email;
-        private NSADatabase db;
+        private CultureInfo ci; //users language
+        private string name; //name for account user enters
+        private string email; //email for account user enters
+        private NSADatabase db; //db is used to connect to db
 
         public createLoyalty(CultureInfo language)
         {
             InitializeComponent();
             ci = language;
             db = new NSADatabase();
+            setLang();
         }
 
+        //sets the language for the interface
+        private void setLang()
+        {
+            Assembly a = Assembly.Load("CustomerInterface");
+            ResourceManager rm = new ResourceManager("CustomerInterface.Lang.lang", a);
+            infoLabel.Text = rm.GetString("enterInfo", ci);
+            nameLabel.Text = rm.GetString("name", ci);
+            emailAddressLabel.Text = rm.GetString("email", ci);
+            createLoyaltyBut.Text = rm.GetString("createLoyalty", ci);
+        }
+            
         //called when user tries to create an account
         private void createLoyaltyBut_Click(object sender, EventArgs e)
         {
@@ -59,7 +73,7 @@ namespace CustomerInterface
                         accountInfo[1].Add(email);
                         accountInfo[2].Add("0");
                         accountInfo[3].Add(accountNumber);
-                        KioskWindow form = new KioskWindow(ci, accountInfo);
+                        KioskWindow form = new KioskWindow(ci, accountInfo); //send info to KioskWindow
                         form.Show();
                         Hide();
                     }

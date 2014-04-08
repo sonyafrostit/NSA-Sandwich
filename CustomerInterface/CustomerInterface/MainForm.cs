@@ -18,22 +18,23 @@ namespace CustomerInterface
         //CultureInfo stores the lanuage
         //(default is US if language not chosen in splash screen)
         private CultureInfo ci;
-        private Assembly a;
-        private ResourceManager rm;
+        private Assembly a; //loads assembly for CustomerInterface
+        private ResourceManager rm; //manages the resources and gets the text localization for users language
 
         //db will connect to the databse
         private NSADatabase db;
-        private NSAMenuCategory[] menu;
-        private NSAOrder currentOrder;
+        private NSAMenuCategory[] menu; //contains menu
+        private NSAOrder currentOrder; //current order
         private NSAComponent[] componentsList;
-        private CustomizeForm customizeItemForm;
-        private NSALoyaltyAccount account;
+        private CustomizeForm customizeItemForm; //used when user tries to customize an order
+        private NSALoyaltyAccount account; //stores loyalty account info
+                                           //acc #, name, email, rewards
 
         //constructor called when logging in as guest
         public KioskWindow(CultureInfo language)
         {
-            ci = language;
-            a = Assembly.Load("CustomerInterface");
+            ci = language; //set the language
+            a = Assembly.Load("CustomerInterface"); //load the assembly and resourcemanager
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
             InitializeComponent();
@@ -50,8 +51,8 @@ namespace CustomerInterface
         //constructor called when logging in with a loyalty account
         public KioskWindow(CultureInfo language, List<string>[] accountNumber)
         {
-            ci = language;
-            a = Assembly.Load("CustomerInterface");
+            ci = language; //set the language
+            a = Assembly.Load("CustomerInterface"); //load the assembly and resourcemanager
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
             //account = new NSALoyaltyAccount(accountNumber);
@@ -79,7 +80,7 @@ namespace CustomerInterface
 
         private void updateMenu()
         {
-            DataParser dataParser = new DataParser(ci);
+            DataParser dataParser = new DataParser(ci); //parses Categories, Menu Items, and Components and displays them in the users language
             foreach (NSAMenuCategory category in menu)
             {
                 ListViewGroup LVG = new ListViewGroup(dataParser.parseCategory(category.Name));
@@ -111,6 +112,7 @@ namespace CustomerInterface
             rm.GetString("accountNumber", ci);
         }
 
+        //clears the menu (mostly used to set items to a users language)
         private void clearMenu()
         {
             menuListView.Items.Clear();
@@ -127,6 +129,7 @@ namespace CustomerInterface
             
 
         }
+
         private void UpdateOrderView() {
             try
             {
@@ -241,50 +244,55 @@ namespace CustomerInterface
             }
         }
 
+        //sets language of the interface to users chosen language
         public void setLang(CultureInfo ci)
         {
-            selectLangText.Text = rm.GetString("selectLangText", ci);
+            selectLangText.Text = rm.GetString("selectLangText", ci); //language tab localization
 
-            button1.Text = rm.GetString("finishOrderBut", ci);
+            button1.Text = rm.GetString("finishOrderBut", ci); //order interface localization
             WelcomeLabel.Text = rm.GetString("welcome", ci);
             button6.Text = rm.GetString("customizeBut", ci);
             RemoveButton.Text = rm.GetString("removeBut", ci);
             OrderView.Columns[0].Text = rm.GetString("itemCat", ci);
             OrderView.Columns[1].Text = rm.GetString("changesCat", ci);
 
-            KioskTabs.TabPages[0].Text = rm.GetString("menuTab", ci);
+            KioskTabs.TabPages[0].Text = rm.GetString("menuTab", ci); //tab name localization
             KioskTabs.TabPages[1].Text = rm.GetString("loyaltyTab", ci);
             KioskTabs.TabPages[2].Text = rm.GetString("languageTab", ci);
 
-            AccNumberTagLabel.Text = rm.GetString("accountNumber", ci);
+            AccNumberTagLabel.Text = rm.GetString("accountNumber", ci); //account tab localization
             nameLabel.Text = rm.GetString("name", ci);
             emailLabel.Text = rm.GetString("email", ci);
             pastOrdersLabel.Text = rm.GetString("pastOrders", ci);
             favoriteItemsLabel.Text = rm.GetString("favoriteItems", ci);
 
-            UpdateOrderView();
+            UpdateOrderView(); //also updates the current orders language
             clearMenu();
-            updateMenu();
+            updateMenu();   //menu is also supported
         }
 
+        //changes the language to english
         private void enBtn_Click(object sender, EventArgs e)
         {
             ci = new CultureInfo("en-US");
             setLang(ci);
         }
 
+        //changes the language to french
         private void frBtn_Click(object sender, EventArgs e)
         {
             ci = new CultureInfo("fr-FR");
             setLang(ci);
         }
 
+        //changes the language to german
         private void geBtn_Click(object sender, EventArgs e)
         {
             ci = new CultureInfo("de-DE");
             setLang(ci);
         }
 
+        //changes the language to spanish
         private void spBtn_Click(object sender, EventArgs e)
         {
             ci = new CultureInfo("es-ES");

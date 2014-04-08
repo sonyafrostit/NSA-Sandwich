@@ -31,7 +31,7 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.createLoyaltyBut = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.emailAddressLabel = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
@@ -61,14 +61,14 @@
             this.createLoyaltyBut.UseVisualStyleBackColor = true;
             this.createLoyaltyBut.Click += new System.EventHandler(this.createLoyaltyBut_Click);
             // 
-            // label1
+            // nameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name:";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(9, 47);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(38, 13);
+            this.nameLabel.TabIndex = 3;
+            this.nameLabel.Text = "Name:";
             // 
             // emailAddressLabel
             // 
@@ -105,7 +105,7 @@
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.emailAddressLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.createLoyaltyBut);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.nameTextBox);
@@ -121,7 +121,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Button createLoyaltyBut;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label emailAddressLabel;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.Label errorLabel;

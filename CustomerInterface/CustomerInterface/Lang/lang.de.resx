@@ -192,4 +192,22 @@
   <data name="sandwich" xml:space="preserve">
     <value>Sandwich</value>
   </data>
+  <data name="continueAsGuest" xml:space="preserve">
+    <value>Continuer en tant qu'invité</value>
+  </data>
+  <data name="createLoyalty" xml:space="preserve">
+    <value>Neues Treuekonto</value>
+  </data>
+  <data name="enterAccountInfo" xml:space="preserve">
+    <value>Geben Sie in Ihrer Kontonummer:</value>
+  </data>
+  <data name="enterInfo" xml:space="preserve">
+    <value>Geben Sie Ihre Informationen:</value>
+  </data>
+  <data name="signIn" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="signIntoLoyalty" xml:space="preserve">
+    <value>Inscrivez compte de fidélité</value>
+  </data>
 </root>
