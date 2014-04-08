@@ -35,6 +35,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.menuListView = new System.Windows.Forms.ListView();
             this.LoyaltyTab = new System.Windows.Forms.TabPage();
+            this.rewardCountLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -70,7 +71,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.rewardCountLabel = new System.Windows.Forms.Label();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -160,6 +160,15 @@
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
             this.LoyaltyTab.UseVisualStyleBackColor = true;
+            // 
+            // rewardCountLabel
+            // 
+            this.rewardCountLabel.AutoSize = true;
+            this.rewardCountLabel.Location = new System.Drawing.Point(21, 138);
+            this.rewardCountLabel.Name = "rewardCountLabel";
+            this.rewardCountLabel.Size = new System.Drawing.Size(37, 25);
+            this.rewardCountLabel.TabIndex = 8;
+            this.rewardCountLabel.Text = "No";
             // 
             // panel1
             // 
@@ -494,15 +503,6 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
-            // rewardCountLabel
-            // 
-            this.rewardCountLabel.AutoSize = true;
-            this.rewardCountLabel.Location = new System.Drawing.Point(21, 138);
-            this.rewardCountLabel.Name = "rewardCountLabel";
-            this.rewardCountLabel.Size = new System.Drawing.Size(37, 25);
-            this.rewardCountLabel.TabIndex = 8;
-            this.rewardCountLabel.Text = "No";
-            // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,6 +514,7 @@
             this.Name = "KioskWindow";
             this.Text = "Customer Kiosk";
             this.Activated += new System.EventHandler(this.KioskWindow_Activated);
+            this.Load += new System.EventHandler(this.KioskWindow_Load);
             this.KioskTabs.ResumeLayout(false);
             this.MenuTab.ResumeLayout(false);
             this.LoyaltyTab.ResumeLayout(false);

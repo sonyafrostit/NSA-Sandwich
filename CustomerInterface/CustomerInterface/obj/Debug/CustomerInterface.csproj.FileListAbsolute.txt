@@ -213,3 +213,11 @@ F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm1
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm2.resources
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm1.resources
 F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm2.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm1.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm2.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.createLoyalty.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm1.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm2.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashCreditSelect.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInForm.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInOrGuest.resources
