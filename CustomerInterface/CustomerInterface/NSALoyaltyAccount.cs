@@ -40,5 +40,28 @@ namespace CustomerInterface
         {
             return rewardsCount;
         }
+
+        public string getOrdersNeeded()
+        {
+            int ordersNeeded = (5 - Convert.ToInt32(rewardsCount));
+
+            switch (ordersNeeded)
+            {
+                case 0:
+                    return "You have earned a free sandwich!";
+                case 1:
+                    return "1 orders needed";
+                case 2:
+                    return "2 orders needed";
+                case 3:
+                    return "3 orders needed";
+                case 4:
+                    return "4 orders needed";
+                case 5:
+                    return "5 orders needed";
+                default:
+                    return "You have earned a free sandwich!";
+            }
+        }
     }
 }

@@ -56,16 +56,16 @@ namespace CustomerInterface
             a = Assembly.Load("CustomerInterface"); //load the assembly and resourcemanager
             rm = new ResourceManager("CustomerInterface.Lang.lang", a);
 
-            //account = new NSALoyaltyAccount(accountNumber);
+            
             account = new NSALoyaltyAccount(accountNumber[0][0], accountNumber[1][0], accountNumber[2][0], accountNumber[3][0]);
-            setAccountTab();
-
             InitializeComponent();
+
             db = new NSADatabase();
             db.OpenConnection();
             componentsList = db.getComponents();
             menu = db.getMenu();
 
+            setAccountTab();
             updateMenu();
             currentOrder = new NSAOrder();
             setLang(ci);
@@ -76,7 +76,7 @@ namespace CustomerInterface
             nameTextBox.Text = account.getName();
             emailTextBox.Text = account.getEmail();
             accountNumberLabel.Text = account.getAccountNumber();
-            rewardsLabel.Text = account.getRewardCount() + " more orders to free sandwich";
+            rewardsLabel.Text = account.getOrdersNeeded() + " more orders to free sandwich";
         }
 
         private void updateMenu()
