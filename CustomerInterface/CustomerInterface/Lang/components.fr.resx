@@ -132,14 +132,26 @@
   <data name="bread" xml:space="preserve">
     <value>Pain</value>
   </data>
+  <data name="brownie" xml:space="preserve">
+    <value>lutin</value>
+  </data>
+  <data name="caesarsalad" xml:space="preserve">
+    <value>Salade César</value>
+  </data>
   <data name="cheese" xml:space="preserve">
     <value>Fromage</value>
+  </data>
+  <data name="chefsalad" xml:space="preserve">
+    <value>Salade du chef</value>
   </data>
   <data name="chicken" xml:space="preserve">
     <value>Poulet</value>
   </data>
   <data name="chips" xml:space="preserve">
     <value>Chips</value>
+  </data>
+  <data name="coconutpie" xml:space="preserve">
+    <value>Coconut Pie</value>
   </data>
   <data name="cookies" xml:space="preserve">
     <value>Cookies</value>
@@ -162,6 +174,9 @@
   <data name="eggs" xml:space="preserve">
     <value>œufs</value>
   </data>
+  <data name="fries" xml:space="preserve">
+    <value>Fries</value>
+  </data>
   <data name="grapejelly" xml:space="preserve">
     <value>Gelée de raisin</value>
   </data>
@@ -170,6 +185,9 @@
   </data>
   <data name="italian" xml:space="preserve">
     <value>Italien</value>
+  </data>
+  <data name="largesoda" xml:space="preserve">
+    <value>Grand Soda</value>
   </data>
   <data name="lettuce" xml:space="preserve">
     <value>Laitue</value>
@@ -233,6 +251,9 @@
   </data>
   <data name="sauerkraut" xml:space="preserve">
     <value>choucroute</value>
+  </data>
+  <data name="smallsoda" xml:space="preserve">
+    <value>Petit Soda</value>
   </data>
   <data name="spinach" xml:space="preserve">
     <value>épinards</value>

@@ -320,6 +320,7 @@ namespace CustomerInterface
             return (Connection.State == System.Data.ConnectionState.Open);
         }
 
+        //create a loyalty account and returns its account number
         public string createLoyaltyAccount(string accountname, string emailaddress)
         {
             List<String> loyaltyaccounts;
@@ -349,21 +350,21 @@ namespace CustomerInterface
                     RecordCount++;
                 }
 
-                string idNum;
+                string idNum; //idNum stores the account number
           
                 //close Data Reader
                 mysqlreader.Close();
 
                 if (RecordCount == 0)
                 {
-                    idNum = StoreNumber.ToString("D4") + RecordCount.ToString("D8");
+                    idNum = StoreNumber.ToString("D4") + RecordCount.ToString("D8"); //store number
                     query = "INSERT INTO loyaltyaccounts (loyaltyid, storeid, name, emailaddress) VALUES ('" + StoreNumber.ToString("D4") + RecordCount.ToString("D8") + "', '" + StoreNumber.ToString() + "', '" + accountname.ToString() + "', '" + emailaddress.ToString() + "')";
                 }
                 else
                 {
                     int accountnumber = Convert.ToInt32(loyaltyaccounts[RecordCount - 1]);
                     accountnumber++;
-                    idNum = accountnumber.ToString("D12");
+                    idNum = accountnumber.ToString("D12"); //store number
                     query = "INSERT INTO loyaltyaccounts (loyaltyid, storeid, name, emailaddress) VALUES ('" + accountnumber.ToString("D12") + "', '" + StoreNumber.ToString() + "', '" + accountname.ToString() + "', '" + emailaddress.ToString() + "')";
                 }
 
@@ -377,12 +378,14 @@ namespace CustomerInterface
             return "FAIL";
         }
 
+        //gets a loyalty accounts info
         public int getLoyaltyAccountInfo(out List<string>[] loyaltyaccounts, string accountNumber)
         {
-            loyaltyaccounts = new List<string>[3];
+            loyaltyaccounts = new List<string>[4]; //store data in loyaltyaccount
             loyaltyaccounts[0] = new List<string>();
             loyaltyaccounts[1] = new List<string>();
             loyaltyaccounts[2] = new List<string>();
+            loyaltyaccounts[3] = new List<string>();
 
             string query = "SELECT name, emailaddress, rewardscount FROM loyaltyaccounts WHERE storeid = " + StoreNumber.ToString() +
                         " and loyaltyid = " + accountNumber.ToString() + " ORDER BY loyaltyid";
@@ -397,7 +400,7 @@ namespace CustomerInterface
                 //Create a MySQL reader and Execute the query
                 MySqlDataReader mysqlreader = cmd.ExecuteReader();
 
-                //Read the data and store them in the list
+                //Read the data and store them in the lists
                 while (mysqlreader.Read())
                 {
                     loyaltyaccounts[0].Add(mysqlreader["name"] + "");
@@ -408,11 +411,12 @@ namespace CustomerInterface
                     RecordCount++;
                 }
 
+                loyaltyaccounts[3].Add(accountNumber); //add the account number to [3][0]
                 //close Data Reader
 
                 mysqlreader.Close();
 
-                //return number of records found.
+                //return number of records found. (if 0 or -1 account was not found)
                 return RecordCount;
 
             }

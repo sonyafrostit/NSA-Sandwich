@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.accountNumberBox = new System.Windows.Forms.TextBox();
             this.enterInfoLabel = new System.Windows.Forms.Label();
             this.signInBut = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // accountNumberBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 20);
-            this.textBox1.TabIndex = 0;
+            this.accountNumberBox.Location = new System.Drawing.Point(16, 39);
+            this.accountNumberBox.Name = "accountNumberBox";
+            this.accountNumberBox.Size = new System.Drawing.Size(291, 20);
+            this.accountNumberBox.TabIndex = 0;
             // 
             // enterInfoLabel
             // 
@@ -77,7 +77,7 @@
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.signInBut);
             this.Controls.Add(this.enterInfoLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.accountNumberBox);
             this.Name = "LogInForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -87,7 +87,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox accountNumberBox;
         private System.Windows.Forms.Label enterInfoLabel;
         private System.Windows.Forms.Button signInBut;
         private System.Windows.Forms.Label errorLabel;

@@ -133,6 +133,33 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Desserts.
+        /// </summary>
+        internal static string deserts {
+            get {
+                return ResourceManager.GetString("deserts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desserts.
+        /// </summary>
+        internal static string desserts {
+            get {
+                return ResourceManager.GetString("desserts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drinks.
+        /// </summary>
+        internal static string drinks {
+            get {
+                return ResourceManager.GetString("drinks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email:.
         /// </summary>
         internal static string email {
@@ -304,6 +331,24 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to more orders for a free sandwich!.
+        /// </summary>
+        internal static string rewards {
+            get {
+                return ResourceManager.GetString("rewards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salad.
+        /// </summary>
+        internal static string salad {
+            get {
+                return ResourceManager.GetString("salad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sandwich.
         /// </summary>
         internal static string sandwich {
@@ -327,6 +372,15 @@ namespace CustomerInterface.Lang {
         internal static string selectLangText {
             get {
                 return ResourceManager.GetString("selectLangText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sides.
+        /// </summary>
+        internal static string sides {
+            get {
+                return ResourceManager.GetString("sides", resourceCulture);
             }
         }
         
