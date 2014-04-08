@@ -34,10 +34,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.BreadList = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.breadLabel = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.otherLabel = new System.Windows.Forms.Label();
             this.OtherListBox = new System.Windows.Forms.CheckedListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -60,7 +60,7 @@
             this.panel1.Controls.Add(this.BreadPanel);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.otherLabel);
             this.panel1.Controls.Add(this.OtherListBox);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
@@ -73,7 +73,7 @@
             this.BreadPanel.Controls.Add(this.button2);
             this.BreadPanel.Controls.Add(this.button1);
             this.BreadPanel.Controls.Add(this.BreadList);
-            this.BreadPanel.Controls.Add(this.label2);
+            this.BreadPanel.Controls.Add(this.breadLabel);
             this.BreadPanel.Location = new System.Drawing.Point(10, 8);
             this.BreadPanel.Name = "BreadPanel";
             this.BreadPanel.Size = new System.Drawing.Size(1036, 172);
@@ -111,15 +111,15 @@
             this.BreadList.UseCompatibleStateImageBehavior = false;
             this.BreadList.SelectedIndexChanged += new System.EventHandler(this.BreadList_SelectedIndexChanged);
             // 
-            // label2
+            // breadLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Bread:";
+            this.breadLabel.AutoSize = true;
+            this.breadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.breadLabel.Location = new System.Drawing.Point(3, 7);
+            this.breadLabel.Name = "breadLabel";
+            this.breadLabel.Size = new System.Drawing.Size(60, 24);
+            this.breadLabel.TabIndex = 3;
+            this.breadLabel.Text = "Bread";
             // 
             // button4
             // 
@@ -142,16 +142,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label1
+            // otherLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Other:";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.otherLabel.AutoSize = true;
+            this.otherLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherLabel.Location = new System.Drawing.Point(3, 183);
+            this.otherLabel.Name = "otherLabel";
+            this.otherLabel.Size = new System.Drawing.Size(57, 24);
+            this.otherLabel.TabIndex = 2;
+            this.otherLabel.Text = "Other";
+            this.otherLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // OtherListBox
             // 
@@ -200,12 +200,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView BreadList;
         private System.Windows.Forms.CheckedListBox OtherListBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label otherLabel;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label breadLabel;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel BreadPanel;
     }

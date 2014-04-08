@@ -90,7 +90,7 @@ namespace CustomerInterface
                     {
                         continue;
                     }
-                    ListViewItem newitem = new ListViewItem(dataParser.parseMenuItem(item.Name), item.Image, LVG);
+                    ListViewItem newitem = new ListViewItem(dataParser.parseItem(item.Name), item.Image, LVG);
                     newitem.Tag = item;
                     menuListView.Items.Add(newitem);
                 }
@@ -139,7 +139,7 @@ namespace CustomerInterface
                 for (int i = 0; i < currentOrder.Items.Count; i++)
                 {
 
-                    ListViewItem lvi = new ListViewItem(cp.parseComponent(currentOrder.Items.ElementAt(i).Name));
+                    ListViewItem lvi = new ListViewItem(cp.parseItem(currentOrder.Items.ElementAt(i).Name));
                     totalPrice += (Decimal)currentOrder.Items.ElementAt(i).Price;
                     lvi.Tag = i; // Set to the index of the order item
                     OrderView.Items.Add(lvi);
@@ -150,7 +150,7 @@ namespace CustomerInterface
                         {
                             
                             ListViewItem changeItem = new ListViewItem(""); // Set to blank so we can see the change
-                            changeItem.SubItems.Add(cp.parseComponent(c.ToString()));
+                            changeItem.SubItems.Add(cp.parseItem(c.ToString()));
                             changeItem.Tag = i;
                             OrderView.Items.Add(changeItem);
                         }
@@ -236,6 +236,7 @@ namespace CustomerInterface
             if (OrderView.SelectedItems.Count > 0)
             {
                 customizeItemForm = new CustomizeForm();
+                customizeItemForm.setLang(ci);
                 customizeItemForm.CustomizeComponents = componentsList;
                 customizeItemForm.CustomizeItem = (NSAMenuItem)currentOrder.Items[(int)OrderView.SelectedItems[0].Tag];
                 customizeItemForm.OriginalIndex = OrderView.SelectedIndices[0];
