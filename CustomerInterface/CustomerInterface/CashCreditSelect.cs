@@ -12,14 +12,19 @@ namespace CustomerInterface
 {
     public partial class CashCreditSelect : Form
     {
-        public CashCreditSelect()
+        int orderID;
+        Decimal cost;
+        NSADatabase db;
+        public CashCreditSelect(int orderID, Decimal cost, NSADatabase db)
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            CashForm2 cf = new CashForm2(orderID, cost, db);
+            cf.Show();
+            Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

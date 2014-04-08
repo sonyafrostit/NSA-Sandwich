@@ -57,6 +57,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashForm1.Designer.cs">
+      <DependentUpon>CashForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CashForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashForm2.Designer.cs">
+      <DependentUpon>CashForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditForm1.Designer.cs">
+      <DependentUpon>CreditForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditForm2.Designer.cs">
+      <DependentUpon>CreditForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataParser.cs" />
     <Compile Include="createLoyalty.cs">
       <SubType>Form</SubType>
@@ -151,8 +175,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CashForm1.resx">
+      <DependentUpon>CashForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashForm2.resx">
+      <DependentUpon>CashForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="createLoyalty.resx">
       <DependentUpon>createLoyalty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditForm1.resx">
+      <DependentUpon>CreditForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditForm2.resx">
+      <DependentUpon>CreditForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomizeForm.resx">
       <DependentUpon>CustomizeForm.cs</DependentUpon>
