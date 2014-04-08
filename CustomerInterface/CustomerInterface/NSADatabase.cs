@@ -349,21 +349,21 @@ namespace CustomerInterface
                     RecordCount++;
                 }
 
-                string storeNumber = StoreNumber.ToString("D4");
-                string recordNumber = RecordCount.ToString("D8");
+                string idNum;
           
                 //close Data Reader
                 mysqlreader.Close();
 
                 if (RecordCount == 0)
                 {
+                    idNum = StoreNumber.ToString("D4") + RecordCount.ToString("D8");
                     query = "INSERT INTO loyaltyaccounts (loyaltyid, storeid, name, emailaddress) VALUES ('" + StoreNumber.ToString("D4") + RecordCount.ToString("D8") + "', '" + StoreNumber.ToString() + "', '" + accountname.ToString() + "', '" + emailaddress.ToString() + "')";
                 }
                 else
                 {
                     int accountnumber = Convert.ToInt32(loyaltyaccounts[RecordCount - 1]);
                     accountnumber++;
-
+                    idNum = accountnumber.ToString("D12");
                     query = "INSERT INTO loyaltyaccounts (loyaltyid, storeid, name, emailaddress) VALUES ('" + accountnumber.ToString("D12") + "', '" + StoreNumber.ToString() + "', '" + accountname.ToString() + "', '" + emailaddress.ToString() + "')";
                 }
 
@@ -372,7 +372,7 @@ namespace CustomerInterface
 
                 //Create a MySQL reader and Execute the query
                 cmd.ExecuteNonQuery();
-                return storeNumber + recordNumber;
+                return idNum;
             }
             return "FAIL";
         }
