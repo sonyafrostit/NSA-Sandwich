@@ -8,3 +8,13 @@ C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_credit\obj\Debug\e
 C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_credit\obj\Debug\emulate_credit.exe
 C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_credit\obj\Debug\emulate_credit.pdb
 C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_credit\obj\Debug\emulate_credit.Form2.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\bin\Debug\emulate_credit.exe.config
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\bin\Debug\emulate_credit.exe
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\bin\Debug\emulate_credit.pdb
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.csprojResolveAssemblyReference.cache
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.CreditForm1.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.CreditForm2.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.Properties.Resources.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.csproj.GenerateResource.Cache
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.exe
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate Credit\obj\Debug\emulate_credit.pdb

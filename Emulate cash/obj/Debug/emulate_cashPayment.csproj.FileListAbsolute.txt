@@ -8,3 +8,13 @@ C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_cashPayment\obj\De
 C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_cashPayment\obj\Debug\emulate_cashPayment.exe
 C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_cashPayment\obj\Debug\emulate_cashPayment.pdb
 C:\Users\bikash\Documents\Visual Studio 2012\Projects\emulate_cashPayment\obj\Debug\emulate_cashPayment.Form2.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\bin\Debug\emulate_cashPayment.exe.config
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\bin\Debug\emulate_cashPayment.exe
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\bin\Debug\emulate_cashPayment.pdb
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.csprojResolveAssemblyReference.cache
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.CashForm1.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.CashForm2.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.Properties.Resources.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.csproj.GenerateResource.Cache
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.exe
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\Emulate cash\obj\Debug\emulate_cashPayment.pdb
