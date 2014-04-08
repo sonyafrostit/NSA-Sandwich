@@ -32,11 +32,23 @@ namespace CustomerInterface
     public class NSADatabase
     {
         private MySqlConnection Connection;
+
+        public MySqlConnection Connection1
+        {
+            get { return Connection; }
+            set { Connection = value; }
+        }
         private string DBServer;    //IP address or host name for server
         private string DBName;      //Database name to use
         private string DBUser;      //DB username
         private string DBPassword;  //Password for the username used.
         private int StoreNumber;    //Store Number.
+
+        public int StoreNumber1
+        {
+            get { return StoreNumber; }
+            set { StoreNumber = value; }
+        }
         private int RecordCount; //Number of record that are currently loaded.
 
         //Constructor - Default Sets default values and DOES not open connectiton.
