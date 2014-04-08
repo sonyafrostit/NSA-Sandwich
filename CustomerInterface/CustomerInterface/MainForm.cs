@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Resources;
 using System.Globalization;
-
+using MySql.Data.MySqlClient;
+using MySql.Data;
 namespace CustomerInterface
 {
     public partial class KioskWindow : Form
@@ -301,7 +302,13 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MySqlCommand cmd = new MySqlCommand(("INSERT INTO orders (storeid, loyaltyid, status, timeplaced, total, tax, refunded) VALUES (" + db.StoreNumber1 + ", " + account.getAccountNumber() + ", 0, " + DateTime.Now + ", " + currentOrder.Total.ToString() + ", " + currentOrder.Tax.ToString() + ", " + (Convert.ToInt32(account.getRewardCount()) == 0) + ");"), db.Connection1);
+            cmd.ExecuteReader();
+            currentOrder.Id = cmd.LastInsertedId;
+            
+            foreach (NSAMenuItem item in currentOrder.Items) { 
+                
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)

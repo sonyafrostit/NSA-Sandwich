@@ -204,3 +204,8 @@ C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterfac
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashCreditSelect.resources
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInForm.resources
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInOrGuest.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.csprojResolveAssemblyReference.cache
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm1.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm2.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm1.resources
+F:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm2.resources
