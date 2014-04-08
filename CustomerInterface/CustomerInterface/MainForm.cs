@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Resources;
 using System.Globalization;
-using NSAData;
 
 namespace CustomerInterface
 {
