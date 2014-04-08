@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,7 +50,20 @@ namespace CustomerInterface
             return (componentID == compare.componentID) && (componentID == compare.componentID);
         }
         public override string ToString() {
-            return Name;
+            if (rm == null)
+            {
+                return Name;
+            }
+            else {
+                return rm.GetString(Name);
+            }
+        }
+        ResourceManager rm;
+
+        public ResourceManager Rm
+        {
+            get { return rm; }
+            set { rm = value; }
         }
 
     }
