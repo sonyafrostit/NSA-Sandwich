@@ -122,15 +122,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>components.fr.resx</DependentUpon>
     </Compile>
-    <Compile Include="NSAChanges.cs" />
-    <Compile Include="NSADatabase.cs" />
-    <Compile Include="NSALoyaltyAccount.cs" />
-    <Compile Include="NSAMenuCategory.cs" />
-    <Compile Include="NSAOrder.cs" />
-    <Compile Include="NSARandomItem.cs" />
-    <Compile Include="NSASpecial.cs" />
-    <Compile Include="NSAComponent.cs" />
-    <Compile Include="NSAMenuItem.cs" />
     <Compile Include="CustomizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +228,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="emulate_cashPayment.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Emulate cash\emulate_cashPayment.csproj">
+      <Project>{af058354-c6ca-4963-8aa3-18860b988f46}</Project>
+      <Name>emulate_cashPayment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Emulate Credit\emulate_credit.csproj">
+      <Project>{e6d738dd-177a-4562-a0bc-c373861235f5}</Project>
+      <Name>emulate_credit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary1\NSAData.csproj">
+      <Project>{d04ce858-ca0f-41e8-adb0-6b38566a7050}</Project>
+      <Name>NSAData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

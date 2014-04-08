@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using NSAData;
 namespace emulate_cashPayment
 {
     public partial class CashForm2 : Form
