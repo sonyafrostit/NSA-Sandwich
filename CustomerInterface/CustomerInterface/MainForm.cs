@@ -379,5 +379,30 @@ namespace CustomerInterface
 
         }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (account != null && OrderView.SelectedItems.Count > 0)
+            {
+                MySqlCommand cmd2 = new MySqlCommand(String.Format("INSERT INTO favoriteitems (storeid, loyaltyid, name, price, menuitemid) VALUES ({0}, {1}, {2}, '{3}', {4}, {5});", db.StoreNumber1, account.getAccountNumber(), ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Name, ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Price, ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Id), db.Connection1);
+                cmd2.ExecuteReader().Close();
+                long favitemid = cmd2.LastInsertedId;
+                foreach (NSAComponent comp in ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Components)
+                {
+                    MySqlCommand cmd3 = new MySqlCommand(("INSERT INTO favoriteitemcomponents (favoriteitemid, storeid, componentid) VALUES (" + favitemid + ", " + db.StoreNumber1 + ", " + comp.ComponentID + ");"), db.Connection1);
+                    cmd3.ExecuteReader().Close();
+                }
+            }
+        }
+
     }
 }

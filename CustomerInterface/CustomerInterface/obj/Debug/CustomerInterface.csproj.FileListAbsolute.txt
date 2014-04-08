@@ -249,3 +249,12 @@ C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.exe
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\bin\Debug\NSAConfig.xml
+G:\NSA\CustomerInterface\CustomerInterface\bin\Debug\NSAConfig.xml
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm1.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashForm2.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.createLoyalty.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm1.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CreditForm2.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.CashCreditSelect.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInForm.resources
+G:\NSA\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.LogInOrGuest.resources

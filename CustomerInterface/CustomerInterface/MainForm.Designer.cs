@@ -71,6 +71,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.splitter5 = new System.Windows.Forms.Splitter();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -79,6 +84,7 @@
             this.LanguageTab.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // KioskTabs
@@ -143,6 +149,7 @@
             // 
             // LoyaltyTab
             // 
+            this.LoyaltyTab.Controls.Add(this.panel5);
             this.LoyaltyTab.Controls.Add(this.rewardCountLabel);
             this.LoyaltyTab.Controls.Add(this.panel1);
             this.LoyaltyTab.Controls.Add(this.panel2);
@@ -178,7 +185,7 @@
             this.panel1.Controls.Add(this.HistoryView);
             this.panel1.Location = new System.Drawing.Point(6, 187);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 184);
+            this.panel1.Size = new System.Drawing.Size(746, 106);
             this.panel1.TabIndex = 3;
             // 
             // splitter2
@@ -194,7 +201,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 184);
+            this.splitter1.Size = new System.Drawing.Size(3, 106);
             this.splitter1.TabIndex = 10;
             this.splitter1.TabStop = false;
             // 
@@ -212,7 +219,7 @@
             // 
             this.HistoryView.Location = new System.Drawing.Point(0, 39);
             this.HistoryView.Name = "HistoryView";
-            this.HistoryView.Size = new System.Drawing.Size(743, 145);
+            this.HistoryView.Size = new System.Drawing.Size(743, 60);
             this.HistoryView.TabIndex = 8;
             this.HistoryView.UseCompatibleStateImageBehavior = false;
             // 
@@ -221,23 +228,23 @@
             this.panel2.Controls.Add(this.listView2);
             this.panel2.Controls.Add(this.favoriteItemsLabel);
             this.panel2.Controls.Add(this.splitter3);
-            this.panel2.Location = new System.Drawing.Point(6, 377);
+            this.panel2.Location = new System.Drawing.Point(6, 299);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 184);
+            this.panel2.Size = new System.Drawing.Size(746, 111);
             this.panel2.TabIndex = 2;
             // 
             // listView2
             // 
             this.listView2.Location = new System.Drawing.Point(3, 34);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(740, 145);
+            this.listView2.Size = new System.Drawing.Size(740, 68);
             this.listView2.TabIndex = 12;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // favoriteItemsLabel
             // 
             this.favoriteItemsLabel.AutoSize = true;
-            this.favoriteItemsLabel.Location = new System.Drawing.Point(3, 6);
+            this.favoriteItemsLabel.Location = new System.Drawing.Point(4, 6);
             this.favoriteItemsLabel.Name = "favoriteItemsLabel";
             this.favoriteItemsLabel.Size = new System.Drawing.Size(146, 25);
             this.favoriteItemsLabel.TabIndex = 1;
@@ -419,6 +426,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.RemoveButton);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button1);
@@ -433,9 +441,9 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(165, 399);
+            this.RemoveButton.Location = new System.Drawing.Point(193, 399);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(95, 35);
+            this.RemoveButton.Size = new System.Drawing.Size(67, 35);
             this.RemoveButton.TabIndex = 10;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -443,9 +451,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(56, 399);
+            this.button6.Location = new System.Drawing.Point(122, 399);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 35);
+            this.button6.Size = new System.Drawing.Size(65, 35);
             this.button6.TabIndex = 9;
             this.button6.Text = "Customize";
             this.button6.UseVisualStyleBackColor = true;
@@ -503,6 +511,53 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(56, 399);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(60, 35);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Fave!";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.listView1);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.splitter5);
+            this.panel5.Location = new System.Drawing.Point(6, 414);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(746, 111);
+            this.panel5.TabIndex = 13;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(3, 34);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(740, 68);
+            this.listView1.TabIndex = 12;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Favorite Order";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // splitter5
+            // 
+            this.splitter5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter5.Location = new System.Drawing.Point(0, 0);
+            this.splitter5.Name = "splitter5";
+            this.splitter5.Size = new System.Drawing.Size(746, 3);
+            this.splitter5.TabIndex = 0;
+            this.splitter5.TabStop = false;
+            // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,6 +583,8 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -576,6 +633,11 @@
         private System.Windows.Forms.ColumnHeader ItemHeader;
         private System.Windows.Forms.ColumnHeader ChangesHeader;
         private System.Windows.Forms.Label rewardCountLabel;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Splitter splitter5;
+        private System.Windows.Forms.Button button7;
     }
 }
 
