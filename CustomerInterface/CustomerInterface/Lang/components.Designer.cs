@@ -106,11 +106,38 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brownie.
+        /// </summary>
+        internal static string brownie {
+            get {
+                return ResourceManager.GetString("brownie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caesar Salad.
+        /// </summary>
+        internal static string caesarsalad {
+            get {
+                return ResourceManager.GetString("caesarsalad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cheese.
         /// </summary>
         internal static string cheese {
             get {
                 return ResourceManager.GetString("cheese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chef Salad.
+        /// </summary>
+        internal static string chefsalad {
+            get {
+                return ResourceManager.GetString("chefsalad", resourceCulture);
             }
         }
         
@@ -129,6 +156,15 @@ namespace CustomerInterface.Lang {
         internal static string chips {
             get {
                 return ResourceManager.GetString("chips", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coconut Pie.
+        /// </summary>
+        internal static string coconutpie {
+            get {
+                return ResourceManager.GetString("coconutpie", resourceCulture);
             }
         }
         
@@ -196,6 +232,15 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fries.
+        /// </summary>
+        internal static string fries {
+            get {
+                return ResourceManager.GetString("fries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grape Jelly.
         /// </summary>
         internal static string grapejelly {
@@ -219,6 +264,15 @@ namespace CustomerInterface.Lang {
         internal static string italian {
             get {
                 return ResourceManager.GetString("italian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large Soda.
+        /// </summary>
+        internal static string largesoda {
+            get {
+                return ResourceManager.GetString("largesoda", resourceCulture);
             }
         }
         
@@ -408,6 +462,15 @@ namespace CustomerInterface.Lang {
         internal static string sauerkraut {
             get {
                 return ResourceManager.GetString("sauerkraut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small Soda.
+        /// </summary>
+        internal static string smallsoda {
+            get {
+                return ResourceManager.GetString("smallsoda", resourceCulture);
             }
         }
         

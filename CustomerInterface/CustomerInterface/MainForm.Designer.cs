@@ -70,6 +70,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.rewardCountLabel = new System.Windows.Forms.Label();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -142,6 +143,7 @@
             // 
             // LoyaltyTab
             // 
+            this.LoyaltyTab.Controls.Add(this.rewardCountLabel);
             this.LoyaltyTab.Controls.Add(this.panel1);
             this.LoyaltyTab.Controls.Add(this.panel2);
             this.LoyaltyTab.Controls.Add(this.emailTextBox);
@@ -268,11 +270,11 @@
             // rewardsLabel
             // 
             this.rewardsLabel.AutoSize = true;
-            this.rewardsLabel.Location = new System.Drawing.Point(10, 130);
+            this.rewardsLabel.Location = new System.Drawing.Point(53, 138);
             this.rewardsLabel.Name = "rewardsLabel";
-            this.rewardsLabel.Size = new System.Drawing.Size(307, 25);
+            this.rewardsLabel.Size = new System.Drawing.Size(289, 25);
             this.rewardsLabel.TabIndex = 3;
-            this.rewardsLabel.Text = "4 more orders to free sandwich";
+            this.rewardsLabel.Text = "more orders to free sandwich";
             this.rewardsLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // emailLabel
@@ -492,6 +494,15 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
+            // rewardCountLabel
+            // 
+            this.rewardCountLabel.AutoSize = true;
+            this.rewardCountLabel.Location = new System.Drawing.Point(21, 138);
+            this.rewardCountLabel.Name = "rewardCountLabel";
+            this.rewardCountLabel.Size = new System.Drawing.Size(37, 25);
+            this.rewardCountLabel.TabIndex = 8;
+            this.rewardCountLabel.Text = "No";
+            // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,6 +574,7 @@
         private System.Windows.Forms.Button enBtn;
         private System.Windows.Forms.ColumnHeader ItemHeader;
         private System.Windows.Forms.ColumnHeader ChangesHeader;
+        private System.Windows.Forms.Label rewardCountLabel;
     }
 }
 

@@ -222,4 +222,22 @@
   <data name="bread" xml:space="preserve">
     <value>Pain</value>
   </data>
+  <data name="rewards" xml:space="preserve">
+    <value>plus de commandes pour un sandwich gratuit!</value>
+  </data>
+  <data name="deserts" xml:space="preserve">
+    <value>Desserts</value>
+  </data>
+  <data name="desserts" xml:space="preserve">
+    <value>Desserts</value>
+  </data>
+  <data name="drinks" xml:space="preserve">
+    <value>Boissons</value>
+  </data>
+  <data name="sides" xml:space="preserve">
+    <value>Côtés</value>
+  </data>
+  <data name="salad" xml:space="preserve">
+    <value>Salade</value>
+  </data>
 </root>

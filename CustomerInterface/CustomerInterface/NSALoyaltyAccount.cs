@@ -48,19 +48,19 @@ namespace CustomerInterface
             switch (ordersNeeded)
             {
                 case 0:
-                    return "You have earned a free sandwich!";
+                    return "No";
                 case 1:
-                    return "1 orders needed";
+                    return "1";
                 case 2:
-                    return "2 orders needed";
+                    return "2";
                 case 3:
-                    return "3 orders needed";
+                    return "3";
                 case 4:
-                    return "4 orders needed";
+                    return "4";
                 case 5:
-                    return "5 orders needed";
+                    return "5";
                 default:
-                    return "You have earned a free sandwich!";
+                    return "No";
             }
         }
     }

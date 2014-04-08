@@ -76,7 +76,7 @@ namespace CustomerInterface
             nameTextBox.Text = account.getName();
             emailTextBox.Text = account.getEmail();
             accountNumberLabel.Text = account.getAccountNumber();
-            rewardsLabel.Text = account.getOrdersNeeded() + " more orders to free sandwich";
+            rewardCountLabel.Text = account.getOrdersNeeded();
         }
 
         private void updateMenu()
@@ -267,6 +267,7 @@ namespace CustomerInterface
             emailLabel.Text = rm.GetString("email", ci);
             pastOrdersLabel.Text = rm.GetString("pastOrders", ci);
             favoriteItemsLabel.Text = rm.GetString("favoriteItems", ci);
+            rewardsLabel.Text = rm.GetString("rewards", ci);
 
             UpdateOrderView(); //also updates the current orders language
             clearMenu();
