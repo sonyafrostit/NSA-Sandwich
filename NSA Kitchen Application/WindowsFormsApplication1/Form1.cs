@@ -106,9 +106,9 @@ namespace WindowsFormsApplication1
                 query.Append("Select Q2.* ,CC.component , CC.name as addname, CC.categoryid ");
                 query.Append("from (Select Q.orderID, Q.storeid, Q.status, Q.timedelivered,Q.orderitemid, ");
                 query.Append("Q.name,OIR.componentremoved , OIR.name as removedname from ");
-                query.Append("(Select O.orderID, O.storeid, O.status, O.timedelivered,OI.orderitemid, OI.name");
+                query.Append("(Select O.orderID, O.storeid, O.status, O.timedelivered,OI.orderitemid, OI.name ");
                 query.Append("from orders O, orderitems OI where O.orderid = OI.orderid ) Q left join ( ");
-                query.Append("Select orderitemremoved.orderitemid, orderitemremoved.componentremoved , components.name");
+                query.Append("Select orderitemremoved.orderitemid, orderitemremoved.componentremoved , components.name ");
                 query.Append("From orderitemremoved,components where componentremoved = componentid ) AS OIR on ");
                 query.Append("Q.orderitemid = OIR.orderitemid )as Q2 left join ( Select orderitemcomponents.orderitemid, ");
                 query.Append("orderitemcomponents.component , components.name, components.categoryid From orderitemcomponents,");
