@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            Polling.Enabled = true;
 
             //TEST DATA
             /*
@@ -621,13 +622,15 @@ namespace WindowsFormsApplication1
                 //was an order there
                 SendToDatabase(ordernumber);
             }
-            
+
+            Polling.Enabled = false;
+
             //After button is clicked, check for new updates.
             UpdateFromDatabase();
             //Update the kitchen screen to reflect the new list_of_orders
             UpdateAllTables();
-   
 
+            Polling.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -649,10 +652,15 @@ namespace WindowsFormsApplication1
                 SendToDatabase(ordernumber);
             }
 
+
+            Polling.Enabled = false;
+
             //After button is clicked, check for new updates.
             UpdateFromDatabase();
             //Update the kitchen screen to reflect the new list_of_orders
             UpdateAllTables();
+
+            Polling.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -672,10 +680,14 @@ namespace WindowsFormsApplication1
                 SendToDatabase(ordernumber);
             }
 
+            Polling.Enabled = false;
+
             //After button is clicked, check for new updates.
             UpdateFromDatabase();
             //Update the kitchen screen to reflect the new list_of_orders
             UpdateAllTables();
+
+            Polling.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -695,10 +707,14 @@ namespace WindowsFormsApplication1
                 SendToDatabase(ordernumber);
             }
 
+            Polling.Enabled = false;
+
             //After button is clicked, check for new updates.
             UpdateFromDatabase();
             //Update the kitchen screen to reflect the new list_of_orders
             UpdateAllTables();
+
+            Polling.Enabled = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -719,19 +735,27 @@ namespace WindowsFormsApplication1
                 SendToDatabase(ordernumber);
             }
 
+            Polling.Enabled = false;
+
             //After button is clicked, check for new updates.
             UpdateFromDatabase();
             //Update the kitchen screen to reflect the new list_of_orders
             UpdateAllTables();
+
+            Polling.Enabled = true;
         }
         
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Polling.Enabled = false;
+
             //After button is clicked, check for new updates.
             UpdateFromDatabase();
             //Update the kitchen screen to reflect the new list_of_orders
             UpdateAllTables();
+
+            Polling.Enabled = true;
         }
     }
 }

@@ -525,7 +525,7 @@
             // 
             // Polling
             // 
-            this.Polling.Interval = 2;
+            this.Polling.Interval = 5000;
             this.Polling.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
