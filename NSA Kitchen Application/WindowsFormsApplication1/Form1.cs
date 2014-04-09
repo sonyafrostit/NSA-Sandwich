@@ -511,18 +511,46 @@ namespace WindowsFormsApplication1
         }
         public void SendToDatabase(int id)
         {
+            //test for open connection and try to open
+            if (!(nsadb.Connected()))
+            {
+                nsadb.OpenConnection();
+            }
 
+            if (nsadb.Connected())
+            {
+
+                
             //Take the order ID and send the corresponding list_of_orders to the database
-
+            
             //Remove the order from the list_of_orders
             for(int i = 0; i < list_of_orders.Count(); i++)
             {
                 if(list_of_orders[i].getOrderId() == id)
                 {
                     list_of_orders.RemoveAt(i);
+                    StringBuilder query = new StringBuilder();
+                    string temp = id.ToString();
+                    query.Append("UPDATE orders SET status = 2, timedelivered = now() Where storeid=1 AND orderID =");
+                    query.Append(temp);
+
+                    //Create a MySQL reader and Execute the query
+                    MySqlDataReader mysqlreader2 = nsadb.CustomQuery(query.ToString());
+                    while (mysqlreader2.Read())
+                    {
+                    }
+                    mysqlreader2.Close();
+
                 }
 
             }
+            
+         }
+            else
+            {
+                MessageBox.Show("Cannot Connect to Database.", "Cannot connect to the Database make sure you have network access.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
 
         }
         
