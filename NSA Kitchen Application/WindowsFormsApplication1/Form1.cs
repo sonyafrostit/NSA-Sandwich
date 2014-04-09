@@ -57,11 +57,6 @@ namespace WindowsFormsApplication1
             //*/
             // END TEST DATA
 
-            //Grab orders from the database
-            UpdateFromDatabase();
-            //Update the kitchen screen to reflect the new list_of_orders
-            UpdateAllTables();
-
             //load the Config XML file.
             try
             {
@@ -73,7 +68,7 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            //Initislize the NSADatabase object
+            //Initialize the NSADatabase object
             try
             {
                 nsadb = new NSADatabase(ConfigurationSettings.DatabaseServer, ConfigurationSettings.DatabaseName,
