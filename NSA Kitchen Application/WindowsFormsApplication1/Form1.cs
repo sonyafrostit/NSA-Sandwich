@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
         }
         public void UpdateFromDatabase()
         {
-            /*
+            
             //test for open connection and try to open
             if (!(nsadb.Connected()))
             {
@@ -123,17 +123,24 @@ namespace WindowsFormsApplication1
                 //Create a MySQL reader and Execute the query
                 MySqlDataReader mysqlreader = nsadb.CustomQuery(query.ToString());
 
+                //Tempory 
                 Mod createtempaddmod = null;
                 Mod createtempremovemod = null;
-                Order createtemporder= null;
                 Item createtempitem=null;
+                Item createtempolditem = null;
+                Order createtemporder= null;
+                Order createtempoldorder = null;
+                bool createid = false;
+                bool createitem = false;
 
-                //Read the data and store them in the list
+                //Read the database and store them in the list_of_orders
                 while (mysqlreader.Read())
                 {
                     int i;
-                    bool createid = false;
-                    bool createitem = false;
+                    createid = false;
+                    createitem = false;
+                    //If an orderID exists in the table, collect data from table
+                    //If an orderID doesn't exist, go onto the next read.
                     if (!(mysqlreader["orderID"] == null))
                     {
                         i = Convert.ToInt32(mysqlreader["orderID"]);
@@ -143,65 +150,110 @@ namespace WindowsFormsApplication1
                             if (i == list_of_orders[j].getOrderId())
                             {
                                 createid = false;
+                                createtemporder = list_of_orders[j];
                             }
 
                         }
                         if (createid)
                         {
+                            createtempoldorder = createtemporder;
                             createtemporder = new Order(i);
-
                         }
 
-                    }//end of order id check
-
-                    if (!(mysqlreader["orderitemid"] == null) && !(mysqlreader["name"] == null))
-                    {
-                        createitem = true;
-                        if (createtempitem != null)
+                        //If an item exists, set createtempitem to that item
+                        if (!(mysqlreader["orderitemid"] == null) && !(mysqlreader["name"] == null))
                         {
-                            if (createtempitem.getId() != Convert.ToInt32(mysqlreader["orderitemid"]))
+
+                            if (createtempitem != null)
+                            {
+                                if (createtempitem.getId() != Convert.ToInt32(mysqlreader["orderitemid"]))
+                                {
+                                    createtempolditem = createtempitem;
+                                    createtempitem = new Item(Convert.ToInt32(mysqlreader["orderitemid"]), mysqlreader["name"].ToString());
+                                    createitem = true;
+                                }
+
+                            }
+                            else
                             {
                                 createtempitem = new Item(Convert.ToInt32(mysqlreader["orderitemid"]), mysqlreader["name"].ToString());
+                                createitem = true;
+
+                            }
+                            //
+                            if (!(mysqlreader["component"] == null) && !(mysqlreader["addname"] == null))
+                            {
+                                createtempaddmod = new Mod(1, mysqlreader["addname"].ToString());
+                                createtempitem.add(createtempaddmod);
+                            }
+                            else
+                            {
+                                createtempaddmod = null;
+                            }
+
+                            if (!(mysqlreader["componentremoved"] == null) && !(mysqlreader["removedname"] == null))
+                            {
+                                createtempremovemod = new Mod(0, mysqlreader["removedname"].ToString());
+                                createtempitem.add(createtempremovemod);
+                            }
+                            else
+                            {
+                                createtempremovemod = null;
                             }
                         }
                         else
                         {
-                            createtempitem = new Item(Convert.ToInt32(mysqlreader["orderitemid"]), mysqlreader["name"].ToString());
-
-                        }
-
-                        if (!(mysqlreader["component"] == null) && !(mysqlreader["addname"] == null))
-                        {
-                            createtempaddmod = new Mod(1, mysqlreader["addname"].ToString());
-                            createtempitem.add(createtempaddmod);
-                        }
-                        else
-                        {
-                            createtempaddmod = null;
-                        }
-
-                        if (!(mysqlreader["componentremoved"] == null) && !(mysqlreader["removedname"] == null))
-                        {
-                            createtempremovemod = new Mod(0, mysqlreader["removedname"].ToString());
-                            createtempitem.add(createtempremovemod);
-                        }
-                        else
-                        {
-                            createtempremovemod = null;
+                            createtempitem = null;
                         }
                     }
-                    //use the Data as you need to the 
+                    else
+                    {
+                        createtemporder = null;
+                        //end of order id check
+                    }
+
+                    //If a new Order(orderID) was created, add it to the list_of_orders
                     if (createid)
                     {
-                        if(createitem)
+                        //If a new Item was created as well, add it to the new Order before adding the Order to the list_of_orders
+                        if (createitem && !(createtempolditem == null) && !(createtempoldorder == null))
                         {
-                            createtemporder.add(createtempitem);
+                            createtempoldorder.add(createtempolditem);
                         }
-                        list_of_orders.Add(createtemporder);
-
+                        if(!(createtempoldorder == null))
+                        { 
+                            list_of_orders.Add(createtempoldorder);
+                        }
 
                     }
-                    else if(createitem)
+                    //If an Order(orderId) already exists in the list_of_orders, AND an item was created, find
+                    //the order in the list_of_orders, and add the newly created item to it.
+                    else if(createitem && !(createtempolditem != null))
+                    {
+                        for (int j = 0; j < list_of_orders.Count(); j++)
+                        {
+
+                            if (createtemporder.getOrderId() == list_of_orders[j].getOrderId())
+                            {
+                                list_of_orders[j].add(createtempolditem);
+                                j = list_of_orders.Count();
+                            }
+
+                        }
+                    }
+                }
+
+
+                //Add the last order or item to the list_of_orders
+                if (!(createtemporder == null) && !(createtempitem == null))
+                {
+                    
+                    if (createid)
+                    {
+                        createtemporder.add(createtempitem);
+                        list_of_orders.Add(createtemporder);
+                    }
+                    else
                     {
                         for (int j = 0; j < list_of_orders.Count(); j++)
                         {
@@ -213,8 +265,12 @@ namespace WindowsFormsApplication1
                             }
 
                         }
+
+
                     }
+
                 }
+                
                 //close Data Reader
                 mysqlreader.Close(); 
 
@@ -222,7 +278,7 @@ namespace WindowsFormsApplication1
             else
             {
                 MessageBox.Show("Cannot Connect to Database.", "Cannot connect to the Database make sure you have network access.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }*/
+            }//*/
         }
         public void UpdateAllTables()
         {
