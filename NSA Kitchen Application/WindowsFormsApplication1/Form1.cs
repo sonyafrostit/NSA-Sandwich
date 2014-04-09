@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
 
             //TEST DATA
-            ///*
+            /*
             Mod mustard = new Mod(0, "mustard");
             Mod ketchup = new Mod(0, "ketchup");
             Mod bacon = new Mod(1, "bacon");
@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
             Order TESTorder1 = new Order(1, Cheeseburger);
             list_of_orders.Add(TESTorder1);
             //After button is clicked, check for new updates.
-            //*/
+            */
             // END TEST DATA
 
             //load the Config XML file.
@@ -121,25 +121,31 @@ namespace WindowsFormsApplication1
                 //Tempory 
                 Mod createtempaddmod = null;
                 Mod createtempremovemod = null;
-                Item createtempitem=null;
-                Item createtempolditem = null;
-                Order createtemporder= null;
-                Order createtempoldorder = null;
+                Item createtempitem = null;
+                Order createtemporder = null;
                 bool createid = false;
-                bool createitem = false;
+                bool createitem = true;
 
                 //Read the database and store them in the list_of_orders
                 while (mysqlreader.Read())
                 {
-                    int i;
-                    createid = false;
-                    createitem = false;
                     //If an orderID exists in the table, collect data from table
                     //If an orderID doesn't exist, go onto the next read.
+                    createid = false;
+                    createitem = false;
                     if (!(mysqlreader["orderID"] == null))
                     {
-                        i = Convert.ToInt32(mysqlreader["orderID"]);
-                        createid = true;
+                        int i = Convert.ToInt32(mysqlreader["orderID"]);
+                        if (createtemporder == null)
+                        {
+                            createtemporder = new Order(i);
+                            createid = true;
+                        }else if(createtemporder.getOrderId() != i)//Convert.ToInt32(mysqlreader["orderID"]))
+                        {
+                            createtemporder = new Order(i);
+                            createid = true;
+
+                        }
                         for (int j = 0; j < list_of_orders.Count(); j++)
                         {
                             if (i == list_of_orders[j].getOrderId())
@@ -149,131 +155,86 @@ namespace WindowsFormsApplication1
                             }
 
                         }
-                        if (createid)
-                        {
-                            createtempoldorder = createtemporder;
-                            createtemporder = new Order(i);
-                        }
 
-                        //If an item exists, set createtempitem to that item
                         if (!(mysqlreader["orderitemid"] == null) && !(mysqlreader["name"] == null))
                         {
-
-                            if (createtempitem != null)
-                            {
-                                if (createtempitem.getId() != Convert.ToInt32(mysqlreader["orderitemid"]))
-                                {
-                                    createtempolditem = createtempitem;
-                                    createtempitem = new Item(Convert.ToInt32(mysqlreader["orderitemid"]), mysqlreader["name"].ToString());
-                                    createitem = true;
-                                }
-
-                            }
-                            else
+                            if ((createtempitem == null))
                             {
                                 createtempitem = new Item(Convert.ToInt32(mysqlreader["orderitemid"]), mysqlreader["name"].ToString());
-                                createitem = true;
-
+                                //createitem = true;
                             }
-                            //
-                            if (!(mysqlreader["component"] == null) && !(mysqlreader["addname"] == null))
+                            else if (createtempitem.getId() != (Convert.ToInt32(mysqlreader["orderitemid"])))
                             {
-                                createtempaddmod = new Mod(1, mysqlreader["addname"].ToString());
-                                createtempitem.add(createtempaddmod);
+                                createtempitem = new Item(Convert.ToInt32(mysqlreader["orderitemid"]), mysqlreader["name"].ToString());
+                                //createitem = true;
                             }
-                            else
+                            if (!(mysqlreader["componentremoved"].ToString() == "") && !(mysqlreader["removedname"].ToString() == null))
                             {
-                                createtempaddmod = null;
-                            }
-
-                            if (!(mysqlreader["componentremoved"] == null) && !(mysqlreader["removedname"] == null))
-                            {
-                                createtempremovemod = new Mod(0, mysqlreader["removedname"].ToString());
+                                createtempremovemod = new Mod(0, (mysqlreader["removedname"]).ToString());
                                 createtempitem.add(createtempremovemod);
                             }
                             else
                             {
                                 createtempremovemod = null;
                             }
-                        }
-                        else
-                        {
-                            createtempitem = null;
-                        }
-                    }
-                    else
-                    {
-                        createtemporder = null;
-                        //end of order id check
-                    }
-
-                    //If a new Order(orderID) was created, add it to the list_of_orders
-                    if (createid)
-                    {
-                        //If a new Item was created as well, add it to the new Order before adding the Order to the list_of_orders
-                        if (createitem && !(createtempolditem == null) && !(createtempoldorder == null))
-                        {
-                            createtempoldorder.add(createtempolditem);
-                        }
-                        if(!(createtempoldorder == null))
-                        { 
-                            list_of_orders.Add(createtempoldorder);
-                        }
-
-                    }
-                    //If an Order(orderId) already exists in the list_of_orders, AND an item was created, find
-                    //the order in the list_of_orders, and add the newly created item to it.
-                    else if(createitem && !(createtempolditem != null))
-                    {
-                        for (int j = 0; j < list_of_orders.Count(); j++)
-                        {
-
-                            if (createtemporder.getOrderId() == list_of_orders[j].getOrderId())
+                            if (!(mysqlreader["component"].ToString() == "") && !(mysqlreader["addname"].ToString() == null))
                             {
-                                list_of_orders[j].add(createtempolditem);
-                                j = list_of_orders.Count();
-                            }
+                                createtempaddmod = new Mod(1, (mysqlreader["addname"]).ToString());
+                                createtempitem.add(createtempaddmod);
 
+                            }
+                            else
+                            {
+                                createtempaddmod = null;
+                            }
+                            /*
+                            for (int m = 0; m < createtemporder.numItems(); m++)
+                            {
+                                if (createtemporder.itemAt(m).getId() == createtempitem.getId())
+                                    createtemporder.removeItem(createtempitem.getId());
+                            }*/
+                            if (createid)
+                            {
+                                createtemporder.add(createtempitem);
+                                list_of_orders.Add(createtemporder);
+                            }else
+                            {
+                                for (int j = 0; j < list_of_orders.Count(); j++)
+                                {
+                                    if (createtemporder.getOrderId() == list_of_orders[j].getOrderId())
+                                    {
+                                            for (int m = 0; m < createtemporder.numItems(); m++)
+                                            {
+                                                if (createtemporder.itemAt(m).getId() == createtempitem.getId())
+                                                {
+                                                    createitem = false;
+                                                    m = createtemporder.numItems();
+                                                    list_of_orders[j].removeItem(createtempitem.getId());
+                                                    list_of_orders[j].add(createtempitem);
+                                                    
+                                                }
+                                            }
+                                        if(!createitem)
+                                        {
+                                            list_of_orders[j].removeItem(createtempitem.getId());
+                                            list_of_orders[j].add(createtempitem);
+                                            j = list_of_orders.Count();
+
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
-
-                //Add the last order or item to the list_of_orders
-                if (!(createtemporder == null) && !(createtempitem == null))
-                {
-                    
-                    if (createid)
-                    {
-                        createtemporder.add(createtempitem);
-                        list_of_orders.Add(createtemporder);
-                    }
-                    else
-                    {
-                        for (int j = 0; j < list_of_orders.Count(); j++)
-                        {
-
-                            if (createtemporder.getOrderId() == list_of_orders[j].getOrderId())
-                            {
-                                list_of_orders[j].add(createtempitem);
-                                j = list_of_orders.Count();
-                            }
-
-                        }
-
-
-                    }
-
-                }
-                
                 //close Data Reader
-                mysqlreader.Close(); 
-
+                mysqlreader.Close();
             }
             else
             {
                 MessageBox.Show("Cannot Connect to Database.", "Cannot connect to the Database make sure you have network access.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }//*/
+            }
         }
         public void UpdateAllTables()
         {
@@ -351,18 +312,16 @@ namespace WindowsFormsApplication1
                             itemNode = new TreeNode(temporder.itemAt(j).getName());
                             for (int k = 0; k < temporder.itemAt(j).numMods(); k++)
                             {
-                                string tempstring = temporder.itemAt(j).itemAt(k).getCondiment();
+                               
                                 if (temporder.itemAt(j).itemAt(k).getType() == 0)
                                 {
-                                    tempstring = "-" + tempstring;
-                                    modNode = new TreeNode(tempstring);
+                                    modNode = new TreeNode(("-" + temporder.itemAt(j).itemAt(k).getCondiment()));
                                     itemNode.Nodes.Add(modNode);
 
                                 }
                                 else if (temporder.itemAt(j).itemAt(k).getType() == 1)
                                 {
-                                    tempstring = "+" + tempstring;
-                                    modNode = new TreeNode(tempstring);
+                                    modNode = new TreeNode(("+" + temporder.itemAt(j).itemAt(k).getCondiment()));
                                     itemNode.Nodes.Add(modNode);
                                 }
                             }

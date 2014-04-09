@@ -54,6 +54,18 @@ namespace WindowsFormsApplication1
                 return list_of_items[i];
 
             }
+            public void removeItem(int id)
+            {
+                for(int i = 0; i < list_of_items.Count(); i++)
+                {
+                    if(list_of_items[i].getId() == id)
+                    {
+                        list_of_items.RemoveAt(i);
+                    }
+
+                }
+
+            }
             public List<Item> getOrderItems()
             {
                 return this.list_of_items;
