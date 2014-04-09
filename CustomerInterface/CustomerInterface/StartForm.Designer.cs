@@ -170,7 +170,7 @@
             this.Controls.Add(this.NSAText);
             this.Controls.Add(this.welcomeText);
             this.Name = "StartForm";
-            this.Text = "Form1";
+            this.Text = "NSA Sandwich";
             this.ResumeLayout(false);
             this.PerformLayout();
 

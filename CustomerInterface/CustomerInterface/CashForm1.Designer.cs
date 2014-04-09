@@ -109,7 +109,7 @@
             this.change_amount.Size = new System.Drawing.Size(0, 13);
             this.change_amount.TabIndex = 7;
             // 
-            // Form1
+            // CashForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,8 +122,8 @@
             this.Controls.Add(this.Due);
             this.Controls.Add(this.cash_received);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CashForm1";
+            this.Text = "Cash Payment";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

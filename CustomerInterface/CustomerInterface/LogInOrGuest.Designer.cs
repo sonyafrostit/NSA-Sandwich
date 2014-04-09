@@ -60,7 +60,7 @@
             this.Controls.Add(this.guestButton);
             this.Controls.Add(this.signInButton);
             this.Name = "LogInOrGuest";
-            this.Text = "Form2";
+            this.Text = "Start Menu";
             this.ResumeLayout(false);
 
         }

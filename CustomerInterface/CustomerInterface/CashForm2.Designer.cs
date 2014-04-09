@@ -88,7 +88,7 @@
             this.Controls.Add(this.Showlabel);
             this.Controls.Add(this.button1);
             this.Name = "CashForm2";
-            this.Text = "Form2";
+            this.Text = "Cash Payment";
             this.Load += new System.EventHandler(this.CashForm2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

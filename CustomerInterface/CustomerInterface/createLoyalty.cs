@@ -75,12 +75,26 @@ namespace CustomerInterface
                     accountInfo[3].Add(accountNumber);
                     KioskWindow form = new KioskWindow(ci, accountInfo); //send info to KioskWindow
                     form.Show();
+                    form.FormClosed += new FormClosedEventHandler(CreateLoyalty_FormClosed);
                     Hide();
                 }
 
                 else
                     errorLabel.Text = "SYSTEM IS DOWN";
             }
+        }
+
+        void CreateLoyalty_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StartForm from = new StartForm();
+            from.Show();
+            from.FormClosed += new FormClosedEventHandler(StartMenu_FormClosed);
+            this.Hide();
+        }
+
+        void StartMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

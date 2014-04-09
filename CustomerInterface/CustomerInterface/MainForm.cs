@@ -327,14 +327,30 @@ namespace CustomerInterface
             foreach (NSAMenuItem item in currentOrder.Items) { 
                 MySqlCommand cmd2 = new MySqlCommand(String.Format("INSERT INTO orderitems (storeid, orderid, menuitemid, name, price) VALUES ({0}, {1}, {2}, '{3}', {4});", db.StoreNumber1, currentOrder.Id, item.Id, item.Name, item.Price), db.Connection1);
                 cmd2.ExecuteReader().Close();
+                long orderitemid;
+                orderitemid = cmd2.LastInsertedId;
                 foreach (NSAComponent comp in item.Components) {
-                    MySqlCommand cmd3 = new MySqlCommand(("INSERT INTO orderitemcomponents (orderitemid, storeid, component) VALUES (" + item.Id + ", " + db.StoreNumber1 + ", " + comp.ComponentID + ");"), db.Connection1);
+                    MySqlCommand cmd3 = new MySqlCommand(("INSERT INTO orderitemcomponents (orderitemid, storeid, component) VALUES (" + orderitemid + ", " + db.StoreNumber1 + ", " + comp.ComponentID + ");"), db.Connection1);
                     cmd3.ExecuteReader().Close();
                 }
             }
             CashCreditSelect ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db);
             ccs.Show();
+            ccs.FormClosed += new FormClosedEventHandler(CustomerKiosk_FormClosed);
             Hide();
+        }
+
+        void CustomerKiosk_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StartForm from = new StartForm();
+            from.Show();
+            from.FormClosed += new FormClosedEventHandler(StartMenu_FormClosed);
+            this.Hide();
+        }
+
+        void StartMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void button2_Click_1(object sender, EventArgs e)

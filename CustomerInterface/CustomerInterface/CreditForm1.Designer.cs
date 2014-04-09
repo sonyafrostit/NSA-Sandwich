@@ -96,7 +96,7 @@
             this.checkLabel.Size = new System.Drawing.Size(0, 13);
             this.checkLabel.TabIndex = 3;
             // 
-            // Form1
+            // CreditForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,8 +105,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CreditForm1";
+            this.Text = "Credit Payment";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

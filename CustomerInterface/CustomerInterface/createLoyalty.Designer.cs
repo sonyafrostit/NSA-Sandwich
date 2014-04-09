@@ -110,7 +110,7 @@
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Name = "createLoyalty";
-            this.Text = "Form1";
+            this.Text = "Create Loyalty";
             this.ResumeLayout(false);
             this.PerformLayout();
 

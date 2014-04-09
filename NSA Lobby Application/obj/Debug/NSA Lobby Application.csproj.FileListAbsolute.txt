@@ -20,3 +20,6 @@ C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\obj\Debug\NSA_
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\obj\Debug\NSA_Lobby_Application.Properties.Resources.resources
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\obj\Debug\NSA Lobby Application.csproj.GenerateResource.Cache
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\obj\Debug\NSA Lobby Application.csprojResolveAssemblyReference.cache
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\bin\Debug\NSA Lobby Application.exe.config
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\obj\Debug\NSA Lobby Application.exe
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Lobby Application\obj\Debug\NSA Lobby Application.pdb

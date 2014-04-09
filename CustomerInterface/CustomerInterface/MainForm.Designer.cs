@@ -62,6 +62,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.OrderView = new System.Windows.Forms.ListView();
@@ -71,8 +73,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -91,8 +91,8 @@
             this.KioskTabs.Controls.Add(this.MenuTab);
             this.KioskTabs.Controls.Add(this.LoyaltyTab);
             this.KioskTabs.Controls.Add(this.LanguageTab);
-            this.KioskTabs.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KioskTabs.ItemSize = new System.Drawing.Size(42, 18);
+            this.KioskTabs.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.KioskTabs.ItemSize = new System.Drawing.Size(42, 20);
             this.KioskTabs.Location = new System.Drawing.Point(13, 12);
             this.KioskTabs.Multiline = true;
             this.KioskTabs.Name = "KioskTabs";
@@ -106,10 +106,10 @@
             this.MenuTab.Controls.Add(this.button4);
             this.MenuTab.Controls.Add(this.button5);
             this.MenuTab.Controls.Add(this.menuListView);
-            this.MenuTab.Location = new System.Drawing.Point(4, 22);
+            this.MenuTab.Location = new System.Drawing.Point(4, 24);
             this.MenuTab.Name = "MenuTab";
             this.MenuTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTab.Size = new System.Drawing.Size(778, 521);
+            this.MenuTab.Size = new System.Drawing.Size(778, 519);
             this.MenuTab.TabIndex = 0;
             this.MenuTab.Text = "Menu";
             this.MenuTab.UseVisualStyleBackColor = true;
@@ -136,11 +136,12 @@
             // 
             // menuListView
             // 
-            this.menuListView.Location = new System.Drawing.Point(75, 6);
+            this.menuListView.Location = new System.Drawing.Point(75, 17);
             this.menuListView.Name = "menuListView";
-            this.menuListView.Size = new System.Drawing.Size(697, 502);
+            this.menuListView.Size = new System.Drawing.Size(697, 491);
             this.menuListView.TabIndex = 0;
             this.menuListView.UseCompatibleStateImageBehavior = false;
+            this.menuListView.View = System.Windows.Forms.View.SmallIcon;
             this.menuListView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // LoyaltyTab
@@ -155,10 +156,10 @@
             this.LoyaltyTab.Controls.Add(this.emailLabel);
             this.LoyaltyTab.Controls.Add(this.accountNumberLabel);
             this.LoyaltyTab.Controls.Add(this.AccNumberTagLabel);
-            this.LoyaltyTab.Location = new System.Drawing.Point(4, 22);
+            this.LoyaltyTab.Location = new System.Drawing.Point(4, 24);
             this.LoyaltyTab.Name = "LoyaltyTab";
             this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LoyaltyTab.Size = new System.Drawing.Size(778, 521);
+            this.LoyaltyTab.Size = new System.Drawing.Size(778, 519);
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
             this.LoyaltyTab.UseVisualStyleBackColor = true;
@@ -168,7 +169,7 @@
             this.rewardCountLabel.AutoSize = true;
             this.rewardCountLabel.Location = new System.Drawing.Point(21, 138);
             this.rewardCountLabel.Name = "rewardCountLabel";
-            this.rewardCountLabel.Size = new System.Drawing.Size(37, 25);
+            this.rewardCountLabel.Size = new System.Drawing.Size(25, 17);
             this.rewardCountLabel.TabIndex = 8;
             this.rewardCountLabel.Text = "No";
             // 
@@ -205,7 +206,7 @@
             this.pastOrdersLabel.AutoSize = true;
             this.pastOrdersLabel.Location = new System.Drawing.Point(3, 11);
             this.pastOrdersLabel.Name = "pastOrdersLabel";
-            this.pastOrdersLabel.Size = new System.Drawing.Size(121, 25);
+            this.pastOrdersLabel.Size = new System.Drawing.Size(79, 17);
             this.pastOrdersLabel.TabIndex = 9;
             this.pastOrdersLabel.Text = "Past Orders";
             this.pastOrdersLabel.Click += new System.EventHandler(this.label5_Click);
@@ -241,7 +242,7 @@
             this.favoriteItemsLabel.AutoSize = true;
             this.favoriteItemsLabel.Location = new System.Drawing.Point(4, 6);
             this.favoriteItemsLabel.Name = "favoriteItemsLabel";
-            this.favoriteItemsLabel.Size = new System.Drawing.Size(146, 25);
+            this.favoriteItemsLabel.Size = new System.Drawing.Size(95, 17);
             this.favoriteItemsLabel.TabIndex = 1;
             this.favoriteItemsLabel.Text = "Favorite Items";
             // 
@@ -258,7 +259,7 @@
             // 
             this.emailTextBox.Location = new System.Drawing.Point(115, 85);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(414, 33);
+            this.emailTextBox.Size = new System.Drawing.Size(414, 24);
             this.emailTextBox.TabIndex = 7;
             // 
             // nameLabel
@@ -266,7 +267,7 @@
             this.nameLabel.AutoSize = true;
             this.nameLabel.Location = new System.Drawing.Point(10, 47);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(73, 25);
+            this.nameLabel.Size = new System.Drawing.Size(48, 17);
             this.nameLabel.TabIndex = 6;
             this.nameLabel.Text = "Name:";
             // 
@@ -274,7 +275,7 @@
             // 
             this.nameTextBox.Location = new System.Drawing.Point(115, 44);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(414, 33);
+            this.nameTextBox.Size = new System.Drawing.Size(414, 24);
             this.nameTextBox.TabIndex = 5;
             this.nameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -283,7 +284,7 @@
             this.rewardsLabel.AutoSize = true;
             this.rewardsLabel.Location = new System.Drawing.Point(53, 138);
             this.rewardsLabel.Name = "rewardsLabel";
-            this.rewardsLabel.Size = new System.Drawing.Size(289, 25);
+            this.rewardsLabel.Size = new System.Drawing.Size(187, 17);
             this.rewardsLabel.TabIndex = 3;
             this.rewardsLabel.Text = "more orders to free sandwich";
             this.rewardsLabel.Click += new System.EventHandler(this.label2_Click);
@@ -293,7 +294,7 @@
             this.emailLabel.AutoSize = true;
             this.emailLabel.Location = new System.Drawing.Point(10, 88);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(70, 25);
+            this.emailLabel.Size = new System.Drawing.Size(44, 17);
             this.emailLabel.TabIndex = 2;
             this.emailLabel.Text = "Email:";
             // 
@@ -303,7 +304,7 @@
             this.accountNumberLabel.Location = new System.Drawing.Point(184, 11);
             this.accountNumberLabel.Name = "accountNumberLabel";
             this.accountNumberLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.accountNumberLabel.Size = new System.Drawing.Size(0, 25);
+            this.accountNumberLabel.Size = new System.Drawing.Size(0, 17);
             this.accountNumberLabel.TabIndex = 1;
             // 
             // AccNumberTagLabel
@@ -311,7 +312,7 @@
             this.AccNumberTagLabel.AutoSize = true;
             this.AccNumberTagLabel.Location = new System.Drawing.Point(10, 11);
             this.AccNumberTagLabel.Name = "AccNumberTagLabel";
-            this.AccNumberTagLabel.Size = new System.Drawing.Size(176, 25);
+            this.AccNumberTagLabel.Size = new System.Drawing.Size(117, 17);
             this.AccNumberTagLabel.TabIndex = 0;
             this.AccNumberTagLabel.Text = "Account Number:";
             this.AccNumberTagLabel.Click += new System.EventHandler(this.label1_Click);
@@ -323,10 +324,10 @@
             this.LanguageTab.Controls.Add(this.geBtn);
             this.LanguageTab.Controls.Add(this.frBtn);
             this.LanguageTab.Controls.Add(this.enBtn);
-            this.LanguageTab.Location = new System.Drawing.Point(4, 22);
+            this.LanguageTab.Location = new System.Drawing.Point(4, 24);
             this.LanguageTab.Name = "LanguageTab";
             this.LanguageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LanguageTab.Size = new System.Drawing.Size(778, 521);
+            this.LanguageTab.Size = new System.Drawing.Size(778, 519);
             this.LanguageTab.TabIndex = 3;
             this.LanguageTab.Text = "Language";
             this.LanguageTab.UseVisualStyleBackColor = true;
@@ -435,6 +436,26 @@
             this.panel3.Size = new System.Drawing.Size(263, 493);
             this.panel3.TabIndex = 7;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(4, 454);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(144, 36);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Save Order to Favorites";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_2);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(56, 399);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(60, 35);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Fave!";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // RemoveButton
             // 
             this.RemoveButton.Location = new System.Drawing.Point(193, 399);
@@ -506,26 +527,6 @@
             // fontDialog1
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(56, 399);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(60, 35);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Fave!";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(4, 454);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(144, 36);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Save Order to Favorites";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click_2);
             // 
             // KioskWindow
             // 

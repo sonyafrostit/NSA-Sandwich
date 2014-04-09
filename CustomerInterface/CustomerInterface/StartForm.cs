@@ -67,7 +67,8 @@ namespace CustomerInterface
         {
             LogInOrGuest form = new LogInOrGuest(ci);
             form.Show();
-            Hide(); //hides form until order is complete
+            form.FormClosed += new FormClosedEventHandler(CustomerKiosk_FormClosed);
+            this.Hide();
         }
 
         //called when user clicks to create a loyalty account
@@ -75,7 +76,21 @@ namespace CustomerInterface
         {
             createLoyalty form = new createLoyalty(ci);
             form.Show();
-            Hide();
+            form.FormClosed += new FormClosedEventHandler(CustomerKiosk_FormClosed);
+            this.Hide();
+        }
+
+        void CustomerKiosk_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StartForm from = new StartForm();
+            from.Show();
+            from.FormClosed += new FormClosedEventHandler(StartMenu_FormClosed);
+            this.Hide();
+        }
+
+        void StartMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

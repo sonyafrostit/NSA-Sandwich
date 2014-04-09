@@ -31,3 +31,13 @@ C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corp
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA_Corporate_Application.CorporateUI.resources
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA_Corporate_Application.Properties.Resources.resources
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.csproj.GenerateResource.Cache
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.exe.config
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.exe
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.pdb
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSAConfig.xml
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.exe
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\bin\Debug\NSA Corporate Application.pdb
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.csprojResolveAssemblyReference.cache
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA_Corporate_Application.CorporateUI.resources
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA_Corporate_Application.Properties.Resources.resources
+C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\NSA Corporate Application\NSA Corporate Application\obj\Debug\NSA Corporate Application.csproj.GenerateResource.Cache

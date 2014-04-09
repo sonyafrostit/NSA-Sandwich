@@ -36,6 +36,7 @@ namespace CustomerInterface
         private void guestButton_Click(object sender, EventArgs e)
         {
             KioskWindow mainForm = new KioskWindow(ci);
+            mainForm.FormClosed += new FormClosedEventHandler(LoginorGuest_FormClosed);
             mainForm.Show();
             Hide(); //hides form until needed again
         }
@@ -44,8 +45,22 @@ namespace CustomerInterface
         private void signInButton_Click(object sender, EventArgs e)
         {
             LogInForm logInForm = new LogInForm(ci);
+            logInForm.FormClosed += new FormClosedEventHandler(LoginorGuest_FormClosed);
             logInForm.Show();
             Hide(); //hides form until needed again
+        }
+
+        void LoginorGuest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StartForm from = new StartForm();
+            from.Show();
+            from.FormClosed += new FormClosedEventHandler(StartMenu_FormClosed);
+            this.Hide();
+        }
+
+        void StartMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

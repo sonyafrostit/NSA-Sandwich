@@ -69,7 +69,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CreditForm2";
-            this.Text = "Form2";
+            this.Text = "Credit Payment";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

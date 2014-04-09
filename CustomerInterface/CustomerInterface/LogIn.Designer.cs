@@ -79,7 +79,7 @@
             this.Controls.Add(this.enterInfoLabel);
             this.Controls.Add(this.accountNumberBox);
             this.Name = "LogInForm";
-            this.Text = "Form1";
+            this.Text = "Loyalty Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 

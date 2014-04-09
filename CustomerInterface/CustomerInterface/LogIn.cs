@@ -62,9 +62,23 @@ namespace CustomerInterface
             else
             {
                 KioskWindow mainForm = new KioskWindow(ci, loyaltyData);
+                mainForm.FormClosed += new FormClosedEventHandler(LogIn_FormClosed);
                 mainForm.Show();
                 Hide();
             }
+        }
+
+        void LogIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StartForm from = new StartForm();
+            from.Show();
+            from.FormClosed += new FormClosedEventHandler(StartMenu_FormClosed);
+            this.Hide();
+        }
+
+        void StartMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
     }
