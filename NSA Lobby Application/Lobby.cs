@@ -171,9 +171,21 @@ namespace NSA_Lobby_Application
         //Timer event that triggers the reload of the Orders.
         private void ReloadTimer_Tick(object sender, EventArgs e) {
             if (InitialLoadSuccess) {
+                Remove20MinuteOrders(); 
                 DisplayOrders();
             }
         } //LoadConfig()
+
+        //Remove all orders that are older than 20 minutes.
+        public bool Remove20MinuteOrders() {
+
+            string query = "UPDATE orders SET status = 3 Where storeid = " + ConfigurationSettings.StoreNumber.ToString() + 
+                            " AND status = 2 AND timedelivered < DATE_SUB(NOW() , INTERVAL 20 MINUTE)";
+
+            nsadb.ExecuteQuery(query);
+
+            return true;
+        }
 
     }
 }

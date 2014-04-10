@@ -189,6 +189,24 @@ namespace NSA{
 
         } //CustomQuery
 
+        //execute the on data query 
+        public int ExecuteQuery(string query) {
+
+            //If DB connection is open attem to get data.
+            if (Connection.State == System.Data.ConnectionState.Open) {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                return cmd.ExecuteNonQuery();
+            }
+
+            return -1;
+
+        } //CustomQuery
+
+
         //Return true if Database is connected
         public bool Connected() {
             return (Connection.State == System.Data.ConnectionState.Open);
