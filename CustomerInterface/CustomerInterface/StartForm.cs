@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Resources;
 using System.Globalization;
+using NSA;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 
 namespace CustomerInterface
 {
@@ -17,9 +21,25 @@ namespace CustomerInterface
     {
         private CultureInfo ci; //users selected language
 
+        private const string XML_CONFIG_FILE = "NSAConfig.xml";
+
         public StartForm()
         {
             InitializeComponent();
+            Load_Top_Entrees();
+        }
+
+        //Loads the top 3 entrees to the form.
+        private void Load_Top_Entrees() {
+            NSADatabase db = new NSADatabase();
+            db.OpenConnection();
+
+            string[] Top3 = db.getTop3Entrees();
+
+            this.lblSandwich1.Text = Top3[0];
+            this.lblSandwich2.Text = Top3[1];
+            this.lblSandwich3.Text = Top3[2];
+
         }
 
         //changes interface when new language is chosen
@@ -32,6 +52,7 @@ namespace CustomerInterface
             createLoyaltyBtn.Text = rm.GetString("createLoyaltyBut", ci);
             startOrderBtn.Text = rm.GetString("startOrderBut", ci);
             selectLangText.Text = rm.GetString("selectLangText", ci);
+            topSelling.Text = rm.GetString("topSelling", ci);
         }
 
         //changes language to english
@@ -92,5 +113,7 @@ namespace CustomerInterface
         {
             Application.Exit();
         }
+
+
     }
 }

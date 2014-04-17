@@ -336,6 +336,35 @@ namespace CustomerInterface
             return itemList.ToArray();
 
         }
+
+        public string[] getTop3Entrees()
+        {
+            StringBuilder query = new StringBuilder();
+            query.Append("SELECT  J.name, count(J.menuitemid) as Rank ");
+            query.Append("FROM (SELECT OI.name, OI.menuitemid, O.timeplaced ");
+	        query.Append("FROM orderitems OI join orders O ON OI.orderID = O.orderID ");
+	        query.Append("Where DATE(O.timeplaced) = DATE(DATE_SUB(NOW(), INTERVAL 1 DAY)) AND O.storeid = 1 AND ");
+		    query.Append("OI.menuitemid in (SELECT menuitemid FROM menuitem where storeid = ");
+            query.Append(StoreNumber.ToString());
+            query.Append(" AND menutypeid in (1,2))) as J ");
+            query.Append("GROUP BY name ORDER BY Rank DESC LIMIT 3;");
+
+            MySqlDataReader componentReader = CustomQuery(query.ToString());
+            List<string> itemList = new List<string>();
+            if (componentReader != null)
+            {
+                while (componentReader.Read())
+                {
+                    string tempString = "";
+                    tempString = (string)componentReader["name"];
+                    itemList.Add(tempString);
+                }
+                componentReader.Close();
+            }
+
+            return itemList.ToArray();
+
+        }
         public void createNewOrder() {
             CustomQuery("INSERT;");
 

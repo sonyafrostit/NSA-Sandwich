@@ -243,4 +243,7 @@
   <data name="sides" xml:space="preserve">
     <value>Lados</value>
   </data>
+  <data name="topSelling" xml:space="preserve">
+    <value>Mejores Ventas de Platos de ayer</value>
+  </data>
 </root>

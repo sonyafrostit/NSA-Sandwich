@@ -240,4 +240,7 @@
   <data name="salad" xml:space="preserve">
     <value>Salat</value>
   </data>
+  <data name="topSelling" xml:space="preserve">
+    <value>Der gestrige Top Selling Entrees</value>
+  </data>
 </root>
