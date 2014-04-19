@@ -12,6 +12,9 @@ using System.Resources;
 using System.Globalization;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using System.Net.Mail;
+using System.Net;
+
 namespace CustomerInterface
 {
     public partial class KioskWindow : Form
@@ -167,6 +170,58 @@ namespace CustomerInterface
                 Console.WriteLine(e.StackTrace);
             }
         }
+
+        private void printReceipt()
+        {
+            StringBuilder receipt = new StringBuilder();
+
+            string message = "Thank you for visiting us! Here is your receipt for your order. Come again!";
+            receipt.Append(message);
+            receipt.AppendLine();
+            receipt.AppendLine();
+
+            receipt.Append("Item                     Changes");
+            receipt.AppendLine();
+
+            foreach (ListViewItem item in OrderView.Items)
+            {
+                receipt.Append(item.Text);
+
+                if (item.SubItems.Count > 1)
+                {
+                    for (int i = 0; i < item.SubItems.Count; i++)
+                    {
+                        if ((i % 2) == 0)
+                        {
+                            continue;
+                        }
+
+                        else
+                        {
+                            receipt.Append("                           ");
+                            receipt.Append(item.SubItems[i].Text);
+                        }
+                    }
+                }
+                receipt.AppendLine();
+                receipt.AppendLine();
+            }
+
+
+            MailMessage mail = new MailMessage();
+            mail.To.Add("cse4444project@gmail.com");
+            mail.Subject = "NSA Receipt";
+            mail.From = new MailAddress("cse4444project@gmail.com");
+            mail.Body = receipt.ToString();
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential("cse4444project@gmail.com", "NSAproject1");
+            smtp.EnableSsl = true;
+
+            smtp.Send(mail);
+        }
+
         private void removeItemFromOrder(NSAMenuItem item)
         { 
         
