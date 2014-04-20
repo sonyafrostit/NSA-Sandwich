@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NSA.AppConfig">
+    <Position X="7" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAgRAAAAAAIAAAAIAAABgAEQIACEIBCCAQBAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA.NSADatabase">
+    <Position X="4" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAQQEAAAABBFBAAQAQAAAEAAAAAAAAAEA=</HashCode>
+      <FileName>DatabaseConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Lobby_Application.Lobby">
+    <Position X="0.5" Y="2" Width="3.25" />
+    <Members>
+      <Field Name="backgroundWorker1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Order1" Hidden="true" />
+      <Field Name="Order10" Hidden="true" />
+      <Field Name="Order2" Hidden="true" />
+      <Field Name="Order3" Hidden="true" />
+      <Field Name="Order4" Hidden="true" />
+      <Field Name="Order5" Hidden="true" />
+      <Field Name="Order6" Hidden="true" />
+      <Field Name="Order7" Hidden="true" />
+      <Field Name="Order8" Hidden="true" />
+      <Field Name="Order9" Hidden="true" />
+      <Field Name="OrderLabel" Hidden="true" />
+      <Field Name="ReloadTimer" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="TimeLabel" Hidden="true" />
+      <Field Name="TimeOrder1" Hidden="true" />
+      <Field Name="TimeOrder10" Hidden="true" />
+      <Field Name="TimeOrder2" Hidden="true" />
+      <Field Name="TimeOrder3" Hidden="true" />
+      <Field Name="TimeOrder4" Hidden="true" />
+      <Field Name="TimeOrder5" Hidden="true" />
+      <Field Name="TimeOrder6" Hidden="true" />
+      <Field Name="TimeOrder7" Hidden="true" />
+      <Field Name="TimeOrder8" Hidden="true" />
+      <Field Name="TimeOrder9" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AwEAACAAACAAAAIAAIGAAgAKCAIAAAQAAAAgAQCAKP4=</HashCode>
+      <FileName>Lobby.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Lobby_Application.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NSA.AppConfig">
+    <Position X="3.25" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAgRAAAAAAIAAAAIAAABgAEQIACEIBCCAQBAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Corporate_Application.CorporateData">
+    <Position X="6" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAQAAACAhAIQAQKAAAAAAAAAAAAAAgAAg=</HashCode>
+      <FileName>CorporateData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Corporate_Application.CorporateUI">
+    <Position X="0.5" Y="2" Width="2.5" />
+    <Members>
+      <Field Name="AccountsFound_Listbox" Hidden="true" />
+      <Field Name="AssistantManagerConfirm_Textbox" Hidden="true" />
+      <Field Name="AssistantManagerFirstName_Label" Hidden="true" />
+      <Field Name="AssistantManagerFirstName_Textbox" Hidden="true" />
+      <Field Name="AssistantManagerLastName_Label" Hidden="true" />
+      <Field Name="AssistantManagerLastName_Textbox" Hidden="true" />
+      <Field Name="AssistantManagerPassword_Textbox" Hidden="true" />
+      <Field Name="AssistantManagers" Hidden="true" />
+      <Field Name="AssistantManagerSave_Button" Hidden="true" />
+      <Field Name="AssistantManagersConfirm_Label" Hidden="true" />
+      <Field Name="AssistantManagersList_Label" Hidden="true" />
+      <Field Name="AssistantManagerTitle_Label" Hidden="true" />
+      <Field Name="AssistantMangerPassword_Label" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="DeleteAssistantManager_Button" Hidden="true" />
+      <Field Name="DeleteStore" Hidden="true" />
+      <Field Name="EmployeeID_Label" Hidden="true" />
+      <Field Name="EmployeeID_Textbox" Hidden="true" />
+      <Field Name="Inventory" Hidden="true" />
+      <Field Name="Inventory_Listbox" Hidden="true" />
+      <Field Name="Inventory_Stores" Hidden="true" />
+      <Field Name="InventoryTitle_Label" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="Loyalty_Stores" Hidden="true" />
+      <Field Name="LoyaltyAccounts" Hidden="true" />
+      <Field Name="ManagerKiosk_TabPage" Hidden="true" />
+      <Field Name="Managers_Listbox" Hidden="true" />
+      <Field Name="OrderItems_Listbox" Hidden="true" />
+      <Field Name="Orders" Hidden="true" />
+      <Field Name="Orders_Listbox" Hidden="true" />
+      <Field Name="Orders_Stores" Hidden="true" />
+      <Field Name="OrdersItems_Label" Hidden="true" />
+      <Field Name="OrdersList_Label" Hidden="true" />
+      <Field Name="PrintReport_Button" Hidden="true" />
+      <Field Name="RefreshOrders_Button" Hidden="true" />
+      <Field Name="Reports" Hidden="true" />
+      <Field Name="Reports_Listbox" Hidden="true" />
+      <Field Name="Reports_Stores" Hidden="true" />
+      <Field Name="ReportsTitle_Label" Hidden="true" />
+      <Field Name="SaveStore" Hidden="true" />
+      <Field Name="StoreAddress_Text" Hidden="true" />
+      <Field Name="StoreCity_Text" Hidden="true" />
+      <Field Name="StoreName_Text" Hidden="true" />
+      <Field Name="Stores" Hidden="true" />
+      <Field Name="Stores_List" Hidden="true" />
+      <Field Name="StoresComboBox" Hidden="true" />
+      <Field Name="StoreState_Text" Hidden="true" />
+      <Field Name="StoreZip_Text" Hidden="true" />
+      <Field Name="webReports" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="NSA_Corporate_Application.CorporateUI.BoxFormat">
+        <TypeIdentifier>
+          <NewMemberFileName>CorporateUI.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>8YEUImipIilAQBGBQwWAhAciA1JA4AgVnAIAgwIoTAQ=</HashCode>
+      <FileName>CorporateUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA.NSADatabase">
+    <Position X="6" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAQQEAAAABBFBAAQAQAAAEAAAAAAAAAEA=</HashCode>
+      <FileName>DatabaseConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Corporate_Application.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA.Reports">
+    <Position X="3.25" Y="8" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="NSA.Reports.ReportIDs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Reports.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gAAAJAAAAAAEQAAQAAAAAAAACAAAIAAEAAQEAQAIJAA=</HashCode>
+      <FileName>Reports.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

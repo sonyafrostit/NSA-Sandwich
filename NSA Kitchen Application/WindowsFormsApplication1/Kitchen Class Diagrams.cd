@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NSA.AppConfig">
+    <Position X="3.5" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAgRAAAAAAIAAAAIAAABgAEQIACEIBCCAQBAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA.NSADatabase">
+    <Position X="3.5" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAQQEAAAABBFBAAQAQAAAEAAAAAAAAAEA=</HashCode>
+      <FileName>DatabaseConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApplication1.Form1">
+    <Position X="0.5" Y="2.25" Width="2.75" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="button2" Hidden="true" />
+      <Field Name="button3" Hidden="true" />
+      <Field Name="button4" Hidden="true" />
+      <Field Name="button5" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label1number" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label2number" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label3number" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label4number" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label5number" Hidden="true" />
+      <Field Name="mytable1" Hidden="true" />
+      <Field Name="mytable2" Hidden="true" />
+      <Field Name="mytable3" Hidden="true" />
+      <Field Name="mytable4" Hidden="true" />
+      <Field Name="mytable5" Hidden="true" />
+      <Field Name="Polling" Hidden="true" />
+      <Field Name="toplabel" Hidden="true" />
+      <Field Name="toplabelnumber" Hidden="true" />
+      <Field Name="treeView1" Hidden="true" />
+      <Field Name="treeView2" Hidden="true" />
+      <Field Name="treeView3" Hidden="true" />
+      <Field Name="treeView4" Hidden="true" />
+      <Field Name="treeView5" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAAAQhECAAARFAAQGIAAAyCMI4IiAAKHQMQQAACgA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApplication1.Item">
+    <Position X="6.25" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgAABAAQAAEAgAAAAAAAAgAAAABAAAAEAAACAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApplication1.Mod">
+    <Position X="6.25" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAABAAAAAAABAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApplication1.Order">
+    <Position X="6.25" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAEABAAAAAAAgEAAAAAAACAABACAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApplication1.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -65,6 +65,9 @@
       <Name>CSCE 4444 Term Project</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Manager Test Diagram.cd" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NSATest.ConfigTest">
+    <Position X="0.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAACAAAAAEAAAAACEAAACEAAAAAAAIkEAAAAAAAA=</HashCode>
+      <FileName>ConfigTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSATest.DatabaseConnecitonTest">
+    <Position X="4.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>EGAAEAIAAAAgAgBAAgAABABAAIAQAIBAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseConnectionTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

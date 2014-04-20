@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NSA_Manager.AppConfig">
+    <Position X="6.5" Y="10.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAgRAAAAAAIAAAAIAAABgAEQIACEIBCCAQBAAA=</HashCode>
+      <FileName>AppConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Manager.NSADatabase">
+    <Position X="6.5" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gAEgEAAAAAAAQQEaAogJBDBAAQAYEAEACDJAAAAAAEA=</HashCode>
+      <FileName>DatabaseConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Manager.ManagerKiosk">
+    <Position X="0.5" Y="2" Width="2.75" />
+    <Members>
+      <Field Name="AccountName_Label" Hidden="true" />
+      <Field Name="AccountName_Label2" Hidden="true" />
+      <Field Name="AccountNumber_Label" Hidden="true" />
+      <Field Name="AccountsFound_Listbox" Hidden="true" />
+      <Field Name="AddAccountName_Textbox" Hidden="true" />
+      <Field Name="AddEmailAddress_Textbox" Hidden="true" />
+      <Field Name="AddLoyaltyAccount_Label" Hidden="true" />
+      <Field Name="AssistantManagerConfirm_Textbox" Hidden="true" />
+      <Field Name="AssistantManagerFirstName_Label" Hidden="true" />
+      <Field Name="AssistantManagerFirstName_Textbox" Hidden="true" />
+      <Field Name="AssistantManagerLastName_Label" Hidden="true" />
+      <Field Name="AssistantManagerLastName_Textbox" Hidden="true" />
+      <Field Name="AssistantManagerPassword_Textbox" Hidden="true" />
+      <Field Name="AssistantManagers" Hidden="true" />
+      <Field Name="AssistantManagers_Listbox" Hidden="true" />
+      <Field Name="AssistantManagerSave_Button" Hidden="true" />
+      <Field Name="AssistantManagersConfirm_Label" Hidden="true" />
+      <Field Name="AssistantManagersList_Label" Hidden="true" />
+      <Field Name="AssistantManagerTitle_Label" Hidden="true" />
+      <Field Name="AssistantMangerPassword_Label" Hidden="true" />
+      <Field Name="ClearPickupWindow_Button" Hidden="true" />
+      <Field Name="ComponentCategory_Label" Hidden="true" />
+      <Field Name="ComponentCategory_Textbox" Hidden="true" />
+      <Field Name="ComponentCost_Label" Hidden="true" />
+      <Field Name="ComponentCost_Textbox" Hidden="true" />
+      <Field Name="ComponentDelete_Button" Hidden="true" />
+      <Field Name="ComponentHighQuantity_Label" Hidden="true" />
+      <Field Name="ComponentHighQuantity_Textbox" Hidden="true" />
+      <Field Name="ComponentLowQuantity_Label" Hidden="true" />
+      <Field Name="ComponentLowQuantity_Textbox" Hidden="true" />
+      <Field Name="ComponentName_Label" Hidden="true" />
+      <Field Name="ComponentName_Textbox" Hidden="true" />
+      <Field Name="ComponentPrice_Label" Hidden="true" />
+      <Field Name="ComponentPrice_Textbox" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Components_Listbox" Hidden="true" />
+      <Field Name="ComponentSave_Button" Hidden="true" />
+      <Field Name="ComponentsTitle_Label" Hidden="true" />
+      <Field Name="DateBegin_Calender" Hidden="true" />
+      <Field Name="DateEnd_Calender" Hidden="true" />
+      <Field Name="DateEnd_Label" Hidden="true" />
+      <Field Name="DeleteAssistantManager_Button" Hidden="true" />
+      <Field Name="DeleteLoyaltyAccount_Button" Hidden="true" />
+      <Field Name="EmailAddress_Label" Hidden="true" />
+      <Field Name="EmailAddress_Label2" Hidden="true" />
+      <Field Name="EmployeeID_Label" Hidden="true" />
+      <Field Name="EmployeeID_Textbox" Hidden="true" />
+      <Field Name="Inventory" Hidden="true" />
+      <Field Name="Inventory_Listbox" Hidden="true" />
+      <Field Name="InventoryTitle_Label" Hidden="true" />
+      <Field Name="InventoryUpdate_Button" Hidden="true" />
+      <Field Name="ItemCount_Label" Hidden="true" />
+      <Field Name="ItemCount_Textbox" Hidden="true" />
+      <Field Name="ItemMods" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="LoyaltyAccount_Title" Hidden="true" />
+      <Field Name="LoyaltyAccounts" Hidden="true" />
+      <Field Name="LoyaltyAccountSearch_Button" Hidden="true" />
+      <Field Name="ManagerKiosk_TabPage" Hidden="true" />
+      <Field Name="MenuItemCategory_Label" Hidden="true" />
+      <Field Name="MenuItemCategory_Textbox" Hidden="true" />
+      <Field Name="MenuItemComponents_Label" Hidden="true" />
+      <Field Name="MenuItemDelete_Button" Hidden="true" />
+      <Field Name="MenuItemName_Label" Hidden="true" />
+      <Field Name="MenuItemName_Textbox" Hidden="true" />
+      <Field Name="MenuItemPrice_Label" Hidden="true" />
+      <Field Name="MenuItemPrice_Textbox" Hidden="true" />
+      <Field Name="MenuItems" Hidden="true" />
+      <Field Name="MenuItems_Listbox" Hidden="true" />
+      <Field Name="MenuItemSave_Button" Hidden="true" />
+      <Field Name="MenuItemsComponent_CheckedListbox" Hidden="true" />
+      <Field Name="MenuItemSpecial_Checkbox" Hidden="true" />
+      <Field Name="MenuItemsTitle_Label" Hidden="true" />
+      <Field Name="OrderItems_Listbox" Hidden="true" />
+      <Field Name="Orders" Hidden="true" />
+      <Field Name="Orders_Listbox" Hidden="true" />
+      <Field Name="OrdersItems_Label" Hidden="true" />
+      <Field Name="OrdersList_Label" Hidden="true" />
+      <Field Name="PrintReport_Button" Hidden="true" />
+      <Field Name="RefreshOrders_Button" Hidden="true" />
+      <Field Name="RefundItem_Button" Hidden="true" />
+      <Field Name="RefundOrders_Button" Hidden="true" />
+      <Field Name="Reports" Hidden="true" />
+      <Field Name="Reports_Listbox" Hidden="true" />
+      <Field Name="ReportsTitle_Label" Hidden="true" />
+      <Field Name="SaveLoyaltyAccount_Button" Hidden="true" />
+      <Field Name="SearchAccountName_Textbox" Hidden="true" />
+      <Field Name="SearchAccountNumber_Textbox" Hidden="true" />
+      <Field Name="SearchEmailAddress_Textbox" Hidden="true" />
+      <Field Name="SpecialDayFriday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayMonday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDays_Label" Hidden="true" />
+      <Field Name="SpecialDaySaturday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDaySunday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayThursday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayTuesday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayWednesday_Checkbox" Hidden="true" />
+      <Field Name="Tools" Hidden="true" />
+      <Field Name="ToolsTitle_Label" Hidden="true" />
+      <Field Name="webReports" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="NSA_Manager.ManagerKiosk.BoxFormat" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ManagerKiosk.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>qyEVKmijMnlEQDGZYtGJBMPaiRJIx6xX3AOK0yYoDQQ=</HashCode>
+      <FileName>ManagerKiosk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Manager.ManagerKiosk2">
+    <Position X="3.5" Y="2" Width="2.75" />
+    <Members>
+      <Field Name="AccountName_Label" Hidden="true" />
+      <Field Name="AccountName_Label2" Hidden="true" />
+      <Field Name="AccountNumber_Label" Hidden="true" />
+      <Field Name="AccountsFound_Listbox" Hidden="true" />
+      <Field Name="AddAccountName_Textbox" Hidden="true" />
+      <Field Name="AddEmailAddress_Textbox" Hidden="true" />
+      <Field Name="AddLoyaltyAccount_Label" Hidden="true" />
+      <Field Name="ClearPickupWindow_Button" Hidden="true" />
+      <Field Name="ComponentCategory_Label" Hidden="true" />
+      <Field Name="ComponentCategory_Textbox" Hidden="true" />
+      <Field Name="ComponentCost_Label" Hidden="true" />
+      <Field Name="ComponentCost_Textbox" Hidden="true" />
+      <Field Name="ComponentDelete_Button" Hidden="true" />
+      <Field Name="ComponentHighQuantity_Label" Hidden="true" />
+      <Field Name="ComponentHighQuantity_Textbox" Hidden="true" />
+      <Field Name="ComponentLowQuantity_Label" Hidden="true" />
+      <Field Name="ComponentLowQuantity_Textbox" Hidden="true" />
+      <Field Name="ComponentName_Label" Hidden="true" />
+      <Field Name="ComponentName_Textbox" Hidden="true" />
+      <Field Name="ComponentPrice_Label" Hidden="true" />
+      <Field Name="ComponentPrice_Textbox" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="Components_Listbox" Hidden="true" />
+      <Field Name="ComponentSave_Button" Hidden="true" />
+      <Field Name="ComponentsTitle_Label" Hidden="true" />
+      <Field Name="DateBegin_Calender" Hidden="true" />
+      <Field Name="DateEnd_Calender" Hidden="true" />
+      <Field Name="DateEnd_Label" Hidden="true" />
+      <Field Name="DeleteLoyaltyAccount_Button" Hidden="true" />
+      <Field Name="EmailAddress_Label" Hidden="true" />
+      <Field Name="EmailAddress_Label2" Hidden="true" />
+      <Field Name="Inventory" Hidden="true" />
+      <Field Name="Inventory_Listbox" Hidden="true" />
+      <Field Name="InventoryTitle_Label" Hidden="true" />
+      <Field Name="InventoryUpdate_Button" Hidden="true" />
+      <Field Name="ItemCount_Label" Hidden="true" />
+      <Field Name="ItemCount_Textbox" Hidden="true" />
+      <Field Name="ItemMods" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="LoyaltyAccount_Title" Hidden="true" />
+      <Field Name="LoyaltyAccounts" Hidden="true" />
+      <Field Name="LoyaltyAccountSearch_Button" Hidden="true" />
+      <Field Name="ManagerKiosk_TabPage" Hidden="true" />
+      <Field Name="MenuItemCategory_Label" Hidden="true" />
+      <Field Name="MenuItemCategory_Textbox" Hidden="true" />
+      <Field Name="MenuItemComponents_Label" Hidden="true" />
+      <Field Name="MenuItemDelete_Button" Hidden="true" />
+      <Field Name="MenuItemName_Label" Hidden="true" />
+      <Field Name="MenuItemName_Textbox" Hidden="true" />
+      <Field Name="MenuItemPrice_Label" Hidden="true" />
+      <Field Name="MenuItemPrice_Textbox" Hidden="true" />
+      <Field Name="MenuItems" Hidden="true" />
+      <Field Name="MenuItems_Listbox" Hidden="true" />
+      <Field Name="MenuItemSave_Button" Hidden="true" />
+      <Field Name="MenuItemsComponent_CheckedListbox" Hidden="true" />
+      <Field Name="MenuItemSpecial_Checkbox" Hidden="true" />
+      <Field Name="MenuItemsTitle_Label" Hidden="true" />
+      <Field Name="OrderItems_Listbox" Hidden="true" />
+      <Field Name="Orders" Hidden="true" />
+      <Field Name="Orders_Listbox" Hidden="true" />
+      <Field Name="OrdersItems_Label" Hidden="true" />
+      <Field Name="OrdersList_Label" Hidden="true" />
+      <Field Name="PrintReport_Button" Hidden="true" />
+      <Field Name="RefreshOrders_Button" Hidden="true" />
+      <Field Name="RefundItem_Button" Hidden="true" />
+      <Field Name="RefundOrders_Button" Hidden="true" />
+      <Field Name="Reports" Hidden="true" />
+      <Field Name="Reports_Listbox" Hidden="true" />
+      <Field Name="ReportsTitle_Label" Hidden="true" />
+      <Field Name="SaveLoyaltyAccount_Button" Hidden="true" />
+      <Field Name="SearchAccountName_Textbox" Hidden="true" />
+      <Field Name="SearchAccountNumber_Textbox" Hidden="true" />
+      <Field Name="SearchEmailAddress_Textbox" Hidden="true" />
+      <Field Name="SpecialDayFriday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayMonday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDays_Label" Hidden="true" />
+      <Field Name="SpecialDaySaturday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDaySunday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayThursday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayTuesday_Checkbox" Hidden="true" />
+      <Field Name="SpecialDayWednesday_Checkbox" Hidden="true" />
+      <Field Name="Tools" Hidden="true" />
+      <Field Name="ToolsTitle_Label" Hidden="true" />
+      <Field Name="webReports" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="NSA_Manager.ManagerKiosk2.BoxFormat">
+        <TypeIdentifier>
+          <NewMemberFileName>ManagerKiosk2.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>qiEVKGmjMnlEQDGZINGJBMLaiRIIx6xXyAOK0gQoDQQ=</HashCode>
+      <FileName>ManagerKiosk2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Manager.ManagerLogin_Form">
+    <Position X="3.5" Y="12" Width="2.75" />
+    <Members>
+      <Field Name="Login_Button" Hidden="true" />
+      <Field Name="Password_Label" Hidden="true" />
+      <Field Name="Password_Textbox" Hidden="true" />
+      <Field Name="Title_Form" Hidden="true" />
+      <Field Name="Username_Label" Hidden="true" />
+      <Field Name="Username_Textbox" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACACBAAQAAWAAAACCAIAEAAAgAAQAAAACAA=</HashCode>
+      <FileName>ManagerLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Manager.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA_Manager.Reports">
+    <Position X="0.5" Y="10.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="NSA_Manager.Reports.ReportIDs">
+        <TypeIdentifier>
+          <NewMemberFileName>Reports.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gAAAJAAAAAAEQAAQAAAAAAAACAAAIAAEAAQEAQAIJAA=</HashCode>
+      <FileName>Reports.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
