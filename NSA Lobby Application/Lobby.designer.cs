@@ -270,7 +270,7 @@
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(783, 94);
             this.TimeLabel.TabIndex = 11;
-            this.TimeLabel.Text = "Time Called:";
+            this.TimeLabel.Text = "Delivery Time:";
             this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimeOrder1
