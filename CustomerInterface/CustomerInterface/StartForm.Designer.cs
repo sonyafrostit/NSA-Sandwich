@@ -178,6 +178,7 @@
             this.lblSandwich1.Size = new System.Drawing.Size(138, 51);
             this.lblSandwich1.TabIndex = 21;
             this.lblSandwich1.Text = "label2";
+            this.lblSandwich1.Visible = false;
             // 
             // lblSandwich2
             // 
@@ -188,6 +189,7 @@
             this.lblSandwich2.Size = new System.Drawing.Size(138, 51);
             this.lblSandwich2.TabIndex = 22;
             this.lblSandwich2.Text = "label3";
+            this.lblSandwich2.Visible = false;
             // 
             // lblSandwich3
             // 
@@ -198,6 +200,7 @@
             this.lblSandwich3.Size = new System.Drawing.Size(138, 51);
             this.lblSandwich3.TabIndex = 23;
             this.lblSandwich3.Text = "label4";
+            this.lblSandwich3.Visible = false;
             // 
             // StartForm
             // 
