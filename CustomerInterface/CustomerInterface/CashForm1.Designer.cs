@@ -36,12 +36,13 @@
             this.due_amount = new System.Windows.Forms.Label();
             this.received_amount = new System.Windows.Forms.Label();
             this.change_amount = new System.Windows.Forms.Label();
+            this.emailReceiptCheck = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(137, 9);
+            this.label1.Location = new System.Drawing.Point(80, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 0;
@@ -50,7 +51,7 @@
             // cash_received
             // 
             this.cash_received.AutoSize = true;
-            this.cash_received.Location = new System.Drawing.Point(50, 89);
+            this.cash_received.Location = new System.Drawing.Point(12, 57);
             this.cash_received.Name = "cash_received";
             this.cash_received.Size = new System.Drawing.Size(113, 13);
             this.cash_received.TabIndex = 1;
@@ -59,16 +60,17 @@
             // Due
             // 
             this.Due.AutoSize = true;
-            this.Due.Location = new System.Drawing.Point(50, 58);
+            this.Due.Location = new System.Drawing.Point(12, 35);
             this.Due.Name = "Due";
             this.Due.Size = new System.Drawing.Size(57, 13);
             this.Due.TabIndex = 2;
             this.Due.Text = "Total Due:";
+            this.Due.Click += new System.EventHandler(this.Due_Click);
             // 
             // change
             // 
             this.change.AutoSize = true;
-            this.change.Location = new System.Drawing.Point(50, 119);
+            this.change.Location = new System.Drawing.Point(12, 79);
             this.change.Name = "change";
             this.change.Size = new System.Drawing.Size(50, 13);
             this.change.TabIndex = 3;
@@ -76,7 +78,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(296, 236);
+            this.button1.Location = new System.Drawing.Point(95, 126);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -109,11 +111,22 @@
             this.change_amount.Size = new System.Drawing.Size(0, 13);
             this.change_amount.TabIndex = 7;
             // 
+            // emailReceiptCheck
+            // 
+            this.emailReceiptCheck.AutoSize = true;
+            this.emailReceiptCheck.Location = new System.Drawing.Point(15, 103);
+            this.emailReceiptCheck.Name = "emailReceiptCheck";
+            this.emailReceiptCheck.Size = new System.Drawing.Size(97, 17);
+            this.emailReceiptCheck.TabIndex = 11;
+            this.emailReceiptCheck.Text = "Email Receipt?";
+            this.emailReceiptCheck.UseVisualStyleBackColor = true;
+            // 
             // CashForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 272);
+            this.ClientSize = new System.Drawing.Size(259, 161);
+            this.Controls.Add(this.emailReceiptCheck);
             this.Controls.Add(this.change_amount);
             this.Controls.Add(this.received_amount);
             this.Controls.Add(this.due_amount);
@@ -140,6 +153,7 @@
         private System.Windows.Forms.Label due_amount;
         private System.Windows.Forms.Label received_amount;
         private System.Windows.Forms.Label change_amount;
+        private System.Windows.Forms.CheckBox emailReceiptCheck;
     }
 }
 
