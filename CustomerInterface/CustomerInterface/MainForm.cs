@@ -87,6 +87,10 @@ namespace CustomerInterface
             DataParser dataParser = new DataParser(ci); //parses Categories, Menu Items, and Components and displays them in the users language
             foreach (NSAMenuCategory category in menu)
             {
+	            //Do not Display "unassigned" category
+	            if (category.Id == 0){
+	                continue;
+	            }
                 ListViewGroup LVG = new ListViewGroup(dataParser.parseCategory(category.Name));
                 foreach (NSAMenuItem item in category.Items)
                 {
