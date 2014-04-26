@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KioskWindow));
             this.KioskTabs = new System.Windows.Forms.TabControl();
             this.MenuTab = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.menuListView = new System.Windows.Forms.ListView();
             this.LoyaltyTab = new System.Windows.Forms.TabPage();
             this.rewardCountLabel = new System.Windows.Forms.Label();
@@ -59,8 +57,6 @@
             this.frBtn = new System.Windows.Forms.Button();
             this.enBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -103,8 +99,6 @@
             // 
             // MenuTab
             // 
-            this.MenuTab.Controls.Add(this.button4);
-            this.MenuTab.Controls.Add(this.button5);
             this.MenuTab.Controls.Add(this.menuListView);
             this.MenuTab.Location = new System.Drawing.Point(4, 24);
             this.MenuTab.Name = "MenuTab";
@@ -114,31 +108,11 @@
             this.MenuTab.Text = "Menu";
             this.MenuTab.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button4.Location = new System.Drawing.Point(3, 443);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(66, 65);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "q";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button5.Location = new System.Drawing.Point(3, 6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(66, 65);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "p";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // menuListView
             // 
-            this.menuListView.Location = new System.Drawing.Point(75, 17);
+            this.menuListView.Location = new System.Drawing.Point(6, 17);
             this.menuListView.Name = "menuListView";
-            this.menuListView.Size = new System.Drawing.Size(697, 491);
+            this.menuListView.Size = new System.Drawing.Size(766, 491);
             this.menuListView.TabIndex = 0;
             this.menuListView.UseCompatibleStateImageBehavior = false;
             this.menuListView.View = System.Windows.Forms.View.SmallIcon;
@@ -398,28 +372,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button2.Location = new System.Drawing.Point(4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 65);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "p";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Wingdings 3", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button3.Location = new System.Drawing.Point(4, 369);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(46, 65);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "q";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button8);
@@ -429,8 +381,6 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.OrderView);
             this.panel3.Controls.Add(this.splitter4);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
             this.panel3.Location = new System.Drawing.Point(805, 108);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(263, 493);
@@ -448,7 +398,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(56, 399);
+            this.button7.Location = new System.Drawing.Point(4, 399);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 35);
             this.button7.TabIndex = 11;
@@ -468,7 +418,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(122, 399);
+            this.button6.Location = new System.Drawing.Point(100, 399);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(65, 35);
             this.button6.TabIndex = 9;
@@ -481,9 +431,9 @@
             this.OrderView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ItemHeader,
             this.ChangesHeader});
-            this.OrderView.Location = new System.Drawing.Point(56, 0);
+            this.OrderView.Location = new System.Drawing.Point(4, 0);
             this.OrderView.Name = "OrderView";
-            this.OrderView.Size = new System.Drawing.Size(204, 393);
+            this.OrderView.Size = new System.Drawing.Size(256, 393);
             this.OrderView.TabIndex = 8;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
@@ -562,8 +512,6 @@
         private System.Windows.Forms.TabPage MenuTab;
         private System.Windows.Forms.ListView menuListView;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TabPage LoyaltyTab;
         private System.Windows.Forms.Label AccNumberTagLabel;
         private System.Windows.Forms.Label accountNumberLabel;
@@ -583,8 +531,6 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TabPage LanguageTab;
         public System.Windows.Forms.TabControl KioskTabs;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Splitter splitter4;
         private System.Windows.Forms.Panel panel4;
