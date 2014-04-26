@@ -236,9 +236,72 @@ namespace CustomerInterface
             foreach (ListViewItem t in menuListView.SelectedItems)
             {
                 ((NSAMenuItem)t.Tag).getComponents(db, componentsList);
+
                 addItemToOrder((NSAMenuItem)t.Tag);
+                //ask add about making combo if entree is sandwich or salad - TRAE
+                if (((NSAMenuItem)t.Tag).CategoryID == 1 || ((NSAMenuItem)t.Tag).CategoryID == 2)
+                {
+                    //make sure that the number of discounts and combo drinks are less than the number of entrees before adding more.
+
+                    if (CanHaveComboDiscount()){
+                        //Ask to make combo - "Make this entree a combo for a 1.00 discount?"
+                        DataParser dataParser = new DataParser(ci); //parses displays them in the users language
+                        DialogResult result = MessageBox.Show(rm.GetString("askmakecombo", ci), rm.GetString("makecombocaption", ci), MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //get the drink combo item and add it to the order
+                            NSAMenuItem newComboItem = db.getComboDrink();
+                            addItemToOrder(newComboItem);
+
+                            //Get the drink combo Discount and add it to the order
+                            NSAMenuItem newComboDiscount = db.getComboDrinkDiscount();
+                            addItemToOrder(newComboDiscount);
+                        }
+                    }
+                }
+
                 UpdateOrderView();
             }
+        }
+
+        private bool CanHaveComboDiscount(){
+        // need to check if the current order is eligiable for another combo. discount.
+            bool canDiscount = false;
+
+            int numEntrees = 0;
+            int numComboDrinks = 0;
+            int numDiscounts = 0;
+
+            NSAMenuItem newComboItem = db.getComboDrink();
+            NSAMenuItem newDiscountItem = db.getDiscountItem();
+
+            // count how may of the various items we have.
+            for (int i = 0; i < currentOrder.Items.Count; i++)
+            {
+                if ((int)currentOrder.Items.ElementAt(i).CategoryID == 1 ||
+                     (int)currentOrder.Items.ElementAt(i).CategoryID == 2)
+                {
+                         numEntrees++;
+                }
+
+                if ((int)currentOrder.Items.ElementAt(i).Id == newComboItem.Id)
+                {
+                    numComboDrinks++;
+                }
+
+                if ((int)currentOrder.Items.ElementAt(i).Id == newDiscountItem.Id)
+                {
+                    numDiscounts++;
+                }
+
+            }
+
+            if ( numEntrees > numComboDrinks  && numEntrees >numDiscounts ){
+                canDiscount = true;
+            }
+
+            return canDiscount;
         }
 
         private void FinishButton_Click(object sender, EventArgs e)

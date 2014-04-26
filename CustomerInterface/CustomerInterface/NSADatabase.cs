@@ -282,6 +282,112 @@ namespace CustomerInterface
             return categories.ToArray();
             
         }
+        public NSAMenuItem getComboDrink()
+        {
+            //get the item to be added to the "combo" return NULL item if item isnt found
+
+            NSAMenuItem newItem = null;
+
+            //build query
+            StringBuilder query = new StringBuilder();
+            query.Append("SELECT m.menuitemid, m.name, m.price, m.menutypeid, c.discountamount ");
+            query.Append("FROM menuitem m join combodrinkmenuid c on m.storeid = c.storeid AND m.menuitemid = c.menuitemid ");
+            query.Append("WHERE m.storeid = ");
+            query.Append(StoreNumber.ToString());
+            query.Append(";");
+
+            //execute query
+            MySqlDataReader menuItemReader = CustomQuery(query.ToString());
+
+            //if we found a discount item build the item to retuen
+            if (menuItemReader != null)
+            {
+                newItem = new NSAMenuItem();
+                menuItemReader.Read();
+
+                newItem.Name = (string)menuItemReader["name"];
+                newItem.Id = (int)menuItemReader["menuitemid"];
+                newItem.CategoryID = (int)menuItemReader["menutypeid"];
+                //Combo
+                newItem.Price = (float)menuItemReader["price"];
+
+            }
+            menuItemReader.Close();
+
+            //return the item will be null 
+            return newItem;
+        }
+
+        public NSAMenuItem getDiscountItem(){
+            //there is a menuitem in the database called Discount that will beused to keep track of the discounts
+            //the ID for this item may vary from store to store but the type will be unassigned.
+            //the generic doscount will have a price of $0 for the discount
+            StringBuilder query = new StringBuilder();
+
+            
+            NSAMenuItem newItem = null;
+
+            //Build the query to get the item in question
+            query.Clear();
+            query.Append("SELECT menuitemid, name, menutypeid ");
+            query.Append("FROM menuitem ");
+            query.Append("WHERE name = 'Discount' AND menutypeid = 0 AND storeid = ");
+            query.Append(StoreNumber.ToString());
+            query.Append(";");
+
+            //run the query
+            MySqlDataReader menuItemReader = CustomQuery(query.ToString());
+
+            //if resuts build item
+            if (menuItemReader != null)
+            {
+                menuItemReader.Read();
+                newItem = new NSAMenuItem();
+                newItem.Name = (string)menuItemReader["name"];
+                newItem.Id = (int)menuItemReader["menuitemid"];
+                newItem.CategoryID = (int)menuItemReader["menutypeid"];
+                newItem.Price = 0; //the default discount is 0
+
+            }
+
+            //close reader
+            menuItemReader.Close();
+            //return item ... will be null if the item is not found
+            return newItem;
+        }
+
+        public NSAMenuItem getComboDrinkDiscount()
+        {
+            //get a discount item that has the combo drink discount.
+            float Discount = 0;
+            NSAMenuItem newItem = null;
+
+            StringBuilder query = new StringBuilder();
+
+            //get teh proper discount amount
+            query.Append("SELECT storeid,discountamount FROM combodrinkmenuid WHERE storeid = ");
+            query.Append(StoreNumber.ToString());
+            query.Append(";");
+
+            MySqlDataReader menuItemReader = CustomQuery(query.ToString());
+            if (menuItemReader != null){
+                menuItemReader.Read();
+                Discount = (float)menuItemReader["discountamount"];
+            }
+
+            menuItemReader.Close();
+
+            //get a generic discount item
+            newItem = getDiscountItem();
+
+            //if the discount item exists then replace teh discount cost.
+            if (newItem != null) {
+                newItem.Price = -1 * Discount;
+            }
+
+            return newItem;
+        }
+
         public NSAMenuItem[] getMenuItems() {
             MySqlDataReader menuItemReader = CustomQuery("SELECT menuitemid, name, price, menutypeid FROM menuitem WHERE storeid = " + StoreNumber.ToString() + " and deleted = 0;");
             List<NSAMenuItem> itemList = new List<NSAMenuItem>();
@@ -339,6 +445,9 @@ namespace CustomerInterface
 
         public string[] getTop3Entrees()
         {
+            //returns a string array of the top 3 selling entrees from the previous day.
+
+            //build query
             StringBuilder query = new StringBuilder();
             query.Append("SELECT  J.name, count(J.menuitemid) as Rank ");
             query.Append("FROM (SELECT OI.name, OI.menuitemid, O.timeplaced ");
@@ -349,7 +458,10 @@ namespace CustomerInterface
             query.Append(" AND menutypeid in (1,2))) as J ");
             query.Append("GROUP BY name ORDER BY Rank DESC LIMIT 3;");
 
+            //run query
             MySqlDataReader componentReader = CustomQuery(query.ToString());
+
+            //build list if we have items -- array may have < 3 items if < 3 types of entrees were sold.
             List<string> itemList = new List<string>();
             if (componentReader != null)
             {
@@ -362,6 +474,7 @@ namespace CustomerInterface
                 componentReader.Close();
             }
 
+            //return array.
             return itemList.ToArray();
 
         }

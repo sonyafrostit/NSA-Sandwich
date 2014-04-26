@@ -168,6 +168,9 @@
   <data name="custom" xml:space="preserve">
     <value>Brauch</value>
   </data>
+  <data name="discount" xml:space="preserve">
+    <value>Combo-Rabatt</value>
+  </data>
   <data name="egg" xml:space="preserve">
     <value>Ei</value>
   </data>

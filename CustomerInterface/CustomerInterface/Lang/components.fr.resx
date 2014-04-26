@@ -168,6 +168,9 @@
   <data name="custom" xml:space="preserve">
     <value>Coutume</value>
   </data>
+  <data name="discount" xml:space="preserve">
+    <value>rabais de combo</value>
+  </data>
   <data name="egg" xml:space="preserve">
     <value>œuf</value>
   </data>
