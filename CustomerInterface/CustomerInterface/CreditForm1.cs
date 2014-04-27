@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using System.Net.Mail;
+using System.Net;
 
 namespace CustomerInterface
 {
@@ -15,12 +18,17 @@ namespace CustomerInterface
         long orderID;
         Decimal cost; //for show
         NSADatabase db;
-        public CreditForm1(long orderID, Decimal cost, NSADatabase db)
+        StringBuilder receipt;
+        string email;
+
+        public CreditForm1(long orderID, Decimal cost, NSADatabase db, StringBuilder receipt, string email)
         {
             InitializeComponent();
             this.orderID = orderID;
             this.cost = cost;
             this.db = db;
+            this.receipt = receipt;
+            this.email = email;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -37,6 +45,9 @@ namespace CustomerInterface
         {
             if (CCBox.TextLength == 16)
             {
+                if (emailReceiptCheck.Checked)
+                    sendReceipt();
+
                 db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
                 CreditForm2 f2 = new CreditForm2();
                 f2.passValue = CCBox.Text;
@@ -58,6 +69,25 @@ namespace CustomerInterface
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void sendReceipt()
+        {
+            if (!String.IsNullOrEmpty(email))
+            {
+                MailMessage mail = new MailMessage();
+                mail.To.Add(email);
+                mail.Subject = "NSA Receipt";
+                mail.From = new MailAddress("cse4444project@gmail.com");
+                mail.Body = receipt.ToString();
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("cse4444project@gmail.com", "NSAproject1");
+                smtp.EnableSsl = true;
+
+                smtp.Send(mail);
+            }
         }
     }
 }

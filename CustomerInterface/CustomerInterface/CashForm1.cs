@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using System.Net.Mail;
+using System.Net;
 
 namespace CustomerInterface
 {
@@ -16,6 +19,8 @@ namespace CustomerInterface
         private string total_to_pay;
         private string total_received;
         private string change_to_be_given;
+        StringBuilder receipt;
+        string email;
 
         public string passValueOntoForms1
         {
@@ -35,13 +40,18 @@ namespace CustomerInterface
             set { change_to_be_given = value; }
         }
 
-        public CashForm1()
+        public CashForm1(StringBuilder receipt, string email)
         {
             InitializeComponent();
+            this.receipt = receipt;
+            this.email = email;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (emailReceiptCheck.Checked)
+                sendReceipt();
+
             Close();
             StartForm form = new StartForm();
             form.Show();
@@ -58,6 +68,31 @@ namespace CustomerInterface
         {
             
         }
+
+        private void Due_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendReceipt()
+        {
+            if (!String.IsNullOrEmpty(email))
+            {
+                MailMessage mail = new MailMessage();
+                mail.To.Add("cse4444project@gmail.com");
+                mail.Subject = "NSA Receipt";
+                mail.From = new MailAddress("cse4444project@gmail.com");
+                mail.Body = receipt.ToString();
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.Port = 587;
+                smtp.Credentials = new System.Net.NetworkCredential("cse4444project@gmail.com", "NSAproject1");
+                smtp.EnableSsl = true;
+
+                smtp.Send(mail);
+            }
+        }
+
     }
 
 }

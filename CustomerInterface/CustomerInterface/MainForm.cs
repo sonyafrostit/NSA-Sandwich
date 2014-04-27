@@ -11,9 +11,6 @@ using System.Reflection;
 using System.Resources;
 using System.Globalization;
 using MySql.Data.MySqlClient;
-using MySql.Data;
-using System.Net.Mail;
-using System.Net;
 
 namespace CustomerInterface
 {
@@ -175,7 +172,7 @@ namespace CustomerInterface
             }
         }
 
-        private void printReceipt()
+        private StringBuilder getReceipt()
         {
             StringBuilder receipt = new StringBuilder();
 
@@ -211,19 +208,7 @@ namespace CustomerInterface
                 receipt.AppendLine();
             }
 
-
-            MailMessage mail = new MailMessage();
-            mail.To.Add("cse4444project@gmail.com");
-            mail.Subject = "NSA Receipt";
-            mail.From = new MailAddress("cse4444project@gmail.com");
-            mail.Body = receipt.ToString();
-
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("cse4444project@gmail.com", "NSAproject1");
-            smtp.EnableSsl = true;
-
-            smtp.Send(mail);
+            return receipt;
         }
 
         private void removeItemFromOrder(NSAMenuItem item)
@@ -426,6 +411,8 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            StringBuilder receipt = getReceipt();
+
             string parsedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             MySqlCommand cmd;
             string cmdstring;
@@ -456,7 +443,19 @@ namespace CustomerInterface
                     cmd3.ExecuteReader().Close();
                 }
             }
-            CashCreditSelect ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db);
+
+            CashCreditSelect ccs;
+
+            if (account != null)
+            {
+                ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db, receipt, account.getEmail());
+            }
+
+            else
+            {
+                ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db, receipt, "");
+            }
+
             ccs.Show();
             ccs.FormClosed += new FormClosedEventHandler(CustomerKiosk_FormClosed);
             Hide();
