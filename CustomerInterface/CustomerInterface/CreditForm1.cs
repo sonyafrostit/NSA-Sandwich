@@ -55,7 +55,7 @@ namespace CustomerInterface
                         sendReceipt();
 
                     db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
-                    CreditForm2 f2 = new CreditForm2();
+                    CreditForm2 f2 = new CreditForm2(receipt.ToString());
                     f2.passValue = CCBox.Text;
                     f2.ShowDialog();
                     Close();

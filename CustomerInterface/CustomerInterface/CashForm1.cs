@@ -59,9 +59,9 @@ namespace CustomerInterface
                 if (emailReceiptCheck.Checked)
                     sendReceipt();
 
-                Close();
-                StartForm form = new StartForm();
+                receiptFinal form = new receiptFinal(receipt.ToString());
                 form.Show();
+                Close();
             }
         }
 
