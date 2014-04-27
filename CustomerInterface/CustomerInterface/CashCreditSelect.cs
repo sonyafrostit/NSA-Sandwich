@@ -26,6 +26,9 @@ namespace CustomerInterface
             this.db = db;
             this.receipt = receipt;
             this.email = email;
+
+            receipt.Append("Order #: " + orderID);
+            receipt.AppendLine();
         }
 
         private void button1_Click(object sender, EventArgs e)
