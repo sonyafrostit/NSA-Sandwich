@@ -49,12 +49,20 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (emailReceiptCheck.Checked)
-                sendReceipt();
+            if (emailReceiptCheck.Checked && String.IsNullOrEmpty(emailAddressText.Text))
+                checkLabel.Text = "Enter email address!";
 
-            Close();
-            StartForm form = new StartForm();
-            form.Show();
+            else
+            {
+                email = emailAddressText.Text;
+
+                if (emailReceiptCheck.Checked)
+                    sendReceipt();
+
+                Close();
+                StartForm form = new StartForm();
+                form.Show();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -79,7 +87,7 @@ namespace CustomerInterface
             if (!String.IsNullOrEmpty(email))
             {
                 MailMessage mail = new MailMessage();
-                mail.To.Add("cse4444project@gmail.com");
+                mail.To.Add(email);
                 mail.Subject = "NSA Receipt";
                 mail.From = new MailAddress("cse4444project@gmail.com");
                 mail.Body = receipt.ToString();
@@ -90,6 +98,16 @@ namespace CustomerInterface
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
+            }
+        }
+
+        private void emailReceiptCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(email))
+            {
+                emailAddressLabel.Visible = !emailAddressLabel.Visible;
+                emailAddressText.Visible = !emailAddressText.Visible;
+                checkLabel.Visible = !checkLabel.Visible;
             }
         }
 

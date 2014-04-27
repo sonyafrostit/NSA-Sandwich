@@ -43,20 +43,29 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (CCBox.TextLength == 16)
-            {
-                if (emailReceiptCheck.Checked)
-                    sendReceipt();
-
-                db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
-                CreditForm2 f2 = new CreditForm2();
-                f2.passValue = CCBox.Text;
-                f2.ShowDialog();
-                Close();
-            }
+            if (emailReceiptCheck.Checked && String.IsNullOrEmpty(emailAddressText.Text))
+                checkLabel.Text = "Enter email address!";
 
             else
-            { checkLabel.Text = "Invalid card length!"; }
+            {
+                email = emailAddressText.Text;
+                if (CCBox.TextLength == 16)
+                {
+                    if (emailReceiptCheck.Checked)
+                        sendReceipt();
+
+                    db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
+                    CreditForm2 f2 = new CreditForm2();
+                    f2.passValue = CCBox.Text;
+                    f2.ShowDialog();
+                    Close();
+                }
+
+                else
+                { 
+                    checkLabel.Text = "Invalid card length!";
+                }
+            }
 
            
         }
@@ -87,6 +96,15 @@ namespace CustomerInterface
                 smtp.EnableSsl = true;
 
                 smtp.Send(mail);
+            }
+        }
+
+        private void emailReceiptCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(email))
+            {
+                emailAddressLabel.Visible = !emailAddressLabel.Visible;
+                emailAddressText.Visible = !emailAddressText.Visible;
             }
         }
     }
