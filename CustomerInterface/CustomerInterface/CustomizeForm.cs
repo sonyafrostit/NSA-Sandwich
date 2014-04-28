@@ -25,7 +25,13 @@ namespace CustomerInterface
         NSAComponent[] customizeComponents;
         NSAMenuItem customizeItem;
         NSAChanges changes;
-        
+        bool isCancelled = false;
+
+        public bool IsCancelled {
+            get { return isCancelled; }
+            set { isCancelled = value; }
+        }
+
         public NSAChanges Changes
         {
             get { return changes; }
@@ -79,6 +85,7 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            isCancelled = true;
             Close();
         }
 
@@ -116,10 +123,11 @@ namespace CustomerInterface
                 finalComponents.Add((NSAComponent)BreadList.SelectedItems[0].Tag);
                 resultItem.BreadIndex = 0;
             }
+            resultItem.Extrascost = 0.0;
             foreach (Object customComponent in OtherListBox.CheckedItems) {
                 
                 finalComponents.Add((NSAComponent)customComponent);
-                if (((NSAComponent)customComponent).Name == "Avocado (+$1.00)") {
+                if (((NSAComponent)customComponent).Name == "Avocado") {
                     resultItem.Extrascost = 1.0;
                 }
             }

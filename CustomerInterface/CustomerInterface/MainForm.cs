@@ -182,7 +182,7 @@ namespace CustomerInterface
 
                 }
 
-                OrderView.Items.Add(new ListViewItem("Total: " + totalPrice));
+                OrderView.Items.Add(new ListViewItem("Total: " + totalPrice.ToString("C")));
             }
             catch (System.NullReferenceException e) {
                 Console.WriteLine(e.StackTrace);
@@ -447,7 +447,7 @@ namespace CustomerInterface
             currentOrder.Id = cmd.LastInsertedId;
             if (account != null && saveorder)
             {
-                MySqlCommand histcmd = new MySqlCommand(String.Format("INSERT INTO favoriteorder (orderID, storeid, loyaltyid) VALUES ({0}, {1}, {2});", currentOrder.Id, db.StoreNumber1, account.getAccountNumber()));
+                MySqlCommand histcmd = new MySqlCommand(String.Format("INSERT INTO favoriteorder (orderID, storeid, loyaltyaccount) VALUES ({0}, {1}, {2});", currentOrder.Id, db.StoreNumber1, account.getAccountNumber()), db.Connection1);
                 histcmd.ExecuteReader().Close();
             }
             foreach (NSAMenuItem item in currentOrder.Items) { 
@@ -460,11 +460,11 @@ namespace CustomerInterface
                     cmd3.ExecuteReader().Close();
                 }
             }
-            if (saveorder) {
-                MySqlCommand cmd4 = new MySqlCommand(String.Format("INSERT INTO favoriteorder (orderID, storeid, loyaltyid) VALUES ({0}, {1}, {2});", currentOrder.Id, db.StoreNumber1, account.getAccountNumber()));
-                cmd4.ExecuteNonQuery();
+            //if (saveorder) {
+            //    MySqlCommand cmd4 = new MySqlCommand(String.Format("INSERT INTO favoriteorder (orderID, storeid, loyaltyaccount) VALUES ({0}, {1}, {2});", currentOrder.Id, db.StoreNumber1, account.getAccountNumber()), db.Connection1);
+            //    cmd4.ExecuteNonQuery();
 
-            }
+            //}
 
             CashCreditSelect ccs;
 
@@ -512,7 +512,7 @@ namespace CustomerInterface
         private void KioskWindow_Activated(object sender, EventArgs e)
         {
             
-            if (customizeItemForm != null)
+            if (customizeItemForm != null && !customizeItemForm.IsCancelled)
             {
                 
                 NSAChanges changes = customizeItemForm.Changes;
@@ -582,10 +582,11 @@ namespace CustomerInterface
 
         private void HistoryView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (ListViewItem t in favItemsListView.SelectedItems)
+            foreach (ListViewItem t in FavOrdersView.SelectedItems)
             {
                 currentOrder = (NSAOrder)t.Tag;
             }
+            UpdateOrderView();
         }
 
         private void favItemsListView_SelectedIndexChanged(object sender, EventArgs e)

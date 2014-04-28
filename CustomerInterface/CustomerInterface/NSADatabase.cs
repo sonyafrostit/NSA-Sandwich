@@ -439,7 +439,7 @@ namespace CustomerInterface
                 while (menuItemReader.Read())
                 {
                     NSAOrder newOrder = new NSAOrder();
-                    newOrder.Id = (int)menuItemReader["orderitemid"];
+                    newOrder.Id = (int)menuItemReader["orderid"];
                     
                     orderList.Add(newOrder);
                 }
@@ -451,6 +451,7 @@ namespace CustomerInterface
             menuItemReader.Close();
             return orderList.ToArray();
         }
+        //Trae - Crashing because of open connection on "newItem.getComponents(this, getComponents());"
         public NSAOrder getPastOrderItems(NSAOrder order) {
             MySqlDataReader menuItemReader = CustomQuery("SELECT name, price, menuitemid FROM orderitems WHERE orderid = " + order.Id +";");
             List<NSAHistoryItem> itemList = new List<NSAHistoryItem>();
@@ -462,14 +463,13 @@ namespace CustomerInterface
                     newItem.Name = (string)menuItemReader["name"];
                     newItem.Id = (int)menuItemReader["menuitemid"];
                     newItem.Price = (float)menuItemReader["price"];
-                    newItem.getComponents(this, getComponents());
+                    
                     itemList.Add(newItem);
                 }
             }
             menuItemReader.Close();
             foreach (NSAMenuItem nmi in itemList) {
-                nmi.Components = new List<NSAComponent>();
-                MySqlDataReader miComponentREader = CustomQuery("SELECT ");
+                nmi.getComponents(this, getComponents());
             }
             
             foreach (NSAHistoryItem i in itemList){

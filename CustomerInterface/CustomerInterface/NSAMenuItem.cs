@@ -20,6 +20,7 @@ namespace CustomerInterface
             image = a.image;
             categoryID = a.categoryID;
             breadIndex = a.breadIndex;
+            extrascost = a.extrascost;
         }
 
         public void getComponents(NSADatabase d, NSAComponent[] allComponents) {

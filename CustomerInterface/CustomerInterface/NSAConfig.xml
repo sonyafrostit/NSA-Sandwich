@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 
 <NSAConfigSettings>
-  <DBServer>54.187.134.203</DBServer>
-  <DBName>nsa_database</DBName>
-  <DBUser>trae</DBUser>
+  <DBServer>localhost</DBServer>
+  <DBName>nsa-database</DBName>
+  <DBUser>root</DBUser>
   <DBPassword></DBPassword>
   <StoreID>1</StoreID>
 </NSAConfigSettings>

@@ -89,11 +89,12 @@
             this.KioskTabs.Controls.Add(this.LanguageTab);
             this.KioskTabs.Font = new System.Drawing.Font("Tahoma", 10F);
             this.KioskTabs.ItemSize = new System.Drawing.Size(42, 20);
-            this.KioskTabs.Location = new System.Drawing.Point(13, 12);
+            this.KioskTabs.Location = new System.Drawing.Point(26, 23);
+            this.KioskTabs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.KioskTabs.Multiline = true;
             this.KioskTabs.Name = "KioskTabs";
             this.KioskTabs.SelectedIndex = 0;
-            this.KioskTabs.Size = new System.Drawing.Size(786, 547);
+            this.KioskTabs.Size = new System.Drawing.Size(1572, 1052);
             this.KioskTabs.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.KioskTabs.TabIndex = 0;
             // 
@@ -101,18 +102,20 @@
             // 
             this.MenuTab.Controls.Add(this.menuListView);
             this.MenuTab.Location = new System.Drawing.Point(4, 24);
+            this.MenuTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MenuTab.Name = "MenuTab";
-            this.MenuTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTab.Size = new System.Drawing.Size(778, 519);
+            this.MenuTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MenuTab.Size = new System.Drawing.Size(1564, 1024);
             this.MenuTab.TabIndex = 0;
             this.MenuTab.Text = "Menu";
             this.MenuTab.UseVisualStyleBackColor = true;
             // 
             // menuListView
             // 
-            this.menuListView.Location = new System.Drawing.Point(6, 17);
+            this.menuListView.Location = new System.Drawing.Point(12, 33);
+            this.menuListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.menuListView.Name = "menuListView";
-            this.menuListView.Size = new System.Drawing.Size(766, 491);
+            this.menuListView.Size = new System.Drawing.Size(1528, 941);
             this.menuListView.TabIndex = 0;
             this.menuListView.UseCompatibleStateImageBehavior = false;
             this.menuListView.View = System.Windows.Forms.View.SmallIcon;
@@ -131,9 +134,10 @@
             this.LoyaltyTab.Controls.Add(this.accountNumberLabel);
             this.LoyaltyTab.Controls.Add(this.AccNumberTagLabel);
             this.LoyaltyTab.Location = new System.Drawing.Point(4, 24);
+            this.LoyaltyTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.LoyaltyTab.Name = "LoyaltyTab";
-            this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LoyaltyTab.Size = new System.Drawing.Size(778, 519);
+            this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LoyaltyTab.Size = new System.Drawing.Size(1564, 1024);
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
             this.LoyaltyTab.UseVisualStyleBackColor = true;
@@ -141,11 +145,13 @@
             // rewardCountLabel
             // 
             this.rewardCountLabel.AutoSize = true;
-            this.rewardCountLabel.Location = new System.Drawing.Point(21, 138);
+            this.rewardCountLabel.Location = new System.Drawing.Point(42, 265);
+            this.rewardCountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.rewardCountLabel.Name = "rewardCountLabel";
-            this.rewardCountLabel.Size = new System.Drawing.Size(25, 17);
+            this.rewardCountLabel.Size = new System.Drawing.Size(48, 33);
             this.rewardCountLabel.TabIndex = 8;
             this.rewardCountLabel.Text = "No";
+            this.rewardCountLabel.Visible = false;
             // 
             // panel1
             // 
@@ -153,43 +159,48 @@
             this.panel1.Controls.Add(this.splitter1);
             this.panel1.Controls.Add(this.pastOrdersLabel);
             this.panel1.Controls.Add(this.FavOrdersView);
-            this.panel1.Location = new System.Drawing.Point(6, 187);
+            this.panel1.Location = new System.Drawing.Point(12, 360);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 171);
+            this.panel1.Size = new System.Drawing.Size(1492, 329);
             this.panel1.TabIndex = 3;
             // 
             // splitter2
             // 
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter2.Location = new System.Drawing.Point(3, 0);
+            this.splitter2.Location = new System.Drawing.Point(6, 0);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(743, 3);
+            this.splitter2.Size = new System.Drawing.Size(1486, 6);
             this.splitter2.TabIndex = 11;
             this.splitter2.TabStop = false;
             // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 171);
+            this.splitter1.Size = new System.Drawing.Size(6, 329);
             this.splitter1.TabIndex = 10;
             this.splitter1.TabStop = false;
             // 
             // pastOrdersLabel
             // 
             this.pastOrdersLabel.AutoSize = true;
-            this.pastOrdersLabel.Location = new System.Drawing.Point(3, 11);
+            this.pastOrdersLabel.Location = new System.Drawing.Point(6, 21);
+            this.pastOrdersLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.pastOrdersLabel.Name = "pastOrdersLabel";
-            this.pastOrdersLabel.Size = new System.Drawing.Size(102, 17);
+            this.pastOrdersLabel.Size = new System.Drawing.Size(198, 33);
             this.pastOrdersLabel.TabIndex = 9;
             this.pastOrdersLabel.Text = "Favorite Orders";
             this.pastOrdersLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // FavOrdersView
             // 
-            this.FavOrdersView.Location = new System.Drawing.Point(0, 39);
+            this.FavOrdersView.Location = new System.Drawing.Point(0, 75);
+            this.FavOrdersView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.FavOrdersView.Name = "FavOrdersView";
-            this.FavOrdersView.Size = new System.Drawing.Size(743, 129);
+            this.FavOrdersView.Size = new System.Drawing.Size(1482, 244);
             this.FavOrdersView.TabIndex = 8;
             this.FavOrdersView.UseCompatibleStateImageBehavior = false;
             this.FavOrdersView.SelectedIndexChanged += new System.EventHandler(this.HistoryView_SelectedIndexChanged);
@@ -199,16 +210,18 @@
             this.panel2.Controls.Add(this.favItemsListView);
             this.panel2.Controls.Add(this.favoriteItemsLabel);
             this.panel2.Controls.Add(this.splitter3);
-            this.panel2.Location = new System.Drawing.Point(6, 364);
+            this.panel2.Location = new System.Drawing.Point(12, 700);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(746, 154);
+            this.panel2.Size = new System.Drawing.Size(1492, 296);
             this.panel2.TabIndex = 2;
             // 
             // favItemsListView
             // 
-            this.favItemsListView.Location = new System.Drawing.Point(3, 34);
+            this.favItemsListView.Location = new System.Drawing.Point(6, 65);
+            this.favItemsListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.favItemsListView.Name = "favItemsListView";
-            this.favItemsListView.Size = new System.Drawing.Size(740, 117);
+            this.favItemsListView.Size = new System.Drawing.Size(1476, 221);
             this.favItemsListView.TabIndex = 12;
             this.favItemsListView.UseCompatibleStateImageBehavior = false;
             this.favItemsListView.SelectedIndexChanged += new System.EventHandler(this.favItemsListView_SelectedIndexChanged);
@@ -216,9 +229,10 @@
             // favoriteItemsLabel
             // 
             this.favoriteItemsLabel.AutoSize = true;
-            this.favoriteItemsLabel.Location = new System.Drawing.Point(4, 6);
+            this.favoriteItemsLabel.Location = new System.Drawing.Point(8, 12);
+            this.favoriteItemsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.favoriteItemsLabel.Name = "favoriteItemsLabel";
-            this.favoriteItemsLabel.Size = new System.Drawing.Size(95, 17);
+            this.favoriteItemsLabel.Size = new System.Drawing.Size(186, 33);
             this.favoriteItemsLabel.TabIndex = 1;
             this.favoriteItemsLabel.Text = "Favorite Items";
             // 
@@ -226,69 +240,78 @@
             // 
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 0);
+            this.splitter3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(746, 3);
+            this.splitter3.Size = new System.Drawing.Size(1492, 6);
             this.splitter3.TabIndex = 0;
             this.splitter3.TabStop = false;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(115, 85);
+            this.emailTextBox.Location = new System.Drawing.Point(230, 163);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(414, 24);
+            this.emailTextBox.Size = new System.Drawing.Size(824, 40);
             this.emailTextBox.TabIndex = 7;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(10, 47);
+            this.nameLabel.Location = new System.Drawing.Point(20, 90);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(48, 17);
+            this.nameLabel.Size = new System.Drawing.Size(94, 33);
             this.nameLabel.TabIndex = 6;
             this.nameLabel.Text = "Name:";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(115, 44);
+            this.nameTextBox.Location = new System.Drawing.Point(230, 85);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(414, 24);
+            this.nameTextBox.Size = new System.Drawing.Size(824, 40);
             this.nameTextBox.TabIndex = 5;
             this.nameTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // rewardsLabel
             // 
             this.rewardsLabel.AutoSize = true;
-            this.rewardsLabel.Location = new System.Drawing.Point(53, 138);
+            this.rewardsLabel.Location = new System.Drawing.Point(106, 265);
+            this.rewardsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.rewardsLabel.Name = "rewardsLabel";
-            this.rewardsLabel.Size = new System.Drawing.Size(187, 17);
+            this.rewardsLabel.Size = new System.Drawing.Size(365, 33);
             this.rewardsLabel.TabIndex = 3;
             this.rewardsLabel.Text = "more orders to free sandwich";
+            this.rewardsLabel.Visible = false;
             this.rewardsLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(10, 88);
+            this.emailLabel.Location = new System.Drawing.Point(20, 169);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(44, 17);
+            this.emailLabel.Size = new System.Drawing.Size(89, 33);
             this.emailLabel.TabIndex = 2;
             this.emailLabel.Text = "Email:";
             // 
             // accountNumberLabel
             // 
             this.accountNumberLabel.AutoSize = true;
-            this.accountNumberLabel.Location = new System.Drawing.Point(184, 11);
+            this.accountNumberLabel.Location = new System.Drawing.Point(368, 21);
+            this.accountNumberLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.accountNumberLabel.Name = "accountNumberLabel";
             this.accountNumberLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.accountNumberLabel.Size = new System.Drawing.Size(0, 17);
+            this.accountNumberLabel.Size = new System.Drawing.Size(0, 33);
             this.accountNumberLabel.TabIndex = 1;
             // 
             // AccNumberTagLabel
             // 
             this.AccNumberTagLabel.AutoSize = true;
-            this.AccNumberTagLabel.Location = new System.Drawing.Point(10, 11);
+            this.AccNumberTagLabel.Location = new System.Drawing.Point(20, 21);
+            this.AccNumberTagLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.AccNumberTagLabel.Name = "AccNumberTagLabel";
-            this.AccNumberTagLabel.Size = new System.Drawing.Size(117, 17);
+            this.AccNumberTagLabel.Size = new System.Drawing.Size(222, 33);
             this.AccNumberTagLabel.TabIndex = 0;
             this.AccNumberTagLabel.Text = "Account Number:";
             this.AccNumberTagLabel.Click += new System.EventHandler(this.label1_Click);
@@ -301,9 +324,10 @@
             this.LanguageTab.Controls.Add(this.frBtn);
             this.LanguageTab.Controls.Add(this.enBtn);
             this.LanguageTab.Location = new System.Drawing.Point(4, 24);
+            this.LanguageTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.LanguageTab.Name = "LanguageTab";
-            this.LanguageTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LanguageTab.Size = new System.Drawing.Size(778, 519);
+            this.LanguageTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LanguageTab.Size = new System.Drawing.Size(1564, 1024);
             this.LanguageTab.TabIndex = 3;
             this.LanguageTab.Text = "Language";
             this.LanguageTab.UseVisualStyleBackColor = true;
@@ -313,20 +337,20 @@
             // 
             this.selectLangText.AutoSize = true;
             this.selectLangText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectLangText.Location = new System.Drawing.Point(15, 16);
-            this.selectLangText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.selectLangText.Location = new System.Drawing.Point(30, 31);
+            this.selectLangText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectLangText.Name = "selectLangText";
-            this.selectLangText.Size = new System.Drawing.Size(174, 26);
+            this.selectLangText.Size = new System.Drawing.Size(344, 51);
             this.selectLangText.TabIndex = 24;
             this.selectLangText.Text = "Select language:";
             // 
             // spBtn
             // 
             this.spBtn.Image = ((System.Drawing.Image)(resources.GetObject("spBtn.Image")));
-            this.spBtn.Location = new System.Drawing.Point(176, 44);
-            this.spBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.spBtn.Location = new System.Drawing.Point(352, 85);
+            this.spBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.spBtn.Name = "spBtn";
-            this.spBtn.Size = new System.Drawing.Size(48, 27);
+            this.spBtn.Size = new System.Drawing.Size(96, 52);
             this.spBtn.TabIndex = 23;
             this.spBtn.UseVisualStyleBackColor = true;
             this.spBtn.Click += new System.EventHandler(this.spBtn_Click);
@@ -334,10 +358,10 @@
             // geBtn
             // 
             this.geBtn.Image = ((System.Drawing.Image)(resources.GetObject("geBtn.Image")));
-            this.geBtn.Location = new System.Drawing.Point(124, 44);
-            this.geBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.geBtn.Location = new System.Drawing.Point(248, 85);
+            this.geBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.geBtn.Name = "geBtn";
-            this.geBtn.Size = new System.Drawing.Size(48, 27);
+            this.geBtn.Size = new System.Drawing.Size(96, 52);
             this.geBtn.TabIndex = 22;
             this.geBtn.UseVisualStyleBackColor = true;
             this.geBtn.Click += new System.EventHandler(this.geBtn_Click);
@@ -345,10 +369,10 @@
             // frBtn
             // 
             this.frBtn.Image = ((System.Drawing.Image)(resources.GetObject("frBtn.Image")));
-            this.frBtn.Location = new System.Drawing.Point(72, 44);
-            this.frBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.frBtn.Location = new System.Drawing.Point(144, 85);
+            this.frBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.frBtn.Name = "frBtn";
-            this.frBtn.Size = new System.Drawing.Size(48, 27);
+            this.frBtn.Size = new System.Drawing.Size(96, 52);
             this.frBtn.TabIndex = 21;
             this.frBtn.UseVisualStyleBackColor = true;
             this.frBtn.Click += new System.EventHandler(this.frBtn_Click);
@@ -356,19 +380,20 @@
             // enBtn
             // 
             this.enBtn.Image = ((System.Drawing.Image)(resources.GetObject("enBtn.Image")));
-            this.enBtn.Location = new System.Drawing.Point(20, 44);
-            this.enBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.enBtn.Location = new System.Drawing.Point(40, 85);
+            this.enBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.enBtn.Name = "enBtn";
-            this.enBtn.Size = new System.Drawing.Size(48, 27);
+            this.enBtn.Size = new System.Drawing.Size(96, 52);
             this.enBtn.TabIndex = 20;
             this.enBtn.UseVisualStyleBackColor = true;
             this.enBtn.Click += new System.EventHandler(this.enBtn_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(154, 454);
+            this.button1.Location = new System.Drawing.Point(308, 873);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 36);
+            this.button1.Size = new System.Drawing.Size(218, 69);
             this.button1.TabIndex = 2;
             this.button1.Text = "Finish Order";
             this.button1.UseVisualStyleBackColor = true;
@@ -383,16 +408,18 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.OrderView);
             this.panel3.Controls.Add(this.splitter4);
-            this.panel3.Location = new System.Drawing.Point(805, 108);
+            this.panel3.Location = new System.Drawing.Point(1610, 208);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(263, 493);
+            this.panel3.Size = new System.Drawing.Size(526, 948);
             this.panel3.TabIndex = 7;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(4, 454);
+            this.button8.Location = new System.Drawing.Point(8, 873);
+            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(144, 36);
+            this.button8.Size = new System.Drawing.Size(288, 69);
             this.button8.TabIndex = 12;
             this.button8.Text = "Save Order to Favorites";
             this.button8.UseVisualStyleBackColor = true;
@@ -400,9 +427,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(4, 399);
+            this.button7.Location = new System.Drawing.Point(8, 767);
+            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(60, 35);
+            this.button7.Size = new System.Drawing.Size(120, 67);
             this.button7.TabIndex = 11;
             this.button7.Text = "Fave!";
             this.button7.UseVisualStyleBackColor = true;
@@ -410,9 +438,10 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(171, 399);
+            this.RemoveButton.Location = new System.Drawing.Point(342, 767);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(89, 35);
+            this.RemoveButton.Size = new System.Drawing.Size(178, 67);
             this.RemoveButton.TabIndex = 10;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -420,9 +449,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(70, 399);
+            this.button6.Location = new System.Drawing.Point(140, 767);
+            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 35);
+            this.button6.Size = new System.Drawing.Size(190, 67);
             this.button6.TabIndex = 9;
             this.button6.Text = "Customize";
             this.button6.UseVisualStyleBackColor = true;
@@ -433,9 +463,10 @@
             this.OrderView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ItemHeader,
             this.ChangesHeader});
-            this.OrderView.Location = new System.Drawing.Point(4, 0);
+            this.OrderView.Location = new System.Drawing.Point(8, 0);
+            this.OrderView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.OrderView.Name = "OrderView";
-            this.OrderView.Size = new System.Drawing.Size(256, 393);
+            this.OrderView.Size = new System.Drawing.Size(508, 752);
             this.OrderView.TabIndex = 8;
             this.OrderView.UseCompatibleStateImageBehavior = false;
             this.OrderView.View = System.Windows.Forms.View.Details;
@@ -453,25 +484,28 @@
             // splitter4
             // 
             this.splitter4.Location = new System.Drawing.Point(0, 0);
+            this.splitter4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.splitter4.Name = "splitter4";
-            this.splitter4.Size = new System.Drawing.Size(3, 493);
+            this.splitter4.Size = new System.Drawing.Size(6, 948);
             this.splitter4.TabIndex = 7;
             this.splitter4.TabStop = false;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.WelcomeLabel);
-            this.panel4.Location = new System.Drawing.Point(808, 34);
+            this.panel4.Location = new System.Drawing.Point(1616, 65);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(260, 68);
+            this.panel4.Size = new System.Drawing.Size(520, 131);
             this.panel4.TabIndex = 8;
             // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.Location = new System.Drawing.Point(4, 4);
+            this.WelcomeLabel.Location = new System.Drawing.Point(8, 8);
+            this.WelcomeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(55, 13);
+            this.WelcomeLabel.Size = new System.Drawing.Size(107, 25);
             this.WelcomeLabel.TabIndex = 0;
             this.WelcomeLabel.Text = "Welcome!";
             this.WelcomeLabel.Click += new System.EventHandler(this.label4_Click);
@@ -482,12 +516,13 @@
             // 
             // KioskWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 617);
+            this.ClientSize = new System.Drawing.Size(2160, 1187);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.KioskTabs);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "KioskWindow";
             this.Text = "Customer Kiosk";
             this.Activated += new System.EventHandler(this.KioskWindow_Activated);

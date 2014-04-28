@@ -29,6 +29,7 @@ namespace CustomerInterface
             this.db = db;
             this.receipt = receipt;
             this.email = email;
+            this.emailAddressText.Text = email;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -103,9 +104,13 @@ namespace CustomerInterface
         {
             if (String.IsNullOrEmpty(email))
             {
-                emailAddressLabel.Visible = !emailAddressLabel.Visible;
-                emailAddressText.Visible = !emailAddressText.Visible;
+
+
             }
+
+            emailAddressLabel.Visible = emailReceiptCheck.Checked;
+            emailAddressText.Visible = emailReceiptCheck.Checked;
+            checkLabel.Visible = emailReceiptCheck.Checked; 
         }
     }
 }

@@ -45,6 +45,7 @@ namespace CustomerInterface
             InitializeComponent();
             this.receipt = receipt;
             this.email = email;
+            emailAddressText.Text = email;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,12 +104,15 @@ namespace CustomerInterface
 
         private void emailReceiptCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(email))
-            {
-                emailAddressLabel.Visible = !emailAddressLabel.Visible;
-                emailAddressText.Visible = !emailAddressText.Visible;
-                checkLabel.Visible = !checkLabel.Visible;
-            }
+            //if (String.IsNullOrEmpty(email)) {
+            //    emailAddressLabel.Visible = !emailAddressLabel.Visible;
+            //    emailAddressText.Visible = !emailAddressText.Visible;
+            //    checkLabel.Visible = !checkLabel.Visible;
+            //}
+
+            emailAddressLabel.Visible = emailReceiptCheck.Checked;
+            emailAddressText.Visible = emailReceiptCheck.Checked;
+            checkLabel.Visible = emailReceiptCheck.Checked; 
         }
 
     }
