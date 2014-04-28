@@ -61,6 +61,20 @@ namespace CustomerInterface
 
             
             account = new NSALoyaltyAccount(accountNumber[0][0], accountNumber[1][0], accountNumber[2][0], accountNumber[3][0]);
+            try
+            {
+                account.FavoriteItems = db.getFavoriteItems(accountNumber[3][0]);
+                foreach (NSAMenuItem it in account.FavoriteItems)
+                {
+                    ListViewItem lvi = new ListViewItem(it.Name);
+                    lvi.Tag = it;
+                    favItemsListView.Items.Add(lvi);
+                }
+            }
+            catch (Exception e) { 
+            
+            }
+            
             InitializeComponent();
 
             db = new NSADatabase();
@@ -468,12 +482,14 @@ namespace CustomerInterface
         {
             if (account != null && OrderView.SelectedItems.Count > 0)
             {
-                MySqlCommand cmd2 = new MySqlCommand(String.Format("INSERT INTO favoriteitems (storeid, loyaltyid, name, price, menuitemid) VALUES ({0}, {1}, {2}, '{3}', {4}, {5});", db.StoreNumber1, account.getAccountNumber(), ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Name, ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Price, ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Id), db.Connection1);
+                Console.WriteLine("button7 : " + (int)OrderView.SelectedItems[0].Tag);
+                NSAMenuItem faveitem = (NSAMenuItem)currentOrder.Items[(int)OrderView.SelectedItems[0].Tag];
+                MySqlCommand cmd2 = new MySqlCommand(String.Format("INSERT INTO favoriteitems (storeid, loyaltyid, name, price, menuitemid) VALUES ({0}, {1}, '{2}', {3}, {4});", db.StoreNumber1, account.getAccountNumber(), faveitem.Name, faveitem.Price, faveitem.Id), db.Connection1);
                 cmd2.ExecuteReader().Close();
                 long favitemid = cmd2.LastInsertedId;
-                foreach (NSAComponent comp in ((NSAMenuItem)OrderView.SelectedItems[0].Tag).Components)
+                foreach (NSAComponent comp in faveitem.Components)
                 {
-                    MySqlCommand cmd3 = new MySqlCommand(("INSERT INTO favoriteitemcomponents (favoriteitemid, storeid, componentid) VALUES (" + favitemid + ", " + db.StoreNumber1 + ", " + comp.ComponentID + ");"), db.Connection1);
+                    MySqlCommand cmd3 = new MySqlCommand(("INSERT INTO favoriteitemcomponents (favoriteitemid, storeid, compontentid) VALUES (" + favitemid + ", " + db.StoreNumber1 + ", " + comp.ComponentID + ");"), db.Connection1);
                     cmd3.ExecuteReader().Close();
                 }
             }
@@ -489,5 +505,10 @@ namespace CustomerInterface
             saveorder = true;
         }
         bool saveorder = false;
+
+        private void HistoryView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

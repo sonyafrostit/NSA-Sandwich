@@ -93,6 +93,8 @@ namespace CustomerInterface
 
 
 
+
+
         string image;
 
         public string Image

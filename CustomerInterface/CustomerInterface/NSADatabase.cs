@@ -301,6 +301,25 @@ namespace CustomerInterface
             return itemList.ToArray();
             
         }
+        public NSAMenuItem[] getFavoriteItems(string loyaltyid)
+        {
+            MySqlDataReader menuItemReader = CustomQuery("SELECT favoriteitemid, name, price FROM favoriteitems WHERE storeid = " + StoreNumber.ToString() + " and deleted = 0 WHERE accountid = " + loyaltyid + ";");
+            List<NSAMenuItem> itemList = new List<NSAMenuItem>();
+            if (menuItemReader != null)
+            {
+                while (menuItemReader.Read())
+                {
+                    NSAMenuItem newItem = new NSAMenuItem();
+                    newItem.Name = (string)menuItemReader["name"];
+                    newItem.Id = (int)menuItemReader["favoriteitemid"];
+                    newItem.Price = (float)menuItemReader["price"];
+                    itemList.Add(newItem);
+                }
+            }
+            menuItemReader.Close();
+            return itemList.ToArray();
+
+        }
         public Dictionary<int, string> getCategories() {
             Dictionary<int, string> categories = new Dictionary<int, string>();
             MySqlDataReader componentCategoryReader = CustomQuery("SELECT categoryid, categoryname FROM componentcategories;");

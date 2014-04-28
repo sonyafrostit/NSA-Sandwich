@@ -12,6 +12,13 @@ namespace CustomerInterface
         private string name;
         private string email;
         private string rewardsCount;
+        private NSAMenuItem[] favoriteItems;
+
+        public NSAMenuItem[] FavoriteItems
+        {
+            get { return favoriteItems; }
+            set { favoriteItems = value; }
+        }
 
         public NSALoyaltyAccount(string n, string e, string rewards, string acc)
         {

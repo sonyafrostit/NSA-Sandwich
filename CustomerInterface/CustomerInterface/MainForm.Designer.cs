@@ -40,7 +40,7 @@
             this.pastOrdersLabel = new System.Windows.Forms.Label();
             this.HistoryView = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.favItemsListView = new System.Windows.Forms.ListView();
             this.favoriteItemsLabel = new System.Windows.Forms.Label();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -192,10 +192,11 @@
             this.HistoryView.Size = new System.Drawing.Size(743, 129);
             this.HistoryView.TabIndex = 8;
             this.HistoryView.UseCompatibleStateImageBehavior = false;
+            this.HistoryView.SelectedIndexChanged += new System.EventHandler(this.HistoryView_SelectedIndexChanged);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.listView2);
+            this.panel2.Controls.Add(this.favItemsListView);
             this.panel2.Controls.Add(this.favoriteItemsLabel);
             this.panel2.Controls.Add(this.splitter3);
             this.panel2.Location = new System.Drawing.Point(6, 364);
@@ -203,13 +204,13 @@
             this.panel2.Size = new System.Drawing.Size(746, 154);
             this.panel2.TabIndex = 2;
             // 
-            // listView2
+            // favItemsListView
             // 
-            this.listView2.Location = new System.Drawing.Point(3, 34);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(740, 117);
-            this.listView2.TabIndex = 12;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.favItemsListView.Location = new System.Drawing.Point(3, 34);
+            this.favItemsListView.Name = "favItemsListView";
+            this.favItemsListView.Size = new System.Drawing.Size(740, 117);
+            this.favItemsListView.TabIndex = 12;
+            this.favItemsListView.UseCompatibleStateImageBehavior = false;
             // 
             // favoriteItemsLabel
             // 
@@ -408,9 +409,9 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(193, 399);
+            this.RemoveButton.Location = new System.Drawing.Point(171, 399);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(67, 35);
+            this.RemoveButton.Size = new System.Drawing.Size(89, 35);
             this.RemoveButton.TabIndex = 10;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
@@ -418,9 +419,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(100, 399);
+            this.button6.Location = new System.Drawing.Point(70, 399);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(65, 35);
+            this.button6.Size = new System.Drawing.Size(95, 35);
             this.button6.TabIndex = 9;
             this.button6.Text = "Customize";
             this.button6.UseVisualStyleBackColor = true;
@@ -441,7 +442,7 @@
             // ItemHeader
             // 
             this.ItemHeader.Text = "Item";
-            this.ItemHeader.Width = 84;
+            this.ItemHeader.Width = 113;
             // 
             // ChangesHeader
             // 
@@ -528,7 +529,7 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label favoriteItemsLabel;
         private System.Windows.Forms.Splitter splitter3;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView favItemsListView;
         private System.Windows.Forms.TabPage LanguageTab;
         public System.Windows.Forms.TabControl KioskTabs;
         private System.Windows.Forms.Panel panel3;
