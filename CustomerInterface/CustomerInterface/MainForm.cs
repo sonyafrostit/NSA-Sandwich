@@ -11,9 +11,6 @@ using System.Reflection;
 using System.Resources;
 using System.Globalization;
 using MySql.Data.MySqlClient;
-using MySql.Data;
-using System.Net.Mail;
-using System.Net;
 
 namespace CustomerInterface
 {
@@ -101,6 +98,10 @@ namespace CustomerInterface
             DataParser dataParser = new DataParser(ci); //parses Categories, Menu Items, and Components and displays them in the users language
             foreach (NSAMenuCategory category in menu)
             {
+	            //Do not Display "unassigned" category
+	            if (category.Id == 0){
+	                continue;
+	            }
                 ListViewGroup LVG = new ListViewGroup(dataParser.parseCategory(category.Name));
                 foreach (NSAMenuItem item in category.Items)
                 {
@@ -185,7 +186,7 @@ namespace CustomerInterface
             }
         }
 
-        private void printReceipt()
+        private StringBuilder getReceipt()
         {
             StringBuilder receipt = new StringBuilder();
 
@@ -221,19 +222,7 @@ namespace CustomerInterface
                 receipt.AppendLine();
             }
 
-
-            MailMessage mail = new MailMessage();
-            mail.To.Add("cse4444project@gmail.com");
-            mail.Subject = "NSA Receipt";
-            mail.From = new MailAddress("cse4444project@gmail.com");
-            mail.Body = receipt.ToString();
-
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("cse4444project@gmail.com", "NSAproject1");
-            smtp.EnableSsl = true;
-
-            smtp.Send(mail);
+            return receipt;
         }
 
         private void removeItemFromOrder(NSAMenuItem item)
@@ -246,9 +235,72 @@ namespace CustomerInterface
             foreach (ListViewItem t in menuListView.SelectedItems)
             {
                 ((NSAMenuItem)t.Tag).getComponents(db, componentsList);
+
                 addItemToOrder((NSAMenuItem)t.Tag);
+                //ask add about making combo if entree is sandwich or salad - TRAE
+                if (((NSAMenuItem)t.Tag).CategoryID == 1 || ((NSAMenuItem)t.Tag).CategoryID == 2)
+                {
+                    //make sure that the number of discounts and combo drinks are less than the number of entrees before adding more.
+
+                    if (CanHaveComboDiscount()){
+                        //Ask to make combo - "Make this entree a combo for a 1.00 discount?"
+                        DataParser dataParser = new DataParser(ci); //parses displays them in the users language
+                        DialogResult result = MessageBox.Show(rm.GetString("askmakecombo", ci), rm.GetString("makecombocaption", ci), MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //get the drink combo item and add it to the order
+                            NSAMenuItem newComboItem = db.getComboDrink();
+                            addItemToOrder(newComboItem);
+
+                            //Get the drink combo Discount and add it to the order
+                            NSAMenuItem newComboDiscount = db.getComboDrinkDiscount();
+                            addItemToOrder(newComboDiscount);
+                        }
+                    }
+                }
+
                 UpdateOrderView();
             }
+        }
+
+        private bool CanHaveComboDiscount(){
+        // need to check if the current order is eligiable for another combo. discount.
+            bool canDiscount = false;
+
+            int numEntrees = 0;
+            int numComboDrinks = 0;
+            int numDiscounts = 0;
+
+            NSAMenuItem newComboItem = db.getComboDrink();
+            NSAMenuItem newDiscountItem = db.getDiscountItem();
+
+            // count how may of the various items we have.
+            for (int i = 0; i < currentOrder.Items.Count; i++)
+            {
+                if ((int)currentOrder.Items.ElementAt(i).CategoryID == 1 ||
+                     (int)currentOrder.Items.ElementAt(i).CategoryID == 2)
+                {
+                         numEntrees++;
+                }
+
+                if ((int)currentOrder.Items.ElementAt(i).Id == newComboItem.Id)
+                {
+                    numComboDrinks++;
+                }
+
+                if ((int)currentOrder.Items.ElementAt(i).Id == newDiscountItem.Id)
+                {
+                    numDiscounts++;
+                }
+
+            }
+
+            if ( numEntrees > numComboDrinks  && numEntrees >numDiscounts ){
+                canDiscount = true;
+            }
+
+            return canDiscount;
         }
 
         private void FinishButton_Click(object sender, EventArgs e)
@@ -373,6 +425,8 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            StringBuilder receipt = getReceipt();
+
             string parsedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             MySqlCommand cmd;
             string cmdstring;
@@ -403,7 +457,19 @@ namespace CustomerInterface
                     cmd3.ExecuteReader().Close();
                 }
             }
-            CashCreditSelect ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db);
+
+            CashCreditSelect ccs;
+
+            if (account != null)
+            {
+                ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db, receipt, account.getEmail());
+            }
+
+            else
+            {
+                ccs = new CashCreditSelect(currentOrder.Id, (currentOrder.Total + currentOrder.Tax), db, receipt, "");
+            }
+
             ccs.Show();
             ccs.FormClosed += new FormClosedEventHandler(CustomerKiosk_FormClosed);
             Hide();

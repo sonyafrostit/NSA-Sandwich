@@ -15,24 +15,32 @@ namespace CustomerInterface
         long orderID;
         Decimal cost;
         NSADatabase db;
-        public CashCreditSelect(long orderID, Decimal cost, NSADatabase db)
+        StringBuilder receipt;
+        String email;
+
+        public CashCreditSelect(long orderID, Decimal cost, NSADatabase db, StringBuilder receipt, string email)
         {
             InitializeComponent();
             this.orderID = orderID;
             this.cost = cost;
             this.db = db;
+            this.receipt = receipt;
+            this.email = email;
+
+            receipt.Append("Order #: " + orderID);
+            receipt.AppendLine();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CashForm2 cf = new CashForm2(orderID, cost, db);
+            CashForm2 cf = new CashForm2(orderID, cost, db, receipt, email);
             cf.Show();
             Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreditForm1 cf = new CreditForm1(orderID, cost, db);
+            CreditForm1 cf = new CreditForm1(orderID, cost, db, receipt, email);
             cf.Show();
             Hide();
         }

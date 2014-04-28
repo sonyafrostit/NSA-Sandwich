@@ -15,17 +15,22 @@ namespace CustomerInterface
         long orderID;
         Decimal cost;
         NSADatabase db;
-        public CashForm2(long orderID, Decimal cost, NSADatabase db)
+        StringBuilder receipt;
+        string email;
+
+        public CashForm2(long orderID, Decimal cost, NSADatabase db, StringBuilder receipt, string email)
         {
             InitializeComponent();
             this.orderID = orderID;
             this.cost = cost;
             this.db = db;
+            this.receipt = receipt;
+            this.email = email;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CashForm1 f1= new CashForm1();
+            CashForm1 f1= new CashForm1(receipt, email);
             db.CustomQuery("UPDATE orders SET status = 1 WHERE orderid = " + orderID + ";").Close();
             f1.passValueOntoForms1 = textBox1.Text;
             f1.passValueOntoForms2 = textBox2.Text;

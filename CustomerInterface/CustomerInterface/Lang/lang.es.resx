@@ -246,4 +246,13 @@
   <data name="topSelling" xml:space="preserve">
     <value>Mejores Ventas de Platos de ayer</value>
   </data>
+  <data name="askmakecombo" xml:space="preserve">
+    <value>Haga este plato un combo para un descuento de $ 1.00?</value>
+  </data>
+  <data name="makecombocaption" xml:space="preserve">
+    <value>Hacer Combo?</value>
+  </data>
+  <data name="combo" xml:space="preserve">
+    <value>Combo</value>
+  </data>
 </root>
