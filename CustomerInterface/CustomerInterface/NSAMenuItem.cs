@@ -48,6 +48,15 @@ namespace CustomerInterface
             
             
         }
+        private double extrascost = 0.0;
+
+        public double Extrascost
+        {
+            set { extrascost = value; }
+        }
+
+
+
         protected int breadIndex; //Index of Bread in the sandwich. If -1, then salad
 
         public int BreadIndex
@@ -73,7 +82,7 @@ namespace CustomerInterface
 
         public double Price
         {
-            get { return price; }
+            get { return price + extrascost; }
             set { price = value; }
         }
         String menuType;

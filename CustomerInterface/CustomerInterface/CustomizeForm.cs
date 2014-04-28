@@ -119,7 +119,9 @@ namespace CustomerInterface
             foreach (Object customComponent in OtherListBox.CheckedItems) {
                 
                 finalComponents.Add((NSAComponent)customComponent);
-                
+                if (((NSAComponent)customComponent).Name == "Avocado (+$1.00)") {
+                    resultItem.Extrascost = 1.0;
+                }
             }
             
             resultItem.Components = finalComponents;

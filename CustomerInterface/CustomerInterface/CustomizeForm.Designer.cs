@@ -31,12 +31,8 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BreadPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.BreadList = new System.Windows.Forms.ListView();
             this.breadLabel = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.otherLabel = new System.Windows.Forms.Label();
             this.OtherListBox = new System.Windows.Forms.CheckedListBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -58,8 +54,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.BreadPanel);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.otherLabel);
             this.panel1.Controls.Add(this.OtherListBox);
             this.panel1.Location = new System.Drawing.Point(13, 13);
@@ -70,8 +64,6 @@
             // 
             // BreadPanel
             // 
-            this.BreadPanel.Controls.Add(this.button2);
-            this.BreadPanel.Controls.Add(this.button1);
             this.BreadPanel.Controls.Add(this.BreadList);
             this.BreadPanel.Controls.Add(this.breadLabel);
             this.BreadPanel.Location = new System.Drawing.Point(10, 8);
@@ -80,33 +72,13 @@
             this.BreadPanel.TabIndex = 8;
             this.BreadPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BreadPanel_Paint);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button2.Location = new System.Drawing.Point(0, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 138);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "t";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button1.Location = new System.Drawing.Point(976, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 138);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "u";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // BreadList
             // 
             this.BreadList.Alignment = System.Windows.Forms.ListViewAlignment.Default;
             this.BreadList.HideSelection = false;
-            this.BreadList.Location = new System.Drawing.Point(58, 34);
+            this.BreadList.Location = new System.Drawing.Point(7, 34);
             this.BreadList.Name = "BreadList";
-            this.BreadList.Size = new System.Drawing.Size(912, 139);
+            this.BreadList.Size = new System.Drawing.Size(1026, 139);
             this.BreadList.TabIndex = 1;
             this.BreadList.UseCompatibleStateImageBehavior = false;
             this.BreadList.SelectedIndexChanged += new System.EventHandler(this.BreadList_SelectedIndexChanged);
@@ -120,27 +92,6 @@
             this.breadLabel.Size = new System.Drawing.Size(60, 24);
             this.breadLabel.TabIndex = 3;
             this.breadLabel.Text = "Bread";
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button4.Location = new System.Drawing.Point(7, 506);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 68);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "q";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Wingdings 3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.button3.Location = new System.Drawing.Point(7, 210);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 68);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "p";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // otherLabel
             // 
@@ -158,9 +109,9 @@
             this.OtherListBox.CheckOnClick = true;
             this.OtherListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OtherListBox.FormattingEnabled = true;
-            this.OtherListBox.Location = new System.Drawing.Point(65, 210);
+            this.OtherListBox.Location = new System.Drawing.Point(10, 210);
             this.OtherListBox.Name = "OtherListBox";
-            this.OtherListBox.Size = new System.Drawing.Size(978, 342);
+            this.OtherListBox.Size = new System.Drawing.Size(1033, 342);
             this.OtherListBox.TabIndex = 0;
             this.OtherListBox.SelectedIndexChanged += new System.EventHandler(this.OtherListBox_SelectedIndexChanged);
             // 
@@ -201,10 +152,6 @@
         private System.Windows.Forms.ListView BreadList;
         private System.Windows.Forms.CheckedListBox OtherListBox;
         private System.Windows.Forms.Label otherLabel;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label breadLabel;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel BreadPanel;
