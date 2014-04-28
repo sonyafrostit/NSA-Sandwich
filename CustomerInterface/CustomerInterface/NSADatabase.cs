@@ -414,13 +414,13 @@ namespace CustomerInterface
             List<NSAOrder> favOrders = new List<NSAOrder>();
             NSAOrder[] pastOrders = getPastOrders(loyaltyid);
             List<long> favOrderIDs = new List<long>();
-            MySqlDataReader favOrderReader = CustomQuery("SELECT orderid FROM favoriteorder WHERE loyaltyid = " + loyaltyid + ";");
+            MySqlDataReader favOrderReader = CustomQuery("SELECT orderid FROM favoriteorder WHERE loyaltyaccount = " + loyaltyid + ";");
             if (favOrderReader != null)
             {
                 while (favOrderReader.Read())
                 {
                     
-                    favOrderIDs.Add((int)favOrderReader["orderid"];
+                    favOrderIDs.Add((int)favOrderReader["orderid"]);
                 }
             }
             foreach (NSAOrder order in pastOrders) {
@@ -428,10 +428,11 @@ namespace CustomerInterface
                     favOrders.Add(order);
                 }
             }
+            favOrderReader.Close();
             return favOrders.ToArray();
         }
         public NSAOrder[] getPastOrders(long loyaltyid) {
-            MySqlDataReader menuItemReader = CustomQuery("SELECT orderid FROM orderitems WHERE loyaltyid = " + loyaltyid + ";);
+            MySqlDataReader menuItemReader = CustomQuery("SELECT orderid FROM orders WHERE loyaltyid = " + loyaltyid + ";");
             List<NSAOrder> orderList = new List<NSAOrder>();
             if (menuItemReader != null)
             {
@@ -447,6 +448,7 @@ namespace CustomerInterface
             for (int i = 0; i < orderList.Count; i++) {
                 orderList[i] = getPastOrderItems(orderList[i]);
             }
+            menuItemReader.Close();
             return orderList.ToArray();
         }
         public NSAOrder getPastOrderItems(NSAOrder order) {

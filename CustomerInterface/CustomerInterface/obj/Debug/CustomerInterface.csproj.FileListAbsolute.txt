@@ -261,3 +261,4 @@ C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterfac
 C:\Users\Ranger\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.pdb
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\bin\Debug\NSAConfig.xml
 C:\Users\Dustin\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.receiptFinal.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.receiptFinal.resources

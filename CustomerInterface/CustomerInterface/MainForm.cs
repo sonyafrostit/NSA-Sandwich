@@ -78,7 +78,7 @@ namespace CustomerInterface
                 account.FavoriteOrders = db.getFavoriteOrders(account.getAccountNumber());
 
                 foreach (NSAOrder order in account.FavoriteOrders) {
-                    ListViewItem lvi = new ListViewItem(order.Id);
+                    ListViewItem lvi = new ListViewItem(order.Id.ToString());
                     lvi.Tag = order;
                     FavOrdersView.Items.Add(lvi);
                 }
@@ -92,7 +92,7 @@ namespace CustomerInterface
         {
             nameTextBox.Text = account.getName();
             emailTextBox.Text = account.getEmail();
-            accountNumberLabel.Text = account.getAccountNumber();
+            accountNumberLabel.Text = account.getAccountNumber().ToString();
             rewardCountLabel.Text = account.getOrdersNeeded();
         }
 

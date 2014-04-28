@@ -33,7 +33,7 @@ namespace CustomerInterface
             name = n;
             email = e;
             rewardsCount = rewards;
-            accountNumber = acc;
+            accountNumber = Convert.ToInt64(acc);
         }
 
         public long getAccountNumber()

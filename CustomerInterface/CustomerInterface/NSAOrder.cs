@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomerInterface
 {
-    class NSAOrder
+    public class NSAOrder
     {
         List<NSAMenuItem> items = new List<NSAMenuItem>();
         long id;
