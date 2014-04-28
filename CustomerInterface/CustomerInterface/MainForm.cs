@@ -67,14 +67,21 @@ namespace CustomerInterface
             componentsList = db.getComponents();
             menu = db.getMenu();
            
-                account.FavoriteItems = db.getFavoriteItems(account.getAccountNumber());
-                foreach (NSAMenuItem it in account.FavoriteItems)
+                account.FavoriteItems = db.getFavoriteItems(account.getAccountNumber().ToString());
+                foreach (NSAFavoriteItem it in account.FavoriteItems)
                 {
                     ListViewItem lvi = new ListViewItem(it.Name);
                     lvi.Tag = it;
                     favItemsListView.Items.Add(lvi);
                 }
-            
+
+                account.FavoriteOrders = db.getFavoriteOrders(account.getAccountNumber());
+
+                foreach (NSAOrder order in account.FavoriteOrders) {
+                    ListViewItem lvi = new ListViewItem(order.Id);
+                    lvi.Tag = order;
+                    FavOrdersView.Items.Add(lvi);
+                }
             setAccountTab();
             updateMenu();
             currentOrder = new NSAOrder();
@@ -453,6 +460,11 @@ namespace CustomerInterface
                     cmd3.ExecuteReader().Close();
                 }
             }
+            if (saveorder) {
+                MySqlCommand cmd4 = new MySqlCommand(String.Format("INSERT INTO favoriteorder (orderID, storeid, loyaltyid) VALUES ({0}, {1}, {2});", currentOrder.Id, db.StoreNumber1, account.getAccountNumber()));
+                cmd4.ExecuteNonQuery();
+
+            }
 
             CashCreditSelect ccs;
 
@@ -570,7 +582,10 @@ namespace CustomerInterface
 
         private void HistoryView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            foreach (ListViewItem t in favItemsListView.SelectedItems)
+            {
+                currentOrder = (NSAOrder)t.Tag;
+            }
         }
 
         private void favItemsListView_SelectedIndexChanged(object sender, EventArgs e)

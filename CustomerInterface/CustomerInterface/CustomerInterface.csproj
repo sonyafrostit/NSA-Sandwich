@@ -96,6 +96,7 @@
       <DependentUpon>CashCreditSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="NSAFavoriteItem.cs" />
+    <Compile Include="NSAHistoryItem.cs" />
     <Compile Include="receiptFinal.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -410,6 +410,72 @@ namespace CustomerInterface
             return itemList.ToArray();
             
         }
+        public NSAOrder[] getFavoriteOrders(long loyaltyid) {
+            List<NSAOrder> favOrders = new List<NSAOrder>();
+            NSAOrder[] pastOrders = getPastOrders(loyaltyid);
+            List<long> favOrderIDs = new List<long>();
+            MySqlDataReader favOrderReader = CustomQuery("SELECT orderid FROM favoriteorder WHERE loyaltyid = " + loyaltyid + ";");
+            if (favOrderReader != null)
+            {
+                while (favOrderReader.Read())
+                {
+                    
+                    favOrderIDs.Add((int)favOrderReader["orderid"];
+                }
+            }
+            foreach (NSAOrder order in pastOrders) {
+                if (favOrderIDs.Contains(order.Id)) {
+                    favOrders.Add(order);
+                }
+            }
+            return favOrders.ToArray();
+        }
+        public NSAOrder[] getPastOrders(long loyaltyid) {
+            MySqlDataReader menuItemReader = CustomQuery("SELECT orderid FROM orderitems WHERE loyaltyid = " + loyaltyid + ";);
+            List<NSAOrder> orderList = new List<NSAOrder>();
+            if (menuItemReader != null)
+            {
+                while (menuItemReader.Read())
+                {
+                    NSAOrder newOrder = new NSAOrder();
+                    newOrder.Id = (int)menuItemReader["orderitemid"];
+                    
+                    orderList.Add(newOrder);
+                }
+            }
+            menuItemReader.Close();
+            for (int i = 0; i < orderList.Count; i++) {
+                orderList[i] = getPastOrderItems(orderList[i]);
+            }
+            return orderList.ToArray();
+        }
+        public NSAOrder getPastOrderItems(NSAOrder order) {
+            MySqlDataReader menuItemReader = CustomQuery("SELECT name, price, menuitemid FROM orderitems WHERE orderid = " + order.Id +";");
+            List<NSAHistoryItem> itemList = new List<NSAHistoryItem>();
+            if (menuItemReader != null)
+            {
+                while (menuItemReader.Read())
+                {
+                    NSAHistoryItem newItem = new NSAHistoryItem();
+                    newItem.Name = (string)menuItemReader["name"];
+                    newItem.Id = (int)menuItemReader["menuitemid"];
+                    newItem.Price = (float)menuItemReader["price"];
+                    newItem.getComponents(this, getComponents());
+                    itemList.Add(newItem);
+                }
+            }
+            menuItemReader.Close();
+            foreach (NSAMenuItem nmi in itemList) {
+                nmi.Components = new List<NSAComponent>();
+                MySqlDataReader miComponentREader = CustomQuery("SELECT ");
+            }
+            
+            foreach (NSAHistoryItem i in itemList){
+                order.Items.Add(i);
+            }
+            return order;
+            
+        }
         public NSAFavoriteItem[] getFavoriteItems(string loyaltyid)
         {
             MySqlDataReader menuItemReader = CustomQuery("SELECT favoriteitemid, name, price FROM favoriteitems WHERE loyaltyid = " + loyaltyid + ";");

@@ -8,17 +8,25 @@ namespace CustomerInterface
 {
     class NSALoyaltyAccount
     {
-        private string accountNumber;
+        private long accountNumber;
         private string name;
         private string email;
         private string rewardsCount;
-        private NSAMenuItem[] favoriteItems;
+        private NSAFavoriteItem[] favoriteItems;
 
-        public NSAMenuItem[] FavoriteItems
+        public NSAFavoriteItem[] FavoriteItems
         {
             get { return favoriteItems; }
             set { favoriteItems = value; }
         }
+        private NSAOrder[] favoriteOrders;
+
+        internal NSAOrder[] FavoriteOrders
+        {
+            get { return favoriteOrders; }
+            set { favoriteOrders = value; }
+        }
+
 
         public NSALoyaltyAccount(string n, string e, string rewards, string acc)
         {
@@ -28,7 +36,7 @@ namespace CustomerInterface
             accountNumber = acc;
         }
 
-        public string getAccountNumber()
+        public long getAccountNumber()
         {
             return accountNumber;
         }
