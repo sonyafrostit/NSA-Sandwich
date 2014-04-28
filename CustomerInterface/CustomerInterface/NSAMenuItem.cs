@@ -48,14 +48,14 @@ namespace CustomerInterface
             
             
         }
-        int breadIndex; //Index of Bread in the sandwich. If -1, then salad
+        protected int breadIndex; //Index of Bread in the sandwich. If -1, then salad
 
         public int BreadIndex
         {
             get { return breadIndex; }
             set { breadIndex = value; }
         }
-        int id;
+        protected int id;
 
         public int Id
         {

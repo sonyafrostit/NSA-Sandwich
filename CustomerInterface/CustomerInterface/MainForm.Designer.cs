@@ -180,9 +180,9 @@
             this.pastOrdersLabel.AutoSize = true;
             this.pastOrdersLabel.Location = new System.Drawing.Point(3, 11);
             this.pastOrdersLabel.Name = "pastOrdersLabel";
-            this.pastOrdersLabel.Size = new System.Drawing.Size(79, 17);
+            this.pastOrdersLabel.Size = new System.Drawing.Size(102, 17);
             this.pastOrdersLabel.TabIndex = 9;
-            this.pastOrdersLabel.Text = "Past Orders";
+            this.pastOrdersLabel.Text = "Favorite Orders";
             this.pastOrdersLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // HistoryView
@@ -211,6 +211,7 @@
             this.favItemsListView.Size = new System.Drawing.Size(740, 117);
             this.favItemsListView.TabIndex = 12;
             this.favItemsListView.UseCompatibleStateImageBehavior = false;
+            this.favItemsListView.SelectedIndexChanged += new System.EventHandler(this.favItemsListView_SelectedIndexChanged);
             // 
             // favoriteItemsLabel
             // 

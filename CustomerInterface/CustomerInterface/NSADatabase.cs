@@ -303,14 +303,15 @@ namespace CustomerInterface
             if (menuItemReader != null)
             {
                 newItem = new NSAMenuItem();
-                menuItemReader.Read();
+                if (menuItemReader.Read())
+                {
 
-                newItem.Name = (string)menuItemReader["name"];
-                newItem.Id = (int)menuItemReader["menuitemid"];
-                newItem.CategoryID = (int)menuItemReader["menutypeid"];
-                //Combo
-                newItem.Price = (float)menuItemReader["price"];
-
+                    newItem.Name = (string)menuItemReader["name"];
+                    newItem.Id = (int)menuItemReader["menuitemid"];
+                    newItem.CategoryID = (int)menuItemReader["menutypeid"];
+                    //Combo
+                    newItem.Price = (float)menuItemReader["price"];
+                }
             }
             menuItemReader.Close();
 
@@ -371,8 +372,10 @@ namespace CustomerInterface
 
             MySqlDataReader menuItemReader = CustomQuery(query.ToString());
             if (menuItemReader != null){
-                menuItemReader.Read();
-                Discount = (float)menuItemReader["discountamount"];
+                if (menuItemReader.Read())
+                {
+                    Discount = (float)menuItemReader["discountamount"];
+                }
             }
 
             menuItemReader.Close();
@@ -407,16 +410,16 @@ namespace CustomerInterface
             return itemList.ToArray();
             
         }
-        public NSAMenuItem[] getFavoriteItems(string loyaltyid)
+        public NSAFavoriteItem[] getFavoriteItems(string loyaltyid)
         {
-            MySqlDataReader menuItemReader = CustomQuery("SELECT favoriteitemid, name, price FROM favoriteitems WHERE storeid = " + StoreNumber.ToString() + " and deleted = 0 WHERE accountid = " + loyaltyid + ";");
-            List<NSAMenuItem> itemList = new List<NSAMenuItem>();
+            MySqlDataReader menuItemReader = CustomQuery("SELECT favoriteitemid, name, price FROM favoriteitems WHERE loyaltyid = " + loyaltyid + ";");
+            List<NSAFavoriteItem> itemList = new List<NSAFavoriteItem>();
             if (menuItemReader != null)
             {
                 while (menuItemReader.Read())
                 {
-                    NSAMenuItem newItem = new NSAMenuItem();
-                    newItem.Name = (string)menuItemReader["name"];
+                    NSAFavoriteItem newItem = new NSAFavoriteItem();
+                    newItem.Name = menuItemReader["name"].ToString();
                     newItem.Id = (int)menuItemReader["favoriteitemid"];
                     newItem.Price = (float)menuItemReader["price"];
                     itemList.Add(newItem);
@@ -501,6 +504,7 @@ namespace CustomerInterface
             CustomQuery("INSERT;");
 
         }
+
         //Return true if Database is connected
         public bool Connected()
         {

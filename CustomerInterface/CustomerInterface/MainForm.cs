@@ -58,19 +58,7 @@ namespace CustomerInterface
 
             
             account = new NSALoyaltyAccount(accountNumber[0][0], accountNumber[1][0], accountNumber[2][0], accountNumber[3][0]);
-            try
-            {
-                account.FavoriteItems = db.getFavoriteItems(accountNumber[3][0]);
-                foreach (NSAMenuItem it in account.FavoriteItems)
-                {
-                    ListViewItem lvi = new ListViewItem(it.Name);
-                    lvi.Tag = it;
-                    favItemsListView.Items.Add(lvi);
-                }
-            }
-            catch (Exception e) { 
             
-            }
             
             InitializeComponent();
 
@@ -78,7 +66,15 @@ namespace CustomerInterface
             db.OpenConnection();
             componentsList = db.getComponents();
             menu = db.getMenu();
-
+           
+                account.FavoriteItems = db.getFavoriteItems(account.getAccountNumber());
+                foreach (NSAMenuItem it in account.FavoriteItems)
+                {
+                    ListViewItem lvi = new ListViewItem(it.Name);
+                    lvi.Tag = it;
+                    favItemsListView.Items.Add(lvi);
+                }
+            
             setAccountTab();
             updateMenu();
             currentOrder = new NSAOrder();
@@ -575,6 +571,19 @@ namespace CustomerInterface
         private void HistoryView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void favItemsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (ListViewItem t in favItemsListView.SelectedItems)
+            {
+                ((NSAMenuItem)t.Tag).getComponents(db, componentsList);
+
+                addItemToOrder((NSAMenuItem)t.Tag);
+                
+
+                UpdateOrderView();
+            }
         }
     }
 }
