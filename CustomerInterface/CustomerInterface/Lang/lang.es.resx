@@ -255,4 +255,13 @@
   <data name="combo" xml:space="preserve">
     <value>Combo</value>
   </data>
+  <data name="askdelete1" xml:space="preserve">
+    <value>Eliminación de su cuenta de la lealtad, se cancelará el pedido actual.</value>
+  </data>
+  <data name="askdelete2" xml:space="preserve">
+    <value>¿Quieres continuar?</value>
+  </data>
+  <data name="askdeletecaption" xml:space="preserve">
+    <value>Eliminar cuenta?</value>
+  </data>
 </root>

@@ -252,4 +252,13 @@
   <data name="combo" xml:space="preserve">
     <value>repas combo</value>
   </data>
+  <data name="askdelete1" xml:space="preserve">
+    <value>La suppression de votre compte de fidélité pour annuler la commande en cours.</value>
+  </data>
+  <data name="askdelete2" xml:space="preserve">
+    <value>Voulez-vous continuer?</value>
+  </data>
+  <data name="askdeletecaption" xml:space="preserve">
+    <value>Supprimer un compte?</value>
+  </data>
 </root>

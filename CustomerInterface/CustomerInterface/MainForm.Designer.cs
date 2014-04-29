@@ -69,6 +69,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.btnDeleteLoyaltyAccount = new System.Windows.Forms.Button();
             this.KioskTabs.SuspendLayout();
             this.MenuTab.SuspendLayout();
             this.LoyaltyTab.SuspendLayout();
@@ -90,7 +91,7 @@
             this.KioskTabs.Font = new System.Drawing.Font("Tahoma", 10F);
             this.KioskTabs.ItemSize = new System.Drawing.Size(42, 20);
             this.KioskTabs.Location = new System.Drawing.Point(26, 23);
-            this.KioskTabs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.KioskTabs.Margin = new System.Windows.Forms.Padding(6);
             this.KioskTabs.Multiline = true;
             this.KioskTabs.Name = "KioskTabs";
             this.KioskTabs.SelectedIndex = 0;
@@ -102,9 +103,9 @@
             // 
             this.MenuTab.Controls.Add(this.menuListView);
             this.MenuTab.Location = new System.Drawing.Point(4, 24);
-            this.MenuTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MenuTab.Margin = new System.Windows.Forms.Padding(6);
             this.MenuTab.Name = "MenuTab";
-            this.MenuTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MenuTab.Padding = new System.Windows.Forms.Padding(6);
             this.MenuTab.Size = new System.Drawing.Size(1564, 1024);
             this.MenuTab.TabIndex = 0;
             this.MenuTab.Text = "Menu";
@@ -113,7 +114,7 @@
             // menuListView
             // 
             this.menuListView.Location = new System.Drawing.Point(12, 33);
-            this.menuListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.menuListView.Margin = new System.Windows.Forms.Padding(6);
             this.menuListView.Name = "menuListView";
             this.menuListView.Size = new System.Drawing.Size(1528, 941);
             this.menuListView.TabIndex = 0;
@@ -123,6 +124,7 @@
             // 
             // LoyaltyTab
             // 
+            this.LoyaltyTab.Controls.Add(this.btnDeleteLoyaltyAccount);
             this.LoyaltyTab.Controls.Add(this.rewardCountLabel);
             this.LoyaltyTab.Controls.Add(this.panel1);
             this.LoyaltyTab.Controls.Add(this.panel2);
@@ -134,9 +136,9 @@
             this.LoyaltyTab.Controls.Add(this.accountNumberLabel);
             this.LoyaltyTab.Controls.Add(this.AccNumberTagLabel);
             this.LoyaltyTab.Location = new System.Drawing.Point(4, 24);
-            this.LoyaltyTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LoyaltyTab.Margin = new System.Windows.Forms.Padding(6);
             this.LoyaltyTab.Name = "LoyaltyTab";
-            this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LoyaltyTab.Padding = new System.Windows.Forms.Padding(6);
             this.LoyaltyTab.Size = new System.Drawing.Size(1564, 1024);
             this.LoyaltyTab.TabIndex = 2;
             this.LoyaltyTab.Text = "Loyalty Account";
@@ -160,7 +162,7 @@
             this.panel1.Controls.Add(this.pastOrdersLabel);
             this.panel1.Controls.Add(this.FavOrdersView);
             this.panel1.Location = new System.Drawing.Point(12, 360);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1492, 329);
             this.panel1.TabIndex = 3;
@@ -169,7 +171,7 @@
             // 
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(6, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitter2.Margin = new System.Windows.Forms.Padding(6);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(1486, 6);
             this.splitter2.TabIndex = 11;
@@ -178,7 +180,7 @@
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(6);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(6, 329);
             this.splitter1.TabIndex = 10;
@@ -198,7 +200,7 @@
             // FavOrdersView
             // 
             this.FavOrdersView.Location = new System.Drawing.Point(0, 75);
-            this.FavOrdersView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.FavOrdersView.Margin = new System.Windows.Forms.Padding(6);
             this.FavOrdersView.Name = "FavOrdersView";
             this.FavOrdersView.Size = new System.Drawing.Size(1482, 244);
             this.FavOrdersView.TabIndex = 8;
@@ -211,7 +213,7 @@
             this.panel2.Controls.Add(this.favoriteItemsLabel);
             this.panel2.Controls.Add(this.splitter3);
             this.panel2.Location = new System.Drawing.Point(12, 700);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1492, 296);
             this.panel2.TabIndex = 2;
@@ -219,7 +221,7 @@
             // favItemsListView
             // 
             this.favItemsListView.Location = new System.Drawing.Point(6, 65);
-            this.favItemsListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.favItemsListView.Margin = new System.Windows.Forms.Padding(6);
             this.favItemsListView.Name = "favItemsListView";
             this.favItemsListView.Size = new System.Drawing.Size(1476, 221);
             this.favItemsListView.TabIndex = 12;
@@ -240,7 +242,7 @@
             // 
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 0);
-            this.splitter3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitter3.Margin = new System.Windows.Forms.Padding(6);
             this.splitter3.Name = "splitter3";
             this.splitter3.Size = new System.Drawing.Size(1492, 6);
             this.splitter3.TabIndex = 0;
@@ -249,7 +251,7 @@
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(230, 163);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(824, 40);
             this.emailTextBox.TabIndex = 7;
@@ -267,7 +269,7 @@
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(230, 85);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(824, 40);
             this.nameTextBox.TabIndex = 5;
@@ -324,9 +326,9 @@
             this.LanguageTab.Controls.Add(this.frBtn);
             this.LanguageTab.Controls.Add(this.enBtn);
             this.LanguageTab.Location = new System.Drawing.Point(4, 24);
-            this.LanguageTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LanguageTab.Margin = new System.Windows.Forms.Padding(6);
             this.LanguageTab.Name = "LanguageTab";
-            this.LanguageTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.LanguageTab.Padding = new System.Windows.Forms.Padding(6);
             this.LanguageTab.Size = new System.Drawing.Size(1564, 1024);
             this.LanguageTab.TabIndex = 3;
             this.LanguageTab.Text = "Language";
@@ -348,7 +350,7 @@
             // 
             this.spBtn.Image = ((System.Drawing.Image)(resources.GetObject("spBtn.Image")));
             this.spBtn.Location = new System.Drawing.Point(352, 85);
-            this.spBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.spBtn.Margin = new System.Windows.Forms.Padding(4);
             this.spBtn.Name = "spBtn";
             this.spBtn.Size = new System.Drawing.Size(96, 52);
             this.spBtn.TabIndex = 23;
@@ -359,7 +361,7 @@
             // 
             this.geBtn.Image = ((System.Drawing.Image)(resources.GetObject("geBtn.Image")));
             this.geBtn.Location = new System.Drawing.Point(248, 85);
-            this.geBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.geBtn.Margin = new System.Windows.Forms.Padding(4);
             this.geBtn.Name = "geBtn";
             this.geBtn.Size = new System.Drawing.Size(96, 52);
             this.geBtn.TabIndex = 22;
@@ -370,7 +372,7 @@
             // 
             this.frBtn.Image = ((System.Drawing.Image)(resources.GetObject("frBtn.Image")));
             this.frBtn.Location = new System.Drawing.Point(144, 85);
-            this.frBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frBtn.Margin = new System.Windows.Forms.Padding(4);
             this.frBtn.Name = "frBtn";
             this.frBtn.Size = new System.Drawing.Size(96, 52);
             this.frBtn.TabIndex = 21;
@@ -381,7 +383,7 @@
             // 
             this.enBtn.Image = ((System.Drawing.Image)(resources.GetObject("enBtn.Image")));
             this.enBtn.Location = new System.Drawing.Point(40, 85);
-            this.enBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enBtn.Margin = new System.Windows.Forms.Padding(4);
             this.enBtn.Name = "enBtn";
             this.enBtn.Size = new System.Drawing.Size(96, 52);
             this.enBtn.TabIndex = 20;
@@ -391,7 +393,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(308, 873);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 69);
             this.button1.TabIndex = 2;
@@ -409,7 +411,7 @@
             this.panel3.Controls.Add(this.OrderView);
             this.panel3.Controls.Add(this.splitter4);
             this.panel3.Location = new System.Drawing.Point(1610, 208);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(526, 948);
             this.panel3.TabIndex = 7;
@@ -417,7 +419,7 @@
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(8, 873);
-            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button8.Margin = new System.Windows.Forms.Padding(6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(288, 69);
             this.button8.TabIndex = 12;
@@ -428,7 +430,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(8, 767);
-            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(120, 67);
             this.button7.TabIndex = 11;
@@ -439,7 +441,7 @@
             // RemoveButton
             // 
             this.RemoveButton.Location = new System.Drawing.Point(342, 767);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(6);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(178, 67);
             this.RemoveButton.TabIndex = 10;
@@ -450,7 +452,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(140, 767);
-            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button6.Margin = new System.Windows.Forms.Padding(6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(190, 67);
             this.button6.TabIndex = 9;
@@ -464,7 +466,7 @@
             this.ItemHeader,
             this.ChangesHeader});
             this.OrderView.Location = new System.Drawing.Point(8, 0);
-            this.OrderView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.OrderView.Margin = new System.Windows.Forms.Padding(6);
             this.OrderView.Name = "OrderView";
             this.OrderView.Size = new System.Drawing.Size(508, 752);
             this.OrderView.TabIndex = 8;
@@ -484,7 +486,7 @@
             // splitter4
             // 
             this.splitter4.Location = new System.Drawing.Point(0, 0);
-            this.splitter4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitter4.Margin = new System.Windows.Forms.Padding(6);
             this.splitter4.Name = "splitter4";
             this.splitter4.Size = new System.Drawing.Size(6, 948);
             this.splitter4.TabIndex = 7;
@@ -494,7 +496,7 @@
             // 
             this.panel4.Controls.Add(this.WelcomeLabel);
             this.panel4.Location = new System.Drawing.Point(1616, 65);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(520, 131);
             this.panel4.TabIndex = 8;
@@ -514,6 +516,16 @@
             // 
             this.fontDialog1.Color = System.Drawing.SystemColors.ControlText;
             // 
+            // btnDeleteLoyaltyAccount
+            // 
+            this.btnDeleteLoyaltyAccount.Location = new System.Drawing.Point(1168, 90);
+            this.btnDeleteLoyaltyAccount.Name = "btnDeleteLoyaltyAccount";
+            this.btnDeleteLoyaltyAccount.Size = new System.Drawing.Size(280, 101);
+            this.btnDeleteLoyaltyAccount.TabIndex = 9;
+            this.btnDeleteLoyaltyAccount.Text = "Delete Loyalty Account";
+            this.btnDeleteLoyaltyAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteLoyaltyAccount.Click += new System.EventHandler(this.btnDeleteLoyaltyAccount_Click);
+            // 
             // KioskWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -522,7 +534,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.KioskTabs);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "KioskWindow";
             this.Text = "Customer Kiosk";
             this.Activated += new System.EventHandler(this.KioskWindow_Activated);
@@ -586,6 +598,7 @@
         private System.Windows.Forms.Label rewardCountLabel;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnDeleteLoyaltyAccount;
     }
 }
 

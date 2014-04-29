@@ -252,4 +252,13 @@
   <data name="combo" xml:space="preserve">
     <value>Combo meal</value>
   </data>
+  <data name="askdelete1" xml:space="preserve">
+    <value>Deleting your loyalty account will cancel the current order. </value>
+  </data>
+  <data name="askdelete2" xml:space="preserve">
+    <value>Do you want to continue?</value>
+  </data>
+  <data name="askdeletecaption" xml:space="preserve">
+    <value>Delete Account?</value>
+  </data>
 </root>

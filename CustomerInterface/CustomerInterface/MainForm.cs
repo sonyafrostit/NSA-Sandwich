@@ -601,5 +601,27 @@ namespace CustomerInterface
                 UpdateOrderView();
             }
         }
+
+        private void btnDeleteLoyaltyAccount_Click(object sender, EventArgs e) {
+
+            DialogResult result = MessageBox.Show(rm.GetString("askdelete1", ci) + Environment.NewLine + rm.GetString("askdelete2", ci), rm.GetString("askdeletecaption", ci), MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (result == DialogResult.Yes) {
+
+                if (db.Connected() && account != null) {
+
+                    string query = "DELETE FROM loyaltyaccounts WHERE loyaltyid = " + account.getAccountNumber().ToString() +
+                                " and storeid = " + db.StoreNumber1.ToString() + ";";
+
+                    //Create MySQL Command object.
+                    MySqlCommand cmd = new MySqlCommand(query, db.Connection1);
+
+                    //Create a MySQL reader and Execute the query
+                    cmd.ExecuteNonQuery();
+
+                    this.Close();
+                }
+            }
+        }
     }
 }

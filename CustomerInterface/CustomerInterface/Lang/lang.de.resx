@@ -252,4 +252,13 @@
   <data name="combo" xml:space="preserve">
     <value>Combo-Menü</value>
   </data>
+  <data name="askdelete1" xml:space="preserve">
+    <value>Löschen Sie Ihre Loyalität Konto wird die aktuelle Bestellung zu stornieren.</value>
+  </data>
+  <data name="askdelete2" xml:space="preserve">
+    <value>Wollen Sie fortfahren?</value>
+  </data>
+  <data name="askdeletecaption" xml:space="preserve">
+    <value>Account löschen?</value>
+  </data>
 </root>

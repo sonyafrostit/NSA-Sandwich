@@ -70,6 +70,33 @@ namespace CustomerInterface.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deleting your loyalty account will cancel the current order. .
+        /// </summary>
+        internal static string askdelete1 {
+            get {
+                return ResourceManager.GetString("askdelete1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to continue?.
+        /// </summary>
+        internal static string askdelete2 {
+            get {
+                return ResourceManager.GetString("askdelete2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Account?.
+        /// </summary>
+        internal static string askdeletecaption {
+            get {
+                return ResourceManager.GetString("askdeletecaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Make this entree a combo for a $1.00 discount?.
         /// </summary>
         internal static string askmakecombo {
