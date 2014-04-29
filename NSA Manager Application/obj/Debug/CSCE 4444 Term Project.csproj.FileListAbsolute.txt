@@ -10,7 +10,6 @@ C:\Users\Ranger\documents\visual studio 2013\Projects\CSCE 4444 Term Project\CSC
 C:\Users\Ranger\documents\visual studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\bin\Debug\NSAConfig.xml
 C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\NSA_Manager.ManagerKiosk.resources
 C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\NSA_Manager.ManagerLogin_Form.resources
-C:\Users\Ranger\Documents\Visual Studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\NSA_Manager.ManagerKiosk2.resources
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\bin\Debug\CSCE 4444 Term Project.exe.config
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\obj\Debug\CSCE 4444 Term Project.exe
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\obj\Debug\CSCE 4444 Term Project.pdb
@@ -24,3 +23,4 @@ C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\obj\Debug\NS
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\obj\Debug\NSA_Manager.ManagerKiosk.resources
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\obj\Debug\CSCE_4444_Term_Project.Properties.Resources.resources
 C:\Users\Trae\Documents\GitHub\NSA-Sandwich\NSA Manager Application\obj\Debug\CSCE 4444 Term Project.csproj.GenerateResource.Cache
+C:\Users\Ranger\documents\visual studio 2013\Projects\CSCE 4444 Term Project\CSCE 4444 Term Project\obj\Debug\NSA_Manager.PriceChange.resources

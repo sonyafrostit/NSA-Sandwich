@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace NSA_Manager
 {
-    public partial class ManagerLogin_Form : Form
+    public partial class PriceChange : Form
     {
+        //Stores information for Form
+        private string curitem;
+        private string oldPrice;
+
         //constant for the config file name
         private const string XML_CONFIG_FILE = "NSAConfig.xml";
 
@@ -25,10 +29,10 @@ namespace NSA_Manager
         //if this is not set then we ignore the timer ticks and do not attempt to reload
         private bool InitialLoadSuccess;
 
-        public ManagerLogin_Form()
+        public PriceChange(string menuitemid, string price)
         {
-            InitialLoadSuccess = false;
             InitializeComponent();
+            InitialLoadSuccess = false;
 
             //load the Config XML file.
             try
@@ -55,54 +59,27 @@ namespace NSA_Manager
                 MessageBox.Show(ex.Message, "Error loading Database: " + XML_CONFIG_FILE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Load Passed in Information
+            curitem = menuitemid;
+            oldPrice = price;
+            Price_Label.Text = "$" + oldPrice;
         }
 
-        private void Login_Button_Click(object sender, EventArgs e)
+        private void SavePrice_Button_Click(object sender, EventArgs e)
         {
-            string Username = Username_Textbox.Text.ToString();
-            string Password = Password_Textbox.Text.ToString();
-            string isassist = null;
+            string newPrice = NewPrice_Textbox.Text.ToString();
 
-            if (String.IsNullOrWhiteSpace(Username) || String.IsNullOrWhiteSpace(Password))
+            // connect to DB if it is not connected
+            if (!nsadb.Connected())
             {
-                MessageBox.Show("Not All Fields Filled In!", "Manager Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                nsadb.OpenConnection();
             }
-            else
-            {
-                // connect to DB if it is not connected
-                if (!nsadb.Connected())
-                {
-                    nsadb.OpenConnection();
-                }
 
-                // Get the loyalty account data from the database
-                isassist = nsadb.ManagerLogin(Username, Password);
-
-                if(isassist == "-1")
-                {
-                    MessageBox.Show("Username or Password Incorrect!", "Manager Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-                else if(isassist == "0")
-                {
-                    ManagerKiosk frm = new ManagerKiosk(0);
-                    frm.Show();
-                    frm.FormClosed += new FormClosedEventHandler(ManagerKiosk_FormClosed);
-                    this.Hide();
-                }
-                else if (isassist == "1")
-                {
-                    ManagerKiosk frm = new ManagerKiosk(1);
-                    frm.Show();
-                    frm.FormClosed += new FormClosedEventHandler(ManagerKiosk_FormClosed);
-                    this.Hide();
-                }
-            }
-        }
-
-        void ManagerKiosk_FormClosed(object sender, FormClosedEventArgs e)
-        {   
+            //request the Records to display on the manager orders list
+            nsadb.ManagerSetPrice(curitem, newPrice);
+            MessageBox.Show("Price Updated!", "Price Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-        }
+        } //SavePrice_Button_Click
     }
 }

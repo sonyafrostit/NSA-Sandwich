@@ -604,6 +604,102 @@ namespace NSA_Manager
 
         } //ManagerGetComponentData
 
+        public int ManagerGetMenuItemCategory(out List<string>[] menuitemcategory)
+        {
+
+            string query = "SELECT menutypeid, name FROM menutypes ORDER BY menutypeid";
+
+            //Change the inventory data list to store the result
+            menuitemcategory = new List<string>[2];
+            menuitemcategory[0] = new List<string>();
+            menuitemcategory[1] = new List<string>();
+
+            //initial record count is 0
+            RecordCount = 0;
+
+            //If DB connection is open attem to get data.
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (mysqlreader.Read())
+                {
+                    menuitemcategory[0].Add(mysqlreader["menutypeid"] + "");
+                    menuitemcategory[1].Add(mysqlreader["name"] + "");
+
+                    //increment the record count 
+                    RecordCount++;
+                }
+
+                //close Data Reader
+                mysqlreader.Close();
+
+                //return number of records found.
+                return RecordCount;
+
+            }
+            else
+            {
+                //if the DB is not open then no records can be read.
+                return -1;
+            }
+
+        } //ManagerGetMenuItemCategory
+
+        public int ManagerGetComponentCategory(out List<string>[] componentcategory)
+        {
+
+            string query = "SELECT categoryid, categoryname FROM componentcategories ORDER BY categoryid";
+
+            //Change the inventory data list to store the result
+            componentcategory = new List<string>[2];
+            componentcategory[0] = new List<string>();
+            componentcategory[1] = new List<string>();
+
+            //initial record count is 0
+            RecordCount = 0;
+
+            //If DB connection is open attem to get data.
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (mysqlreader.Read())
+                {
+                    componentcategory[0].Add(mysqlreader["categoryid"] + "");
+                    componentcategory[1].Add(mysqlreader["categoryname"] + "");
+
+                    //increment the record count 
+                    RecordCount++;
+                }
+
+                //close Data Reader
+                mysqlreader.Close();
+
+                //return number of records found.
+                return RecordCount;
+
+            }
+            else
+            {
+                //if the DB is not open then no records can be read.
+                return -1;
+            }
+
+        } //ManagerGetMenuItemCategory
+
         public void ManagerDeleteLoyaltyAccount(string loyaltyid)
         {
             string query = "DELETE FROM loyaltyaccounts WHERE loyaltyid = " + loyaltyid.ToString() + " and storeid = " + StoreNumber.ToString();
@@ -816,6 +912,80 @@ namespace NSA_Manager
 
             return assistflag;
         }
+
+        public string ManagerGetPrice(string menuitemid)
+        {
+            string query = "SELECT price FROM menuitem WHERE menuitemid = " + menuitemid.ToString() + " and storeid = " + StoreNumber.ToString() + " ORDER BY menuitemid";
+
+            string price = null;
+
+            //Create MySQL Command object.
+            MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+            //Create a MySQL reader and Execute the query
+            MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            mysqlreader.Read();
+            price = mysqlreader["price"] + "";
+
+            //close Data Reader
+            mysqlreader.Close();
+
+            return price;
+        } //ManagerGetPrice
+
+        public void ManagerSetPrice(string menuitemid, string newPrice)
+        {
+            string query = "UPDATE menuitem SET price = " + newPrice.ToString() + " WHERE menuitemid = " + menuitemid.ToString();
+
+            //Create MySQL Command object.
+            MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+            //Create a MySQL reader and Execute the query
+            cmd.ExecuteNonQuery();
+        } //ManagerSetPrice
+
+        public void ManagerGetKidsMealDays(out int[] days)
+        {
+            string query = "SELECT monday, tuesday, wednesday, thursday, friday, saturday, sunday FROM kidsmealday WHERE storeid = " + StoreNumber.ToString();
+            days = new int[7];
+
+            //Create MySQL Command object.
+            MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+            //Create a MySQL reader and Execute the query
+            MySqlDataReader mysqlreader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            mysqlreader.Read();
+            days[0] = Convert.ToInt32(mysqlreader["monday"]);
+            days[1] = Convert.ToInt32(mysqlreader["tuesday"]);
+            days[2] = Convert.ToInt32(mysqlreader["wednesday"]);
+            days[3] = Convert.ToInt32(mysqlreader["thursday"]);
+            days[4] = Convert.ToInt32(mysqlreader["friday"]);
+            days[5] = Convert.ToInt32(mysqlreader["saturday"]);
+            days[6] = Convert.ToInt32(mysqlreader["sunday"]);
+
+            //close Data Reader
+            mysqlreader.Close();
+        }
+
+        public void UpdateKidsMealDays(int[] days)
+        {
+            string query = "UPDATE kidsmealday SET monday = " + days[0].ToString() + ", tuesday = " + days[1].ToString() + ", wednesday = " + days[2].ToString() + ", thursday = " + days[3].ToString() +
+                ", friday = " + days[4].ToString() + ", saturday = " + days[5].ToString() + ", sunday = " + days[6].ToString() + " WHERE storeid = " + StoreNumber.ToString();
+
+            if (Connection.State == System.Data.ConnectionState.Open)
+            {
+
+                //Create MySQL Command object.
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+
+                //Create a MySQL reader and Execute the query
+                cmd.ExecuteNonQuery();
+            }
+        } // UpdateKidsMealDays
 
         //Return true if Database is connected
         public bool Connected()

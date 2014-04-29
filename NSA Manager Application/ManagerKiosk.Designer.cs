@@ -83,6 +83,8 @@
             this.Reports_Listbox = new System.Windows.Forms.ListBox();
             this.ReportsTitle_Label = new System.Windows.Forms.Label();
             this.MenuItems = new System.Windows.Forms.TabPage();
+            this.MenuItemCategory_comboBox = new System.Windows.Forms.ComboBox();
+            this.PriceChange_Button = new System.Windows.Forms.Button();
             this.SpecialDaySunday_Checkbox = new System.Windows.Forms.CheckBox();
             this.MenuItemSave_Button = new System.Windows.Forms.Button();
             this.MenuItemDelete_Button = new System.Windows.Forms.Button();
@@ -101,7 +103,6 @@
             this.MenuItemsComponent_CheckedListbox = new System.Windows.Forms.CheckedListBox();
             this.MenuItemComponents_Label = new System.Windows.Forms.Label();
             this.MenuItemPrice_Textbox = new System.Windows.Forms.TextBox();
-            this.MenuItemCategory_Textbox = new System.Windows.Forms.TextBox();
             this.MenuItemName_Textbox = new System.Windows.Forms.TextBox();
             this.MenuItemCategory_Label = new System.Windows.Forms.Label();
             this.MenuItemPrice_Label = new System.Windows.Forms.Label();
@@ -120,7 +121,6 @@
             this.ComponentPrice_Label = new System.Windows.Forms.Label();
             this.ComponentCategory_Label = new System.Windows.Forms.Label();
             this.ComponentPrice_Textbox = new System.Windows.Forms.TextBox();
-            this.ComponentCategory_Textbox = new System.Windows.Forms.TextBox();
             this.ComponentName_Textbox = new System.Windows.Forms.TextBox();
             this.ComponentName_Label = new System.Windows.Forms.Label();
             this.Components_Listbox = new System.Windows.Forms.ListBox();
@@ -128,6 +128,16 @@
             this.Tools = new System.Windows.Forms.TabPage();
             this.ClearPickupWindow_Button = new System.Windows.Forms.Button();
             this.ToolsTitle_Label = new System.Windows.Forms.Label();
+            this.ComponentCategory_comboBox = new System.Windows.Forms.ComboBox();
+            this.KidsMealDay_Label = new System.Windows.Forms.Label();
+            this.KidsMealDayMonday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDayTuesday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDayWednesday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDayThursday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDayFriday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDaySaturday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDaySunday_CheckBox = new System.Windows.Forms.CheckBox();
+            this.KidsMealDaySave_Button = new System.Windows.Forms.Button();
             this.ManagerKiosk_TabPage.SuspendLayout();
             this.Orders.SuspendLayout();
             this.LoyaltyAccounts.SuspendLayout();
@@ -691,6 +701,8 @@
             // 
             // MenuItems
             // 
+            this.MenuItems.Controls.Add(this.MenuItemCategory_comboBox);
+            this.MenuItems.Controls.Add(this.PriceChange_Button);
             this.MenuItems.Controls.Add(this.SpecialDaySunday_Checkbox);
             this.MenuItems.Controls.Add(this.MenuItemSave_Button);
             this.MenuItems.Controls.Add(this.MenuItemDelete_Button);
@@ -709,7 +721,6 @@
             this.MenuItems.Controls.Add(this.MenuItemsComponent_CheckedListbox);
             this.MenuItems.Controls.Add(this.MenuItemComponents_Label);
             this.MenuItems.Controls.Add(this.MenuItemPrice_Textbox);
-            this.MenuItems.Controls.Add(this.MenuItemCategory_Textbox);
             this.MenuItems.Controls.Add(this.MenuItemName_Textbox);
             this.MenuItems.Controls.Add(this.MenuItemCategory_Label);
             this.MenuItems.Controls.Add(this.MenuItemPrice_Label);
@@ -723,6 +734,25 @@
             this.MenuItems.TabIndex = 5;
             this.MenuItems.Text = "Menu Items";
             this.MenuItems.UseVisualStyleBackColor = true;
+            // 
+            // MenuItemCategory_comboBox
+            // 
+            this.MenuItemCategory_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MenuItemCategory_comboBox.FormattingEnabled = true;
+            this.MenuItemCategory_comboBox.Location = new System.Drawing.Point(448, 58);
+            this.MenuItemCategory_comboBox.Name = "MenuItemCategory_comboBox";
+            this.MenuItemCategory_comboBox.Size = new System.Drawing.Size(224, 21);
+            this.MenuItemCategory_comboBox.TabIndex = 28;
+            // 
+            // PriceChange_Button
+            // 
+            this.PriceChange_Button.Location = new System.Drawing.Point(173, 599);
+            this.PriceChange_Button.Name = "PriceChange_Button";
+            this.PriceChange_Button.Size = new System.Drawing.Size(171, 39);
+            this.PriceChange_Button.TabIndex = 27;
+            this.PriceChange_Button.Text = "Change Price";
+            this.PriceChange_Button.UseVisualStyleBackColor = true;
+            this.PriceChange_Button.Click += new System.EventHandler(this.PriceChange_Button_Click);
             // 
             // SpecialDaySunday_Checkbox
             // 
@@ -747,7 +777,7 @@
             // 
             this.MenuItemDelete_Button.Location = new System.Drawing.Point(7, 599);
             this.MenuItemDelete_Button.Name = "MenuItemDelete_Button";
-            this.MenuItemDelete_Button.Size = new System.Drawing.Size(267, 39);
+            this.MenuItemDelete_Button.Size = new System.Drawing.Size(160, 39);
             this.MenuItemDelete_Button.TabIndex = 24;
             this.MenuItemDelete_Button.Text = "Delete Menu Item";
             this.MenuItemDelete_Button.UseVisualStyleBackColor = true;
@@ -889,13 +919,6 @@
             this.MenuItemPrice_Textbox.Size = new System.Drawing.Size(224, 20);
             this.MenuItemPrice_Textbox.TabIndex = 7;
             // 
-            // MenuItemCategory_Textbox
-            // 
-            this.MenuItemCategory_Textbox.Location = new System.Drawing.Point(448, 58);
-            this.MenuItemCategory_Textbox.Name = "MenuItemCategory_Textbox";
-            this.MenuItemCategory_Textbox.Size = new System.Drawing.Size(224, 20);
-            this.MenuItemCategory_Textbox.TabIndex = 6;
-            // 
             // MenuItemName_Textbox
             // 
             this.MenuItemName_Textbox.Location = new System.Drawing.Point(448, 32);
@@ -955,6 +978,7 @@
             // 
             // ItemMods
             // 
+            this.ItemMods.Controls.Add(this.ComponentCategory_comboBox);
             this.ItemMods.Controls.Add(this.ComponentCost_Label);
             this.ItemMods.Controls.Add(this.ComponentCost_Textbox);
             this.ItemMods.Controls.Add(this.ComponentSave_Button);
@@ -966,7 +990,6 @@
             this.ItemMods.Controls.Add(this.ComponentPrice_Label);
             this.ItemMods.Controls.Add(this.ComponentCategory_Label);
             this.ItemMods.Controls.Add(this.ComponentPrice_Textbox);
-            this.ItemMods.Controls.Add(this.ComponentCategory_Textbox);
             this.ItemMods.Controls.Add(this.ComponentName_Textbox);
             this.ItemMods.Controls.Add(this.ComponentName_Label);
             this.ItemMods.Controls.Add(this.Components_Listbox);
@@ -1075,13 +1098,6 @@
             this.ComponentPrice_Textbox.Size = new System.Drawing.Size(224, 20);
             this.ComponentPrice_Textbox.TabIndex = 5;
             // 
-            // ComponentCategory_Textbox
-            // 
-            this.ComponentCategory_Textbox.Location = new System.Drawing.Point(471, 58);
-            this.ComponentCategory_Textbox.Name = "ComponentCategory_Textbox";
-            this.ComponentCategory_Textbox.Size = new System.Drawing.Size(224, 20);
-            this.ComponentCategory_Textbox.TabIndex = 4;
-            // 
             // ComponentName_Textbox
             // 
             this.ComponentName_Textbox.Location = new System.Drawing.Point(471, 31);
@@ -1121,6 +1137,15 @@
             // 
             // Tools
             // 
+            this.Tools.Controls.Add(this.KidsMealDaySave_Button);
+            this.Tools.Controls.Add(this.KidsMealDaySunday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDaySaturday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDayFriday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDayThursday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDayWednesday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDayTuesday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDayMonday_CheckBox);
+            this.Tools.Controls.Add(this.KidsMealDay_Label);
             this.Tools.Controls.Add(this.ClearPickupWindow_Button);
             this.Tools.Controls.Add(this.ToolsTitle_Label);
             this.Tools.Location = new System.Drawing.Point(4, 22);
@@ -1149,6 +1174,105 @@
             this.ToolsTitle_Label.Size = new System.Drawing.Size(57, 24);
             this.ToolsTitle_Label.TabIndex = 0;
             this.ToolsTitle_Label.Text = "Tools";
+            // 
+            // ComponentCategory_comboBox
+            // 
+            this.ComponentCategory_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComponentCategory_comboBox.FormattingEnabled = true;
+            this.ComponentCategory_comboBox.Location = new System.Drawing.Point(471, 56);
+            this.ComponentCategory_comboBox.Name = "ComponentCategory_comboBox";
+            this.ComponentCategory_comboBox.Size = new System.Drawing.Size(224, 21);
+            this.ComponentCategory_comboBox.TabIndex = 31;
+            // 
+            // KidsMealDay_Label
+            // 
+            this.KidsMealDay_Label.AutoSize = true;
+            this.KidsMealDay_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.KidsMealDay_Label.Location = new System.Drawing.Point(6, 106);
+            this.KidsMealDay_Label.Name = "KidsMealDay_Label";
+            this.KidsMealDay_Label.Size = new System.Drawing.Size(143, 24);
+            this.KidsMealDay_Label.TabIndex = 2;
+            this.KidsMealDay_Label.Text = "Kids Meal Days:";
+            // 
+            // KidsMealDayMonday_CheckBox
+            // 
+            this.KidsMealDayMonday_CheckBox.AutoSize = true;
+            this.KidsMealDayMonday_CheckBox.Location = new System.Drawing.Point(10, 133);
+            this.KidsMealDayMonday_CheckBox.Name = "KidsMealDayMonday_CheckBox";
+            this.KidsMealDayMonday_CheckBox.Size = new System.Drawing.Size(64, 17);
+            this.KidsMealDayMonday_CheckBox.TabIndex = 3;
+            this.KidsMealDayMonday_CheckBox.Text = "Monday";
+            this.KidsMealDayMonday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDayTuesday_CheckBox
+            // 
+            this.KidsMealDayTuesday_CheckBox.AutoSize = true;
+            this.KidsMealDayTuesday_CheckBox.Location = new System.Drawing.Point(80, 133);
+            this.KidsMealDayTuesday_CheckBox.Name = "KidsMealDayTuesday_CheckBox";
+            this.KidsMealDayTuesday_CheckBox.Size = new System.Drawing.Size(67, 17);
+            this.KidsMealDayTuesday_CheckBox.TabIndex = 4;
+            this.KidsMealDayTuesday_CheckBox.Text = "Tuesday";
+            this.KidsMealDayTuesday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDayWednesday_CheckBox
+            // 
+            this.KidsMealDayWednesday_CheckBox.AutoSize = true;
+            this.KidsMealDayWednesday_CheckBox.Location = new System.Drawing.Point(153, 133);
+            this.KidsMealDayWednesday_CheckBox.Name = "KidsMealDayWednesday_CheckBox";
+            this.KidsMealDayWednesday_CheckBox.Size = new System.Drawing.Size(83, 17);
+            this.KidsMealDayWednesday_CheckBox.TabIndex = 5;
+            this.KidsMealDayWednesday_CheckBox.Text = "Wednesday";
+            this.KidsMealDayWednesday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDayThursday_CheckBox
+            // 
+            this.KidsMealDayThursday_CheckBox.AutoSize = true;
+            this.KidsMealDayThursday_CheckBox.Location = new System.Drawing.Point(243, 133);
+            this.KidsMealDayThursday_CheckBox.Name = "KidsMealDayThursday_CheckBox";
+            this.KidsMealDayThursday_CheckBox.Size = new System.Drawing.Size(70, 17);
+            this.KidsMealDayThursday_CheckBox.TabIndex = 6;
+            this.KidsMealDayThursday_CheckBox.Text = "Thursday";
+            this.KidsMealDayThursday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDayFriday_CheckBox
+            // 
+            this.KidsMealDayFriday_CheckBox.AutoSize = true;
+            this.KidsMealDayFriday_CheckBox.Location = new System.Drawing.Point(320, 133);
+            this.KidsMealDayFriday_CheckBox.Name = "KidsMealDayFriday_CheckBox";
+            this.KidsMealDayFriday_CheckBox.Size = new System.Drawing.Size(54, 17);
+            this.KidsMealDayFriday_CheckBox.TabIndex = 7;
+            this.KidsMealDayFriday_CheckBox.Text = "Friday";
+            this.KidsMealDayFriday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDaySaturday_CheckBox
+            // 
+            this.KidsMealDaySaturday_CheckBox.AutoSize = true;
+            this.KidsMealDaySaturday_CheckBox.Location = new System.Drawing.Point(381, 133);
+            this.KidsMealDaySaturday_CheckBox.Name = "KidsMealDaySaturday_CheckBox";
+            this.KidsMealDaySaturday_CheckBox.Size = new System.Drawing.Size(68, 17);
+            this.KidsMealDaySaturday_CheckBox.TabIndex = 8;
+            this.KidsMealDaySaturday_CheckBox.Text = "Saturday";
+            this.KidsMealDaySaturday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDaySunday_CheckBox
+            // 
+            this.KidsMealDaySunday_CheckBox.AutoSize = true;
+            this.KidsMealDaySunday_CheckBox.Location = new System.Drawing.Point(456, 133);
+            this.KidsMealDaySunday_CheckBox.Name = "KidsMealDaySunday_CheckBox";
+            this.KidsMealDaySunday_CheckBox.Size = new System.Drawing.Size(62, 17);
+            this.KidsMealDaySunday_CheckBox.TabIndex = 9;
+            this.KidsMealDaySunday_CheckBox.Text = "Sunday";
+            this.KidsMealDaySunday_CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KidsMealDaySave_Button
+            // 
+            this.KidsMealDaySave_Button.Location = new System.Drawing.Point(10, 157);
+            this.KidsMealDaySave_Button.Name = "KidsMealDaySave_Button";
+            this.KidsMealDaySave_Button.Size = new System.Drawing.Size(75, 23);
+            this.KidsMealDaySave_Button.TabIndex = 10;
+            this.KidsMealDaySave_Button.Text = "Save Days";
+            this.KidsMealDaySave_Button.UseVisualStyleBackColor = true;
+            this.KidsMealDaySave_Button.Click += new System.EventHandler(this.KidsMealDaySave_Button_Click);
             // 
             // ManagerKiosk
             // 
@@ -1233,7 +1357,6 @@
         private System.Windows.Forms.Label MenuItemPrice_Label;
         private System.Windows.Forms.Label MenuItemName_Label;
         private System.Windows.Forms.ListBox MenuItems_Listbox;
-        private System.Windows.Forms.TextBox MenuItemCategory_Textbox;
         private System.Windows.Forms.TextBox MenuItemName_Textbox;
         private System.Windows.Forms.TextBox MenuItemPrice_Textbox;
         private System.Windows.Forms.CheckedListBox MenuItemsComponent_CheckedListbox;
@@ -1257,7 +1380,6 @@
         private System.Windows.Forms.Label ComponentName_Label;
         private System.Windows.Forms.TextBox ComponentName_Textbox;
         private System.Windows.Forms.TextBox ComponentPrice_Textbox;
-        private System.Windows.Forms.TextBox ComponentCategory_Textbox;
         private System.Windows.Forms.Label ComponentCategory_Label;
         private System.Windows.Forms.Label ComponentPrice_Label;
         private System.Windows.Forms.TextBox ComponentHighQuantity_Textbox;
@@ -1281,6 +1403,18 @@
         private System.Windows.Forms.Label ComponentCost_Label;
         private System.Windows.Forms.CheckBox SpecialDaySunday_Checkbox;
         private System.Windows.Forms.WebBrowser webReports;
+        private System.Windows.Forms.Button PriceChange_Button;
+        private System.Windows.Forms.ComboBox MenuItemCategory_comboBox;
+        private System.Windows.Forms.ComboBox ComponentCategory_comboBox;
+        private System.Windows.Forms.Label KidsMealDay_Label;
+        private System.Windows.Forms.Button KidsMealDaySave_Button;
+        private System.Windows.Forms.CheckBox KidsMealDaySunday_CheckBox;
+        private System.Windows.Forms.CheckBox KidsMealDaySaturday_CheckBox;
+        private System.Windows.Forms.CheckBox KidsMealDayFriday_CheckBox;
+        private System.Windows.Forms.CheckBox KidsMealDayThursday_CheckBox;
+        private System.Windows.Forms.CheckBox KidsMealDayWednesday_CheckBox;
+        private System.Windows.Forms.CheckBox KidsMealDayTuesday_CheckBox;
+        private System.Windows.Forms.CheckBox KidsMealDayMonday_CheckBox;
     }
 }
 

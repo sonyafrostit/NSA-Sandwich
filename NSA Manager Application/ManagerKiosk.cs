@@ -30,7 +30,7 @@ namespace NSA_Manager
         private bool InitialLoadSuccess;
 
         //Constructor for Manager Kiosk
-        public ManagerKiosk()
+        public ManagerKiosk(int isassistant)
         {
             InitialLoadSuccess = false;
             InitializeComponent();
@@ -63,6 +63,7 @@ namespace NSA_Manager
 
             // Intial Load of all Lists
             LoadOrders();
+            LoadKidsMealDays();
             LoadManagerAccountList();
             LoadManagerInventoryList();
             LoadManagerComponentList();
@@ -84,6 +85,11 @@ namespace NSA_Manager
             MenuItemDelete_Button.Click += new EventHandler(this.DeleteMenuItem_Click);
             MenuItemSave_Button.Click += new EventHandler(this.SaveMenuItem_Click);
             PrintReport_Button.Click += new EventHandler(this.PrintReport_Button_Click);
+
+            if(isassistant == 1)
+            {
+                ManagerKiosk_TabPage.TabPages.Remove(AssistantManagers);
+            }
         }
 
         public class BoxFormat
@@ -169,6 +175,58 @@ namespace NSA_Manager
                 MessageBox.Show(ex.Message, "Error loading Orders List", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         } // LoadOrders
+
+        public void LoadKidsMealDays()
+        {
+            try
+            {
+                int[] kidsmealdays;   // the Kids Meal Day Flags
+
+                // connect to DB if it is not connected
+                if (!nsadb.Connected())
+                {
+                    nsadb.OpenConnection();
+                }
+
+                //request the Records to display on the manager orders list
+                nsadb.ManagerGetKidsMealDays(out kidsmealdays);
+
+                // Checks Days checkboxes if true in database.
+                if (kidsmealdays[0] == 1)
+                {
+                    KidsMealDayMonday_CheckBox.Checked = true;
+                }
+                if (kidsmealdays[1] == 1)
+                {
+                    KidsMealDayTuesday_CheckBox.Checked = true;
+                }
+                if (kidsmealdays[2] == 1)
+                {
+                    KidsMealDayWednesday_CheckBox.Checked = true;
+                }
+                if (kidsmealdays[3] == 1)
+                {
+                    KidsMealDayThursday_CheckBox.Checked = true;
+                }
+                if (kidsmealdays[4] == 1)
+                {
+                    KidsMealDayFriday_CheckBox.Checked = true;
+                }
+                if (kidsmealdays[5] == 1)
+                {
+                    KidsMealDaySaturday_CheckBox.Checked = true;
+                }
+                if (kidsmealdays[6] == 1)
+                {
+                    KidsMealDaySunday_CheckBox.Checked = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error loading Kids Meal Days", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        } // LoadKidsMealDays
 
         private void Orders_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -512,8 +570,11 @@ namespace NSA_Manager
             try
             {
                 int ordercount = 0;        // the number of orders to display
+                int categorycount = 0;
                 List<string>[] ManagerComponentdata;   // the orders that will be displayed
+                List<string>[] ManagerComponentCategory; // The component categories
                 ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
+                ArrayList CategoryInfo = new ArrayList();
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -523,10 +584,13 @@ namespace NSA_Manager
 
                 //request the Records to display on the manager orders list
                 ordercount = nsadb.ManagerGetComponentData(out ManagerComponentdata);
+                categorycount = nsadb.ManagerGetComponentCategory(out ManagerComponentCategory);
 
                 // Clear any existing data in the list box
                 Components_Listbox.DataSource = null;
                 Components_Listbox.Items.Clear();
+                ComponentCategory_comboBox.DataSource = null;
+                ComponentCategory_comboBox.Items.Clear();
 
                 // If there is no data in the database skip attempting to load the List
                 // It will cause an error.
@@ -541,12 +605,26 @@ namespace NSA_Manager
                     ListBoxInfo.Add(new BoxFormat(ManagerComponentdata[1][index] + " - $" + ManagerComponentdata[2][index], ManagerComponentdata[0][index]));
                 }
 
+                if (categorycount == 0)
+                {
+                    return;
+                }
+
+                //loop over the records and format them in the Array List
+                for (int index = 0; index < categorycount; index++)
+                {
+                    CategoryInfo.Add(new BoxFormat(ManagerComponentCategory[1][index], ManagerComponentCategory[0][index]));
+                }
+
                 // Insert Array List into the List Box
                 Components_Listbox.DataSource = ListBoxInfo;
+                ComponentCategory_comboBox.DataSource = CategoryInfo;
 
                 // Define which information is actually displayed by the listbox and returned
                 Components_Listbox.DisplayMember = "displayText";
                 Components_Listbox.ValueMember = "databaseID";
+                ComponentCategory_comboBox.DisplayMember = "displayText";
+                ComponentCategory_comboBox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -560,10 +638,13 @@ namespace NSA_Manager
             {
                 int itemcount = 0;        // the number of menu items returned by database
                 int componentcount = 0;   // The number of components returned by database
+                int categorycount = 0;    // The number of component category returned
                 List<string>[] ManagerMenuItemdata;   // The Menu Items that will be displayed
                 List<string>[] ManagerComponentdata;  // The Components that will be displayed
+                List<string>[] ManagerItemCategory;   // The Categories that will be displayed
                 ArrayList ListBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
                 ArrayList CheckBoxInfo = new ArrayList(); // Array List where formatted text will be stored.
+                ArrayList CategoryInfo = new ArrayList(); // Array List where formatted text will be stored.
 
                 // connect to DB if it is not connected
                 if (!nsadb.Connected())
@@ -574,12 +655,15 @@ namespace NSA_Manager
                 //request the Records to display on the manager orders list
                 itemcount = nsadb.ManagerGetMenuItemData(out ManagerMenuItemdata);
                 componentcount = nsadb.ManagerGetComponentData(out ManagerComponentdata);
+                categorycount = nsadb.ManagerGetMenuItemCategory(out ManagerItemCategory);
 
                 // Clear any existing data in the list box
                 MenuItems_Listbox.DataSource = null;
                 MenuItems_Listbox.Items.Clear();
                 MenuItemsComponent_CheckedListbox.DataSource = null;
                 MenuItemsComponent_CheckedListbox.Items.Clear();
+                MenuItemCategory_comboBox.DataSource = null;
+                MenuItemCategory_comboBox.Items.Clear();
 
                 // If there is no data in the database skip attempting to load the List
                 // It will cause an error.
@@ -592,6 +676,17 @@ namespace NSA_Manager
                 for (int index = 0; index < itemcount; index++)
                 {
                     ListBoxInfo.Add(new BoxFormat(ManagerMenuItemdata[1][index], ManagerMenuItemdata[0][index]));
+                }
+
+                if (categorycount == 0)
+                {
+                    return;
+                }
+
+                //loop over the records and format them in the Array List
+                for (int index = 0; index < categorycount; index++)
+                {
+                    CategoryInfo.Add(new BoxFormat(ManagerItemCategory[1][index], ManagerItemCategory[0][index]));
                 }
 
                 if (componentcount == 0)
@@ -607,12 +702,15 @@ namespace NSA_Manager
                 // Insert Array List into the List Box
                 MenuItems_Listbox.DataSource = ListBoxInfo;
                 MenuItemsComponent_CheckedListbox.DataSource = CheckBoxInfo;
+                MenuItemCategory_comboBox.DataSource = CategoryInfo;
 
                 // Define which information is actually displayed by the listbox and returned
                 MenuItems_Listbox.DisplayMember = "displayText";
                 MenuItems_Listbox.ValueMember = "databaseID";
                 MenuItemsComponent_CheckedListbox.DisplayMember = "displayText";
                 MenuItemsComponent_CheckedListbox.ValueMember = "databaseID";
+                MenuItemCategory_comboBox.DisplayMember = "displayText";
+                MenuItemCategory_comboBox.ValueMember = "databaseID";
             }
             catch (Exception ex)
             {
@@ -785,7 +883,7 @@ namespace NSA_Manager
             {
                 // Buffer to store text
                 string ComponentName = ComponentName_Textbox.Text.ToString();
-                string ComponentCategory = ComponentCategory_Textbox.Text.ToString();
+                string ComponentCategory = ((BoxFormat)ComponentCategory_comboBox.SelectedItem).databaseID;
                 string ComponentPrice = ComponentPrice_Textbox.Text.ToString();
                 string ComponentCost = ComponentCost_Textbox.Text.ToString();
                 string ComponentHighQuantity = ComponentHighQuantity_Textbox.Text.ToString();
@@ -812,7 +910,7 @@ namespace NSA_Manager
                 LoadManagerComponentList();
                 
                 // Inform user that account was successfully created.
-                MessageBox.Show("Component - " + Name + " Created.", "Save Component", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Component - " + ComponentName + " Created.", "Save Component", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -852,7 +950,7 @@ namespace NSA_Manager
             {
                 // Buffer to store text
                 string MenuItemName = MenuItemName_Textbox.Text.ToString();
-                string MenuItemCategory = MenuItemCategory_Textbox.Text.ToString();
+                string MenuItemCategory = ((BoxFormat)MenuItemCategory_comboBox.SelectedItem).databaseID;
                 string MenuItemPrice = MenuItemPrice_Textbox.Text.ToString();
                 string isspecial = null;
                 string MenuItemID = null;
@@ -998,6 +1096,88 @@ namespace NSA_Manager
         private void PrintReport_Button_Click(object sender, EventArgs e)
         {
             webReports.ShowPrintDialog();
+        }
+
+        private void PriceChange_Button_Click(object sender, EventArgs e)
+        {
+            string curItem = ((BoxFormat)MenuItems_Listbox.SelectedItem).databaseID;
+            string oldPrice = null;
+
+            oldPrice = nsadb.ManagerGetPrice(curItem);
+
+            PriceChange FormCreate = new PriceChange(curItem, oldPrice);
+            FormCreate.Show();
+        }
+
+        private void KidsMealDaySave_Button_Click(object sender, EventArgs e)
+        {
+            // Days created to store Checked status
+            int []days = new int[7];
+
+            // Gets if Checkboxes are checked and assigns to days array.
+            if(KidsMealDayMonday_CheckBox.Checked)
+            {
+                days[0] = 1;
+            }
+            else
+            {
+                days[0] = 0;
+            }
+            if (KidsMealDayTuesday_CheckBox.Checked)
+            {
+                days[1] = 1;
+            }
+            else
+            {
+                days[1] = 0;
+            }
+            if (KidsMealDayWednesday_CheckBox.Checked)
+            {
+                days[2] = 1;
+            }
+            else
+            {
+                days[2] = 0;
+            }
+            if (KidsMealDayThursday_CheckBox.Checked)
+            {
+                days[3] = 1;
+            }
+            else
+            {
+                days[3] = 0;
+            }
+            if (KidsMealDayFriday_CheckBox.Checked)
+            {
+                days[4] = 1;
+            }
+            else
+            {
+                days[4] = 0;
+            }
+            if (KidsMealDaySaturday_CheckBox.Checked)
+            {
+                days[5] = 1;
+            }
+            else
+            {
+                days[5] = 0;
+            }
+            if (KidsMealDaySunday_CheckBox.Checked)
+            {
+                days[6] = 1;
+            }
+            else
+            {
+                days[6] = 0;
+            }
+
+            nsadb.UpdateKidsMealDays(days);
+
+            // Inform user that Kids Meal Days was successfully Updated.
+            MessageBox.Show("Kids Meal Days Updated!", "Update Kids Meal Days", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            LoadKidsMealDays();
         } // PrintReport_Button_Click
     }
 }
