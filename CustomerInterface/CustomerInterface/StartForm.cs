@@ -40,15 +40,15 @@ namespace CustomerInterface
             {
                 switch (counter)
                 {
-                    case 1:
+                    case 0:
                         this.lblSandwich1.Visible = true;
                         this.lblSandwich1.Text = Top3[counter];
                         break;
-                    case 2:
+                    case 1:
                         this.lblSandwich2.Visible = true;
                         this.lblSandwich2.Text = Top3[counter];
                         break;
-                    case 3:
+                    case 2:
                         this.lblSandwich3.Visible = true;
                         this.lblSandwich3.Text = Top3[counter];
                         break;

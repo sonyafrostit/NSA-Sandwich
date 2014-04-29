@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CustomerInterface.CashCreditSelect">
+    <Position X="1.25" Y="12" Width="2" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="button2" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAAAgAACAAAACAAAYAAAAEGAAAAAgAAA=</HashCode>
+      <FileName>CashCreditSelect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.CashForm1">
+    <Position X="1.25" Y="6.5" Width="2.75" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="cash_received" Hidden="true" />
+      <Field Name="change" Hidden="true" />
+      <Field Name="change_amount" Hidden="true" />
+      <Field Name="checkLabel" Hidden="true" />
+      <Field Name="Due" Hidden="true" />
+      <Field Name="due_amount" Hidden="true" />
+      <Field Name="emailAddressLabel" Hidden="true" />
+      <Field Name="emailAddressText" Hidden="true" />
+      <Field Name="emailReceiptCheck" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="received_amount" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EIAAAEAAAGAAEBAgAASAAAACgQAIAbgSEESAACAggAI=</HashCode>
+      <FileName>CashForm1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.CashForm2">
+    <Position X="4.25" Y="6.5" Width="2" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="receipt" Hidden="true" />
+      <Field Name="Showlabel" Hidden="true" />
+      <Field Name="textBox1" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAACAQAJAgIACAAAACAAAYAAAAEEAAAAAgAAA=</HashCode>
+      <FileName>CashForm2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.createLoyalty">
+    <Position X="6.5" Y="6.5" Width="2.25" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="createLoyaltyBut" Hidden="true" />
+      <Field Name="emailAddressLabel" Hidden="true" />
+      <Field Name="emailTextBox" Hidden="true" />
+      <Field Name="errorLabel" Hidden="true" />
+      <Field Name="infoLabel" Hidden="true" />
+      <Field Name="nameLabel" Hidden="true" />
+      <Field Name="nameTextBox" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ASAAAAAAACAUCAAgAACAADACigAUAAAAAAAAACAAAEA=</HashCode>
+      <FileName>createLoyalty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.CreditForm1">
+    <Position X="1.25" Y="2" Width="2.75" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="CCBox" Hidden="true" />
+      <Field Name="checkLabel" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="emailAddressLabel" Hidden="true" />
+      <Field Name="emailAddressText" Hidden="true" />
+      <Field Name="emailReceiptCheck" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="promptLabel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAAAAAQAACAQABQgAASAAAASgQAaAAAQEESAACAgAAA=</HashCode>
+      <FileName>CreditForm1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.CreditForm2">
+    <Position X="4.25" Y="2" Width="1.75" />
+    <Members>
+      <Field Name="button1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAABAACACAAAACAAAIAAAAAEAAAAAgCAA=</HashCode>
+      <FileName>CreditForm2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.CustomizeForm">
+    <Position X="14.75" Y="2" Width="2.75" />
+    <Members>
+      <Field Name="breadLabel" Hidden="true" />
+      <Field Name="BreadList" Hidden="true" />
+      <Field Name="BreadPanel" Hidden="true" />
+      <Field Name="button5" Hidden="true" />
+      <Field Name="CancelButton" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="otherLabel" Hidden="true" />
+      <Field Name="OtherListBox" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAAAQUIDAEgAgAgQiIAAASAIAEAQAAAFElpQAAAGA=</HashCode>
+      <FileName>CustomizeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.DataParser">
+    <Position X="1.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>DataParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.LogInForm">
+    <Position X="3.5" Y="12" Width="1.5" />
+    <Members>
+      <Field Name="accountNumberBox" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="enterInfoLabel" Hidden="true" />
+      <Field Name="errorLabel" Hidden="true" />
+      <Field Name="signInBut" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAUAAAAAACAGDACAAAAAAAAAEQAAIAAAEA=</HashCode>
+      <FileName>LogIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.LogInOrGuest">
+    <Position X="9" Y="2" Width="2.25" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="guestButton" Hidden="true" />
+      <Field Name="signInButton" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAIAAAACAEAAAAAACAgBACAAAAAAABACAAAAAAAEA=</HashCode>
+      <FileName>LogInOrGuest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAChanges">
+    <Position X="8.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAIAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NSAChanges.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAComponent">
+    <Position X="8.25" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAACQAAAAEAAAAAAAIACAACAA=</HashCode>
+      <FileName>NSAComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSADatabase">
+    <Position X="3.75" Y="15.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAggEAAAARAAQQlAgAENFBBAAQETAIEEEAAACAAACEA=</HashCode>
+      <FileName>NSADatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAFavoriteItem">
+    <Position X="14" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NSAFavoriteItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAHistoryItem">
+    <Position X="12.25" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NSAHistoryItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSALoyaltyAccount">
+    <Position X="6.25" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQgAAACAggACAICAAAAAAEAABAAAAEAAAAAAE=</HashCode>
+      <FileName>NSALoyaltyAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAMenuCategory">
+    <Position X="10.25" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAAAgAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>NSAMenuCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAMenuItem">
+    <Position X="12.75" Y="15.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAADAAACAQAAAogAgACAABQAEAAUABAADAAAAA4AAgA=</HashCode>
+      <FileName>NSAMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSAOrder">
+    <Position X="6.25" Y="20" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgCAAAAAgAEAAAgAAAQAAAAAAAAAAAAgA=</HashCode>
+      <FileName>NSAOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSARandomItem">
+    <Position X="10.5" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>NSARandomItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.NSASpecial">
+    <Position X="15.75" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAgAAAAAAACAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NSASpecial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.Program">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.receiptFinal">
+    <Position X="6.5" Y="2" Width="2" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Field Name="finishButton" Hidden="true" />
+      <Field Name="receiptText" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgIACAAAAAAAACAAAAKAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>receiptFinal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.StartForm">
+    <Position X="9" Y="6.5" Width="2.25" />
+    <Members>
+      <Field Name="createLoyaltyBtn" Hidden="true" />
+      <Field Name="enBtn" Hidden="true" />
+      <Field Name="frBtn" Hidden="true" />
+      <Field Name="geBtn" Hidden="true" />
+      <Field Name="lblSandwich1" Hidden="true" />
+      <Field Name="lblSandwich2" Hidden="true" />
+      <Field Name="lblSandwich3" Hidden="true" />
+      <Field Name="scanLoyaltyText" Hidden="true" />
+      <Field Name="selectLangText" Hidden="true" />
+      <Field Name="spBtn" Hidden="true" />
+      <Field Name="startOrderBtn" Hidden="true" />
+      <Field Name="topSelling" Hidden="true" />
+      <Field Name="welcomeText" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QAAAAoAAwCAEAAggAAWAABQCFACAAABBAgAAABAgEEA=</HashCode>
+      <FileName>StartForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NSA.AppConfig">
+    <Position X="1.25" Y="15.5" Width="2.25" />
+    <Members>
+      <Field Name="gcDBName" Hidden="true" />
+      <Field Name="gcDBPassword" Hidden="true" />
+      <Field Name="gcDBServer" Hidden="true" />
+      <Field Name="gcDBUser" Hidden="true" />
+      <Field Name="gcFilePath" Hidden="true" />
+      <Field Name="gcLoaded" Hidden="true" />
+      <Field Name="gcStoreNumber" Hidden="true" />
+      <Field Name="XML_CONFIG_SECTION" Hidden="true" />
+      <Field Name="XML_DB_HOST" Hidden="true" />
+      <Field Name="XML_DB_NAME" Hidden="true" />
+      <Field Name="XML_DB_PASS" Hidden="true" />
+      <Field Name="XML_DB_USER" Hidden="true" />
+      <Field Name="XML_STORE_ID" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAggAAgRAAAAAAIAAAAIAAABgAEQIACEIBCCAQBAAA=</HashCode>
+      <FileName>Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerInterface.KioskWindow">
+    <Position X="11.5" Y="2" Width="3" />
+    <Members>
+      <Field Name="AccNumberTagLabel" Hidden="true" />
+      <Field Name="accountNumberLabel" Hidden="true" />
+      <Field Name="btnDeleteLoyaltyAccount" Hidden="true" />
+      <Field Name="button1" Hidden="true" />
+      <Field Name="button6" Hidden="true" />
+      <Field Name="button7" Hidden="true" />
+      <Field Name="button8" Hidden="true" />
+      <Field Name="ChangesHeader" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="emailLabel" Hidden="true" />
+      <Field Name="emailTextBox" Hidden="true" />
+      <Field Name="enBtn" Hidden="true" />
+      <Field Name="favItemsListView" Hidden="true" />
+      <Field Name="FavOrdersView" Hidden="true" />
+      <Field Name="favoriteItemsLabel" Hidden="true" />
+      <Field Name="fontDialog1" Hidden="true" />
+      <Field Name="frBtn" Hidden="true" />
+      <Field Name="geBtn" Hidden="true" />
+      <Field Name="ItemHeader" Hidden="true" />
+      <Field Name="KioskTabs" Hidden="true" />
+      <Field Name="LanguageTab" Hidden="true" />
+      <Field Name="LoyaltyTab" Hidden="true" />
+      <Field Name="menuListView" Hidden="true" />
+      <Field Name="MenuTab" Hidden="true" />
+      <Field Name="nameLabel" Hidden="true" />
+      <Field Name="nameTextBox" Hidden="true" />
+      <Field Name="OrderView" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="pastOrdersLabel" Hidden="true" />
+      <Field Name="RemoveButton" Hidden="true" />
+      <Field Name="rewardCountLabel" Hidden="true" />
+      <Field Name="rewardsLabel" Hidden="true" />
+      <Field Name="rm" Hidden="true" />
+      <Field Name="saveorder" Hidden="true" />
+      <Field Name="selectLangText" Hidden="true" />
+      <Field Name="spBtn" Hidden="true" />
+      <Field Name="splitter1" Hidden="true" />
+      <Field Name="splitter2" Hidden="true" />
+      <Field Name="splitter3" Hidden="true" />
+      <Field Name="splitter4" Hidden="true" />
+      <Field Name="WelcomeLabel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CKmAIBSBASBeApggJBTBAJhyPAQPATxlyvAjQTAgUGE=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
