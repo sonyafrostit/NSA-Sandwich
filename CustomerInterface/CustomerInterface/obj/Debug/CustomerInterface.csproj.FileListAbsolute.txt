@@ -300,3 +300,5 @@ C:\Users\bikash\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterfac
 C:\Users\bikash\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\es\CustomerInterface.resources.dll
 C:\Users\bikash\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.NSAKidsMeal.resources
 C:\Users\bikash\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Prompt_menu_for_kids.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.NSAKidsMeal.resources
+C:\Users\Trae\Documents\GitHub\NSA-Sandwich\CustomerInterface\CustomerInterface\obj\Debug\CustomerInterface.Prompt_menu_for_kids.resources
