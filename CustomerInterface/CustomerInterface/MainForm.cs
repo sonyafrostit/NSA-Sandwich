@@ -30,8 +30,15 @@ namespace CustomerInterface
         private CustomizeForm customizeItemForm; //used when user tries to customize an order
         private NSALoyaltyAccount account; //stores loyalty account info
                                            //acc #, name, email, rewards
+        private string kid_num_count;
+        private int counter;
 
-        //constructor called when logging in as guest
+        public string passValueMax {
+            get { return kid_num_count; }
+            set { kid_num_count = value; }
+        }
+
+             //constructor called when logging in as guest
         public KioskWindow(CultureInfo language)
         {
             ci = language; //set the language
@@ -262,9 +269,41 @@ namespace CustomerInterface
                         }
                     }
                 }
+                
+                    if (checkKidsMeal())
+                    {
+                        DataParser dataParser = new DataParser(ci); //parses displays them in the users language
+                        if (counter < Convert.ToInt32(kidsnum_store.Text))
+                        {
+                            DialogResult result = MessageBox.Show("Do you want to add kid meal to your entree?", "free kids meal", MessageBoxButtons.YesNo);
 
+                            if (result == DialogResult.Yes)
+                            {
+                                counter++;
+                                NSAMenuItem newKidsMeal = db.getKidsMeal();
+                                addItemToOrder(newKidsMeal);
+                            }
+                        }
+                       
+                    }
+                
                 UpdateOrderView();
             }
+        }
+
+        //check if it's a kids meal day
+        private bool checkKidsMeal()
+        {
+            bool kidsmeal = false;
+            NSAMenuItem checkKids = db.getKidsMeal();
+            string dt = DateTime.Now.DayOfWeek.ToString();
+            if (dt == "Monday" || dt == "Tuesday" || dt == "Wednesday" || dt == "Thursday" || dt == "Friday" || dt == "Saturday" || dt == "Sunday")
+            {
+                kidsmeal = true;
+                
+            }
+            
+            return kidsmeal;
         }
 
         private bool CanHaveComboDiscount(){
@@ -429,7 +468,6 @@ namespace CustomerInterface
         private void button1_Click(object sender, EventArgs e)
         {
             StringBuilder receipt = getReceipt();
-
             string parsedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             MySqlCommand cmd;
             string cmdstring;
@@ -539,7 +577,8 @@ namespace CustomerInterface
 
         private void KioskWindow_Load(object sender, EventArgs e)
         {
-
+            kidsnum_store.Text = kid_num_count;
+            kidsnum_store.Visible = false;
         }
 
         private void label1_Click_1(object sender, EventArgs e)

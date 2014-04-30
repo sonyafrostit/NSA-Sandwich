@@ -357,6 +357,33 @@ namespace CustomerInterface
             return newItem;
         }
 
+        public NSAMenuItem getKidsMeal() 
+        {
+            StringBuilder query = new StringBuilder();
+
+            NSAMenuItem newItem = null;
+
+            query.Clear();
+            query.Append("SELECT name, menutypeid ");
+            query.Append("FROM menuitem ");
+            query.Append("WHERE name = 'Kids Meal' AND menutypeid = 0 AND storeid = ");
+            query.Append(StoreNumber.ToString());
+            query.Append(";");
+
+            MySqlDataReader menuItemReader = CustomQuery(query.ToString());
+
+            if (menuItemReader != null)
+            {
+                menuItemReader.Read();
+                newItem = new NSAMenuItem();
+                newItem.Name = (string)menuItemReader["name"];
+                newItem.CategoryID = (int)menuItemReader["menutypeid"];
+             }
+
+            menuItemReader.Close();
+            return newItem;
+        }
+
         public NSAMenuItem getComboDrinkDiscount()
         {
             //get a discount item that has the combo drink discount.

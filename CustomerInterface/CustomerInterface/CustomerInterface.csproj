@@ -97,6 +97,18 @@
     </Compile>
     <Compile Include="NSAFavoriteItem.cs" />
     <Compile Include="NSAHistoryItem.cs" />
+    <Compile Include="NSAKidsMeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NSAKidsMeal.designer.cs">
+      <DependentUpon>NSAKidsMeal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prompt_menu_for_kids.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prompt_menu_for_kids.Designer.cs">
+      <DependentUpon>Prompt_menu_for_kids.cs</DependentUpon>
+    </Compile>
     <Compile Include="receiptFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +217,12 @@
     <EmbeddedResource Include="CashCreditSelect.resx">
       <DependentUpon>CashCreditSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NSAKidsMeal.resx">
+      <DependentUpon>NSAKidsMeal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prompt_menu_for_kids.resx">
+      <DependentUpon>Prompt_menu_for_kids.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="receiptFinal.resx">
       <DependentUpon>receiptFinal.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +305,7 @@
     <Content Include="emulate_cashPayment.csproj" />
     <Content Include="NSAConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

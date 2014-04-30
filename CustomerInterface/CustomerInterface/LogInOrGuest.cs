@@ -35,7 +35,8 @@ namespace CustomerInterface
         //called when user clicks to order as a guest
         private void guestButton_Click(object sender, EventArgs e)
         {
-            KioskWindow mainForm = new KioskWindow(ci);
+           // KioskWindow mainForm = new KioskWindow(ci);
+            NSAKidsMeal mainForm = new NSAKidsMeal(ci);
             mainForm.FormClosed += new FormClosedEventHandler(LoginorGuest_FormClosed);
             mainForm.Show();
             Hide(); //hides form until needed again
