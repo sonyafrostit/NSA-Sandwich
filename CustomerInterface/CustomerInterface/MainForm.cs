@@ -272,6 +272,10 @@ namespace CustomerInterface
                 
                     if (checkKidsMeal())
                     {
+                        if(String.IsNullOrWhiteSpace(kidsnum_store.Text))
+                        {
+                            kidsnum_store.Text = "0";
+                        }
                         DataParser dataParser = new DataParser(ci); //parses displays them in the users language
                         if (counter < Convert.ToInt32(kidsnum_store.Text))
                         {

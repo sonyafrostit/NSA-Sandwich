@@ -49,20 +49,20 @@
             // 
             this.selectLangText.AutoSize = true;
             this.selectLangText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectLangText.Location = new System.Drawing.Point(322, 510);
-            this.selectLangText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.selectLangText.Location = new System.Drawing.Point(644, 981);
+            this.selectLangText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.selectLangText.Name = "selectLangText";
-            this.selectLangText.Size = new System.Drawing.Size(174, 26);
+            this.selectLangText.Size = new System.Drawing.Size(344, 51);
             this.selectLangText.TabIndex = 19;
             this.selectLangText.Text = "Select language:";
             // 
             // spBtn
             // 
             this.spBtn.Image = ((System.Drawing.Image)(resources.GetObject("spBtn.Image")));
-            this.spBtn.Location = new System.Drawing.Point(483, 538);
-            this.spBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spBtn.Location = new System.Drawing.Point(966, 1035);
+            this.spBtn.Margin = new System.Windows.Forms.Padding(4);
             this.spBtn.Name = "spBtn";
-            this.spBtn.Size = new System.Drawing.Size(48, 27);
+            this.spBtn.Size = new System.Drawing.Size(96, 52);
             this.spBtn.TabIndex = 18;
             this.spBtn.UseVisualStyleBackColor = true;
             this.spBtn.Click += new System.EventHandler(this.spBtn_Click);
@@ -70,10 +70,10 @@
             // geBtn
             // 
             this.geBtn.Image = ((System.Drawing.Image)(resources.GetObject("geBtn.Image")));
-            this.geBtn.Location = new System.Drawing.Point(431, 538);
-            this.geBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.geBtn.Location = new System.Drawing.Point(862, 1035);
+            this.geBtn.Margin = new System.Windows.Forms.Padding(4);
             this.geBtn.Name = "geBtn";
-            this.geBtn.Size = new System.Drawing.Size(48, 27);
+            this.geBtn.Size = new System.Drawing.Size(96, 52);
             this.geBtn.TabIndex = 17;
             this.geBtn.UseVisualStyleBackColor = true;
             this.geBtn.Click += new System.EventHandler(this.geBtn_Click);
@@ -81,10 +81,10 @@
             // frBtn
             // 
             this.frBtn.Image = ((System.Drawing.Image)(resources.GetObject("frBtn.Image")));
-            this.frBtn.Location = new System.Drawing.Point(379, 538);
-            this.frBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.frBtn.Location = new System.Drawing.Point(758, 1035);
+            this.frBtn.Margin = new System.Windows.Forms.Padding(4);
             this.frBtn.Name = "frBtn";
-            this.frBtn.Size = new System.Drawing.Size(48, 27);
+            this.frBtn.Size = new System.Drawing.Size(96, 52);
             this.frBtn.TabIndex = 16;
             this.frBtn.UseVisualStyleBackColor = true;
             this.frBtn.Click += new System.EventHandler(this.frBtn_Click);
@@ -92,10 +92,10 @@
             // enBtn
             // 
             this.enBtn.Image = ((System.Drawing.Image)(resources.GetObject("enBtn.Image")));
-            this.enBtn.Location = new System.Drawing.Point(327, 538);
-            this.enBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.enBtn.Location = new System.Drawing.Point(654, 1035);
+            this.enBtn.Margin = new System.Windows.Forms.Padding(4);
             this.enBtn.Name = "enBtn";
-            this.enBtn.Size = new System.Drawing.Size(48, 27);
+            this.enBtn.Size = new System.Drawing.Size(96, 52);
             this.enBtn.TabIndex = 15;
             this.enBtn.UseVisualStyleBackColor = true;
             this.enBtn.Click += new System.EventHandler(this.enBtn_Click);
@@ -103,10 +103,10 @@
             // startOrderBtn
             // 
             this.startOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startOrderBtn.Location = new System.Drawing.Point(319, 360);
-            this.startOrderBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startOrderBtn.Location = new System.Drawing.Point(638, 692);
+            this.startOrderBtn.Margin = new System.Windows.Forms.Padding(4);
             this.startOrderBtn.Name = "startOrderBtn";
-            this.startOrderBtn.Size = new System.Drawing.Size(212, 124);
+            this.startOrderBtn.Size = new System.Drawing.Size(424, 238);
             this.startOrderBtn.TabIndex = 14;
             this.startOrderBtn.Text = "Start Order";
             this.startOrderBtn.UseVisualStyleBackColor = true;
@@ -115,10 +115,10 @@
             // createLoyaltyBtn
             // 
             this.createLoyaltyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createLoyaltyBtn.Location = new System.Drawing.Point(76, 360);
-            this.createLoyaltyBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createLoyaltyBtn.Location = new System.Drawing.Point(152, 692);
+            this.createLoyaltyBtn.Margin = new System.Windows.Forms.Padding(4);
             this.createLoyaltyBtn.Name = "createLoyaltyBtn";
-            this.createLoyaltyBtn.Size = new System.Drawing.Size(212, 124);
+            this.createLoyaltyBtn.Size = new System.Drawing.Size(424, 238);
             this.createLoyaltyBtn.TabIndex = 13;
             this.createLoyaltyBtn.Text = "Need a Loyalty Card Click here";
             this.createLoyaltyBtn.UseVisualStyleBackColor = true;
@@ -128,11 +128,11 @@
             // 
             this.scanLoyaltyText.AutoSize = true;
             this.scanLoyaltyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scanLoyaltyText.Location = new System.Drawing.Point(66, 247);
-            this.scanLoyaltyText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.scanLoyaltyText.MaximumSize = new System.Drawing.Size(723, 0);
+            this.scanLoyaltyText.Location = new System.Drawing.Point(132, 475);
+            this.scanLoyaltyText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.scanLoyaltyText.MaximumSize = new System.Drawing.Size(1446, 0);
             this.scanLoyaltyText.Name = "scanLoyaltyText";
-            this.scanLoyaltyText.Size = new System.Drawing.Size(723, 55);
+            this.scanLoyaltyText.Size = new System.Drawing.Size(1436, 108);
             this.scanLoyaltyText.TabIndex = 12;
             this.scanLoyaltyText.Text = "Scan Loyalty Card or Press Start";
             // 
@@ -140,10 +140,10 @@
             // 
             this.NSAText.AutoSize = true;
             this.NSAText.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NSAText.Location = new System.Drawing.Point(58, 127);
-            this.NSAText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NSAText.Location = new System.Drawing.Point(116, 244);
+            this.NSAText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NSAText.Name = "NSAText";
-            this.NSAText.Size = new System.Drawing.Size(242, 108);
+            this.NSAText.Size = new System.Drawing.Size(487, 217);
             this.NSAText.TabIndex = 11;
             this.NSAText.Text = "NSA";
             // 
@@ -151,10 +151,10 @@
             // 
             this.welcomeText.AutoSize = true;
             this.welcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeText.Location = new System.Drawing.Point(58, 19);
-            this.welcomeText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.welcomeText.Location = new System.Drawing.Point(116, 37);
+            this.welcomeText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.welcomeText.Name = "welcomeText";
-            this.welcomeText.Size = new System.Drawing.Size(550, 108);
+            this.welcomeText.Size = new System.Drawing.Size(1105, 217);
             this.welcomeText.TabIndex = 10;
             this.welcomeText.Text = "Welcome to";
             // 
@@ -162,10 +162,9 @@
             // 
             this.topSelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.topSelling.ForeColor = System.Drawing.Color.Red;
-            this.topSelling.Location = new System.Drawing.Point(574, 323);
-            this.topSelling.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.topSelling.Location = new System.Drawing.Point(1148, 621);
             this.topSelling.Name = "topSelling";
-            this.topSelling.Size = new System.Drawing.Size(246, 70);
+            this.topSelling.Size = new System.Drawing.Size(491, 135);
             this.topSelling.TabIndex = 20;
             this.topSelling.Text = "Yesterday\'s Top Selling Entrees";
             this.topSelling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,10 +173,9 @@
             // 
             this.lblSandwich1.AutoSize = true;
             this.lblSandwich1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSandwich1.Location = new System.Drawing.Point(575, 396);
-            this.lblSandwich1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSandwich1.Location = new System.Drawing.Point(1150, 762);
             this.lblSandwich1.Name = "lblSandwich1";
-            this.lblSandwich1.Size = new System.Drawing.Size(70, 26);
+            this.lblSandwich1.Size = new System.Drawing.Size(138, 51);
             this.lblSandwich1.TabIndex = 21;
             this.lblSandwich1.Text = "label2";
             this.lblSandwich1.Visible = false;
@@ -186,10 +184,9 @@
             // 
             this.lblSandwich2.AutoSize = true;
             this.lblSandwich2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSandwich2.Location = new System.Drawing.Point(575, 423);
-            this.lblSandwich2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSandwich2.Location = new System.Drawing.Point(1150, 813);
             this.lblSandwich2.Name = "lblSandwich2";
-            this.lblSandwich2.Size = new System.Drawing.Size(70, 26);
+            this.lblSandwich2.Size = new System.Drawing.Size(138, 51);
             this.lblSandwich2.TabIndex = 22;
             this.lblSandwich2.Text = "label3";
             this.lblSandwich2.Visible = false;
@@ -198,19 +195,18 @@
             // 
             this.lblSandwich3.AutoSize = true;
             this.lblSandwich3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSandwich3.Location = new System.Drawing.Point(575, 449);
-            this.lblSandwich3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSandwich3.Location = new System.Drawing.Point(1150, 864);
             this.lblSandwich3.Name = "lblSandwich3";
-            this.lblSandwich3.Size = new System.Drawing.Size(70, 26);
+            this.lblSandwich3.Size = new System.Drawing.Size(138, 51);
             this.lblSandwich3.TabIndex = 23;
             this.lblSandwich3.Text = "label4";
             this.lblSandwich3.Visible = false;
             // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 590);
+            this.ClientSize = new System.Drawing.Size(1630, 1127);
             this.Controls.Add(this.lblSandwich3);
             this.Controls.Add(this.lblSandwich2);
             this.Controls.Add(this.lblSandwich1);
@@ -225,6 +221,7 @@
             this.Controls.Add(this.scanLoyaltyText);
             this.Controls.Add(this.NSAText);
             this.Controls.Add(this.welcomeText);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "StartForm";
             this.Text = "NSA Sandwich";
             this.ResumeLayout(false);

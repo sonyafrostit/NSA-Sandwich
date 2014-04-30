@@ -61,7 +61,7 @@ namespace CustomerInterface
 
             else
             {
-                KioskWindow mainForm = new KioskWindow(ci, loyaltyData);
+                NSAKidsMeal mainForm = new NSAKidsMeal(ci, loyaltyData);
                 mainForm.FormClosed += new FormClosedEventHandler(LogIn_FormClosed);
                 mainForm.Show();
                 Hide();

@@ -73,7 +73,7 @@ namespace CustomerInterface
                     accountInfo[1].Add(email);
                     accountInfo[2].Add("0");
                     accountInfo[3].Add(accountNumber);
-                    KioskWindow form = new KioskWindow(ci, accountInfo); //send info to KioskWindow
+                    NSAKidsMeal form = new NSAKidsMeal(ci, accountInfo); //send info to KioskWindow
                     form.Show();
                     form.FormClosed += new FormClosedEventHandler(CreateLoyalty_FormClosed);
                     Hide();

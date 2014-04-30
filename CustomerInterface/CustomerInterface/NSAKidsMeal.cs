@@ -16,6 +16,7 @@ namespace CustomerInterface
     public partial class NSAKidsMeal : Form
     {
         private CultureInfo ci; //users selected language
+        public List<string>[] accountNumber; //users entered account number
         public NSAKidsMeal(CultureInfo language)
         {
             InitializeComponent();
@@ -23,6 +24,13 @@ namespace CustomerInterface
             setLang();
         }
 
+        public NSAKidsMeal(CultureInfo language, List<string>[] loyaltyaccount)
+        {
+            InitializeComponent();
+            ci = language;
+            setLang();
+            accountNumber = loyaltyaccount;
+        }
         //sets the language for the interface
         private void setLang()
         {
@@ -42,10 +50,35 @@ namespace CustomerInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            KioskWindow newKiosk = new KioskWindow(ci);
-            newKiosk.passValueMax = kidsNum.Text;
-            newKiosk.Show();
-            Hide();
+            if (accountNumber == null)
+            {
+                KioskWindow newKiosk = new KioskWindow(ci);
+                newKiosk.passValueMax = kidsNum.Text;
+                newKiosk.FormClosed += new FormClosedEventHandler(KidsMeal_FormClosed);
+                newKiosk.Show();
+                Hide();
+            }
+            else
+            {
+                KioskWindow newKiosk = new KioskWindow(ci, accountNumber);
+                newKiosk.passValueMax = kidsNum.Text;
+                newKiosk.FormClosed += new FormClosedEventHandler(KidsMeal_FormClosed);
+                newKiosk.Show();
+                Hide();
+            }
+        }
+
+        void KidsMeal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            StartForm from = new StartForm();
+            from.Show();
+            from.FormClosed += new FormClosedEventHandler(StartMenu_FormClosed);
+            this.Hide();
+        }
+
+        void StartMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
